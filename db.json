@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "email": "asd123@gmail.com",
+      "password": "$2a$10$Y5DdPLbcQD8/8BMl7B58neTOBLN4U3OvahDCLM43xHHmVllARO1BG",
+      "username": "張景泰",
+      "carId": "sds-457",
+      "id": 1
+    }
+  ]
+}

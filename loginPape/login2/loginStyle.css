@@ -1,0 +1,252 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' ,sans-serif;
+}
+
+.head{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    padding: 10px 100px;
+    z-index: 99; 
+    background: transparent;
+    background-color: rgba(220, 220, 220, 0.5);
+    backdrop-filter:blur(10px);
+}
+
+
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .logo{
+    width: 100px;
+    height: 50px;
+}
+.navbar .searchBar{
+    width: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #fff;
+}
+.searchBar .btn1{
+    border: 0;
+    width: 40%;
+    height: 60%;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+}
+.searchBar .btn2{
+    border: 0;
+    width: 40%;
+    height: 60%;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    display: none;
+}
+.searchBar a:hover{
+    color: aqua;
+}
+
+.background-img{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/pic1.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px)
+}
+.home{
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    transform: translate(-50% , -50%);
+    background: url(./img/pic1.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 5px 10px 10px 0;
+}
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 背景色，此处 rgba 中的 0.5 控制透明度 */
+    z-index: -1; /* 将 ::before 放在元素的下方 */
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 700px;
+    padding: 140px;
+
+}
+.content h2{
+    font-size: 4.5em;
+    text-align: start;
+    color: #fff;
+    letter-spacing: 10px;
+}
+.content pre{
+    margin-top: 20px;
+    text-align: start;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.login{
+    width: 450px;
+    position: relative;
+    padding: 70px 40px;
+    background-color: rgba(220, 220, 220, 0.5);
+    backdrop-filter:blur(10px);
+}
+.login h3{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.login .input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.login .input .email{
+    width: 100%;
+    height: 100%;
+    font-style: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+}
+.input label{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 24px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.login .input input:focus ~ label,
+.login .input #email:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #ff0000;
+    font-size: 12px;
+}
+.login .input .Password{
+    width: 100%;
+    height: 100%;
+    font-style: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+}
+.login .input input:focus ~ label,
+.login .input #Password:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #ff0000;
+    font-size: 12px;
+}
+.input .email-warn{
+    text-align: end;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.input .Password-warn{
+    text-align: end;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.aboutAccount{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 32px;
+}
+.aboutAccount .check{
+    display: flex;
+}
+.aboutAccount a{
+    text-decoration: none;
+    color: #fff;
+}
+.logIn-btn{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+}
+.logIn-btn button{
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: rgb(75, 75, 75);
+    border: 0;
+    margin-bottom: 16px;
+    transition: 0.3s; /* 将过渡属性移至此处 */
+}
+.logIn-btn button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+.logIn-btn button:hover::after {
+    width: 90%;
+    height: 40px;
+    background-color: rgb(75, 75, 75);
+}
+.signIn{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.signIn a{
+    text-decoration: none;
+    color: #fff;
+}
