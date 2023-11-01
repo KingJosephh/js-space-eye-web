@@ -12,6 +12,7 @@ function logIn(a,b){
         token = response.data.accessToken
         document.querySelector('.btn2').style.display = 'block';
         document.querySelector('.btn1').style.display = 'none';
+        window.location.href = 'http://127.0.0.1:5501/carOwnerArea/index.html';
     }).catch(function(err){
         console.log(err)
         // alert('登入失敗')

@@ -1,4 +1,19 @@
+$display-none: none;
+
 .btn-bg-move {
     transition: margin-left 0.3s;
     margin-left: 0;
+}
+
+.content-to-hide-owner {
+    display: block;
+}
+
+.content-to-hide-save,
+.content-to-hide-place-history,
+.content-to-hide-trading-history,
+.content-to-hide-appointment-trading-history,
+.content-to-hide-appointment,
+.content-to-hide-storage {
+    display: $display-none;
 }

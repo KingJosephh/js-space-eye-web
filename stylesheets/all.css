@@ -4,6 +4,393 @@
   margin-left: 0;
 }
 
+.content-to-hide-owner {
+  display: block;
+}
+
+.content-to-hide-save,
+.content-to-hide-place-history,
+.content-to-hide-trading-history,
+.content-to-hide-appointment-trading-history,
+.content-to-hide-appointment,
+.content-to-hide-storage {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.head {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  padding: 10px 100px;
+  z-index: 99;
+  background: transparent;
+  background-color: rgba(220, 220, 220, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .logo {
+  width: 100px;
+  height: 50px;
+}
+.navbar .searchBar {
+  width: 20em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar .searchBar .btn {
+  border: 0;
+  width: 40%;
+  height: 60%;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+}
+.navbar .searchBar .btn a {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar .searchBar .btn a:hover {
+  color: aqua;
+}
+
+.background-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/loginPape/login2/img/pic1.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
+}
+
+.home {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  width: 75%;
+  height: 75%;
+  transform: translate(-50%, -50%);
+  background: url(/loginPape/login2/img/pic1.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 5px 10px 10px 0;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 700px;
+  padding: 140px;
+}
+.content h2, .content .h2 {
+  font-size: 4.5em;
+  text-align: start;
+  color: #fff;
+  letter-spacing: 10px;
+}
+.content p {
+  margin-top: 20px;
+  text-align: start;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.login {
+  width: 450px;
+  position: relative;
+  padding: 10px 40px;
+  background-color: rgba(220, 220, 220, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.login h3, .login .h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.login .input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.login .input .all-input {
+  width: 100%;
+  height: 100%;
+  font-style: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+.login .input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.login .input input:focus ~ label,
+.login .input input[data-state=UserName]:valid ~ label,
+.login .input input[data-state=Email]:valid ~ label,
+.login .input input[data-state=Password]:valid ~ label,
+.login .input input[data-state=Password-again]:valid ~ label,
+.login .input input[data-state=Car-id]:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ff0000;
+  font-size: 12px;
+}
+.login .input .warn-UserName,
+.login .input .warn-Email,
+.login .input .warn-Email-exists,
+.login .input .warn-Password,
+.login .input .warn-Password-again,
+.login .input .warn-Car-id {
+  text-align: end;
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+.login .aboutAccount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+.login .aboutAccount .check {
+  display: flex;
+}
+.login .aboutAccount a {
+  text-decoration: none;
+  color: #fff;
+}
+.login .logIn-btn {
+  display: flex;
+  justify-content: center;
+  height: 20%;
+}
+.login .logIn-btn button {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgb(75, 75, 75);
+  border: 0;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.login .logIn-btn button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+.login .logIn-btn button:hover::after {
+  width: 90%;
+  height: 40px;
+  background-color: rgb(75, 75, 75);
+}
+.login .word a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 8px;
+  margin-top: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .searchBar {
+  width: 20em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar .searchBar .btn1,
+.navbar .searchBar .btn2 {
+  border: 0;
+  width: 40%;
+  height: 60%;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+}
+.navbar .searchBar .btn1.btn2,
+.navbar .searchBar .btn2.btn2 {
+  display: none;
+}
+.navbar .searchBar a:hover {
+  color: aqua;
+}
+
+.login {
+  width: 450px;
+  position: relative;
+  padding: 70px 40px;
+  background-color: rgba(220, 220, 220, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.input .email,
+.input .Password {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+.input .email-warn {
+  text-align: end;
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+.input .Password-warn {
+  text-align: end;
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+.input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 24px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.input input:focus ~ label,
+.input input#email:valid ~ label,
+.input input#Password:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.aboutAccount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+.aboutAccount .check {
+  display: flex;
+}
+.aboutAccount a {
+  text-decoration: none;
+  color: #fff;
+}
+.aboutAccount p {
+  margin: 0;
+}
+
+.logIn-btn {
+  display: flex;
+  justify-content: center;
+  height: 20%;
+}
+.logIn-btn button {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgb(75, 75, 75);
+  border: 0;
+  margin-bottom: 16px;
+  transition: 0.3s;
+}
+.logIn-btn button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+.logIn-btn button:hover::after {
+  width: 90%;
+  height: 40px;
+  background-color: rgb(75, 75, 75);
+}
+
+.signIn {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+.signIn a {
+  text-decoration: none;
+  color: #ff0000;
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
