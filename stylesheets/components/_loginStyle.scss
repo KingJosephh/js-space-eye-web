@@ -45,12 +45,12 @@
     background-color: rgba(220, 220, 220, 0.5);
     backdrop-filter: blur(10px);
 
-    // h3 {
-    //     font-size: 2.5rem;
-    //     text-align: center;
-    //     color: #fff;
-    //     margin-bottom: 10px;
-    // }
+    h3 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 10px;
+    }
 
 }
 .input {
@@ -93,8 +93,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            padding: 10px 0;
-            font-size: 24px;
+            // padding: 10px 0;
+            font-size: 20px;
             color: #fff;
             pointer-events: none;
             transition: 0.5s;

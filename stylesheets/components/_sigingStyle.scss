@@ -115,10 +115,10 @@
     }
 }
 
-.login {
+.signIn2 {
     width: 450px;
     position: relative;
-    padding: 10px 40px;
+    padding: 20px 40px;
     background-color: rgba(220, 220, 220, 0.5);
     backdrop-filter: blur(10px);
 
@@ -163,8 +163,8 @@
         input:focus ~ label,
         input[data-state="UserName"]:valid ~ label,
         input[data-state="Email"]:valid ~ label,
-        input[data-state="Password"]:valid ~ label,
-        input[data-state="Password-again"]:valid ~ label,
+        input[data-state="Password-sign"]:valid ~ label,
+        input[data-state="Password-again-sign"]:valid ~ label,
         input[data-state="Car-id"]:valid ~ label {
             top: -20px;
             left: 0;

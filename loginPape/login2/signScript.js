@@ -2,7 +2,7 @@
 
 const UserName = document.getElementById('UserName')
 const Email = document.getElementById('Email')
-const Password = document.getElementById('Password')
+const Password = document.getElementById('Password-signIn')
 const PasswordAgain = document.getElementById('Password-again')
 const CarId = document.getElementById('Car-id')
 const logInBtn = document.querySelector('.logIn-btn')
@@ -75,11 +75,11 @@ function add() {
         hideError('.warn-Car-id');
     }
     if(pass !== passAgain){
-        showError('.warn-Password-again');
+        showError('.warn-Password-again-sign');
     }else if (pass === passAgain) {
         passWord = Password.value.trim();
         signUp(username, email, passWord, carsId);
-        hideError('.warn-Password-again');
+        hideError('.warn-Password-again-sign');
     }
 }
 
@@ -110,14 +110,14 @@ Email.addEventListener('input', function() {
 });
 Password.addEventListener('input', function() {
     if (Password.value !== '') {
-        Password.setAttribute('data-state', 'Password');
+        Password.setAttribute('data-state', 'Password-sign');
     } else {
-        Password.removeAttribute('data-state', 'Password');
+        Password.removeAttribute('data-state', 'Password-sign');
     }
 });
 PasswordAgain.addEventListener('input', function() {
     if (PasswordAgain.value !== '') {
-        PasswordAgain.setAttribute('data-state', 'Password-again');
+        PasswordAgain.setAttribute('data-state', 'Password-again-sign');
     } else {
         PasswordAgain.removeAttribute('data-state', 'Password-again');
     }

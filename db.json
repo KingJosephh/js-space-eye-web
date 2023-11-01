@@ -6,6 +6,13 @@
       "username": "張景泰",
       "carId": "sds-457",
       "id": 1
+    },
+    {
+      "email": "wtf1234@gmail.com",
+      "password": "$2a$10$Y825XpuN.B74TII6FYrb3u3gVg.KVky1UQ/HdAtE60iwmPu.MZ0J6",
+      "username": "張景泰",
+      "carId": "ccc-789",
+      "id": 2
     }
   ]
 }
