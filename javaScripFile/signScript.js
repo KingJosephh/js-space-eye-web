@@ -27,7 +27,10 @@ function signUp(a,b,c,d){
         console.log(err)
         if(err.response.data === 'Email format is invalid'){
             showError('.warn-Email');
-        }else{
+        }else if(err.response.data === 'Email and password are required'){
+            showError('.warn-Email');
+        }
+        else{
             hideError('.warn-Email');
         }
         if(err.response.data === 'Email already exists'){
