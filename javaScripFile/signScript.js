@@ -22,7 +22,7 @@ function signUp(a,b,c,d){
         UserName.value = '';
         Email.value = '';
         CarId.value = '';
-        window.location.href = 'http://127.0.0.1:5501/loginPape/login2/login.html';
+        window.location.href = 'http://127.0.0.1:5501/spaceEyeHtmlPage/login.html';
     }).catch(function(err){
         console.log(err)
         if(err.response.data === 'Email format is invalid'){

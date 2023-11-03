@@ -8,3 +8,38 @@
     註冊登入功能，並記錄喜愛路段停車格
     停車時自動計算時間並可選擇超商繳費或線上付款
 
+要顯示在頁面上的停車場資訊:
+停車場名: 八德路三段停車場
+地址: 台北市松山區八德路3段12巷
+剩餘空位: 17
+收費:30/hr 300/d 3000/w
+室內/室外: 室外
+支援付款: 現金/信用卡
+限高: 200 cm
+座標: "location": {
+        "latitude": 25.033963,
+        "longitude": 121.564472
+    }
+
+{
+    "park": [
+        {
+            "id": 1,
+            "parkName": "詹錦泰停車場",
+            "address": "台中市西屯區七七路5段777號",
+            "space": "10",
+            "charge": "30/hr 300/d",
+            ""
+            "inOrOut": "室外",
+            "pay": "現金/信用卡",
+            "height": "200cm",
+            "type": "generally/child/disabled"
+            "location": {
+                "latitude": 25.033963,
+                "longitude": 121.564472
+            }
+        }
+    ]
+}
+
+幫我生產出10筆西屯區資訊parkName根據常用藝名更改address更改西屯區後面就好space的數字更改範圍5~50之間charge以整數去更動inOrOut隨機更改室內或室外pay現金/信用卡/儲值金去隨機更動height以180cm跟220cm，type的內容根據generally/child/disabled,generally/disabled隨機搭配，location的latitude與longitude幫我參考googlemap的西屯區座標去做隨機更改如果inOrOut為室外則height = '無'有關"室外"的停車場必須要"location"資訊
