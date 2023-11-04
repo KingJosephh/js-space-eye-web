@@ -1,0 +1,32 @@
+$display-none: none;
+
+.bi-suit-heart-fill{
+    color: #b0b0b0;
+}
+.bi-suit-heart-broke {
+    color: #ff0000;
+}
+
+
+.content-to-hide-search {
+    display: block;
+}
+
+.content-to-hide-showPark{
+    display: $display-none;
+}
+
+.btn-bg-move {
+    transition: margin-left 0.3s;
+    margin-left: 0;
+}
+
+.btn-bg-move2 {
+    transition: margin-left 0.3s;
+    margin-left: 0;
+}
+
+.btn-bg-move3 {
+    transition: margin-left 0.3s;
+    margin-left: 0;
+}

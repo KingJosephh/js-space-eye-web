@@ -21,7 +21,7 @@ function getNum(x) {
         btnBgMove.style.marginLeft = (194 * (num-1)) + 'px';
     } else if (num < btnNumList) {
         btnBgMove.style.marginLeft = (194 * (num - 1)) + 'px';
-    }else if(num=1){
+    } else if(num=1){
         btnBgMove.style.marginLeft = 0;
     }
 }
