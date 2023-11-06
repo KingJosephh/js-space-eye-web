@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./loginStyle.css"> -->
-    <link rel="stylesheet" href="/stylesheets/all.css">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
     <header class="head">
@@ -14,50 +15,152 @@
             <div class="searchBar">
                 <a>預約停車</a>
                 <a>找停車位</a>
-                <button class="btn1">登入/註冊</button>
-                <button class="btn2">車主專區</button>
+                <!-- <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html">登入/註冊</a></button> -->
+                <button class="btn">車主專區</button>
             </div>
         </nav>
     </header>
-    <div class="background-img"></div>
-    <section class="home">
-        <div class="content">
-            <div class="logo"></div>
-            <h2>Space</h2>
-            <h2>Eye</h2>
-            <p>your space my space
-                Welcome to space eye
-                            </p>
-        </div>
-        <div class="login">
-            <h3>login</h3>
-            <div class="input">
-                <input class="email" type="text">
-                <label for="">Email</label>
-                <p class="email-warn">* 請輸入正確帳號 *</p>
-            </div>
-            <div class="input">
-                <input class="Password" type="text">
-                <label for="">Password</label>
-                <p class="Password-warn">* 請輸入正確密碼 *</p>
-            </div>
-            <div class="aboutAccount">
-                <div class="check">
-                    <input type="checkbox">
-                    <p>記住帳號</p>
+    <section>
+        <div class="container">
+            <div>
+                <div class="row">
+                    <div class="col"  style="margin-top: 100px;"></div>
                 </div>
-                <a href="">忘記密碼?</a>
-            </div>
-            <div class="logIn-btn">
-                <button class="btn">登入會員</button>
-            </div>
-            <div class="signIn">
-                <p>還沒擁有會員嗎?</p>
-                <a href="http://127.0.0.1:5501/loginPape/login2/signin.html">前往註冊</a>
+                <div class="row">
+                    <div class="col-8 p-0">
+                        <iframe width="100%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=25.033963,121.564472(台北 101)&z=16&output=embed&markers=25.033963,121.564472">
+                        </iframe>
+                    </div>
+                    <div class="col-4 bg-light-gray">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-10 mt-4 p-0">
+                                <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2 ">
+                                    <div class="position-absolute btn-bg-move">
+                                        <div id="color-block" class=" bg-light-gray mx-4 d-flex align-center rounded-2" style="height: 32px; width: 100px;"></div>
+                                    </div>
+                                    <button id="btn1" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1">搜尋條件</button>
+                                    <button id="btn2" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2">停車場一覽</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-10 bg-white mt-4 rounded-2" style="height: 440px; overflow: auto;">
+                                <div class="content-to-hide-search">
+                                    <div class="row mt-5">
+                                        <div class="col-12">
+                                            <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
+                                                <div class="col-5 p-0">
+                                                    <select class="form-select form-select-lg mb-3 py-1" aria-label="form-select-lg example" id="areaOption">
+                                                        <!-- <option value="USD">USD</option>
+                                                        <option value="CNY">CNY</option>
+                                                        <option value="HKD">HKD</option> -->
+                                                    </select>
+                                                </div>
+                                                <div class="col-6 p-0">
+                                                    <select class="form-select form-select-lg mb-3 py-1" aria-label="form-select-lg example" id="roadOption">
+                                                        <!-- <option value="USD">USD</option>
+                                                        <option value="CNY">CNY</option>
+                                                        <option value="HKD">HKD</option> -->
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-10 p-0">
+                                            <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                                                <div class="position-absolute btn-bg-move2">
+                                                    <div id="color-block" class=" bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 28px; width: 70px;"></div>
+                                                </div>
+                                                <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="generally">一般車位</button>
+                                                <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="child">親子車位</button>
+                                                <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="disabled">殘障車位</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center mt-4">
+                                        <div class="col-10 p-0">
+                                            <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                                                <div class="position-absolute btn-bg-move3">
+                                                    <div id="color-block" class=" bg-light-gray mx-3 d-flex align-center rounded-2" style="height: 28px; width: 90px;"></div>
+                                                </div>
+                                                <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1">全部停車場</button>
+                                                <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2">有空位停車場</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col d-flex flex-row-reverse" style="margin-top: 100px;">
+                                            <button id="confirm" type="button" class="btn btn-info mx-3 px-5 py-1" data-bs-toggle="modal" data-bs-target="#storageModel">確認送出</button>
+                                            <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-to-hide-showPark">
+                                    <div class="card mt-3" style="width: 16rem;">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <h5 class="card-title">西屯停車場</h5>
+                                                <i id="save-like" class="bi bi-suit-heart-fill"></i>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">地址:</div>
+                                                <div class="col-7">台北市松山區八德路3段12巷</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">剩餘空位:</div>
+                                                <div class="col-7">15</div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">詳細資料</button>
+                                                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="西屯停車場" data-bs-show-type="一般車位" data-bs-show-address="台北市松山區八德路3段12巷" data-bs-show-space="15" data-bs-show-in="室外">長期方案</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="showAllParkModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title mt-3 mx-4" id="park"></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row mx-3 mb-3">
+                                                            <div class="col-5">停車場樣式:</div>
+                                                            <div class="col-7" id="type"></div>
+                                                        </div>
+                                                        <div class="row mx-3 mb-3">
+                                                            <div class="col-5">地址:</div>
+                                                            <div class="col-7" id="address"></div>
+                                                        </div>                                       
+                                                        <div class="row mx-3 mb-3">
+                                                            <div class="col-5">剩餘空位:</div>
+                                                            <div class="col-7" id="space"></div>
+                                                        </div>
+                                                        <div class="row mx-3 mb-3">
+                                                            <div class="col-5">室內/室外:</div>
+                                                            <div class="col-7" id="in"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer ">
+                                                    <button type="button" class="btn btn-secondary">預約停車</button>
+                                                    <button type="button" class="btn btn-primary">長期方案</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="../javaScripFile/loginScript copy.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../javaScripFile/findSpace.js"></script>
 </body>
 </html>
