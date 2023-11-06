@@ -21,6 +21,11 @@ $display-none: none;
     margin-left: 0;
 }
 
+.btn-bg-move1 {
+    transition: margin-left 0.3s;
+    margin-left: 0;
+}
+
 .btn-bg-move2 {
     transition: margin-left 0.3s;
     margin-left: 0;
@@ -29,4 +34,8 @@ $display-none: none;
 .btn-bg-move3 {
     transition: margin-left 0.3s;
     margin-left: 0;
+}
+
+.color-tran-gray {
+    background: rgba(156, 156, 156, 0.8);
 }

@@ -6,8 +6,11 @@ const btn22 = document.querySelector('#btn2-2');
 const btn23 = document.querySelector('#btn2-3');
 const btn31 = document.querySelector('#btn3-1');
 const btn32 = document.querySelector('#btn3-2');
+const btn11 = document.querySelector('#btn1-1')
+const btn12 = document.querySelector('#btn1-2')
 const confirmBtn = document.querySelector('#confirm');
 const btnBgMove = document.querySelector('.btn-bg-move');
+const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const btnBgMove2 = document.querySelector('.btn-bg-move2');
 const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
@@ -15,8 +18,11 @@ const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const btnNumList = 1;
+const btnNumList1 = 1;
 const btnNumList2 = 1;
 const btnNumList3 = 1;
+let getType = 'generally';
+let getSpaceOrNot = 'all';
 const urlGetArea = 'http://localhost:3000/road';
 
 
@@ -32,7 +38,7 @@ function hidePage(a){
         hideShowPark.style.display = 'block';
     }
 }
-//選搜尋停建或停車場一覽
+//選搜尋停建或停車場一覽按鈕區塊移動
 function moveBtn(x) {
     let num = parseInt(x.getAttribute('data-num'));
     if (num > btnNumList) {
@@ -41,7 +47,7 @@ function moveBtn(x) {
         btnBgMove.style.marginLeft = 0;
     }
 }
-//選車位種類按鈕移動
+//選車位種類按鈕區塊移動
 function moveBtn2(y) {
     let num = parseInt(y.getAttribute('data-num'));
     // console.log(num)
@@ -53,16 +59,24 @@ function moveBtn2(y) {
         btnBgMove2.style.marginLeft = 0;
     }
 }
-//顯示有車位停車場按鈕移動
+//顯示有車位停車場按鈕區塊移動
 function moveBtn3(z) {
     let num = parseInt(z.getAttribute('data-num'));
-    console.log(num)
     if (num > btnNumList2) {
         btnBgMove3.style.marginLeft = (136 * (num-1)) + 'px';
     }else if(num > btnNumList2){
         btnBgMove3.style.marginLeft = (100 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove3.style.marginLeft = 0;
+    }
+}
+//選擇路邊或停車唱按鈕區塊移動
+const moveBtn1 = (w) => {
+    let num = parseInt(w.getAttribute('data-num'));
+    if (num > btnNumList1) {
+        btnBgMove1.style.marginLeft = (105 * (num-1)) + 'px';
+    }else if(num=1){
+        btnBgMove1.style.marginLeft = 0;
     }
 }
 
@@ -75,27 +89,41 @@ btn2.addEventListener('click', () => {
     moveBtn(btn2)
     hidePage(btn2)
 });
+let area = 'S01';
+let road = 'R001';
 confirmBtn.addEventListener('click', () => {
-    btnBgMove.style.marginLeft = 162 + 'px';
-    hideSearch.style.display = 'none';
-    hideShowPark.style.display = 'block';
+    // btnBgMove.style.marginLeft = 162 + 'px';
+    // hideSearch.style.display = 'none';
+    // hideShowPark.style.display = 'block';
+    console.log(area ,road ,getType ,getSpaceOrNot)
 })
 btn21.addEventListener('click', () => {
     moveBtn2(btn21)
-    console.log(btn21.value)
+    getType = btn21.value
 });
 btn22.addEventListener('click', () => {
     moveBtn2(btn22)
+    getType = btn22.value
 });
 btn23.addEventListener('click', () => {
     moveBtn2(btn23)
+    getType = btn23.value
 });
 btn31.addEventListener('click', () => {
     moveBtn3(btn31)
+    getSpaceOrNot = btn31.value
 });
 btn32.addEventListener('click', () => {
     moveBtn3(btn32)
+    getSpaceOrNot = btn32.value
 });
+btn11.addEventListener('click' , () => {
+    moveBtn1(btn11)
+})
+btn12.addEventListener('click' , () => {
+    moveBtn1(btn12)
+})
+
 //收藏停車場的愛心按鈕監聽
 saveLike.addEventListener('click', (e) =>{
     if(!e.target.classList.contains('bi-suit-heart-broke')){
@@ -173,15 +201,30 @@ const getRoad = (roadIdInData) => {
         console.log(err);
     })
 }
+getRoad("S01")//預先渲染路段R001到畫面上
 //渲染道路資料到畫面上
 const showRoadOptionList = (a) => {
     let content = '';
-    if (a.length === 0) {
-        content =  ``
+    if (a === "S01") {
+        content =  `<option value="R001">中山路</option>`
         } else {
             a.forEach((item) => {
                 content += `<option value="${item.id}">${item.roadName}</option>`
             })
         }
         roadOption.innerHTML = content;
+}
+//取得停車場資訊
+const getMap = () => {
+    axios.get('http://localhost:3000/park?_expand=road')
+    .then(function(res){
+        console.log(res)
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+}
+getMap()
+const getMapDetail = (a,b,c,d) => {
+    
 }

@@ -70,166 +70,346 @@
     { "id": "R019", "roadName": "仁愛路", "sectionId": "S02" },
     { "id": "R020", "roadName": "東山路", "sectionId": "S02" }
 ],
+"categorys": [
+    {
+        "id": "C01",
+        "style": "路邊停車格"
+    },
+    {
+        "id": "C02",
+        "style": "停車場"
+    }
+],
 "park": [
-{
-        "id": 1,
-        "parkName": "凤凰停车场",
-        "address": "台中市中區中山路123號",
-        "roadId": "R01",
-        "space": "35",
-        "charge": "40/hr 400/d 4000/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "220cm",
-        "type": "generally",
-        "location": {
-            "latitude": 24.146183,
-            "longitude": 120.682009
-        }
-    },
     {
-        "id": 2,
-        "parkName": "太阳停车场",
-        "address": "台中市中區中山路456號",
-        "roadId": "R01",
-        "space": "15",
-        "charge": "45/hr 450/d 4500/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "180cm",
-        "type": "child",
-        "location": {
-            "latitude": 24.143263,
-            "longitude": 120.679921
+            "id": 1,
+            "parkName": "凤凰停车场",
+            "address": "台中市中區中山路123號",
+            "categoryId": "C02",
+            "roadId": "R01",
+            "space": "35",
+            "charge": "40/hr 400/d 4000/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "220cm",
+            "type": "G",
+            "location": {
+                "latitude": 24.146183,
+                "longitude": 120.682009
+            }
+        },
+        {
+            "id": 2,
+            "parkName": "太阳停车场",
+            "address": "台中市中區中山路456號",
+            "categoryId": "C02",
+            "roadId": "R01",
+            "space": "0",
+            "charge": "45/hr 450/d 4500/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "180cm",
+            "type": "C",
+            "location": {
+                "latitude": 24.143263,
+                "longitude": 120.679921
+            }
+        },
+        {
+            "id": 3,
+            "parkName": "和平停车场",
+            "address": "台中市中區中山路789號",
+            "categoryId": "C02",
+            "roadId": "R01",
+            "space": "0",
+            "charge": "50/hr 500/d 5000/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "220cm",
+            "type": "G",
+            "location": {
+                "latitude": 24.141326,
+                "longitude": 120.677839
+            }
+        },
+        {
+            "id": 4,
+            "parkName": "中山广场停车场",
+            "address": "台中市中區中山路1011號",
+            "categoryId": "C02",
+            "roadId": "R01",
+            "space": "30",
+            "charge": "55/hr 550/d 5500/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "220cm",
+            "type": "C",
+            "location": {
+                "latitude": 24.138351,
+                "longitude": 120.675768
+            }
+        },
+        {
+            "id": 5,
+            "parkName": "太平洋停车场",
+            "address": "台中市中區中山路1314號",
+            "categoryId": "C02",
+            "roadId": "R01",
+            "space": "40",
+            "charge": "60/hr 600/d 6000/w",
+            "inOrOut": "室外",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "D",
+            "location": {
+                "latitude": 24.135462,
+                "longitude": 120.673655
+            }
+        },
+        {
+            "id": 6,
+            "parkName": "停车格",
+            "address": "台中市西屯区中山路1588號",
+            "categoryId": "C01",
+            "roadId": "R01",
+            "space": 0,
+            "charge": "61/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "C",
+            "location": {
+                "latitude": 24.181585,
+                "longitude": 120.622914
+            }
+        },
+        {
+            "id": 7,
+            "parkName": "停车格",
+            "address": "台中市西屯区中山路744號",
+            "categoryId": "C01",
+            "roadId": "R01",
+            "space": 9,
+            "charge": "62/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡/儲值金",
+            "height": "無",
+            "type": "D",
+            "location": {
+                "latitude": 24.179646,
+                "longitude": 120.619569
+            }
+        },
+        {
+            "id": 8,
+            "parkName": "停车格",
+            "address": "台中市西屯区中山路999號",
+            "categoryId": "C01",
+            "roadId": "R01",
+            "space": 2,
+            "charge": "63/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡/儲值金",
+            "height": "無",
+            "type": "C",
+            "location": {
+                "latitude": 24.180956,
+                "longitude": 120.621620
+            }
+        },
+        {
+            "id": 9,
+            "parkName": "停车格",
+            "address": "台中市西屯区中山路1234號",
+            "categoryId": "C01",
+            "roadId": "R01",
+            "space": 7,
+            "charge": "64/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡/儲值金",
+            "height": "無",
+            "type": "G",
+            "location": {
+                "latitude": 24.180181,
+                "longitude": 120.620632
+            }
+        },
+        {
+            "id": 10,
+            "parkName": "停车格",
+            "address": "台中市西屯区中山路666號",
+            "categoryId": "C01",
+            "roadId": "R01",
+            "space": 8,
+            "charge": "65/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "D",
+            "location": {
+                "latitude": 24.179880,
+                "longitude": 120.619241
+            }
+        },
+        {
+            "id": 11,
+            "parkName": "金龙停车场",
+            "address": "台中市中區自由路123號",
+            "roadId": "R02",
+            "space": "45",
+            "charge": "40/hr 400/d 4000/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "220cm",
+            "type": "G",
+            "location": {
+                "latitude": 24.145883,
+                "longitude": 120.679433
         }
-    },
-    {
-        "id": 3,
-        "parkName": "和平停车场",
-        "address": "台中市中區中山路789號",
-        "roadId": "R01",
-        "space": "25",
-        "charge": "50/hr 500/d 5000/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "220cm",
-        "type": "generally",
-        "location": {
-            "latitude": 24.141326,
-            "longitude": 120.677839
+        },
+        {
+            "id": 12,
+            "parkName": "银龙停车场",
+            "address": "台中市中區自由路456號",
+            "roadId": "R02",
+            "space": "0",
+            "charge": "45/hr 450/d 4500/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "180cm",
+            "type": "C",
+            "location": {
+                "latitude": 24.143955,
+                "longitude": 120.677274
+            }
+        },
+        {
+            "id": 13,
+            "parkName": "自由广场停车场",
+            "address": "台中市中區自由路789號",
+            "roadId": "R02",
+            "space": "30",
+            "charge": "50/hr 500/d 5000/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "220cm",
+            "type": "G",
+            "location": {
+                "latitude": 24.142485,
+                "longitude": 120.675714
+            }
+        },
+        {
+            "id": 14,
+            "parkName": "自由停车场",
+            "address": "台中市中區自由路1011號",
+            "roadId": "R02",
+            "space": "25",
+            "charge": "55/hr 550/d 5500/w",
+            "inOrOut": "室内",
+            "pay": "现金/信用卡/儲值金",
+            "height": "220cm",
+            "type": "C",
+            "location": {
+                "latitude": 24.141024,
+                "longitude": 120.673153
+            }
+        },
+        {
+            "id": 15,
+            "parkName": "自由广场2停车场",
+            "address": "台中市中區自由路1314號",
+            "roadId": "R02",
+            "space": "40",
+            "charge": "60/hr 600/d 6000/w",
+            "inOrOut": "室外",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "D",
+            "location": {
+                "latitude": 24.139757,
+                "longitude": 120.671709
+            }
+        },
+        {
+            "id": "16",
+            "parkName": "自由广场2停车场",
+            "address": "台中市西屯区自由路1234號",
+            "roadId": "R02",
+            "space": 7,
+            "charge": "30/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "G",
+            "location": {
+                "latitude": 24.182205,
+                "longitude": 120.620633
+            }
+        },
+        {
+            "id": "17",
+            "parkName": "自由广场2停车场",
+            "address": "台中市西屯区自由路4321號",
+            "roadId": "R02",
+            "space": 2,
+            "charge": "30/hr",
+            "inOrOut": "無",
+            "pay": "现金/儲值金",
+            "height": "無",
+            "type": "C",
+            "location": {
+                "latitude": 24.181964,
+                "longitude": 120.620484
+            }
+        },
+        {
+            "id": "18",
+            "parkName": "自由广场2停车场",
+            "address": "台中市西屯区自由路5678號",
+            "roadId": "R02",
+            "space": 0,
+            "charge":"30/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡/儲值金",
+            "height": "無",
+            "type": "D",
+            "location": {
+                "latitude": 24.181783,
+                "longitude": 120.620224
+            }
+        },
+        {
+            "id": "19",
+            "parkName": "自由广场2停车场",
+            "address": "台中市西屯区自由路9876號",
+            "roadId": "R02",
+            "space": 0,
+            "charge": "30/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "G",
+            "location": {
+                "latitude": 24.181542,
+                "longitude": 120.620035
+            }
+        },
+        {
+            "id": "20",
+            "parkName": "自由广场2停车场",
+            "address": "台中市西屯区自由路1111號",
+            "roadId": "R02",
+            "space": 5,
+            "charge": "30/hr",
+            "inOrOut": "無",
+            "pay": "现金/信用卡",
+            "height": "無",
+            "type": "D",
+            "location": {
+                "latitude": 24.181234,
+                "longitude": 120.619850
+            }
         }
-    },
-    {
-        "id": 4,
-        "parkName": "中山广场停车场",
-        "address": "台中市中區中山路1011號",
-        "roadId": "R01",
-        "space": "30",
-        "charge": "55/hr 550/d 5500/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "220cm",
-        "type": "child",
-        "location": {
-            "latitude": 24.138351,
-            "longitude": 120.675768
-        }
-    },
-    {
-        "id": 5,
-        "parkName": "太平洋停车场",
-        "address": "台中市中區中山路1314號",
-        "roadId": "R01",
-        "space": "40",
-        "charge": "60/hr 600/d 6000/w",
-        "inOrOut": "室外",
-        "pay": "现金/信用卡",
-        "height": "无",
-        "type": "disabled",
-        "location": {
-            "latitude": 24.135462,
-            "longitude": 120.673655
-        }
-    },
-    {
-        "id": 6,
-        "parkName": "金龙停车场",
-        "address": "台中市中區自由路123號",
-        "roadId": "R02",
-        "space": "45",
-        "charge": "40/hr 400/d 4000/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "220cm",
-        "type": "generally",
-        "location": {
-            "latitude": 24.145883,
-            "longitude": 120.679433
-    }
-    },
-    {
-        "id": 7,
-        "parkName": "银龙停车场",
-        "address": "台中市中區自由路456號",
-        "roadId": "R02",
-        "space": "22",
-        "charge": "45/hr 450/d 4500/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "180cm",
-        "type": "child",
-        "location": {
-            "latitude": 24.143955,
-            "longitude": 120.677274
-        }
-    },
-    {
-        "id": 8,
-        "parkName": "自由广场停车场",
-        "address": "台中市中區自由路789號",
-        "roadId": "R02",
-        "space": "30",
-        "charge": "50/hr 500/d 5000/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "220cm",
-        "type": "generally",
-        "location": {
-            "latitude": 24.142485,
-            "longitude": 120.675714
-        }
-    },
-    {
-        "id": 9,
-        "parkName": "自由停车场",
-        "address": "台中市中區自由路1011號",
-        "roadId": "R02",
-        "space": "25",
-        "charge": "55/hr 550/d 5500/w",
-        "inOrOut": "室内",
-        "pay": "现金/信用卡/儲值金",
-        "height": "220cm",
-        "type": "child",
-        "location": {
-            "latitude": 24.141024,
-            "longitude": 120.673153
-        }
-    },
-    {
-        "id": 10,
-        "parkName": "自由广场2停车场",
-        "address": "台中市中區自由路1314號",
-        "roadId": "R02",
-        "space": "40",
-        "charge": "60/hr 600/d 6000/w",
-        "inOrOut": "室外",
-        "pay": "现金/信用卡",
-        "height": "无",
-        "type": "disabled",
-        "location": {
-            "latitude": 24.139757,
-            "longitude": 120.671709
-        }
-    }
 ]
 }

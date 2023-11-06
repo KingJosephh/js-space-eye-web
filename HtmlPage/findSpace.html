@@ -28,10 +28,21 @@
                 </div>
                 <div class="row">
                     <div class="col-8 p-0">
+                        <div class="row d-flex justify-content-end position-relative ">
+                            <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
+                                <div class="btn-bg-move-dad button-group d-flex justify-content-between color-tran-gray rounded-2 py-2">
+                                    <div class="position-absolute btn-bg-move1">
+                                        <div id="color-block" class="bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
+                                    </div>
+                                    <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1">路邊車格</button>
+                                    <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2">停車場</button>
+                                </div>
+                            </div>
+                        </div>
                         <iframe width="100%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                        src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=25.033963,121.564472(台北 101)&z=16&output=embed&markers=25.033963,121.564472">
+                            src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=25.033963,121.564472(台北 101)&z=16&output=embed&markers=25.033963,121.564472">
                         </iframe>
-                    </div>
+                    </div>                    
                     <div class="col-4 bg-light-gray">
                         <div class="row d-flex justify-content-center">
                             <div class="col-10 mt-4 p-0">
@@ -85,14 +96,14 @@
                                                 <div class="position-absolute btn-bg-move3">
                                                     <div id="color-block" class=" bg-light-gray mx-3 d-flex align-center rounded-2" style="height: 28px; width: 90px;"></div>
                                                 </div>
-                                                <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1">全部停車場</button>
-                                                <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2">有空位停車場</button>
+                                                <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="all">全部停車場</button>
+                                                <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="haveSpace">有空位停車場</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col d-flex flex-row-reverse" style="margin-top: 100px;">
-                                            <button id="confirm" type="button" class="btn btn-info mx-3 px-5 py-1" data-bs-toggle="modal" data-bs-target="#storageModel">確認送出</button>
+                                            <button id="confirm" type="button" class="btn btn-info mx-3 px-5 py-1">確認送出</button>
                                             <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
                                         </div>
                                     </div>
@@ -161,6 +172,6 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="../javaScripFile/findSpace.js"></script>
+    <script src="../scripts/findSpace.js"></script>
 </body>
 </html>
