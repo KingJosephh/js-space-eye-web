@@ -1,4 +1,5 @@
-const saveLike = document.querySelector('#save-like');
+const saveLikes = document.querySelectorAll('.save-like');
+const saveLike = document.querySelector('.save-like');
 const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');;
 const btn21 = document.querySelector('#btn2-1');
@@ -24,6 +25,7 @@ const btnNumList2 = 1;
 const btnNumList3 = 1;
 let getType = '一般車位';
 let getSpaceOrNot = 'all';
+let getParkValue = 'C01'
 let data = [];
 
 
@@ -81,7 +83,7 @@ const moveBtn1 = (w) => {
     }
 }
 
-//各種按鈕監聽
+//搜尋條件與停車場一覽監聽
 btn1.addEventListener('click', () => {
     moveBtn(btn1)
     hidePage(btn1)
@@ -90,17 +92,17 @@ btn2.addEventListener('click', () => {
     moveBtn(btn2)
     hidePage(btn2)
 });
-// let area =  areaOption.value;
-// let road =  roadOption.value;
+//確認送出按鈕監聽
 confirmBtn.addEventListener('click', () => {
-    // btnBgMove.style.marginLeft = 162 + 'px';
-    // hideSearch.style.display = 'none';
-    // hideShowPark.style.display = 'block';
+    btnBgMove.style.marginLeft = 162 + 'px';
+    hideSearch.style.display = 'none';
+    hideShowPark.style.display = 'block';
     let area = areaOption.value;
     let road = roadOption.value;
-    getMapDetail(area,road,getType,getSpaceOrNot)
-    console.log(area ,road ,getType ,getSpaceOrNot)
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    console.log(area ,road ,getType ,getSpaceOrNot,getParkValue)
 })
+//車位類別按鈕監聽
 btn21.addEventListener('click', () => {
     moveBtn2(btn21)
     getType = btn21.value
@@ -113,6 +115,7 @@ btn23.addEventListener('click', () => {
     moveBtn2(btn23)
     getType = btn23.value
 });
+//顯示有車位或全部停車場按鈕監聽
 btn31.addEventListener('click', () => {
     moveBtn3(btn31)
     getSpaceOrNot = btn31.value
@@ -121,21 +124,42 @@ btn32.addEventListener('click', () => {
     moveBtn3(btn32)
     getSpaceOrNot = btn32.value
 });
+//路邊停車與停車場按鈕監聽
 btn11.addEventListener('click' , () => {
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getParkValue = btn11.value
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
     moveBtn1(btn11)
+    console.log(area ,road ,getType ,getSpaceOrNot,getParkValue)
 })
 btn12.addEventListener('click' , () => {
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getParkValue = btn12.value
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
     moveBtn1(btn12)
+    console.log(area ,road ,getType ,getSpaceOrNot,getParkValue)
 })
-
 //收藏停車場的愛心按鈕監聽
-saveLike.addEventListener('click', (e) =>{
-    if(!e.target.classList.contains('bi-suit-heart-broke')){
-        e.target.classList.add('bi-suit-heart-broke');
-    }else if(e.target.classList.contains('bi-suit-heart-broke')){
-        e.target.classList.remove('bi-suit-heart-broke');
-    }
-})
+// saveLike.addEventListener('click', (e) =>{
+//     console.log('aa')
+//     if(!e.target.classList.contains('bi-suit-heart-broke')){
+//         e.target.classList.add('bi-suit-heart-broke');
+//     }else if(e.target.classList.contains('bi-suit-heart-broke')){
+//         e.target.classList.remove('bi-suit-heart-broke');
+//     }
+// })
+saveLikes.forEach(saveLike => {
+    saveLike.addEventListener('click', (e) => {
+        console.log('aa')
+        if (!e.target.classList.contains('bi-suit-heart-broke')) {
+            e.target.classList.add('bi-suit-heart-broke');
+        } else if (e.target.classList.contains('bi-suit-heart-broke')) {
+            e.target.classList.remove('bi-suit-heart-broke');
+        }
+    });
+});
 //控制彈出視窗(modal)
 const showAllPark = document.querySelector('#showAllParkModel')
                         showAllPark.addEventListener('show.bs.modal' , function (e) {
@@ -230,21 +254,23 @@ const getMap = () => {
     })
 }
 getMap()
-const getMapDetail = (a,b,c,d) => {
+//透過搜尋條件篩選資料
+const getMapDetail = (a,b,c,d,e) => {
     let str = '';
-    const filteredData = data.filter((item) => {
-        if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && (d === 'haveSpace' && item.space !== "0")){
+    const filteredMapData = data.filter((item) => {
+        if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && (d === 'haveSpace' && item.space !== "0") && item.categoryId === e){
             return item
-        }else if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'all'){
+        }else if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'all' && item.categoryId === e){
             return item
         }
     })
-    filteredData.forEach((item) => {
+//將篩選過後的資料渲染到畫面上  
+    filteredMapData.forEach((item) => {
         let content = `<div class="card mt-3" style="width: 16rem;">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h5 class="card-title">${item.parkName}</h5>
-                <i id="save-like" class="bi bi-suit-heart-fill"></i>
+                <i class="save-like bi bi-suit-heart-fill"></i>
             </div>
             <div class="row">
                 <div class="col-5">地址:</div>
@@ -264,3 +290,11 @@ const getMapDetail = (a,b,c,d) => {
     })
     showMapCard.innerHTML = str
 }
+//選出路邊停車或停車場
+// const getPark = (a,b) => {
+//     const parkData = a.filter((item) => {
+//         if(item.parkName.includes(b)){
+//             return item
+//         }
+//     })
+// }

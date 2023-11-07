@@ -34,8 +34,8 @@
                                     <div class="position-absolute btn-bg-move1">
                                         <div id="color-block" class="bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
                                     </div>
-                                    <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1">路邊車格</button>
-                                    <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2">停車場</button>
+                                    <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1" value="C01">路邊车格</button>
+                                    <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2" value="C02">停車場</button>
                                 </div>
                             </div>
                         </div>
@@ -84,9 +84,9 @@
                                                 <div class="position-absolute btn-bg-move2">
                                                     <div id="color-block" class=" bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 28px; width: 70px;"></div>
                                                 </div>
-                                                <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="generally">一般車位</button>
-                                                <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="child">親子車位</button>
-                                                <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="disabled">殘障車位</button>
+                                                <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="一般車位">一般車位</button>
+                                                <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="親子車位">親子車位</button>
+                                                <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="殘障車位">殘障車位</button>
                                             </div>
                                         </div>
                                     </div>
@@ -102,18 +102,18 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col d-flex flex-row-reverse" style="margin-top: 100px;">
+                                        <div class="col d-flex justify-content-center" style="margin-top: 100px;">
                                             <button id="confirm" type="button" class="btn btn-info mx-3 px-5 py-1">確認送出</button>
-                                            <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
+                                            <!-- <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button> -->
                                         </div>
                                     </div>
                                 </div>
-                                <div class="content-to-hide-showPark">
+                                <div class="content-to-hide-showPark" id="showMapCard">
                                     <div class="card mt-3" style="width: 16rem;">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between">
                                                 <h5 class="card-title">西屯停車場</h5>
-                                                <i id="save-like" class="bi bi-suit-heart-fill"></i>
+                                                <i class="save-like bi bi-suit-heart-fill"></i>
                                             </div>
                                             <div class="row">
                                                 <div class="col-5">地址:</div>
@@ -172,6 +172,6 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="../scripts/findSpace.js"></script>
+    <script src="../scripts/findSpace copy.js"></script>
 </body>
 </html>
