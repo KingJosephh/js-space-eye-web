@@ -18,15 +18,33 @@ const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard =document.querySelector('#showMapCard')
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
+const Url = 'http://localhost:3000'
 const btnNumList = 1;
 const btnNumList1 = 1;
 const btnNumList2 = 1;
 const btnNumList3 = 1;
+const token = localStorage.getItem('token');
+const usersId = localStorage.getItem('usersId');
 let getType = '一般車位';
 let getSpaceOrNot = 'all';
 let getParkValue = 'C01'
 let data = [];
+let filteredMapData = [];
+let saveLikePark = '';
 
+// 在后续请求中，将 token 添加到请求头中
+axios.get('http://localhost:3000/600/users/2', {
+    headers: {
+        Authorization: `Bearer ${token}`,
+        },
+    })
+    .then((response) => {
+        const data = response.data;
+        console.log('从受保护的端点获取的数据:', data);
+    })
+    .catch((error) => {
+        console.error('请求受保护的端点失败:', error);
+    });
 
 //控制顯示或隱藏頁面
 function hidePage(a){
@@ -99,6 +117,7 @@ confirmBtn.addEventListener('click', () => {
     let area = areaOption.value;
     let road = roadOption.value;
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
     console.log(area ,road ,getType ,getSpaceOrNot,getParkValue)
 })
 //車位類別按鈕監聽
@@ -129,6 +148,7 @@ btn11.addEventListener('click' , () => {
     let road = roadOption.value;
     getParkValue = btn11.value
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
     moveBtn1(btn11)
     console.log(area ,road ,getType ,getSpaceOrNot,getParkValue)
 })
@@ -137,6 +157,7 @@ btn12.addEventListener('click' , () => {
     let road = roadOption.value;
     getParkValue = btn12.value
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
     moveBtn1(btn12)
     console.log(area ,road ,getType ,getSpaceOrNot,getParkValue)
 })
@@ -145,8 +166,14 @@ showMapCard.addEventListener('click' ,(e) => {
     if(e.target.classList.contains('save-like')){
         let likeBtn = e.target
         if (!e.target.classList.contains('bi-suit-heart-broke')) {
+            let someValue = likeBtn.getAttribute('data-some-value');
+            getLikePark(filteredMapData,someValue)
+            postLikePark(e)
             likeBtn.classList.add('bi-suit-heart-broke');
+            console.log('aa')
         } else if (e.target.classList.contains('bi-suit-heart-broke')) {
+            let someValue = likeBtn.getAttribute('data-some-value');
+            // removeLikePark(saveLikePark,someValue)
             likeBtn.classList.remove('bi-suit-heart-broke');
         }
     }
@@ -174,7 +201,7 @@ const showAllPark = document.querySelector('#showAllParkModel')
 //取得區域資料
 let sectionData = [];
 const getSection = () => {
-    axios.get('http://localhost:3000/sections')
+    axios.get(Url + '/sections')
     .then(function(res){
         sectionData = res.data;
         showSectionList()
@@ -208,7 +235,7 @@ areaOption.addEventListener('click', (event) => {
 //取得道路資料
 let roadData = [];
 const getRoad = (roadIdInData) => {
-    axios.get('http://localhost:3000/roads')
+    axios.get(Url + '/roads')
     .then(function(res){
         roadData = res.data;
         const equalId = roadData.filter((item) => {
@@ -235,7 +262,7 @@ const showRoadOptionList = (a) => {
 }
 //取得停車場資訊
 const getMap = () => {
-    axios.get('http://localhost:3000/parks?_expand=road')
+    axios.get(Url + '/parks?_expand=road')
     .then(function(res){
         data = res.data
         console.log(data)
@@ -247,21 +274,23 @@ const getMap = () => {
 getMap()
 //透過搜尋條件篩選資料
 const getMapDetail = (a,b,c,d,e) => {
-    let str = '';
-    const filteredMapData = data.filter((item) => {
+    filteredMapData = data.filter((item) => {
         if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && (d === 'haveSpace' && item.space !== "0") && item.categoryId === e){
             return item
         }else if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'all' && item.categoryId === e){
             return item
         }
     })
-//將篩選過後的資料渲染到畫面上  
-    filteredMapData.forEach((item) => {
+}
+//將篩選過後的資料渲染到畫面上 
+const render = (aa) => {
+    let str = '';
+    aa.forEach((item) => {
         let content = `<div class="card mt-3" style="width: 16rem;">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h5 class="card-title">${item.parkName}</h5>
-                <i class="save-like bi bi-suit-heart-fill"></i>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${item.location.latitude}"></i>
             </div>
             <div class="row">
                 <div class="col-5">地址:</div>
@@ -281,6 +310,74 @@ const getMapDetail = (a,b,c,d,e) => {
     })
     showMapCard.innerHTML = str
 }
+//將喜愛停車場push到saveLikePark裡
+const getLikePark = (aa,bb) => {
+    aa.forEach((item) => {
+        let locateNum = item.location.latitude.toString();
+        if(locateNum === bb){
+            // saveLikePark.push(item)
+            // saveLikePark.push(locateNum)
+            saveLikePark = locateNum
+        }
+    })
+    console.log(saveLikePark)
+}
+//將喜愛停車場remove到saveLikePark裡
+const removeLikePark = (cc, dd) => {
+    const removeInd = cc.findIndex((item) => {
+        return item.location.latitude.toString() === dd;
+    });
+    if (removeInd !== -1) {
+        cc.splice(removeInd, 1);
+    }
+    console.log(saveLikePark)
+};
+const postLikePark = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:3000/posts' , {
+        "likePark": saveLikePark,
+        "userId": usersId
+    }).then(function (response) {
+        // console.log(response)
+        console.log('Response with status code:', response.status);
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+window.addEventListener('beforeunload', function (event) {
+    // 阻止页面刷新
+    event.preventDefault();
+    // 设置 event.returnValue 为空字符串，不会触发提示框
+    event.returnValue = 'nnn';
+  });
+// const postLikePark = () => {
+//     axios.get('http://localhost:3000/600/users/2' ,{
+//         headers: {
+//             Authorization: `Bearer ${token}`,
+//             },
+//     })
+//     .then((response) => {
+//         console.log(response)
+//         const userData = response.data;
+//         userData.likePark = saveLikePark;
+//         axios.patch('http://localhost:3000/600/users/2', {
+//             likePark: userData.likePark
+//         },{
+//             headers: {
+//                 Authorization: `Bearer ${token}`,
+//                 }
+//         })
+//         .then((postResponse) => {
+//             console.log('Data updated and sent to the server:', postResponse.data);
+//         })
+//         .catch((postError) => {
+//             console.error('Error sending updated data:', postError);
+//         });
+//     })
+//     .catch((error) => {
+//         console.error('Error fetching user data:', error);
+//     });
+// }
 //選出路邊停車或停車場
 // const getPark = (a,b) => {
 //     const parkData = a.filter((item) => {
@@ -293,3 +390,4 @@ const getMapDetail = (a,b,c,d,e) => {
 //     console.log("按钮点击事件触发");
 //     $("#showAllParkModel").modal("show");
 // });
+//把資料先存在本地端然後在用重整網頁監聽方式存到資料庫

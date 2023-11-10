@@ -1,7 +1,6 @@
 const emailInput = document.querySelector('.email');
 const passWordInput = document.querySelector('.Password');
 const logInBtn = document.querySelector('.logIn-btn')
-const logInElm = [];
 
 function logIn(a,b){
     axios.post('http://localhost:3000/login', {
@@ -9,10 +8,15 @@ function logIn(a,b){
         'password': b,
     }).then(function(response){
         console.log(response)
-        token = response.data.accessToken
+        const token = response.data.accessToken;
+        const usersId = response.data.user.id;
+        localStorage.setItem('token', token);
+        localStorage.setItem('usersId', usersId);
         document.querySelector('.btn2').style.display = 'block';
         document.querySelector('.btn1').style.display = 'none';
-        window.location.href = 'http://127.0.0.1:5501/spaceEyeHtmlPage/carOwner.html';
+        // window.location.href = 'http://127.0.0.1:5501/HtmlPage/carOwner.html';
+        emailInput.value = '';
+        passWordInput.value = '';
     }).catch(function(err){
         console.log(err)
         // alert('登入失敗')
@@ -69,6 +73,4 @@ function hideError(select){
     document.querySelector(select).style.display = 'none';
 }
 
-
-// 找車位切版
 
