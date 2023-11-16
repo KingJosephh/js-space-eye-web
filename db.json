@@ -9,133 +9,15 @@
     },
     {
       "email": "wtf1234@gmail.com",
-      "password": "$2a$10$Y825XpuN.B74TII6FYrb3u3gVg.KVky1UQ/HdAtE60iwmPu.MZ0J6",
+      "password": "$2a$10$WcJE3ZMyr1M43cnpnXzOPOO9lQ4epKaUs3T2OmHfTxf25AgIOs6wO",
       "username": "張景泰",
       "carId": "ccc-789",
-      "id": 2
-    },
-    {
-      "email": "hahaha121@gmail.com",
-      "password": "$2a$10$56CV0kb7Q8nb/jclsxrWyeXyyNywH0.du/JmZ/NiT4fZYoul8C5Cy",
-      "username": "張景泰",
-      "carId": "zzz-456",
-      "id": 3
-    },
-    {
-      "email": "sbsb111@gmail.com",
-      "password": "$2a$10$zGO9XiaYUbpJyYFDKDASguYtvG2STIJ/MC7rgfx4w9VOxTtycPl7O",
-      "username": "張景泰",
-      "carId": "xxx-777",
-      "id": 4
-    },
-    {
-      "email": "wwww1112@gmail.com",
-      "password": "$2a$10$pQSU7pPhfS6FGER2AC9oGuqRoatZGjcUsVqK1LC5QTAJ5uUq4xChq",
-      "username": "張景泰",
-      "carId": "vvv-999",
-      "id": 5
-    }
-  ],
-  "posts": [
-    {
-      "likePark": "24.181585",
-      "userId": "2",
-      "id": 1
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 2
-    },
-    {
-      "likePark": "24.180181",
-      "userId": "2",
-      "id": 3
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 4
-    },
-    {
-      "likePark": "24.181585",
-      "userId": "2",
-      "id": 5
-    },
-    {
-      "likePark": "24.180181",
-      "userId": "2",
-      "id": 6
-    },
-    {
-      "likePark": "24.146183",
-      "userId": "2",
-      "id": 7
-    },
-    {
-      "likePark": "24.181585",
-      "userId": "2",
-      "id": 8
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 9
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 10
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 11
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 12
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 13
-    },
-    {
-      "likePark": "24.181585",
-      "userId": "2",
-      "id": 14
-    },
-    {
-      "likePark": "24.181585",
-      "userId": "2",
-      "id": 15
-    },
-    {
-      "likePark": "24.179646",
-      "userId": "2",
-      "id": 16
-    },
-    {
-      "likePark": "24.180181",
-      "userId": "2",
-      "id": 17
-    },
-    {
-      "likePark": "24.146183",
-      "userId": "2",
-      "id": 18
-    },
-    {
-      "likePark": "24.181585",
-      "userId": "2",
-      "id": 19
-    },
-    {
-      "likePark": "24.143263",
-      "userId": "2",
-      "id": 20
+      "id": 2,
+      "likePark": [
+        "24.181585",
+        "24.179646",
+        "24.180181"
+      ]
     }
   ],
   "sections": [

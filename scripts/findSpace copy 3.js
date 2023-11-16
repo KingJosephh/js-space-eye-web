@@ -32,7 +32,8 @@ let data = [];
 let filteredMapData = [];
 let saveLikePark = [];
 
-console.log(token,usersId)
+
+//將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
     if(localParkData === ''){
         saveLikePark = [];
@@ -42,7 +43,6 @@ const parsedLocalParkData = () => {
         saveLikePark.push(...ss)
     }
 }
-// parsedLocalParkData()
 // 在后续请求中，将 token 添加到请求头中
 axios.get(`http://localhost:3000/600/users/${usersId}`, {
     headers: {
@@ -179,9 +179,6 @@ btn12.addEventListener('click' , () => {
     moveBtn1(btn12)
 })
 //收藏停車場的愛心按鈕監聽
-// showMapCard.addEventListener('click' ,(e) => {
-//     addLikeParkToLocal(e)
-// })
 const addLikeParkToLocal = (e) => {
     if(e.target.classList.contains('save-like')){
         let likeBtn = e.target
@@ -334,15 +331,6 @@ const render = (aa) => {
     console.log(saveLikePark)
     plusLike(aa)
 }
-//將喜愛停車場push到saveLikePark裡
-// const getLikePark = (aa,bb) => {
-//     aa.forEach((item) => {
-//         let locateNum = item.location.latitude.toString();
-//         if(locateNum === bb){
-//             saveLikePark.push(locateNum)
-//         }
-//     })
-// }
 const getLikePark = (aa, bb) => {
     aa.forEach((item) => {
         let locateNum = parseFloat(item.location.latitude);
@@ -361,55 +349,25 @@ const removeLikePark = (cc, dd) => {
         cc.splice(removeInd, 1);
     }
 };
-// const likeParkGet = (aa) => {
-//     // if(aa === NaN){
-//     //     return
-//     // }
-//     // aa.forEach((item) => {
-//     //     saveLikePark.push(item)
-//     // })
-//     let ff = aa.filter((item) => {
-//         return item !== 'NaN'
-//     })
-//     saveLikePark.push(ff)
-//     console.log('cc')
-// }
-// likeParkGet(parsedLocalParkData)
-console.log(saveLikePark)
-console.log(localParkData)
+//將有在saveLikePark裡的項目愛心加上顏色
 const plusLike = (aa) => {
     const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
-    console.log('aaa')
     aa.forEach((item) => {
         let locatedId = item.location.latitude;
         console.log(locatedId)
         for (let i = 0; i < saveLikePark.length; i++) {
             if (locatedId === saveLikePark[i]) {
                 let saveLikeElement = saveLikePark[i];
-                console.log('aab')
                 for (let x = 0; x < saveLikes.length; x++) {
                     if (saveLikeElement.toString() === saveLikes[x].getAttribute('data-some-value')) {
                         saveLikes[x].classList.add('bi-suit-heart-broke');
-                        console.log('aac')
                     }
                 }
             }
         }
     });
 };
-// const plusLike = (aa) => {
-//     const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
-//     aa.forEach((item) => {
-//         let locatedId = item.location.latitude;
-//         let saveLikeElement = Array.from(saveLikes).find(element => element.getAttribute('data-some-value') === locatedId);
-//         console.log(saveLikeElement)
-//         if (saveLikeElement) {
-//             saveLikeElement.classList.add('bi-suit-heart-broke');
-//         }
-//     });
-//     console.log('acc');
-// };
-
+//如果值為空就不儲存
 const updateLocalStorage = () => {
     if(saveLikePark === ''){
         return
@@ -417,45 +375,4 @@ const updateLocalStorage = () => {
         localStorage.setItem('likePark', saveLikePark);
     }
 };
-// const postLikePark = () => {
-//     axios.get('http://localhost:3000/600/users/2' ,{
-//         headers: {
-//             Authorization: `Bearer ${token}`,
-//             },
-//     })
-//     .then((response) => {
-//         console.log(response)
-//         const userData = response.data;
-//         userData.likePark = saveLikePark;
-//         axios.patch('http://localhost:3000/600/users/2', {
-//             likePark: userData.likePark
-//         },{
-//             headers: {
-//                 Authorization: `Bearer ${token}`,
-//                 }
-//         })
-//         .then((postResponse) => {
-//             console.log('Data updated and sent to the server:', postResponse.data);
-//         })
-//         .catch((postError) => {
-//             console.error('Error sending updated data:', postError);
-//         });
-//     })
-//     .catch((error) => {
-//         console.error('Error fetching user data:', error);
-//     });
-// }
-// window.addEventListener('beforeunload', function (event) {
-//   // 阻止页面刷新
-// //   event.preventDefault();
-// //   // 设置 event.returnValue 为空字符串，不会触发提示框
-// //   event.returnValue = '';
-// localStorage.setItem('likePark', saveLikePark)
-// });
-// window.addEventListener('hashchange', function (event) {
-//     postLikePark()
-// });
-
-
-//把資料先存在本地端然後在用重整網頁監聽方式存到資料庫
 //"jwt expired"token過期

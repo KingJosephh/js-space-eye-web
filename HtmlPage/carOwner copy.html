@@ -30,51 +30,90 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-green-black rounded-2 py-2 ">
+                    <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2 ">
                         <div class="position-absolute btn-bg-move">
-                            <div id="color-block" class=" bg-light-green mx-4 d-flex align-center rounded-2" style="height: 34px; width: 100px;"></div>
+                            <div id="color-block" class=" bg-light-gray mx-4 d-flex align-center rounded-2" style="height: 34px; width: 100px;"></div>
                         </div>
-                        <button id="btn1" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1">車主資訊</button>
-                        <button id="btn2" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2">我的收藏</button>
-                        <button id="btn3" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="3">停車紀錄</button>
-                        <button id="btn4" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="4">交易紀錄</button>
-                        <button id="btn5" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="5">預約紀錄</button>
-                        <button id="btn6" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="6">儲值專區</button>
+                        <button id="btn1" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1">車主資訊</button>
+                        <button id="btn2" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2">我的收藏</button>
+                        <button id="btn3" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3">停車紀錄</button>
+                        <button id="btn4" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="4">交易紀錄</button>
+                        <button id="btn5" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="5">預約紀錄</button>
+                        <button id="btn6" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="6">儲值專區</button>
                     </div>
                 </div>
             </div>
             <hr class="text-dark mt-5">
             <!-- 寫換頁(隱藏頁面顯示頁面) -->
             <div class="content-to-hide-owner">
-
-            </div>
-            <!-- model -->
-            <div class="modal fade" id="changePass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">更改密碼</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                        <label for="enterPassword" class="col-form-label">輸入新密碼:</label>
-                        <input type="text" class="form-control" id="enterPassword">
-                        </div>
-                        <div class="mb-3">
-                            <label for="reEnterPassword" class="col-form-label">再次輸入新密碼:</label>
-                            <input type="text" class="form-control" id="reEnterPassword">
-                            <p class="Password-warn text-end">* 請輸入正確密碼 *</p>
+                <!-- <div class="row mt-5 d-flex justify-content-between gx-5">
+                    <div class="col-6">
+                        <div class="mb-4 row d-flex justify-content-between">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">姓名</label>
+                            <div class="col-8">
+                                <input class="form-control  bg-white" type="text" value="馬因酒" aria-label="Disabled input example" disabled readonly>
                             </div>
-                    </form>
+                        </div>
+                        <div class="mb-4 row d-flex justify-content-between">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-8">
+                                <input class="form-control  bg-white" type="text" value="wda894@gmail.com" aria-label="Disabled input example" disabled readonly>
+                            </div>
+                        </div>
+                            <div class="row g-3 d-flex justify-content-between mb-4">
+                                <label for="PhoneNumber" class="col-sm-2 col-form-label">手機號碼</label>
+                                <div class="col-8 d-flex">
+                                    <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example">
+                                        <option class="text-5" selected>+ 886</option>
+                                        <option value="1">+ 007</option>
+                                        <option value="2">+ 125</option>
+                                        <option value="3">+ 789</option>
+                                    </select>
+                                    <div class="col-8 ms-3">
+                                        <input class="form-control bg-white py-1" type="text" value="3524891" aria-label="Disabled input example" disabled readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="changePassWord d-flex justify-content-between">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">密碼</label>
+                                <div class="col-8 d-flex align-items-center">
+                                    <label for="" class=""><a href="" class="fw-bold text-decoration-none text-strat ps-2">更改密碼</a></label>
+                                </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="getNewPass">Send message</button>
+                    <div class="col-6">
+                        <div class="mb-4 row d-flex justify-content-between">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">車牌號碼</label>
+                            <div class="col-8">
+                                <input class="form-control  bg-white" type="text" value="asd-123" aria-label="Disabled input example" disabled readonly>
+                            </div>
+                        </div>
+                        <div class="changePassWord d-flex justify-content-between mb-4">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">信用卡</label>
+                            <div class="col-8 d-flex align-items-center">
+                                <label for="" class=""><a href="" class="fw-bold text-decoration-none text-strat ps-2">新增信用卡</a></label>
+                            </div>
                     </div>
-                </div>
-                </div>
+                    <div class="row g-3 d-flex justify-content-between mb-4">
+                        <label for="inputPassword" class="col-4 col-form-label">信用卡資訊</label>
+                            <div class="col-8 d-flex">
+                                <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example">
+                                    <option class="text-5" selected>EASY  **** **** **** 1234</option>
+                                    <option value="1">EASY  **** **** **** 5147</option>
+                                    <option value="2">EASY  **** **** **** 8457</option>
+                                    <option value="3">EASY  **** **** **** 5147</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex flex-row-reverse" style="margin-top: 50px;">
+                            <button type="button" class="btn btn-info mx-3 px-5 py-1">確認送出</button>
+                            <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
+                        </div>
+                    </div>
+                </div> -->
             </div>
             <div class="content-to-hide-save">
                 <div class="row mx-1">
@@ -83,7 +122,7 @@
                             <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
                                 <div class="btn-bg-move-dad button-group d-flex justify-content-between color-tran-gray rounded-2 py-2">
                                     <div class="position-absolute btn-bg-move1">
-                                        <div id="color-block" class="bg-light-green mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
+                                        <div id="color-block" class="bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
                                     </div>
                                     <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1" value="C01">路邊车格</button>
                                     <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2" value="C02">停車場</button>
@@ -102,6 +141,34 @@
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col-10 bg-white mt-4 rounded-2" id="showMapCard" style="height: 288px; overflow: auto;">
+                                <!-- <div class="position-absolute text-white active" style="top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.65); z-index: 100;">
+                                    <div class="card mt-3 position-absolute top-50 start-50 translate-middle rounded-5" style="width: 30rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title mt-3 mx-4">西屯停車場</h5>
+                                            <hr class="text-dark mt-3 mx-3">
+                                            <div class="row mx-3 mb-3">
+                                                <div class="col-5">停車場樣式:</div>
+                                                <div class="col-7">林廷</div>
+                                            </div>
+                                            <div class="row mx-3 mb-3">
+                                                <div class="col-5">地址:</div>
+                                                <div class="col-7">台北市松山區八德路3段12巷</div>
+                                            </div>                                       
+                                            <div class="row mx-3 mb-3">
+                                                <div class="col-5">剩餘空位:</div>
+                                                <div class="col-7">15</div>
+                                            </div>
+                                            <div class="row mx-3 mb-3">
+                                                <div class="col-5">室內/室外:</div>
+                                                <div class="col-7">室外</div>
+                                            </div>
+                                            <div class="d-flex justify-content-between mx-3">
+                                                <button type="button" class="btn btn-sm btn-light-gray px-3">長期方案</button>
+                                                <button type="button" class="btn btn-sm btn-light-gray px-3">預約車位</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
                                 <div class="card mt-3" style="width: 16rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">西屯停車場</h5>
@@ -114,8 +181,8 @@
                                             <div class="col-7">15</div>
                                         </div>
                                         <div class="d-flex justify-content-between">
-                                            <button type="button" class="btn btn-sm btn-light-green px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-green px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="西屯停車場" data-bs-save-type="林廷" data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15" data-bs-save-in="室外">長期方案</button>
+                                            <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">詳細資料</button>
+                                            <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="西屯停車場" data-bs-save-type="林廷" data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15" data-bs-save-in="室外">長期方案</button>
                                         </div>
                                     </div>
                                 </div>
@@ -353,6 +420,28 @@
             </div>
             <div class="content-to-hide-storage">
                 <div class="row mt-5">
+                    <!-- <div class="position-absolute text-white active" style="top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.65); z-index: 100;">
+                        <div class="card mt-3 position-absolute top-50 start-50 translate-middle rounded-5" style="width: 30rem;">
+                            <div class="card-body">
+                                <h5 class="card-title mt-3 mx-4 text-center">訂單摘要</h5>
+                                <hr class="text-dark mt-3 mx-3">
+                                <div class="row mx-3 mb-3">
+                                    <div class="col-5">訂單金額:</div>
+                                    <div class="col-7">NT$ 1000</div>
+                                </div>
+                                <br><br><br>
+                                <div class="row mx-3 mb-3">
+                                    <h3 class="col-5">訂單金額:</h3>
+                                    <h3 class="col-7 text-end">NT$ 1000</h3>
+                                </div>
+                                <hr class="text-dark my-4 mx-3">
+                                <div class="d-flex justify-content-between mx-3">
+                                    <button type="button" class="btn btn-sm btn-light-gray px-3">取消</button>
+                                    <button type="button" class="btn btn-sm btn-info px-5">前往結帳</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                     <div class="col-4 d-flex">
                         <div class="col-8">
                             <h2>剩餘金額:</h2>
