@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    margin: 0;
+}
+
+.watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 讓它佔滿整個視窗高度 */
+    background: rgba(255, 255, 255, 0.8); /* 設定背景透明度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    z-index: 1000; 
+    padding: 20px;
+}
+
+
+.watermark hr {
+    width: 50%; 
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    z-index: 999; 
+    padding: 20px;
+}
+
+.top {
+    display: flex;
+    margin-top: 100px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    max-width: 1024px;
+    margin-bottom: 120px;
+}
+
+label {
+    flex: 1; 
+    margin-right: 100px; 
+    padding-right: 100px;
+}
+
+.form-input {
+    flex: 1; 
+    margin-right: 100px; 
+    padding-right: 100px;
+}
+
+.top img {
+    padding-left: 100px;
+}
+
+.buttom-submit {
+    margin-left: 60px;
+}
+
+.notice {
+    margin-top: 60px;
+    padding-top: 120px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content h2 {
+    padding-right: 180px;
+}
+
+.notice-list {
+    margin-top: 60px;
+}
