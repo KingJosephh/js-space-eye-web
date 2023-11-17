@@ -1,0 +1,31 @@
+.tab{
+  color: var(--gray-02);
+  font-weight: var(--fw-bold-700);
+  cursor: pointer;
+  display: inline;
+  position: relative;
+  margin: 15px;
+}
+
+.tab:hover {
+  color: var(--gray-01);
+}
+
+.tab-l:active.tab-l::after{
+  content: '';
+  border-bottom: 4px solid var(--brand-01);
+  width: 128px;
+  padding-bottom: 4px;
+  position: absolute;
+  left: -8px;
+  bottom: -14px;
+}
+.tab-m:active.tab-m::after{
+  content: '';
+  border-bottom: 4px solid var(--brand-01);
+  width: 88px;
+  padding-bottom: 4px;
+  position: absolute;
+  left: -4.4px;
+  bottom: -14px;
+}

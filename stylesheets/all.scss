@@ -1,5 +1,14 @@
 @import "../node_modules/bootstrap/scss/functions";
+@import "../stylesheets/helpers/cusVariables";
 @import "../stylesheets/helpers/variables";
+@import "../stylesheets/helpers/reset";
+@import "../stylesheets/helpers/utilities";
+@import "../stylesheets/components/buttons/button";
+@import "../stylesheets/components/footer/footer";
+@import "../stylesheets/components/header/header";
+@import "../stylesheets/components/menu/menu";
+@import "../stylesheets/components/search-bar/searchbar";
+@import "../stylesheets/components/tab/tab";
 @import "../stylesheets/components/carOwner";
 @import "../stylesheets/components/sigingStyle";
 @import "../stylesheets/components/loginStyle";

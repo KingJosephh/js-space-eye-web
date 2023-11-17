@@ -1,0 +1,24 @@
+.menu-l,
+.menu-m{
+  color: var(--white);
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-l::before,
+.menu-m::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background: var(--brand-01);
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  bottom: 40%;
+  left: -10px;
+}
+
+.menu-l:hover::before,
+.menu-m:hover::before {
+  opacity: 40%;
+}

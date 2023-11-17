@@ -1,0 +1,159 @@
+/* btn-light */
+.btn-light-solid-l,
+.btn-light-solid-m,
+.btn-light-trans-l,
+.btn-light-trans-m,
+.btn-dark-solid-l,
+.btn-dark-solid-m,
+.btn-dark-trans-l,
+.btn-dark-trans-m {
+  border-radius: 48px;
+  font-family: var(--ff);
+  font-weight: var(--fw-medium-500);
+}
+
+.btn-light-solid-l,
+.btn-light-trans-l,
+.btn-dark-solid-l,
+.btn-dark-trans-l {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 16px 24px;
+}
+
+.btn-light-solid-m,
+.btn-light-trans-m,
+.btn-dark-solid-m,
+.btn-dark-trans-m {
+  font-size: 16px;
+  line-height: 19.2px;
+  padding: 12px 16px;
+}
+
+.btn-light-solid-l,
+.btn-light-solid-m {
+  background: var(--brand-01);
+}
+
+.btn-light-trans-l,
+.btn-light-trans-m {
+  color: var(--brand-01);
+  border: 2px solid var(--brand-01);
+}
+
+.btn-light-solid-l:hover,
+.btn-light-solid-m:hover,
+.btn-light-trans-l:hover,
+.btn-light-trans-m:hover {
+  background: var(--brand-02);
+  border-color: var(--brand-02);
+}
+
+/* btn-dark */
+.btn-dark-solid-l,
+.btn-dark-solid-m {
+  background: var(--gray-01);
+  color: var(--brand-01);
+}
+
+.btn-dark-trans-l,
+.btn-dark-trans-m {
+  color: var(--gray-01);
+  border: 2px solid var(--gray-01);
+}
+
+.btn-dark-solid-l:hover,
+.btn-dark-solid-m:hover,
+.btn-dark-trans-l:hover,
+.btn-dark-trans-m:hover {
+  background: var(--gray-02);
+  border-color: var(--gray-02);
+  color: var(--white);
+}
+
+
+/* 按鈕 - 歡迎免費諮詢 */
+/* btn-mail */
+.btn-mail-m,.btn-mail-l{
+  border: 2px solid var(--brand-01);
+  background: var(--brand-01);
+  border-radius: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-mail-m:hover,
+.btn-mail-l:hover{
+  border: 2px solid var(--white);
+    background: var(--white);
+}
+
+.icon-mail-m{
+  padding: 0 16px;
+}
+.icon-mail-l{
+  padding: 0 12px;
+}
+
+.btn-mail-part-m,.btn-mail-part-l{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background: var(--gray-01);
+  color: var(--white);
+  font-weight: var(--fw-medium-500);
+  border-top-right-radius: 48px;
+  border-bottom-right-radius: 48px;
+}
+.btn-mail-part-m{
+  width: 196px;
+}
+.btn-mail-part-l{
+  width: 283px;
+}
+
+.btn-mail-m:hover .btn-mail-part-m,
+.btn-mail-l:hover .btn-mail-part-l{
+  background: var(--brand-01);
+  color: var(--gray-01);
+}
+
+.btn-mail-title-m,.btn-mail-title-l{
+  line-height: 24px;
+  font-weight: var(--fw-medium-500);
+  margin-bottom: 0;
+}
+
+.btn-mail-title-m{
+  font-size: 20px;
+  padding: 16px 0;
+}
+.btn-mail-title-l{
+  font-size: 16px;
+  padding: 12px 0;
+}
+
+/* btn-up */
+.btn-up{
+  border: 2px solid var(--brand-01);
+  background: var(--brand-01);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn-up:hover{
+  background: var(--gray-01);
+}
+
+.btn-up-l{
+  width: 46.67px;
+  height: 46.67px;
+}
+.btn-up-m{
+  width: 36.67px;
+  height: 36.67px;
+}

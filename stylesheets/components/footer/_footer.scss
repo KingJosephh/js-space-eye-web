@@ -1,0 +1,114 @@
+body{
+  margin-top: 50px;
+}
+
+.container-footer{
+  max-width: 100%;
+  position: relative;
+}
+
+.container-footer .btn-up-l{
+  position: absolute;
+  right: 50px;
+  top: -20px;    
+}
+
+footer{
+  background: var(--gray-01);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 40px;
+  position: relative;
+  padding: 32px 0;
+}
+
+.footer-svg-slash{
+  position: relative;
+  top: 14px;
+  height: 80px;
+}
+
+.footer-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.footer-content-p{
+  color: var(--white);
+  padding-top: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content-p::before{
+  content: 'Contact';
+  position: absolute;
+  color: var(--brand-01);
+  opacity: 20%;
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: var(--fw-bold-700);
+  top: 12px;
+}
+
+.footer-content-button{
+  display: flex;
+  gap: 24px;
+}
+
+.footer-content-copyright{
+  color: var(--gray-03);
+  padding-top: 32px;
+}
+
+@media screen and (max-width: 992px){
+  footer{
+    justify-content: center;
+  }
+  .footer-svg-slash{
+    display: none;
+  }
+  .btn-mail-part-l {
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .footer-svg-slash{
+    width: 200px;
+  }
+
+  .btn-mail-part-l {
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .footer-svg-slash{
+    width: 200px;
+  }
+
+  .btn-mail-part-l {
+    width: 293px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .footer-svg-slash{
+    width: 310px;
+  }
+}
+
+@media screen and (min-width: 1700px){
+  .footer-svg-slash{
+    width: 354px;
+  }
+
+  .btn-mail-part-l {
+    width: 373px;
+  }
+}
