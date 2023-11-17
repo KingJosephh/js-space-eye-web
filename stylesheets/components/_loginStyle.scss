@@ -4,38 +4,39 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+// .navbar {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
 
-    .searchBar {
-        width: 20em;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-weight: bold;
-        color: #fff;
+//     .searchBar {
+//         width: 20em;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         font-weight: bold;
+//         color: #fff;
 
-        .btn1,
-        .btn2 {
-            border: 0;
-            width: 40%;
-            height: 60%;
-            border-radius: 5px;
-            background-color: #93FF00;
-            color: #000000;
+//         .btn,
+//         .btn1,
+//         .btn2 {
+//             border: 0;
+//             width: 40%;
+//             height: 60%;
+//             border-radius: 5px;
+//             background-color: #93FF00;
+//             color: #000000;
             
-            &.btn2 {
-                display: none;
-            }
-        }
+//             &.btn2 {
+//                 display: none;
+//             }
+//         }
 
-        a:hover {
-            color: aqua;
-        }
-    }
-}
+//         a:hover {
+//             color: aqua;
+//         }
+//     }
+// }
 
 
 .login {

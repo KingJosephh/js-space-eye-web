@@ -10,13 +10,31 @@
 </head>
 <body>
     <header class="head">
-        <nav class="navbar">
-            <img src="../img/parking lot logo.png" alt="logo" class="logo">
+        <!-- <nav class="navbar">
+            <img src="../Assests/img/parking lot logo.png" alt="logo" class="logo">
             <div class="searchBar">
                 <a>預約停車</a>
                 <a>找停車位</a>
-                <!-- <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html">登入/註冊</a></button> -->
-                <a class="btn" href="http://127.0.0.1:5501/HtmlPage/carOwner.html">車主專區</a>
+                <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
+                <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">車主專區</a></button>
+            </div>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid m-lg-4 p-0">
+                <div class="container-fluid d-flex justify-content-between p-0">
+                    <a class="logo navbar-brand" href="#"><img src="../Assests/img/parking lot logo.png" alt="" style="height: 50px;"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse searchBar" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">服務介紹</p></a>
+                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">熱門車款</p></a>
+                        <button class="btn ms-2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold text-nowrap">登入/註冊</a></button>
+                        <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -27,12 +45,12 @@
                     <div class="col"  style="margin-top: 100px;"></div>
                 </div>
                 <div class="row">
-                    <div class="col-8 p-0">
+                    <div class="col-lg-8 col-12 p-0">
                         <div class="row d-flex justify-content-end position-relative ">
                             <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
                                 <div class="btn-bg-move-dad button-group d-flex justify-content-between color-tran-gray rounded-2 py-2">
                                     <div class="position-absolute btn-bg-move1">
-                                        <div id="color-block" class="bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
+                                        <div id="color-block" class="bg-light-green mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
                                     </div>
                                     <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1" value="C01">路邊车格</button>
                                     <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2" value="C02">停車場</button>
@@ -42,37 +60,37 @@
                         <!-- <iframe width="100%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                             src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=25.033963,121.564472(台北 101)&z=16&output=embed&markers=25.033963,121.564472">
                         </iframe> -->
-                        <iframe width="100%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        <iframe width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                             src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=24.146183,120.682009(凤凰停车场)&z=16&output=embed&markers=24.146183,120.682009">
                         </iframe>
                     </div>                    
-                    <div class="col-4 bg-light-gray">
+                    <div class="col-4 bg-light-gray d-lg-block d-none">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10 mt-4 p-0">
-                                <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2 ">
+                            <div class="col-10 mt-4 mb-4 p-0">
+                                <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-green-black rounded-2 py-2 ">
                                     <div class="position-absolute btn-bg-move">
-                                        <div id="color-block" class=" bg-light-gray mx-4 d-flex align-center rounded-2" style="height: 32px; width: 100px;"></div>
+                                        <div id="color-block" class=" bg-light-green mx-4 d-flex align-center rounded-2" style="height: 32px; width: 100px;"></div>
                                     </div>
-                                    <button id="btn1" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1">搜尋條件</button>
-                                    <button id="btn2" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2">停車場一覽</button>
+                                    <button id="btn1" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1">搜尋條件</button>
+                                    <button id="btn2" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2">停車場一覽</button>
                                 </div>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10 bg-white mt-4 rounded-2" style="height: 440px; overflow: auto;">
+                            <div class="col-10 bg-white mt-4 rounded-2" style="height: 470px; overflow: auto;">
                                 <div class="content-to-hide-search">
                                     <div class="row mt-5">
                                         <div class="col-12">
                                             <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
                                                 <div class="col-5 p-0">
-                                                    <select class="form-select form-select-lg mb-3 py-1" aria-label="form-select-lg example" id="areaOption">
+                                                    <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="areaOption">
                                                         <!-- <option value="USD">USD</option>
                                                         <option value="CNY">CNY</option>
                                                         <option value="HKD">HKD</option> -->
                                                     </select>
                                                 </div>
                                                 <div class="col-6 p-0">
-                                                    <select class="form-select form-select-lg mb-3 py-1" aria-label="form-select-lg example" id="roadOption">
+                                                    <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="roadOption">
                                                         <!-- <option value="USD">USD</option>
                                                         <option value="CNY">CNY</option>
                                                         <option value="HKD">HKD</option> -->
@@ -81,7 +99,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row d-flex justify-content-center">
+                                    <div class="row d-flex justify-content-center mb-5">
                                         <div class="col-10 p-0">
                                             <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
                                                 <div class="position-absolute btn-bg-move2">

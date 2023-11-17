@@ -10,11 +10,12 @@
     width: 100%;
     height: 70px;
     display: flex;
-    padding: 10px 100px;
+    // padding: 10px 80px;
     z-index: 99;
     background: transparent;
     background-color: rgba(220, 220, 220, 0.5);
     backdrop-filter: blur(10px);
+    // padding-bottom: 200px;
 }
 
 .navbar {
@@ -29,28 +30,30 @@
 
     .searchBar {
         width: 20em;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         font-weight: bold;
         color: #fff;
 
-        .btn {
+        .btn,
+        .btn2 {
             border: 0;
-            width: 40%;
-            height: 60%;
+            width: 30%;
+            height: 20%;
             border-radius: 5px;
-            background-color: rgb(255, 0, 0);
-            color: #fff;
+            background-color: #93FF00;
+            color: #000000;
+            
+            &.btn2 {
+                display: none;
+            }
 
             a {
                 color: #fff;
                 text-decoration: none;
             }
 
-            a:hover {
-                color: aqua;
-            }
+            // a:hover {
+            //     color: aqua;
+            // }
         }
     }
 }
@@ -58,7 +61,7 @@
 .background-img {
     width: 100%;
     height: 100vh;
-    background-image: url(/img/bgImg.png);
+    background-image: url(/Assests/img/bgImg.png);
     background-position: center;
     background-size: cover;
     filter: blur(5px);
@@ -71,7 +74,7 @@
     width: 75%;
     height: 75%;
     transform: translate(-50%, -50%);
-    background: url(/img/bgImg.png);
+    background: url(/Assests/img/bgImg.png);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -92,13 +95,11 @@
         z-index: -1;
     }
 }
-
 .content {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 700px;
-    padding: 140px;
 
     h2 {
         font-size: 4.5em;
@@ -114,9 +115,26 @@
         font-size: 1.5rem;
     }
 }
+.content {
+    padding: 110px;
+}
+
+/* 在大于 1000px 的屏幕上的样式 */
+@media screen and (min-width: 1000px) {
+    .content {
+        padding: 110px;
+    }
+}
+
+/* 在小于 400px 的屏幕上的样式 */
+@media screen and (max-width: 900px) {
+    .content {
+        padding: 80px;
+    }
+}
 
 .signIn2 {
-    width: 450px;
+    width: 100%;
     position: relative;
     padding: 20px 40px;
     background-color: rgba(220, 220, 220, 0.5);
