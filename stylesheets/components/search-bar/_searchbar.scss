@@ -35,6 +35,7 @@
   display: flex;
   position: relative;
   right: 50px;
+  border: none;
 }
 
 .search-bar-icon-container-m{
@@ -47,4 +48,10 @@
   display: flex;
   position: relative;
   right: 40px;
+  border: none;
+}
+
+.search-bar-icon-container-l:hover,
+.search-bar-icon-container-m:hover{
+  background: var(--brand-02);
 }
