@@ -199,24 +199,34 @@ body {
   margin-top: 50px;
 }
 
-.container-footer {
+.container-footer-l {
   max-width: 100%;
   position: relative;
-}
-
-.container-footer .btn-up-l {
-  position: absolute;
-  right: 50px;
-  top: -20px;
-}
-
-footer {
   background: var(--gray-01);
   display: flex;
   justify-content: space-between;
   border-radius: 40px;
   position: relative;
   padding: 32px 0;
+}
+
+.container-footer-m {
+  width: 400px;
+  position: relative;
+  background: var(--gray-01);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  position: relative;
+  padding: 32px 12px 16px 12px;
+}
+
+.container-footer-l .btn-up-l {
+  position: absolute;
+  right: 50px;
+  top: -20px;
 }
 
 .footer-svg-slash {
@@ -233,37 +243,69 @@ footer {
   margin: 0 50px;
 }
 
-.footer-content-p {
+.footer-content-p-l,
+.footer-content-p-m {
   color: var(--white);
-  padding-top: 40px;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.footer-content-p::before {
+.footer-content-p-l {
+  padding-top: 40px;
+}
+
+.footer-content-p-m {
+  padding-top: 32px;
+}
+
+.footer-content-p-l::before,
+.footer-content-p-m::before {
   content: "Contact";
   position: absolute;
   color: var(--brand-01);
-  opacity: 20%;
-  font-size: 44px;
   line-height: 48px;
+  opacity: 20%;
   font-weight: var(--fw-bold-700);
+}
+
+.footer-content-p-l::before {
+  font-size: 44px;
   top: 12px;
 }
 
-.footer-content-button {
+.footer-content-p-m::before {
+  font-size: 32px;
+  top: 6px;
+}
+
+.footer-content-button-l {
   display: flex;
   gap: 24px;
 }
 
-.footer-content-copyright {
+.footer-content-button-m {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-content-copyright-l {
   color: var(--gray-03);
   padding-top: 32px;
 }
 
+.footer-content-copyright-m {
+  color: var(--gray-03);
+  padding-top: 22px;
+}
+
+.btn-mail-part-m {
+  width: 327px;
+}
+
 @media screen and (max-width: 992px) {
-  footer {
+  .container-footer-l {
     justify-content: center;
   }
   .footer-svg-slash {
