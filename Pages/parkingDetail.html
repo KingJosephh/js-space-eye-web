@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/cssFile/parkingDetail.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <img src="/Assests/img/parking.png" alt="parkingLogo">
+            <h1>預約停車</h1>
+        </div>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">停車場資訊</th>
+                    <th scope="col">停車場</th>
+                    <th scope="col">地址</th>
+                    <th scope="col">室內/室外</th>
+                    <th scope="col">車格種類</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Account">八德路三段停車場</td>
+                    <td data-label="Account">八德路三段停車場</td>
+                    <td data-label="Account">台北市松山區八德路3段12巷</td>
+                    <td data-label="Account">Outdoor</td>
+                    <td data-label="Account">一般車位</td>
+                </tr>
+            </tbody>
+        </table>
+        <form id="reservationForm">
+            <label for="date">入場日期:</label>
+            <input type="date" id="date" name="date" class="form-input" required>
+            <label for="date">離場日期:</label>
+            <input type="date" id="date" name="date" class="form-input" required>
+        </form>
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="當日停車">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="notice">
+            <div class="btn">
+                <button type="button" class="cancelButton">取消</button>
+                <button type="button" class="rightButton">確認送出</button>
+            </div>
+            <div class="content">
+              <h3>公告事項說明</h3>
+              <ul class="notice-list">
+                <li>1同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</li>
+                <li>2預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</li>
+                <li>3本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</li>
+                <li>4預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</li>
+                <li> ★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。★</li>
+              </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/click2.js"></script>
+</body>
+</html>

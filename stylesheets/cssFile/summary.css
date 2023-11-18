@@ -1,0 +1,203 @@
+.main-container{
+    min-width: 50vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.summary-container{
+    width: 450px;
+    min-height: 550px;
+    margin: auto;
+    border-radius: 32px;
+}
+
+.bottom-part {
+    border-radius: 32px;
+}
+
+.bi-x-circle {
+    position: absolute;
+    right: 780px;
+    transform: scaleY(-1);
+    margin-top: 30px;
+}
+
+.bottom-part{
+    background-color: #fff;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: #E0E8FE;
+}
+
+.word-section{
+    text-align: center;
+    padding-top: 22px;
+}
+
+.word-section h1{
+    font-size: 28px;
+    padding: 12px;
+    color:  hsl(223, 47%, 23%);
+    font-weight: 700;
+}
+
+.word-section p{
+    font-size: 17px;
+    letter-spacing: 0.4px;
+    line-height: 23px;
+    font-weight: 600;
+    color: hsl(226, 20%, 71%);
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+hr {
+  border-color: #11cc00;
+}
+
+.plan-section{
+    background-color: hsl(225, 100%, 98%);
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    border-radius: 12px;
+    align-items: center;
+    margin: 0 40px;
+    margin-bottom: 32px;
+}
+
+.plan-section .img img{
+    margin-right: 15px;
+}
+
+.plan-section .annual-plan h2{
+    color:  hsl(223, 47%, 23%);
+    font-size: 20px;
+}
+
+.plan-section .annual-plan p{
+    color: hsl(226, 20%, 71%);
+    font-weight: 600;
+}
+
+.plan-section .change{
+    margin: auto;
+    margin-right: 0px;   
+}
+
+.plan-section .change a{
+    color: hsl(245, 75%, 52%);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: 0.3s ease-out;
+    transition-property: color, text;
+}
+
+.plan-section .change a:hover{
+    color: #766CF1;
+    text-decoration: none;
+}
+
+.btn-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    padding-bottom: 32px;
+}
+
+.btn{
+    border: none;
+    width:auto;
+    margin: 0 40px;
+    font-size: 14px;
+    padding: 14px 0;
+    border-radius: 7px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-payment{
+    background-color: hsl(245, 75%, 52%);
+    margin-bottom: 25px;
+    color: #fff;
+    transition: 0.3s ease-in;
+    transition-property: background;
+    box-shadow: 0 18px 14px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-payment:hover{
+    background-color: #766CF1;
+}
+
+.btn-submit{
+    color: hsl(226, 20%, 71%);
+    background-color: #fff;
+    transition: 0.3s ease-in;
+    transition-property: color;
+}
+
+.btn-submit:hover{
+    color: hsl(223, 47%, 23%);
+}
+
+/* Media Queries */
+
+@media (min-width: 1440px) {
+    .main-container{
+        background-image: none;
+    }
+}
+
+@media (max-height: 700px) {
+    .main-container{
+        padding: 35px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-container{
+        padding: 35px 35px;
+    }
+
+    .plan-section .annual-plan h2{
+        font-size: 16px;
+    }
+
+    .plan-section .annual-plan p{
+        font-size: 14px;
+    }
+
+    .plan-section .change a{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .main-container{
+        background-image: url('../images/pattern-background-mobile.svg');
+        padding: 25px 25px;
+    }
+
+    .container{
+        max-width: 350px !important;
+    }
+
+    br{
+        display: none;
+    }
+
+    .word-section p{
+        margin: 0 18px;
+    }
+
+    .plan-section{
+        margin: 0 20px;
+    }
+    
+    .annual-plan{
+        margin-right: 15px;
+    }
+} 
