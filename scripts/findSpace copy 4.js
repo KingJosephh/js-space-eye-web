@@ -1,13 +1,13 @@
-const btn1 = document.querySelector('#btn1');
-const btn2 = document.querySelector('#btn2');;
-const btn21 = document.querySelector('#btn2-1');
-const btn22 = document.querySelector('#btn2-2');
-const btn23 = document.querySelector('#btn2-3');
-const btn31 = document.querySelector('#btn3-1');
-const btn32 = document.querySelector('#btn3-2');
-const btn11 = document.querySelector('#btn1-1')
-const btn12 = document.querySelector('#btn1-2')
-const confirmBtn = document.querySelector('#confirm');
+// const btn1 = document.querySelector('#btn1');
+// const btn2 = document.querySelector('#btn2');;
+// const btn21 = document.querySelector('#btn2-1');
+// const btn22 = document.querySelector('#btn2-2');
+// const btn23 = document.querySelector('#btn2-3');
+// const btn31 = document.querySelector('#btn3-1');
+// const btn32 = document.querySelector('#btn3-2');
+// const btn11 = document.querySelector('#btn1-1')
+// const btn12 = document.querySelector('#btn1-2')
+// const confirmBtn = document.querySelector('#confirm');
 const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const btnBgMove2 = document.querySelector('.btn-bg-move2');
@@ -15,6 +15,7 @@ const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard =document.querySelector('#showMapCard')
+const showParkSelect = document.querySelector('.showParkSelect')
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const Url = 'http://localhost:3000'
@@ -32,14 +33,19 @@ let data = [];
 let filteredMapData = [];
 let saveLikePark = [];
 
-//leaflet資料
-var map = L.map('map').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
 //搜尋條件與停車場一覽監聽
+const btnCtrl = () => {
+    const btn1 = document.querySelector('#btn1');
+    const btn2 = document.querySelector('#btn2');;
+    const btn21 = document.querySelector('#btn2-1');
+    const btn22 = document.querySelector('#btn2-2');
+    const btn23 = document.querySelector('#btn2-3');
+    const btn31 = document.querySelector('#btn3-1');
+    const btn32 = document.querySelector('#btn3-2');
+    const btn11 = document.querySelector('#btn1-1')
+    const btn12 = document.querySelector('#btn1-2')
+    const confirmBtn = document.querySelector('#confirm');
+    
     btn1.addEventListener('click', () => {
         moveBtn(btn1)
         hidePage(btn1)
@@ -97,6 +103,81 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         render(filteredMapData)
         moveBtn1(btn12)
     })
+}
+//渲染選擇停車場條件到畫面
+const toShowParkSelect = () => {
+    let content = `<div class="row d-flex justify-content-center">
+    <div class="col-10 mt-4 mb-4 p-0">
+        <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-green-black rounded-2 py-2 ">
+            <div class="position-absolute btn-bg-move">
+                <div id="color-block" class=" bg-light-green mx-4 d-flex align-center rounded-2" style="height: 32px; width: 100px;"></div>
+            </div>
+            <button id="btn1" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1">搜尋條件</button>
+            <button id="btn2" type="button" class="btn mx-4 px-3 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2">停車場一覽</button>
+        </div>
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-10 bg-white mt-4 rounded-2" style="height: 470px; overflow: auto;">
+        <div class="content-to-hide-search">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
+                        <div class="col-5 p-0">
+                            <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="areaOption">
+                                <!-- <option value="USD">USD</option>
+                                <option value="CNY">CNY</option>
+                                <option value="HKD">HKD</option> -->
+                            </select>
+                        </div>
+                        <div class="col-6 p-0">
+                            <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="roadOption">
+                                <!-- <option value="USD">USD</option>
+                                <option value="CNY">CNY</option>
+                                <option value="HKD">HKD</option> -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mb-5">
+                <div class="col-10 p-0">
+                    <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                        <div class="position-absolute btn-bg-move2">
+                            <div id="color-block" class=" bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 28px; width: 70px;"></div>
+                        </div>
+                        <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="一般車位">一般車位</button>
+                        <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="親子車位">親子車位</button>
+                        <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="殘障車位">殘障車位</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-4">
+                <div class="col-10 p-0">
+                    <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                        <div class="position-absolute btn-bg-move3">
+                            <div id="color-block" class=" bg-light-gray mx-3 d-flex align-center rounded-2" style="height: 28px; width: 90px;"></div>
+                        </div>
+                        <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="all">全部停車場</button>
+                        <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="haveSpace">有空位停車場</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center" style="margin-top: 100px;">
+                    <button id="confirm" type="button" class="btn btn-info mx-3 px-5 py-1">確認送出</button>
+                    <!-- <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="content-to-hide-showPark" id="showMapCard">
+        </div>
+    </div>
+</div>`
+showParkSelect.innerHTML = content
+btnCtrl()
+}
+toShowParkSelect()
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
     if(localParkData === ''){
@@ -205,24 +286,24 @@ const addLikeParkToLocal = (e) => {
 }
 //控制彈出視窗(modal)
 const showAllPark = document.querySelector('#showAllParkModel')
-    showAllPark.addEventListener('show.bs.modal' , function (e) {
-    const showButton = e.relatedTarget
-    const showPark = showButton.dataset.bsShowPark
-    const showType = showButton.dataset.bsShowType
-    const showAddress = showButton.dataset.bsShowAddress
-    const showSpace = showButton.dataset.bsShowSpace
-    const showIn = showButton.dataset.bsShowIn
-    const park = showAllPark.querySelector('#park')
-    const type = showAllPark.querySelector('#type')
-    const address = showAllPark.querySelector('#address')
-    const space = showAllPark.querySelector('#space')
-    const inOrOut = showAllPark.querySelector('#in')
-    park.textContent = showPark
-    type.textContent = showType
-    address.textContent = showAddress
-    space.textContent = showSpace
-    inOrOut.textContent = showIn
-})
+                        showAllPark.addEventListener('show.bs.modal' , function (e) {
+                        const showButton = e.relatedTarget
+                        const showPark = showButton.dataset.bsShowPark
+                        const showType = showButton.dataset.bsShowType
+                        const showAddress = showButton.dataset.bsShowAddress
+                        const showSpace = showButton.dataset.bsShowSpace
+                        const showIn = showButton.dataset.bsShowIn
+                        const park = showAllPark.querySelector('#park')
+                        const type = showAllPark.querySelector('#type')
+                        const address = showAllPark.querySelector('#address')
+                        const space = showAllPark.querySelector('#space')
+                        const inOrOut = showAllPark.querySelector('#in')
+                        park.textContent = showPark
+                        type.textContent = showType
+                        address.textContent = showAddress
+                        space.textContent = showSpace
+                        inOrOut.textContent = showIn
+                        })
 //取得區域資料
 let sectionData = [];
 const getSection = () => {
