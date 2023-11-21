@@ -39,4 +39,8 @@ $display-none: none;
 .color-tran-gray {
     background: rgba(30, 30, 30, 0.4);
 }
+
+.searchBg {
+    display: $display-none;
+}
 #map { width: 100%; height: 620px; }
