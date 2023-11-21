@@ -41,47 +41,49 @@
     </header>
     <section>
         <div class="position-absolute text-white" style="top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 2100;">
-            <div class="col-8 bg-light-gray d-flex justify-content-center">
-                <div class="row d-flex justify-content-center">
-                        <div class="content-to-hide-search">
-                            <div class="row mt-5">
-                                <div class="col-12">
-                                    <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
-                                        <div class="col-5 p-0">
-                                            <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="areaOption">
-                                            </select>
+            <div class="row d-flex justify-content-center" style="margin-top: 110px;">
+                <div class="col-10">
+                    <div class="row">
+                            <div class="content-to-hide-search">
+                                <div class="row mt-5">
+                                    <div class="col-12">
+                                        <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
+                                            <div class="col-5 p-0">
+                                                <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="areaOption">
+                                                </select>
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="roadOption">
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-6 p-0">
-                                            <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="roadOption">
-                                            </select>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center mb-5">
+                                    <div class="col-10 p-0">
+                                        <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                                            <div class="position-absolute btn-bg-move2">
+                                                <div id="color-block" class=" bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 28px; width: 70px;"></div>
+                                            </div>
+                                            <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="一般車位">一般車位</button>
+                                            <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="親子車位">親子車位</button>
+                                            <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="殘障車位">殘障車位</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center mt-4">
+                                    <div class="col-10 p-0">
+                                        <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                                            <div class="position-absolute btn-bg-move3">
+                                                <div id="color-block" class=" bg-light-gray mx-3 d-flex align-center rounded-2" style="height: 28px; width: 90px;"></div>
+                                            </div>
+                                            <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="all">全部停車場</button>
+                                            <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="haveSpace">有空位停車場</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row d-flex justify-content-center mb-5">
-                                <div class="col-10 p-0">
-                                    <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
-                                        <div class="position-absolute btn-bg-move2">
-                                            <div id="color-block" class=" bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 28px; width: 70px;"></div>
-                                        </div>
-                                        <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="一般車位">一般車位</button>
-                                        <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="親子車位">親子車位</button>
-                                        <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="殘障車位">殘障車位</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-center mt-4">
-                                <div class="col-10 p-0">
-                                    <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
-                                        <div class="position-absolute btn-bg-move3">
-                                            <div id="color-block" class=" bg-light-gray mx-3 d-flex align-center rounded-2" style="height: 28px; width: 90px;"></div>
-                                        </div>
-                                        <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="all">全部停車場</button>
-                                        <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="haveSpace">有空位停車場</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
