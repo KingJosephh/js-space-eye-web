@@ -10371,6 +10371,10 @@ textarea.form-control-lg {
   z-index: 3 !important;
 }
 
+.fs-s-104 {
+  font-size: 1.25rem !important;
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;

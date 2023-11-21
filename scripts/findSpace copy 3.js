@@ -334,7 +334,7 @@ const render = (aa) => {
     str += content
     })
     showMapCard.innerHTML = str
-    console.log(saveLikePark)
+    // console.log(saveLikePark)
     plusLike(aa)
 }
 const getLikePark = (aa, bb) => {
@@ -360,7 +360,7 @@ const plusLike = (aa) => {
     const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
     aa.forEach((item) => {
         let locatedId = item.location.latitude;
-        console.log(locatedId)
+        // console.log(locatedId)
         for (let i = 0; i < saveLikePark.length; i++) {
             if (locatedId === saveLikePark[i]) {
                 let saveLikeElement = saveLikePark[i];
