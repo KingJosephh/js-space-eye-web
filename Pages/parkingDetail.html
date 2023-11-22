@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="/stylesheets/cssFile/parkingDetail.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+    <header class="head">
+        <nav class="navbar">
+            <img src="../img/parking lot logo.png" alt="logo" class="logo">
+            <div class="searchBar">
+                <a>預約停車</a>
+                <a>找停車位</a>
+                <button class="btn">車主專區</button>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <div class="top">
             <img src="/Assests/img/parking.png" alt="parkingLogo">
@@ -38,23 +49,54 @@
         </table>
         <form id="reservationForm">
             <label for="date">入場日期:</label>
-            <input type="date" id="date" name="date" class="form-input" required>
+            <input type="date" id="entryDate" name="date" class="form-input" required>
             <label for="date">離場日期:</label>
-            <input type="date" id="date" name="date" class="form-input" required>
+            <input type="date" id="exitDate" name="date" class="form-input" required>
         </form>
-        <div class="wrap">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="當日停車">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
+        <h1 style="text-align: center">方案選擇</h1>
+        <div class="plan-container">
+            <div onclick="select(this, false)" class="plan">
+                <h3>每月停車</h3>
+                <p style="margin-top: 0">monthly</p>
+                <ul>
+                    <li>NT 349</li>
+                    <li>全月自由停車，方便又節省。</li>
+                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+                    <li>省時省力，停車不再是煩惱。</li>
+                </ul>
+            </div>
+            <div onclick="select(this, true)" class="plan">
+                <h3>每週停車</h3>
+                <p style="margin-top: 0">monthly</p>
+                <ul>
+                    <li>NT 149</li>
+                    <li>縮短週末中的尋找停車位的時間。</li>
+                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+                    <li>省時省力，停車不再是煩惱。</li>
+                </ul>
+            </div>
+            <div onclick="select(this, false)" class="plan">
+                <h3>每年停車</h3>
+                <p style="margin-top: 0">monthly</p>
+                <ul>
+                    <li>NT 749</li>
+                    <li>長期停車需求的理想選擇</li>
+                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+                    <li>一次訂閱，一整年無限次數停車。</li>
+                </ul>
             </div>
         </div>
+          <div style="display: flex; justify-content: center; padding-top: 20px; width: 100%">
+            <button id="next" type="button" disabled>Register</button>
+          </div>
+        </div> 
+        <button type="button" class="btn btn-secondary" aria-pressed="false" autocomplete="off">
+            取消
+        </button>
+        <button type="button" class="btn-primary" aria-pressed="false" autocomplete="off">
+            確認送出
+        </button>
         <div class="notice">
-            <div class="btn">
-                <button type="button" class="cancelButton">取消</button>
-                <button type="button" class="rightButton">確認送出</button>
-            </div>
             <div class="content">
               <h3>公告事項說明</h3>
               <ul class="notice-list">
