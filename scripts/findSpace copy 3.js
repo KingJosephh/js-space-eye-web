@@ -7,6 +7,8 @@ const btn31 = document.querySelector('#btn3-1');
 const btn32 = document.querySelector('#btn3-2');
 const btn11 = document.querySelector('#btn1-1')
 const btn12 = document.querySelector('#btn1-2')
+const searchBtn = document.querySelector('.searchBtn')
+const searchBg = document.querySelector('.searchBg')
 const confirmBtn = document.querySelector('#confirm');
 const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
@@ -32,7 +34,71 @@ let data = [];
 let filteredMapData = [];
 let saveLikePark = [];
 
+//leaflet資料
+var map = L.map('map').setView([51.505, -0.09], 13);
 
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+//搜尋條件與停車場一覽監聽
+    btn1.addEventListener('click', () => {
+        moveBtn(btn1)
+        hidePage(btn1)
+    });
+    btn2.addEventListener('click', () => {
+        moveBtn(btn2)
+        hidePage(btn2)
+    });
+    //確認送出按鈕監聽
+    confirmBtn.addEventListener('click', () => {
+        btnBgMove.style.marginLeft = 214 + 'px';
+        hideSearch.style.display = 'none';
+        hideShowPark.style.display = 'block';
+        let area = areaOption.value;
+        let road = roadOption.value;
+        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+        render(filteredMapData)
+    })
+    //車位類別按鈕監聽
+    btn21.addEventListener('click', () => {
+        moveBtn2(btn21)
+        getType = btn21.value
+    });
+    btn22.addEventListener('click', () => {
+        moveBtn2(btn22)
+        getType = btn22.value
+    });
+    btn23.addEventListener('click', () => {
+        moveBtn2(btn23)
+        getType = btn23.value
+    });
+    //顯示有車位或全部停車場按鈕監聽
+    btn31.addEventListener('click', () => {
+        moveBtn3(btn31)
+        getSpaceOrNot = btn31.value
+    });
+    btn32.addEventListener('click', () => {
+        moveBtn3(btn32)
+        getSpaceOrNot = btn32.value
+    });
+    //路邊停車與停車場按鈕監聽
+    btn11.addEventListener('click' , () => {
+        let area = areaOption.value;
+        let road = roadOption.value;
+        getParkValue = btn11.value
+        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+        render(filteredMapData)
+        moveBtn1(btn11)
+    })
+    btn12.addEventListener('click' , () => {
+        let area = areaOption.value;
+        let road = roadOption.value;
+        getParkValue = btn12.value
+        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+        render(filteredMapData)
+        moveBtn1(btn12)
+    })
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
     if(localParkData === ''){
@@ -83,7 +149,7 @@ function hidePage(a){
 function moveBtn(x) {
     let num = parseInt(x.getAttribute('data-num'));
     if (num > btnNumList) {
-        btnBgMove.style.marginLeft = (162 * (num-1)) + 'px';
+        btnBgMove.style.marginLeft = (214 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove.style.marginLeft = 0;
     }
@@ -92,9 +158,9 @@ function moveBtn(x) {
 function moveBtn2(y) {
     let num = parseInt(y.getAttribute('data-num'));
     if (num > btnNumList2) {
-        btnBgMove2.style.marginLeft = (90 * (num-1)) + 'px';
+        btnBgMove2.style.marginLeft = (110 * (num-1)) + 'px';
     }else if(num > btnNumList2){
-        btnBgMove2.style.marginLeft = (90 * (num-1)) + 'px';
+        btnBgMove2.style.marginLeft = (110 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove2.style.marginLeft = 0;
     }
@@ -103,7 +169,7 @@ function moveBtn2(y) {
 function moveBtn3(z) {
     let num = parseInt(z.getAttribute('data-num'));
     if (num > btnNumList2) {
-        btnBgMove3.style.marginLeft = (136 * (num-1)) + 'px';
+        btnBgMove3.style.marginLeft = (180 * (num-1)) + 'px';
     }else if(num > btnNumList2){
         btnBgMove3.style.marginLeft = (100 * (num-1)) + 'px';
     }else if(num=1){
@@ -114,70 +180,12 @@ function moveBtn3(z) {
 const moveBtn1 = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
-        btnBgMove1.style.marginLeft = (105 * (num-1)) + 'px';
+        btnBgMove1.style.marginLeft = (135 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1.style.marginLeft = 0;
     }
 }
 
-//搜尋條件與停車場一覽監聽
-btn1.addEventListener('click', () => {
-    moveBtn(btn1)
-    hidePage(btn1)
-});
-btn2.addEventListener('click', () => {
-    moveBtn(btn2)
-    hidePage(btn2)
-});
-//確認送出按鈕監聽
-confirmBtn.addEventListener('click', () => {
-    btnBgMove.style.marginLeft = 162 + 'px';
-    hideSearch.style.display = 'none';
-    hideShowPark.style.display = 'block';
-    let area = areaOption.value;
-    let road = roadOption.value;
-    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
-})
-//車位類別按鈕監聽
-btn21.addEventListener('click', () => {
-    moveBtn2(btn21)
-    getType = btn21.value
-});
-btn22.addEventListener('click', () => {
-    moveBtn2(btn22)
-    getType = btn22.value
-});
-btn23.addEventListener('click', () => {
-    moveBtn2(btn23)
-    getType = btn23.value
-});
-//顯示有車位或全部停車場按鈕監聽
-btn31.addEventListener('click', () => {
-    moveBtn3(btn31)
-    getSpaceOrNot = btn31.value
-});
-btn32.addEventListener('click', () => {
-    moveBtn3(btn32)
-    getSpaceOrNot = btn32.value
-});
-//路邊停車與停車場按鈕監聽
-btn11.addEventListener('click' , () => {
-    let area = areaOption.value;
-    let road = roadOption.value;
-    getParkValue = btn11.value
-    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
-    moveBtn1(btn11)
-})
-btn12.addEventListener('click' , () => {
-    let area = areaOption.value;
-    let road = roadOption.value;
-    getParkValue = btn12.value
-    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
-    moveBtn1(btn12)
-})
 //收藏停車場的愛心按鈕監聽
 const addLikeParkToLocal = (e) => {
     if(e.target.classList.contains('save-like')){
@@ -199,24 +207,24 @@ const addLikeParkToLocal = (e) => {
 }
 //控制彈出視窗(modal)
 const showAllPark = document.querySelector('#showAllParkModel')
-                        showAllPark.addEventListener('show.bs.modal' , function (e) {
-                        const showButton = e.relatedTarget
-                        const showPark = showButton.dataset.bsShowPark
-                        const showType = showButton.dataset.bsShowType
-                        const showAddress = showButton.dataset.bsShowAddress
-                        const showSpace = showButton.dataset.bsShowSpace
-                        const showIn = showButton.dataset.bsShowIn
-                        const park = showAllPark.querySelector('#park')
-                        const type = showAllPark.querySelector('#type')
-                        const address = showAllPark.querySelector('#address')
-                        const space = showAllPark.querySelector('#space')
-                        const inOrOut = showAllPark.querySelector('#in')
-                        park.textContent = showPark
-                        type.textContent = showType
-                        address.textContent = showAddress
-                        space.textContent = showSpace
-                        inOrOut.textContent = showIn
-                        })
+    showAllPark.addEventListener('show.bs.modal' , function (e) {
+    const showButton = e.relatedTarget
+    const showPark = showButton.dataset.bsShowPark
+    const showType = showButton.dataset.bsShowType
+    const showAddress = showButton.dataset.bsShowAddress
+    const showSpace = showButton.dataset.bsShowSpace
+    const showIn = showButton.dataset.bsShowIn
+    const park = showAllPark.querySelector('#park')
+    const type = showAllPark.querySelector('#type')
+    const address = showAllPark.querySelector('#address')
+    const space = showAllPark.querySelector('#space')
+    const inOrOut = showAllPark.querySelector('#in')
+    park.textContent = showPark
+    type.textContent = showType
+    address.textContent = showAddress
+    space.textContent = showSpace
+    inOrOut.textContent = showIn
+})
 //取得區域資料
 let sectionData = [];
 const getSection = () => {
@@ -328,7 +336,7 @@ const render = (aa) => {
     str += content
     })
     showMapCard.innerHTML = str
-    console.log(saveLikePark)
+    // console.log(saveLikePark)
     plusLike(aa)
 }
 const getLikePark = (aa, bb) => {
@@ -354,7 +362,7 @@ const plusLike = (aa) => {
     const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
     aa.forEach((item) => {
         let locatedId = item.location.latitude;
-        console.log(locatedId)
+        // console.log(locatedId)
         for (let i = 0; i < saveLikePark.length; i++) {
             if (locatedId === saveLikePark[i]) {
                 let saveLikeElement = saveLikePark[i];
@@ -376,3 +384,15 @@ const updateLocalStorage = () => {
     }
 };
 //"jwt expired"token過期
+let rwdBtn = false
+searchBtn.addEventListener('click' , (e) => {
+    rwdBtn = !rwdBtn;
+    showRwdChoice()
+})
+const showRwdChoice = () => {
+    if(rwdBtn === true){
+        searchBg.style.display = 'block'
+    }else if(rwdBtn === false){
+        searchBg.style.display = 'none'
+    }
+}

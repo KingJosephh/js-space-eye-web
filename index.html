@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="../stylesheets/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="./stylesheets/all.css">
 </head>
 <body>
-    <header class="head">
-        <!-- <nav class="navbar">
+    <!-- <header class="head">
+        <nav class="navbar">
             <img src="../Assests/img/parking lot logo.png" alt="logo" class="logo">
             <div class="searchBar">
                 <a>預約停車</a>
@@ -18,51 +19,105 @@
                 <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
                 <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">車主專區</a></button>
             </div>
-        </nav> -->
+        </nav>
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid m-lg-4 p-0">
-                <div class="container-fluid d-flex justify-content-between p-0">
-                    <a class="logo navbar-brand" href="#"><img src="../Assests/img/parking lot logo.png" alt="" style="height: 50px;"></a>
+            <div class="container-fluid">
+                <div class="container-fluid d-flex justify-content-between">
+                    <a class="logo navbar-brand" href="#"><img src="./Assests/img/parking lot logo.png" alt="" style="height: 50px;"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse searchBar" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">服務介紹</p></a>
-                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">熱門車款</p></a>
+                        <a class="nav-link text-start text-nowrap" href="./carOwnerNew.html"><p class="mb-0 ms-lg-0 ms-3">找停車位</p></a>
+                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">立即預約</p></a>
                         <button class="btn ms-2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold text-nowrap">登入/註冊</a></button>
                         <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
                     </div>
                 </div>
             </div>
         </nav>
-    </header>
+    </header> -->
+    <!-- 另外做一個手機板的js然後重新命名這裡的class -->
     <section>
+        <div class="searchBg position-absolute text-white" style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 2100;">
+            <div class="row d-flex justify-content-center" style="margin-top: 110px; width: 100%;">
+                <div class="col-10">
+                    <div class="row">
+                            <div class="content-to-hide-search">
+                                <div class="row mt-5">
+                                    <div class="col-12">
+                                        <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
+                                            <div class="col-5 p-0">
+                                                <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="areaOption">
+                                                </select>
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="roadOption">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center mb-5">
+                                    <div class="col-10 p-0">
+                                        <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                                            <div class="position-absolute btn-bg-move2">
+                                                <div id="color-block" class=" bg-light-gray mx-2 d-flex align-center rounded-2" style="height: 28px; width: 70px;"></div>
+                                            </div>
+                                            <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="一般車位">一般車位</button>
+                                            <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="親子車位">親子車位</button>
+                                            <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none" style="z-index: 2;" data-num="3" value="殘障車位">殘障車位</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center mt-4">
+                                    <div class="col-10 p-0">
+                                        <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
+                                            <div class="position-absolute btn-bg-move3">
+                                                <div id="color-block" class=" bg-light-gray mx-3 d-flex align-center rounded-2" style="height: 28px; width: 90px;"></div>
+                                            </div>
+                                            <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="1" value="all">全部停車場</button>
+                                            <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none" style="z-index: 2;" data-num="2" value="haveSpace">有空位停車場</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-lg-none d-block">
+                <button class="searchBtn btn btn-light-green position-absolute" style="margin-top: 84px; z-index: 2200; margin-left: 330px;"><i class="bi bi-plus-lg text-dark"></i></button>
+            </div>
+        </div>
+        <div class="choice-bar">
+
+        </div>
         <div class="container">
             <div>
                 <div class="row">
-                    <div class="col"  style="margin-top: 100px;"></div>
+                    <div class="col"  style="margin-top: 70px;"></div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 col-12 p-0">
-                        <div class="row d-flex justify-content-end position-relative ">
+                <div class="row mt-lg-4 mt-0">
+                    <div class="col-lg-8 col p-0">
+                        <div class="row d-flex justify-content-end position-relative d-lg-block d-none" style="z-index: 2000;">
                             <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
                                 <div class="btn-bg-move-dad button-group d-flex justify-content-between color-tran-gray rounded-2 py-2">
                                     <div class="position-absolute btn-bg-move1">
                                         <div id="color-block" class="bg-light-green mx-2 d-flex align-center rounded-2" style="height: 32px; width: 75px;"></div>
                                     </div>
-                                    <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="1" value="C01">路邊车格</button>
-                                    <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;" data-num="2" value="C02">停車場</button>
+                                    <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold text-nowrap" style="z-index: 2;" data-num="1" value="C01">路邊车格</button>
+                                    <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold text-nowrap" style="z-index: 2;" data-num="2" value="C02">停車場</button>
                                 </div>
-                            </div>
+                            </div>                          
                         </div>
-                        <!-- <iframe width="100%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                            src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=25.033963,121.564472(台北 101)&z=16&output=embed&markers=25.033963,121.564472">
-                        </iframe> -->
-                        <iframe width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        <div id="map"></div>
+                        <!-- <iframe width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                             src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=24.146183,120.682009(凤凰停车场)&z=16&output=embed&markers=24.146183,120.682009">
-                        </iframe>
+                        </iframe> -->
                     </div>                    
                     <div class="col-4 bg-light-gray d-lg-block d-none">
                         <div class="row d-flex justify-content-center">
@@ -77,23 +132,17 @@
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10 bg-white mt-4 rounded-2" style="height: 470px; overflow: auto;">
+                            <div class="col-10 bg-white mt-4 mb-3 rounded-2" style="height: 470px; overflow: auto;">
                                 <div class="content-to-hide-search">
                                     <div class="row mt-5">
                                         <div class="col-12">
                                             <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
                                                 <div class="col-5 p-0">
                                                     <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="areaOption">
-                                                        <!-- <option value="USD">USD</option>
-                                                        <option value="CNY">CNY</option>
-                                                        <option value="HKD">HKD</option> -->
                                                     </select>
                                                 </div>
                                                 <div class="col-6 p-0">
                                                     <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example" id="roadOption">
-                                                        <!-- <option value="USD">USD</option>
-                                                        <option value="CNY">CNY</option>
-                                                        <option value="HKD">HKD</option> -->
                                                     </select>
                                                 </div>
                                             </div>
@@ -151,42 +200,42 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="showAllParkModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title mt-3 mx-4" id="park"></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row mx-3 mb-3">
-                                                        <div class="col-5">停車場樣式:</div>
-                                                        <div class="col-7" id="type"></div>
-                                                    </div>
-                                                    <div class="row mx-3 mb-3">
-                                                        <div class="col-5">地址:</div>
-                                                        <div class="col-7" id="address"></div>
-                                                    </div>                                       
-                                                    <div class="row mx-3 mb-3">
-                                                        <div class="col-5">剩餘空位:</div>
-                                                        <div class="col-7" id="space"></div>
-                                                    </div>
-                                                    <div class="row mx-3 mb-3">
-                                                        <div class="col-5">室內/室外:</div>
-                                                        <div class="col-7" id="in"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer ">
-                                                <button type="button" class="btn btn-secondary">預約停車</button>
-                                                <button type="button" class="btn btn-primary">長期方案</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="showAllParkModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title mt-3 mx-4" id="park"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row mx-3 mb-3">
+                                            <div class="col-5">停車場樣式:</div>
+                                            <div class="col-7" id="type"></div>
+                                        </div>
+                                        <div class="row mx-3 mb-3">
+                                            <div class="col-5">地址:</div>
+                                            <div class="col-7" id="address"></div>
+                                        </div>                                       
+                                        <div class="row mx-3 mb-3">
+                                            <div class="col-5">剩餘空位:</div>
+                                            <div class="col-7" id="space"></div>
+                                        </div>
+                                        <div class="row mx-3 mb-3">
+                                            <div class="col-5">室內/室外:</div>
+                                            <div class="col-7" id="in"></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer ">
+                                    <button type="button" class="btn btn-secondary">預約停車</button>
+                                    <button type="button" class="btn btn-primary">長期方案</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
@@ -194,6 +243,9 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../scripts/findSpace copy 2.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script type="module" src="./scripts/findSpace copy 3.js"></script>
 </body>
 </html>
