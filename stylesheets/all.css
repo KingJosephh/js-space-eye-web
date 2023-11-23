@@ -941,7 +941,9 @@ header.active {
 .btn-bg-move1,
 .btn-bg-move2,
 .btn-bg-move3,
-.btn-bg-move2-Rwd {
+.btn-bg-move1-Rwd,
+.btn-bg-move2-Rwd,
+.btn-bg-move3-Rwd {
   transition: margin-left 0.3s;
   margin-left: 0;
 }
@@ -961,7 +963,7 @@ header.active {
 }
 
 .searchBg {
-  opacity: 1;
+  opacity: 0;
   transition: opacity 1s ease;
 }
 
