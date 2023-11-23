@@ -442,7 +442,6 @@ btn11Rwd.addEventListener('click' , () => {
     let area = areaOptionRwd.value;
     let road = roadOptionRwd.value;
     getParkValue = btn11Rwd.value
-    console.log('aa')
     moveBtn1Rwd(btn11Rwd)
 })
 btn12Rwd.addEventListener('click' , () => {
@@ -525,4 +524,4 @@ const rotateIcon = () => {
     }
 }
 
-
+//寫篩選停車場資訊與渲染到地圖上
