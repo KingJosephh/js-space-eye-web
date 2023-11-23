@@ -937,22 +937,11 @@ header.active {
   display: none;
 }
 
-.btn-bg-move {
-  transition: margin-left 0.3s;
-  margin-left: 0;
-}
-
-.btn-bg-move1 {
-  transition: margin-left 0.3s;
-  margin-left: 0;
-}
-
-.btn-bg-move2 {
-  transition: margin-left 0.3s;
-  margin-left: 0;
-}
-
-.btn-bg-move3 {
+.btn-bg-move,
+.btn-bg-move1,
+.btn-bg-move2,
+.btn-bg-move3,
+.btn-bg-move2-Rwd {
   transition: margin-left 0.3s;
   margin-left: 0;
 }
@@ -968,12 +957,12 @@ header.active {
 
 .xBtn2 {
   transform: rotate(45deg);
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
 }
 
 .searchBg {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .searchBg.show {
