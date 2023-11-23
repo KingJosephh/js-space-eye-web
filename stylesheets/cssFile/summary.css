@@ -22,7 +22,9 @@
     right: 780px;
     transform: scaleY(-1);
     margin-top: 30px;
+    cursor: pointer;
 }
+
 
 .bottom-part{
     background-color: #fff;
