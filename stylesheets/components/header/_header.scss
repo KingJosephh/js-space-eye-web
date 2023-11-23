@@ -1,6 +1,6 @@
-header{
+/* header{
   display: block;
-}
+} */
 /* large - 1920 */
 .header-container-l{
   display: flex;
@@ -40,7 +40,7 @@ header{
   cursor: pointer;
 }
 
-header.active{
+header.active .header-container-m{
   background:  var(--gray-01);
 }
 
@@ -61,3 +61,11 @@ header.active{
 .hide{
   display: none;
 }
+
+/* .navbar-expand-md .navbar-collapse {
+  justify-content: flex-end;
+
+  li.nav-item{
+    padding-right: 34px;
+  }
+} */

@@ -30,74 +30,46 @@ p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, ul, li {
   cursor: pointer;
 }
 
-/* btn-light */
-.btn-light-solid-l,
-.btn-light-solid-m,
-.btn-light-trans-l,
-.btn-light-trans-m,
-.btn-dark-solid-l,
-.btn-dark-solid-m,
-.btn-dark-trans-l,
-.btn-dark-trans-m {
+button {
+  /* btn-light */
+  /* btn-dark */
+}
+button.btn-light-solid-l, button.btn-light-solid-m {
+  background: var(--brand-01);
+}
+button.btn-light-solid-l, button.btn-light-solid-m, button.btn-light-trans-l, button.btn-light-trans-m, button.btn-dark-solid-l, button.btn-dark-solid-m, button.btn-dark-trans-l, button.btn-dark-trans-m {
   border-radius: 48px;
   font-family: var(--ff);
   font-weight: var(--fw-medium-500);
+  border: none;
 }
-
-.btn-light-solid-l,
-.btn-light-trans-l,
-.btn-dark-solid-l,
-.btn-dark-trans-l {
+button.btn-light-solid-l, button.btn-light-trans-l, button.btn-dark-solid-l, button.btn-dark-trans-l {
   font-size: 20px;
   line-height: 24px;
   padding: 16px 24px;
 }
-
-.btn-light-solid-m,
-.btn-light-trans-m,
-.btn-dark-solid-m,
-.btn-dark-trans-m {
+button.btn-light-solid-m, button.btn-light-trans-m, button.btn-dark-solid-m, button.btn-dark-trans-m {
   font-size: 16px;
   line-height: 19.2px;
   padding: 12px 16px;
 }
-
-.btn-light-solid-l,
-.btn-light-solid-m {
-  background: var(--brand-01);
-}
-
-.btn-light-trans-l,
-.btn-light-trans-m {
+button.btn-light-trans-l, button.btn-light-trans-m {
   color: var(--brand-01);
   border: 2px solid var(--brand-01);
 }
-
-.btn-light-solid-l:hover,
-.btn-light-solid-m:hover,
-.btn-light-trans-l:hover,
-.btn-light-trans-m:hover {
+button.btn-light-solid-l:hover, button.btn-light-solid-m:hover, button.btn-light-trans-l:hover, button.btn-light-trans-m:hover {
   background: var(--brand-02);
   border-color: var(--brand-02);
 }
-
-/* btn-dark */
-.btn-dark-solid-l,
-.btn-dark-solid-m {
+button.btn-dark-solid-l, button.btn-dark-solid-m {
   background: var(--gray-01);
   color: var(--brand-01);
 }
-
-.btn-dark-trans-l,
-.btn-dark-trans-m {
+button.btn-dark-trans-l, button.btn-dark-trans-m {
   color: var(--gray-01);
   border: 2px solid var(--gray-01);
 }
-
-.btn-dark-solid-l:hover,
-.btn-dark-solid-m:hover,
-.btn-dark-trans-l:hover,
-.btn-dark-trans-m:hover {
+button.btn-dark-solid-l:hover, button.btn-dark-solid-m:hover, button.btn-dark-trans-l:hover, button.btn-dark-trans-m:hover {
   background: var(--gray-02);
   border-color: var(--gray-02);
   color: var(--white);
@@ -344,10 +316,9 @@ body {
     width: 373px;
   }
 }
-header {
+/* header{
   display: block;
-}
-
+} */
 /* large - 1920 */
 .header-container-l {
   display: flex;
@@ -386,7 +357,7 @@ header {
   cursor: pointer;
 }
 
-header.active {
+header.active .header-container-m {
   background: var(--gray-01);
 }
 
@@ -408,15 +379,21 @@ header.active {
   display: none;
 }
 
-.menu-l,
-.menu-m {
+/* .navbar-expand-md .navbar-collapse {
+  justify-content: flex-end;
+
+  li.nav-item{
+    padding-right: 34px;
+  }
+} */
+li .menu-l,
+li .menu-m {
   color: var(--white);
   position: relative;
   cursor: pointer;
 }
-
-.menu-l::before,
-.menu-m::before {
+li .menu-l::before,
+li .menu-m::before {
   content: "";
   width: 24px;
   height: 24px;
@@ -427,9 +404,8 @@ header.active {
   bottom: 40%;
   left: -10px;
 }
-
-.menu-l:hover::before,
-.menu-m:hover::before {
+li .menu-l:hover::before,
+li .menu-m:hover::before {
   opacity: 40%;
 }
 
@@ -5139,6 +5115,7 @@ textarea.form-control-lg {
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-sm .navbar-toggler {
     display: none;
@@ -5186,6 +5163,7 @@ textarea.form-control-lg {
   .navbar-expand-md .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-md .navbar-toggler {
     display: none;
@@ -5233,6 +5211,7 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-lg .navbar-toggler {
     display: none;
@@ -5280,6 +5259,7 @@ textarea.form-control-lg {
   .navbar-expand-xl .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-xl .navbar-toggler {
     display: none;
@@ -5327,6 +5307,7 @@ textarea.form-control-lg {
   .navbar-expand-xxl .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-xxl .navbar-toggler {
     display: none;
@@ -5373,6 +5354,7 @@ textarea.form-control-lg {
 .navbar-expand .navbar-collapse {
   display: flex !important;
   flex-basis: auto;
+  justify-content: flex-end;
 }
 .navbar-expand .navbar-toggler {
   display: none;
