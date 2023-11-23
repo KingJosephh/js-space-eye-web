@@ -961,8 +961,23 @@ header.active {
   background: rgba(30, 30, 30, 0.4);
 }
 
+.xBtn {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+.xBtn2 {
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
 .searchBg {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.searchBg.show {
+  opacity: 1;
 }
 
 #map {

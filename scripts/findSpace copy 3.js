@@ -7,8 +7,6 @@ const btn31 = document.querySelector('#btn3-1');
 const btn32 = document.querySelector('#btn3-2');
 const btn11 = document.querySelector('#btn1-1')
 const btn12 = document.querySelector('#btn1-2')
-const searchBtn = document.querySelector('.searchBtn')
-const searchBg = document.querySelector('.searchBg')
 const confirmBtn = document.querySelector('#confirm');
 const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
@@ -384,15 +382,3 @@ const updateLocalStorage = () => {
     }
 };
 //"jwt expired"token過期
-let rwdBtn = false
-searchBtn.addEventListener('click' , (e) => {
-    rwdBtn = !rwdBtn;
-    showRwdChoice()
-})
-const showRwdChoice = () => {
-    if(rwdBtn === true){
-        searchBg.style.display = 'block'
-    }else if(rwdBtn === false){
-        searchBg.style.display = 'none'
-    }
-}
