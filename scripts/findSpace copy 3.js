@@ -230,6 +230,7 @@ const getSection = () => {
     .then(function(res){
         sectionData = res.data;
         showSectionList()
+        showSectionListRwd()
     })
     .catch(function(err){
         console.log(err);
@@ -267,6 +268,7 @@ const getRoad = (roadIdInData) => {
             return item.sectionId === roadIdInData
         })
         showRoadOptionList(equalId)
+        showRoadOptionListRwd(equalId)
     })
     .catch(function(err){
         console.log(err);
@@ -382,3 +384,145 @@ const updateLocalStorage = () => {
     }
 };
 //"jwt expired"token過期
+
+
+//手機板
+const searchBtn = document.querySelector('.searchBtn');
+const searchBg = document.querySelector('.searchBg');
+const btnX = document.querySelector('#btnX');
+const areaOptionRwd = document.querySelector('#areaOption-Rwd');
+const roadOptionRwd = document.querySelector('#roadOption-Rwd');
+const btnBgMove2Rwd = document.querySelector('.btn-bg-move2-Rwd');
+const btn11Rwd = document.querySelector('#btn1-1-Rwd');
+const btn12Rwd = document.querySelector('#btn1-2-Rwd');
+const btn21Rwd = document.querySelector('#btn2-1-Rwd');
+const btn22Rwd = document.querySelector('#btn2-2-Rwd');
+const btn23Rwd = document.querySelector('#btn2-3-Rwd');
+const btnBgMove3Rwd = document.querySelector('.btn-bg-move3-Rwd');
+const btnBgMove1Rwd = document.querySelector('.btn-bg-move1-Rwd')
+const btn31Rwd = document.querySelector('#btn3-1-Rwd');
+const btn32Rwd = document.querySelector('#btn3-2-Rwd');
+
+//渲染區域資料到畫面上
+const showSectionListRwd = () => {
+    let content = '';
+    if (sectionData.length === 0) {
+        content =  ``
+        } else {
+            sectionData.forEach((item) => {
+                content += `<option value="${item.id}">${item.area}</option>`
+            })
+        }
+        areaOptionRwd.innerHTML = content;
+}
+//車位類別按鈕監聽
+btn21Rwd.addEventListener('click', () => {
+    moveBtn2Rwd(btn21Rwd)
+    getType = btn21Rwd.value
+});
+btn22Rwd.addEventListener('click', () => {
+    moveBtn2Rwd(btn22Rwd)
+    getType = btn22Rwd.value
+});
+btn23Rwd.addEventListener('click', () => {
+    moveBtn2Rwd(btn23Rwd)
+    getType = btn23Rwd.value
+});
+//顯示有車位或全部停車場按鈕監聽
+btn31Rwd.addEventListener('click', () => {
+    moveBtn3Rwd(btn31Rwd)
+    getSpaceOrNot = btn31Rwd.value
+});
+btn32Rwd.addEventListener('click', () => {
+    moveBtn3Rwd(btn32Rwd)
+    getSpaceOrNot = btn32Rwd.value
+});
+//路邊停車與停車場按鈕監聽
+btn11Rwd.addEventListener('click' , () => {
+    let area = areaOptionRwd.value;
+    let road = roadOptionRwd.value;
+    getParkValue = btn11Rwd.value
+    console.log('aa')
+    moveBtn1Rwd(btn11Rwd)
+})
+btn12Rwd.addEventListener('click' , () => {
+    let area = areaOptionRwd.value;
+    let road = roadOptionRwd.value;
+    getParkValue = btn12Rwd.value
+    moveBtn1Rwd(btn12Rwd)
+})
+//渲染道路資料到畫面上
+const showRoadOptionListRwd = (a) => {
+    let content = '';
+    if (a === "S01") {
+        content =  `<option value="R001">中山路</option>`
+        } else {
+            a.forEach((item) => {
+                content += `<option value="${item.id}">${item.roadName}</option>`
+            })
+        }
+        roadOptionRwd.innerHTML = content;
+}
+//選車位種類按鈕區塊移動
+const moveBtn2Rwd = (y) => {
+    let num = parseInt(y.getAttribute('data-num'));
+    if (num > btnNumList2) {
+        btnBgMove2Rwd.style.marginLeft = (100 * (num-1)) + 'px';
+    }else if(num > btnNumList2){
+        btnBgMove2Rwd.style.marginLeft = (100 * (num-1)) + 'px';
+    }else if(num=1){
+        btnBgMove2Rwd.style.marginLeft = 0;
+    }
+}
+//顯示有車位停車場按鈕區塊移動
+const moveBtn3Rwd = (z) => {
+    let num = parseInt(z.getAttribute('data-num'));
+    if (num > btnNumList2) {
+        btnBgMove3Rwd.style.marginLeft = (158 * (num-1)) + 'px';
+    }else if(num=1){
+        btnBgMove3Rwd.style.marginLeft = 0;
+    }
+}
+//選擇路邊或停車唱按鈕區塊移動
+const moveBtn1Rwd = (w) => {
+    let num = parseInt(w.getAttribute('data-num'));
+    if (num > btnNumList1) {
+        btnBgMove1Rwd.style.marginLeft = (170 * (num-1)) + 'px';
+    }else if(num=1){
+        btnBgMove1Rwd.style.marginLeft = 0;
+    }
+}
+//控制篩選藍
+let rwdBtn = false
+searchBtn.addEventListener('click' , (e) => {
+    rwdBtn = !rwdBtn;
+    showRwdChoice()
+    rotateIcon()
+})
+//讓篩選藍出現或消失的出發方法
+const showRwdChoice = () => {
+    if(rwdBtn === true){
+        searchBg.style.display = 'block'
+        setTimeout(() => {
+            searchBg.classList.add('show');
+        }, 1);
+    }else if(rwdBtn === false){
+        searchBg.classList.remove('show');
+        setTimeout(() => {
+            searchBg.style.display = 'none'
+        }, 500);
+    }
+}
+searchBg.style.display = 'none'//預先將篩選藍禁止顯示
+//加號按鈕旋轉方法
+const rotateIcon = () => {
+    if(rwdBtn === true){
+        btnX.classList.add('xBtn2');
+        btnX.classList.remove('xBtn');
+    }else if(rwdBtn === false){
+        btnX.classList.add('xBtn');
+        btnX.classList.remove('xBtn2');
+    }
+}
+
+
