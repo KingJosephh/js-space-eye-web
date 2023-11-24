@@ -26,6 +26,11 @@ p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, ul, li, a {
   font-family: var(--ff);
 }
 
+body,
+html {
+  background: var(--gray-04);
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -382,13 +387,13 @@ li .menu-m:hover::before {
 .search-bar-container {
   display: flex;
   align-items: center;
-  position: relative;
+  position: absolute;
 }
 
 .search-bar {
   border-radius: 56px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 8px 8px 8px 24px;
   border: none;
 }
@@ -415,8 +420,8 @@ li .menu-m:hover::before {
   padding: 8px;
   cursor: pointer;
   display: flex;
-  position: relative;
-  right: 50px;
+  position: absolute;
+  right: 8px;
   border: none;
 }
 
@@ -428,8 +433,8 @@ li .menu-m:hover::before {
   padding: 8px;
   cursor: pointer;
   display: flex;
-  position: relative;
-  right: 40px;
+  position: absolute;
+  right: 8px;
   border: none;
 }
 
@@ -920,6 +925,74 @@ li .menu-m:hover::before {
 #map {
   width: 100%;
   height: 620px;
+}
+
+body, html {
+  background: var(--gray-04) !important;
+}
+
+.navbar {
+  z-index: 1000;
+}
+
+.banner {
+  padding: 96px 0 140px 0;
+}
+.banner h1, .banner .h1 {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 992px) {
+  .banner h1, .banner .h1 {
+    font-size: 60px;
+  }
+}
+.banner .banner-img-mobile {
+  display: none;
+}
+.banner .banner-img {
+  position: absolute;
+}
+.banner .banner-img img {
+  position: relative;
+  top: -180px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 300px;
+  border-bottom-left-radius: 300px;
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 0 0 32px 0;
+    text-align: center;
+  }
+  .banner .banner-img img {
+    display: none;
+  }
+  .banner .banner-img-mobile {
+    display: block;
+  }
+  .banner .banner-img-mobile img {
+    width: 100%;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius: 300px;
+    padding: 16px 0 24px 12px;
+  }
+  .banner .search-bar-container {
+    /* justify-content: center; */
+    width: 90%;
+  }
+  .banner .search-bar-container .search-bar-l {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .banner {
+    padding: 96px 0 100px 0;
+  }
+  .banner h1, .banner .h1 {
+    font-size: 60px;
+  }
 }
 
 /*!
