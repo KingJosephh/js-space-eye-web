@@ -444,7 +444,8 @@ li .menu-m:hover::before {
   cursor: pointer;
   display: inline;
   position: relative;
-  margin: 15px;
+  width: 100%;
+  text-decoration: none;
 }
 
 .tab:hover {
@@ -454,10 +455,10 @@ li .menu-m:hover::before {
 .tab-l:active.tab-l::after {
   content: "";
   border-bottom: 4px solid var(--brand-01);
-  width: 128px;
+  width: 100%;
   padding-bottom: 4px;
   position: absolute;
-  left: -8px;
+  left: 0;
   bottom: -14px;
 }
 
@@ -1087,6 +1088,57 @@ header img {
   .features-main .features-intro .features-intro-item p {
     margin-bottom: 8px;
   }
+}
+
+.introCarousel {
+  /* .carousel-item-first{
+    width: 100%;
+
+    .carousel-item-img{
+      width: 400px;
+      height: 100%;
+      background-image: url(/Assests/img/introCarousel-img01.png);
+      background-repeat: no-repeat;
+    }
+    .carousel-item-main{
+      width: 400px;
+    }
+  } */
+}
+.introCarousel .introCarousel-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.introCarousel .carousel-item {
+  /* display: flex;
+  flex-direction: column; */
+}
+.introCarousel .carousel-item img {
+  width: 100%;
+}
+.introCarousel .carousel-item .carousel-item-main {
+  width: 570px;
+  height: 80%;
+  padding: 24px 40px 40px 40px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: -200px;
+  background: #fff;
+}
+.introCarousel .carousel-item .carousel-item-main .carousel-item-main-list::after {
+  content: "";
+  width: 100%;
+  margin: auto;
+  padding-bottom: 10px;
+  border-bottom: 4px solid var(--gray-02);
+}
+.introCarousel .carousel-item .carousel-item-main .carousel-item-main-list .tab {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*!

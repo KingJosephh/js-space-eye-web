@@ -4,7 +4,9 @@
   cursor: pointer;
   display: inline;
   position: relative;
-  margin: 15px;
+  //margin: 15px;
+  width: 100%;
+  text-decoration: none;
 }
 
 .tab:hover {
@@ -14,12 +16,13 @@
 .tab-l:active.tab-l::after{
   content: '';
   border-bottom: 4px solid var(--brand-01);
-  width: 128px;
+  width: 100%;
   padding-bottom: 4px;
   position: absolute;
-  left: -8px;
+  left: 0;
   bottom: -14px;
 }
+
 .tab-m:active.tab-m::after{
   content: '';
   border-bottom: 4px solid var(--brand-01);
