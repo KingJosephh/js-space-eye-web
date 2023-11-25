@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/cssFile/parkingDetail.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -21,6 +22,59 @@
             </div>
         </nav>
     </header>
+    <div class="watermark" style="display: none;" id="elementToClose">
+        <div class="main-container">
+            <div class="summary-container">
+                <div class="bottom-part">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi-x-circle" viewBox="0 0 16 16" id="closeBtn">
+                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                       <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                    <div class="word-section">
+                        <h1>訂單摘要</h1>
+                        <hr>
+                    </div>
+                    <div class="plan-section">
+                      <div class="annual-plan">
+                          <p>方案選擇: <span> 即時方案</span></p>
+                      </div>
+                      <div class="change">
+                          <a href="#">Change</a>
+                      </div>
+                    </div>
+                    <div class="plan-section">
+                        <div class="annual-plan">
+                            <p id="entryTime">進場時間: <span></span></p>
+                        </div>
+                        <div class="change">
+                            <a href="#">Change</a>
+                        </div>
+                    </div>
+                    <div class="plan-section">
+                        <div class="annual-plan">
+                            <p id="exitTime">出場時間: <span></span></p>
+                        </div>
+                        <div class="change">
+                            <a href="#">Change</a>
+                        </div>
+                    </div>
+                    <div class="plan-section">
+                        <div class="annual-plan">
+                            <p>車牌號碼: <span> ABC - 9999</span></p>
+                        </div>
+                        <div class="change">
+                            <a href="#">Change</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="btn-section">
+                        <button class="btn-payment btn" type="submit">前往結帳</button>
+                        <button class="btn-submit btn" type="submit">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="top">
             <img src="/Assests/img/parking.png" alt="parkingLogo">
@@ -48,9 +102,9 @@
             </tbody>
         </table>
         <form id="reservationForm">
-            <label for="date">入場日期:</label>
+            <label for="entryDate">入場日期:</label>
             <input type="date" id="entryDate" name="date" class="form-input" required>
-            <label for="date">離場日期:</label>
+            <label for="exitDate">離場日期:</label>
             <input type="date" id="exitDate" name="date" class="form-input" required>
         </form>
         <h1 style="text-align: center">方案選擇</h1>
