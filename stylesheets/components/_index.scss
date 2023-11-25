@@ -1,5 +1,5 @@
 body,html{
-  background: var(--gray-04) !important;
+  //background: var(--gray-04);
 }
 .navbar{
   z-index: 1000;
@@ -10,12 +10,13 @@ body,html{
   padding: 96px 0 140px 0;
   h1{
     margin-bottom: 40px;
+    font-size: 60px;
   }
-  @media screen and (min-width: 992px) {
+  /* @media screen and (min-width: 992px) {
     h1 {
       font-size: 60px;
     }
-  }
+  } */
   .banner-img-mobile {
     display: none;
   }
@@ -30,6 +31,9 @@ body,html{
       border-top-left-radius: 300px;
       border-bottom-left-radius: 300px;
     }
+  }
+  @media screen and (max-width: 992px) {
+    padding: 96px 0 100px 0;
   }
   @media screen and (max-width: 768px) {
     padding: 0 0 32px 0;
@@ -57,10 +61,5 @@ body,html{
     }
   }
   
-  @media screen and (max-width: 992px){
-    padding: 96px 0 100px 0;
-    h1 {
-      font-size: 60px;
-    }
-  }
+  
 }

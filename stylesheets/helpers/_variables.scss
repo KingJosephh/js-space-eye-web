@@ -318,7 +318,7 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
-  "light-gray": #eaeaea,
+  "light-gray": #F2F2F2,
   "light-green": #93FF00,
   "green-black": #1E1E1E
 ) !default;
@@ -439,7 +439,7 @@ $position-values: (
 
 $body-text-align:           null !default;
 $body-color:                $gray-900 !default;
-$body-bg:                   $white !default;
+$body-bg:                   #F2F2F2 !default;
 
 $body-secondary-color:      rgba($body-color, .75) !default;
 $body-secondary-bg:         $gray-200 !default;
