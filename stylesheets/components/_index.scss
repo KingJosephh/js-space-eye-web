@@ -1,43 +1,49 @@
-body,html{
-  //background: var(--gray-04);
-}
-.navbar{
-  z-index: 1000;
+body {
+  overflow-x: hidden;
 }
 
+header{
+  position: relative;
+  .navbar{
+    z-index: 1000;
+  }
+  img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    max-width: 996px;//996, 890
+    max-height: 560px;//560, 500
+  }
+  @media screen and (max-width: 768px){
+    img{
+      display: none;
+    }
+  }
+}
 
 .banner{
-  padding: 96px 0 140px 0;
+  padding: 96px 0 280px 0;
   h1{
     margin-bottom: 40px;
     font-size: 60px;
   }
-  /* @media screen and (min-width: 992px) {
-    h1 {
-      font-size: 60px;
-    }
-  } */
   .banner-img-mobile {
     display: none;
   }
-  .banner-img{
-    position: absolute;
-    img{
-      position: relative;
-      top: -180px;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      border-top-left-radius: 300px;
-      border-bottom-left-radius: 300px;
+  @media screen and (max-width: 1200px) {
+    padding: 96px 0 200px 0;
+    .search-bar-l{
+      width: 350px;
     }
   }
-  @media screen and (max-width: 992px) {
-    padding: 96px 0 100px 0;
-  }
   @media screen and (max-width: 768px) {
-    padding: 0 0 32px 0;
+    padding: 0 0 76px 0;
     text-align: center;
+    h1 {
+      margin-bottom: 16px;
+      font-size: 44px;
+    }
     .banner-img {
       img{
         display: none;
@@ -62,4 +68,104 @@ body,html{
   }
   
   
+}
+
+/* 分開寫是為了背景圖不要包到標題 */
+.features-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 12px;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  .col {
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    padding: 32px 12px 24px 12px;
+  }
+}
+.features-main{
+  padding-top: 50px;
+  padding-bottom: 190px;
+  background-image: url(/Assests/img/features-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  
+  .features-intro{
+    color: #fff;
+    text-align: center;
+    
+    .features-intro-title{
+      color: var(--brand-02);
+    }
+
+    & > div{
+      padding: 0 12px;
+    }
+
+    .features-intro-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* icon */
+      .features-intro-item-icon{
+        margin-bottom: 20px;
+      }
+      div:nth-of-type(2) { 
+          /* line */
+          img {
+            width: 100%;
+            padding: 32px 0;
+          }
+        }
+      p{
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px){
+    /* padding-top: 40px;
+    padding-bottom: 130px; */
+  }
+  @media screen and (max-width: 992px){
+    padding-top: 40px;
+    padding-bottom: 32px;
+    background-color: var(--gray-01);
+  }
+  @media screen and (max-width: 768px){
+    .features-intro{
+      gap: 24px;
+      &>div {
+          padding: 0 12px;
+        }
+
+      .features-intro-item {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        text-align: left;
+        gap: 16px;
+    
+        div:nth-of-type(2) {
+          width: 100%;
+          /* line */
+          img{
+            width: 100%;
+            padding: 16px 0;
+          }
+        }
+        p {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
 }
