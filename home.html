@@ -210,34 +210,71 @@
       </div>
       <div id="introCarouselInterval" class="carousel slide"><!--  data-bs-ride="carousel" -->
         <div class="carousel-inner">
-          <div class="carousel-item active container" data-bs-interval="">
+          <div class="carousel-item active container" data-bs-interval="3000">
             <div class="row d-flex justify-content-center align-items-center">
-              <div class="col-md-8">
+              <div class="col-lg-8">
                 <img src="/Assests/img/introCarousel-img01.png" class="" alt="...">
               </div>
-              <div class="col-md-4 carousel-item-main">
+              <div class="col-lg-4 carousel-item-main">
                 <div class="row carousel-item-main-list">
-                  <a class="col-4 tab tab-l">長期租約方案</a>
-                  <a class="col-4 tab tab-l">註冊</a>
-                  <a class="col-4 tab tab-l">查找停車場</a>
+                  <a class="col-4 tab tab-l active">長期租約方案</a>
+                  <a class="col-4 tab tab-l" data-bs-target="#introCarouselInterval" data-bs-slide="next">註冊</a>
+                  <a class="col-4 tab tab-l" data-bs-target="#introCarouselInterval" data-bs-slide="prev">查找停車場</a>
                 </div>
                 <div class="row">
-                  <div class="col">
-                    <div class="fs-3">了解長期租約方案</div>
+                  <div class="col carousel-item-main-text">
+                    <div class="fs-3 fw-bold">了解長期租約方案</div>
                     <p>專為您的便利度身打造!選擇我們的長期租用停車格方案,享受超值優惠,讓停車變得輕鬆又經濟。長期停車,無壓力,保證您的車位在期限內永久使用。現在就加入我們,體驗輕鬆停車的滿足感!</p>
                     <button class="btn btn-dark-solid-l">方案比較</button>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="carousel-item container" data-bs-interval="3000">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-lg-8">
+                <img src="/Assests/img/introCarousel-img02.png" class="" alt="...">
+              </div>
+              <div class="col-lg-4 carousel-item-main">
+                <div class="row carousel-item-main-list">
+                  <a class="col-4 tab tab-l" data-bs-target="#introCarouselInterval" data-bs-slide="prev">長期租約方案</a>
+                  <a class="col-4 tab tab-l active">註冊</a>
+                  <a class="col-4 tab tab-l" data-bs-target="#introCarouselInterval" data-bs-slide="next">查找停車場</a>
+                </div>
+                <div class="row">
+                  <div class="col carousel-item-main-text">
+                    <div class="fs-3 fw-bold">領取首次註冊優惠券</div>
+                    <p>註冊,掌握更多功能!成為我們的會員,您可以輕鬆預約車位、收藏喜愛的停車場,還能享受線上支付和金額儲值的便捷服務。立即註冊,開始您的智慧停車之旅!</p>
+                    <button class="btn btn-dark-solid-l">立即註冊</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             
           </div>
-          <div class="carousel-item" data-bs-interval="">
-            <img src="/Assests/img/introCarousel-img02.png" class="d-block" alt="...">
+          <div class="carousel-item container" data-bs-interval="3000">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-lg-8">
+                <img src="/Assests/img/introCarousel-img03.png" class="" alt="...">
+              </div>
+              <div class="col-lg-4 carousel-item-main">
+                <div class="row carousel-item-main-list">
+                  <a class="col-4 tab tab-l" data-bs-target="#introCarouselInterval" data-bs-slide="next">長期租約方案</a>
+                  <a class="col-4 tab tab-l" data-bs-target="#introCarouselInterval" data-bs-slide="prev">註冊</a>
+                  <a class="col-4 tab tab-l active">查找停車場</a>
+                </div>
+                <div class="row">
+                  <div class="col carousel-item-main-text">
+                    <div class="fs-3 fw-bold">查找停車場</div>
+                    <p>停車煩惱?我們解決!使用我們的App,輕鬆找尋可用車位。即時位置、實時可用性,簡單預訂。快速、便捷,給您無壓力的停車體驗。開始您的無煩停車之旅吧!</p>
+                    <button class="btn btn-dark-solid-l">立即搜尋</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="carousel-item" data-bs-interval="">
-            <img src="/Assests/img/introCarousel-img03.png" class="d-block" alt="...">
-          </div>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#introCarouselInterval" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -251,6 +288,59 @@
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="container-md">
+      <div class="reviews-title">
+        <div class="fs-2 fw-bold">聽聽用戶怎麼說</div>
+        <img src="/Assests/icon/Vector-bend.png" alt="">
+      </div>
+      <div class="row reviews-body">
+        <div class="col-4 card">
+          <div class="card-user">
+            <img class="card-user-img" src="/Assests/img/reviewsUser-01.png"></img>
+            <div>Paul</div>
+          </div>
+          <ul class="card-rate-stars">
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+          </ul>
+          <p>在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
+        </div>
+        <div class="col-4 card">
+          <div class="card-user">
+            <img class="card-user-img" src="/Assests/img/reviewsUser-01.png"></img>
+            <div>Paul</div>
+          </div>
+          <ul class="card-rate-stars">
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+          </ul>
+          <p>在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
+        </div>
+        <div class="col-4 card">
+          <div class="card-user">
+            <img class="card-user-img" src="/Assests/img/reviewsUser-01.png"></img>
+            <div>Paul</div>
+          </div>
+          <ul class="card-rate-stars">
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+          </ul>
+          <p>在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
+        </div>
+      </div>
+    </div>
+  </section>
   
 
   <!-- components部分，之後用webpack處理 -->
