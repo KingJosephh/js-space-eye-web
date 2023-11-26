@@ -246,26 +246,133 @@ header{
 }
 
 .reviews{
-  .reviews-title{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: var(--gray-01);
+  @media screen and (max-width: 768px){
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .reviews-title-container{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 40px;
+    align-items: center;
+    margin: 0 auto 40px auto;
+    @media screen and (max-width: 768px){
+      margin-bottom: 24px;
+    }
+    .reviews-title{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+    .reviews-controller{
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      button{
+        border: none;
+      }
+      img{
+        padding: 8px;
+      }
+    }
   }
   .reviews-body{
     gap: 24px;
-    .card{
-      //width: 100%;
-      padding: 24px 16px;
+    width: 100%;
+    margin: auto;
+    .card-cus{
+      padding: 24px;
       background: #fff;
       border-radius: 16px;
       border: none;
+      @media screen and (max-width: 768px){
+        padding: 16px;
+      }
+      .card-user{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: var(--fw-medium-500);
+      }
+      .card-rate-stars{
+        display: flex;
+        gap: 4px;
+        padding-left: 0;
+        padding-top: 12px;
+        padding-bottom: 16px;
+        margin-bottom: 0;
+        @media screen and (max-width: 768px){
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+      p{
+        margin-bottom: 0;
+      }
     }
-    .card-user{
+  }
+}
+
+.questions{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  @media screen and (max-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .questions-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .questions-title{
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      border-radius: 134px;
+      padding-top: 102px;
+      padding-bottom: 102px;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), url(/Assests/img/questions-bg-01.png), lightgray 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      justify-content: center;
+      @media screen and (max-width: 768px){
+        height: 160px;
+      }
     }
-    .card-rate-stars{
-      display: flex;
+    .questions-body{
+      .accordion{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        @media screen and (max-width: 768px){
+          gap: 12px;
+        }
+        .accordion-item{
+          background: #fff;
+          padding: 16px 24px 24px 24px;
+          border: none;
+          border-radius: 24px;
+          @media screen and (max-width: 768px) {
+            padding: 16px 16px 16px 16px;
+          }
+          img{
+            width: 100%;
+          }
+          .accordion-button{
+            padding: 7.5px 0;
+            box-shadow: none;
+          }
+          .accordion-body{
+            padding: 0;
+            color: var(--gray-02);
+          }
+        }
+      }
     }
   }
 }
