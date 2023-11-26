@@ -1,5 +1,102 @@
+const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+// 監聽視窗變化移除黑底樣式
+/* window.addEventListener('resize', e => {
+  let screenWidth = document.body.offsetWidth;
+  if (screenWidth > 768){
+    // 回到原樣式
+    navbar.classList.remove('open-bg-color');
+  }
+  else if (screenWidth <= 768) {
+    // 回到原樣式
+    if(navbarCollapse.classList.contains('show')){
+      navbar.classList.add('open-bg-color');
+    }
+  }
+}); */
+
+// 監聽hamburger點擊新增與移除黑底樣式
+/* hamburger.addEventListener('click', e => {
+  console.log(navbarCollapse.classList);
+  // navbarCollapse 打開跟關閉，classList都會出現'collapsing'
+  // 用 setTimeout 是為了偵測到'show'而非'collapsing'
+  setTimeout(() => {
+    console.log('非同步事件');
+    if (navbarCollapse.classList.contains('show') || navbarCollapse.classList.contains('collapsing')) {
+      navbar.classList.add('open-bg-color');
+      navbarCollapse.classList.add('open');
+    } else if (navbarCollapse.classList.contains('open')) {
+      navbarCollapse.classList.remove('open');
+      navbar.classList.remove('open-bg-color');
+    }
+  }, 0);
+}) */
+
+
+
+// 嘗試 MutationObserver
+/* const headerNavbar = document.querySelector('#headerNavbar');
+//console.log(headerNavbar);
+// 建立 MutationObserver 實例
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    console.dir(mutation.target.classList[2]);
+    if (mutation.target.classList[2] === 'show') {
+      console.log('Class attribute modified:', observer.classList);
+    }
+  });
+});
+// 設定要觀察的屬性和其配置
+const config = { attributes: true, attributeFilter: ['class'] };
+// 開始觀察目標元素
+observer.observe(headerNavbar, config);
+
+const { log } = require("console"); */
+
+// 嘗試 DOMContentLoaded
+// 等待 DOM 載入完成
+/* document.addEventListener("DOMContentLoaded", function () {
+  console.log(1);
+  // 取得 Navbar 元素
+  const navbar = document.querySelector('.navbar');
+
+  // 取得 Navbar 打開事件
+  const navbarToggle = document.querySelector('.navbar-toggler');
+  navbarToggle.addEventListener('click', function () {
+    console.log(2);
+    // 在這裡加上判斷是否為打開狀態，例如透過 classList.contains('show')
+    // 這邊假設使用 Bootstrap 5，Navbar 打開時會添加 'show' 這個 class
+    setTimeout(() => {
+      console.log('非同步事件');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        console.log(3);
+      // 如果是打開狀態，則修改背景色
+        navbar.classList.add('open-bg-color');
+      } else {
+      // 如果是關閉狀態，則移除背景色
+        navbar.classList.remove('open-bg-color');
+        }
+    }, 1000);
+
+    });
+}); */
+
+
+// 以下為之前手刻樣式變化，留存為殘考用，目前已改成套用BS的navbar
+//let navbar = document.querySelector('.navbar');
+
+//修改navbar背景色與logo顏色
+/* window.addEventListener('click', e => {
+  if (headerNavbar.classList[2] === 'show'){
+    console.log(1);
+  }
+  
+}); */
+
 // 監聽視窗寬度，調整header樣式
-window.addEventListener('resize',e=>{
+/* window.addEventListener('resize',e=>{
   let screenWidth = document.body.offsetWidth;
   headerStyleChange(screenWidth);
 });
@@ -50,7 +147,7 @@ function headerStyleChange(screenWidth){
         </ul>
       </nav>
     `;
-    /* 監聽漢堡點擊動作 */
+    監聽漢堡點擊動作
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     const svg = document.querySelectorAll('header > div > svg');
@@ -155,4 +252,4 @@ function headerStyleChange(screenWidth){
       </nav>
     </div>
   `};
-};
+}; */
