@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="stylesheets/all.css">
 </head>
 <body>
-  <header>
+  <header id="header">
     <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
       <div class="container-md">
         <!-- logo -->
@@ -208,7 +208,7 @@
         <div class="fs-2 fw-bold">輕鬆預定,立即享受</div>
         <img src="/Assests/icon/Vector-bend.png" alt="">
       </div>
-      <div id="introCarouselInterval" class="carousel slide"><!--  data-bs-ride="carousel" -->
+      <div id="introCarouselInterval" class="carousel slide" data-bs-ride="carousel"><!--  data-bs-ride="carousel" -->
         <div class="carousel-inner">
           <div class="carousel-item active container" data-bs-interval="3000">
             <div class="row d-flex justify-content-center align-items-center">
@@ -291,57 +291,224 @@
   <!-- REVIEWS -->
   <section class="reviews">
     <div class="container-md">
-      <div class="reviews-title">
-        <div class="fs-2 fw-bold">聽聽用戶怎麼說</div>
-        <img src="/Assests/icon/Vector-bend.png" alt="">
+      <div class="row reviews-title-container">
+        <div class="col reviews-title">
+          <div class="fs-2 fw-bold">聽聽用戶怎麼說</div>
+          <img src="/Assests/icon/Vector-bend.png" alt="">
+        </div>
+        <div class="col reviews-controller">
+          <button class="" id="prev"><img src="/Assests/icon/icon-arrow-left.png" alt="" srcset=""></button>
+          <button class="" id="next"><img src="/Assests/icon/icon-arrow-right.png" alt="" srcset=""></button>
+        </div>
       </div>
       <div class="row reviews-body">
-        <div class="col-4 card">
+        <div class="col card-cus">
           <div class="card-user">
             <img class="card-user-img" src="/Assests/img/reviewsUser-01.png"></img>
-            <div>Paul</div>
+            <div class="fs-5">Paul</div>
           </div>
           <ul class="card-rate-stars">
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
             <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
           </ul>
-          <p>在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
+          <p class="fs-6">在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
         </div>
-        <div class="col-4 card">
+        <div class="col d-none d-sm-block card-cus">
           <div class="card-user">
-            <img class="card-user-img" src="/Assests/img/reviewsUser-01.png"></img>
-            <div>Paul</div>
+            <img class="card-user-img" src="/Assests/img/reviewsUser-02.png"></img>
+            <div class="fs-5">Tommy</div>
           </div>
           <ul class="card-rate-stars">
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
           </ul>
-          <p>在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
+          <p class="fs-6">即時顯示是否有空位真的很方便~節省了好多找車位的時間</p>
         </div>
-        <div class="col-4 card">
+        <div class="col d-none d-md-block card-cus">
           <div class="card-user">
-            <img class="card-user-img" src="/Assests/img/reviewsUser-01.png"></img>
-            <div>Paul</div>
+            <img class="card-user-img" src="/Assests/img/reviewsUser-03.png"></img>
+            <div class="fs-5">Jessica</div>
           </div>
           <ul class="card-rate-stars">
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
-            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-00.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
+            <li><img class="card-user-img" src="/Assests/icon/icon-user-rate-01.png"></img></li>
           </ul>
-          <p>在網站提前租了一週停車位,隨時停車都沒有被佔位的問題，價格也挺優惠的!</p>
+          <p class="fs-6">年方案的價格比我自己打去問的價格便宜欸</p>
         </div>
       </div>
     </div>
   </section>
   
+  <!-- QUESTIONS -->
+  <section class="questions">
+    <div class="container-md questions-container">
+      <div class="questions-title">
+        <div class="fs-2 fw-bold">常見問題</div>
+        <img src="/Assests/icon/Vector-bend.png" alt="">
+      </div>
+      <div class="questions-body">
+        <div class="row accordion" id="accordion">
+          <div class="col-10 accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                我可以提前預訂停車位嗎?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordion">
+              <img src="/Assests/icon/line-gray.png" alt="" srcset="">
+              <div class="accordion-body">
+                是的，您可以提前預訂停車位。這樣就可以確保在您需要停車的時候有一個可用的停車位。<br>
+                您可以通過以下方式進行預訂停車位:<br>
+                在線預訂:許多停車場和停車服務提供在其網站或應用程序上進行預訂的選項。您可以選擇日期、時間和位置,然後支付預訂費用。
+              </div>
+            </div>
+          </div>
+          <div class="col-10 accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                這個應用程式支援哪些支付方式?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordion">
+              <img src="/Assests/icon/line-gray.png" alt="" srcset="">
+              <div class="accordion-body">
+                使用信用卡，超商付款。
+              </div>
+            </div>
+          </div>
+          <div class="col-10 accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                aria-expanded="true" aria-controls="collapseThree">
+                應用程式提供停車位的實時可用性信息嗎?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordion">
+              <img src="/Assests/icon/line-gray.png" alt="" srcset="">
+              <div class="accordion-body">
+                是的,提供以下即時性信息:<br>
+                1.停車位可用性地圖:這些應用程式通常會顯示一個交互式地圖,上面標有可用的停車位,並使用不同的標誌或顏色來表示每個停車位的狀態(空閒、已預訂、已占用等)。<br>
+                2.即時價格和預訂:您可以查看不同停車場的即時價格,並在需要時進行預訂。這使您可以比較不同選項,找到最適合您需求和預算的停車位。
+              </div>
+            </div>
+          </div>
+          <div class="col-10 accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                aria-expanded="true" aria-controls="collapseFour">
+                是否有評價或評論功能，讓用戶分享停車經驗?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordion">
+              <img src="/Assests/icon/line-gray.png" alt="" srcset="">
+              <div class="accordion-body">
+                有的，在首頁有許多用戶者提供使用我們網站心得。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- 斜線條 -->
+    <img src="/Assests/icon/maskGroup-01.png" alt="" srcset="">
+    <div class="container-md container-footer-l">
+      <!-- 向上箭頭 -->
+      <a class="btn-up btn-up-l" href="#header">
+        <svg width="21" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.175 14.6L11 7.42501L3.825 14.6L0.5 11.3333L11 0.833344L21.5 11.3333L18.175 14.6Z" fill="#1E1E1E" />
+        </svg>
+      </a>
+      <!-- 內容區塊 -->
+      <div class="footer-content">
+        <!-- logo -->
+        <img src="/Assests/img/Logo-white.png" alt="" srcset="">
+        <p class="footer-content-p-l fs-4">現在就與我們聯絡!</p>
+        <!-- btn -->
+        <div class="footer-content-button-l">
+          <!-- email -->
+          <button class="btn-mail btn-mail-l">
+            <!-- icon -->
+            <div class="icon-mail-l">
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L2 4V14H18V4L10 9ZM10 7L18 2H2L10 7ZM2 4V2V14V4Z"
+                  fill="#1E1E1E" />
+              </svg>
+            </div>
+            <div class="btn-mail-part-l">
+              <h5 class="btn-mail-title-l">歡迎免費諮詢</h5>
+              <!-- 箭頭 -->
+              <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                  height="24">
+                  <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_2910_7237)">
+                  <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
+                </g>
+              </svg>
+            </div>
+          </button>
+          <!-- phone -->
+          <button class="btn-mail btn-mail-l">
+            <!-- icon -->
+            <div class="icon-mail-l">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_2910_7143" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                  height="24">
+                  <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_2910_7143)">
+                  <path
+                    d="M19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
+                    fill="#1E1E1E" />
+                </g>
+              </svg>
+            </div>
+            <div class="btn-mail-part-l">
+              <h5 class="btn-mail-title-l">02-2326-8575</h5>
+              <!-- 箭頭 -->
+              <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                  height="24">
+                  <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_2910_7237)">
+                  <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
+                </g>
+              </svg>
+            </div>
+          </button>
+        </div>
+        <!-- copyright -->
+        <span class="footer-content-copyright-l fs-16">© 2023 SPACE EYE</span>
+      </div>
+    </div>
+    <!-- 斜線條 -->
+    <img src="/Assests/icon/maskGroup-02.png" alt="" srcset="">
+  </footer>
+
 
   <!-- components部分，之後用webpack處理 -->
   <script src="stylesheets/components/buttons/button.js"></script>
