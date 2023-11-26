@@ -14,9 +14,11 @@ const btnBgMove2 = document.querySelector('.btn-bg-move2');
 const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
-const showMapCard =document.querySelector('#showMapCard')
+const showMapCard =document.querySelector('#showMapCard');
+const cardBody = document.querySelector('.card-body');
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
+const mapLocated = document.querySelector('#map')
 const Url = 'http://localhost:3000'
 const btnNumList = 1;
 const btnNumList1 = 1;
@@ -31,14 +33,99 @@ let getParkValue = 'C01'
 let data = [];
 let filteredMapData = [];
 let saveLikePark = [];
-
+let locatedX = 24.162139;
+let locatedY = 120.647021;
 //leaflet資料
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map').setView([24.162139, 120.647021], 17);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+var greenIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var greyIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+// L.marker([24.162139, 120.647021]).addTo(map)
+//     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+//     .openPopup();
+//將資料渲染到地圖上
+// 在创建地图后，将图层保存到一个变量中
+var markersLayer = L.layerGroup().addTo(map);
+
+const dataToMap = () => {
+    markersLayer.clearLayers();
+    for (let i = 0; i < filteredMapData.length; i++) {
+        let dataDetail = filteredMapData[i]
+        let marker;
+        locatedX = filteredMapData[1].location.latitude,
+        locatedY = filteredMapData[1].location.longitude
+        if (dataDetail.space === '0') {
+            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
+                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title">${dataDetail.parkName}</h5>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+            </div>
+            <div class="row">
+                <div class="col-5">地址:</div>
+                <div class="col-7">${dataDetail.address}</div>
+            </div>
+            <div class="row">
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7">${dataDetail.space}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            </div>
+        </div>
+    </div>`);
+        } else if (dataDetail.space !== '0') {
+            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
+                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title">${dataDetail.parkName}</h5>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+            </div>
+            <div class="row">
+                <div class="col-5">地址:</div>
+                <div class="col-7">${dataDetail.address}</div>
+            </div>
+            <div class="row">
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7">${dataDetail.space}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            </div>
+        </div>
+    </div>`);
+        }
+        markersLayer.addLayer(marker);
+    }
+    // console.log(locatedX, locatedY)
+    map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
+}
+//測試地圖上卡片監聽事件(目前無效)
+// mapLocated.addEventListener('click' , (e) => {
+//     console.log(e.target)
+// })
 //搜尋條件與停車場一覽監聽
     btn1.addEventListener('click', () => {
         moveBtn(btn1)
@@ -57,6 +144,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         let road = roadOption.value;
         getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
         render(filteredMapData)
+        // dataToMap()
     })
     //車位類別按鈕監聽
     btn21.addEventListener('click', () => {
@@ -88,6 +176,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
         render(filteredMapData)
         moveBtn1(btn11)
+        // dataToMap()
     })
     btn12.addEventListener('click' , () => {
         let area = areaOption.value;
@@ -96,6 +185,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
         render(filteredMapData)
         moveBtn1(btn12)
+        // dataToMap()
     })
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
@@ -117,6 +207,9 @@ axios.get(`http://localhost:3000/600/users/${usersId}`, {
         showMapCard.addEventListener('click' ,(e) => {
             addLikeParkToLocal(e)
         })
+        mapLocated.addEventListener('click' , (e) => {
+            addLikeParkToLocal(e)
+        })
         parsedLocalParkData()
         const data = response.data;
         console.log('从受保护的端点获取的数据:', data);
@@ -127,7 +220,13 @@ axios.get(`http://localhost:3000/600/users/${usersId}`, {
             if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
                 alert('請先登入')
             }
-            console.log(e.target)
+        })
+        //地圖上卡片監聽事件
+        mapLocated.addEventListener('click' , (e) => {
+            let likeBtn = e.target
+            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+                alert('請先登入')
+            }
         })
         console.error('请求受保护的端点失败:', error);
     });
@@ -205,7 +304,7 @@ const addLikeParkToLocal = (e) => {
 }
 //控制彈出視窗(modal)
 const showAllPark = document.querySelector('#showAllParkModel')
-    showAllPark.addEventListener('show.bs.modal' , function (e) {
+showAllPark.addEventListener('show.bs.modal' , function (e) {
     const showButton = e.relatedTarget
     const showPark = showButton.dataset.bsShowPark
     const showType = showButton.dataset.bsShowType
@@ -439,14 +538,10 @@ btn32Rwd.addEventListener('click', () => {
 });
 //路邊停車與停車場按鈕監聽
 btn11Rwd.addEventListener('click' , () => {
-    let area = areaOptionRwd.value;
-    let road = roadOptionRwd.value;
     getParkValue = btn11Rwd.value
     moveBtn1Rwd(btn11Rwd)
 })
 btn12Rwd.addEventListener('click' , () => {
-    let area = areaOptionRwd.value;
-    let road = roadOptionRwd.value;
     getParkValue = btn12Rwd.value
     moveBtn1Rwd(btn12Rwd)
 })
@@ -506,6 +601,10 @@ const showRwdChoice = () => {
             searchBg.classList.add('show');
         }, 1);
     }else if(rwdBtn === false){
+        let area = areaOptionRwd.value;
+        let road = roadOptionRwd.value;
+        getMapDetailRwd(area,road,getType,getSpaceOrNot,getParkValue)
+        dataToMap()
         searchBg.classList.remove('show');
         setTimeout(() => {
             searchBg.style.display = 'none'
@@ -523,5 +622,13 @@ const rotateIcon = () => {
         btnX.classList.remove('xBtn2');
     }
 }
-
+const getMapDetailRwd = (a,b,c,d,e) => {
+    filteredMapData = data.filter((item) => {
+        if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && (d === 'haveSpace' && item.space !== "0") && item.categoryId === e){
+            return item
+        }else if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'all' && item.categoryId === e){
+            return item
+        }
+    })
+}
 //寫篩選停車場資訊與渲染到地圖上
