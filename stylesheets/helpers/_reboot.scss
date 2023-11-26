@@ -1,0 +1,35 @@
+body {
+  margin: 0; // 1
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #1E1E1E;
+  background-color: var(--#{$prefix}body-bg);
+}
+%heading {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #1E1E1E;
+}
+
+h1 {
+  @extend %heading;
+}
+
+h2 {
+  @extend %heading;
+}
+
+h3 {
+  @extend %heading;
+}
+
+h4 {
+  @extend %heading;
+}
+
+h5 {
+  @extend %heading;
+}
+
+h6 {
+  @extend %heading;
+}
+

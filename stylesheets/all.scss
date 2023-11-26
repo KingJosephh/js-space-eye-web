@@ -2,7 +2,6 @@
 @import "../stylesheets/helpers/variables";
 @import "../stylesheets/helpers/maps";
 @import "../stylesheets/helpers/utilities";
-@import "../stylesheets/helpers/accordion";
 @import "../stylesheets/components/cusVariables";
 @import "../stylesheets/components/reset";
 @import "../stylesheets/components/utilitie";
@@ -18,3 +17,5 @@
 @import "../stylesheets/components/findSpace";
 @import "../stylesheets/components/index";
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../stylesheets/helpers/accordion";
+@import "../stylesheets/helpers/reboot";

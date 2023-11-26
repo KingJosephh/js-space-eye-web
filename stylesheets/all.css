@@ -1,18 +1,4 @@
 @charset "UTF-8";
-.accordion-button {
-  color: var(--gray-01) !important;
-  background-color: #fff;
-  font-size: 1.25rem !important;
-}
-@media screen and (max-width: 768px) {
-  .accordion-button {
-    font-size: 1rem !important;
-  }
-}
-.accordion-button:not(.collapsed) {
-  background-color: #fff;
-}
-
 :root {
   /* FONT */
   --ff: "Noto Sans TC", sans-serif;
@@ -1276,6 +1262,7 @@ header img {
   padding: 16px 24px 24px 24px;
   border: none;
   border-radius: 24px;
+  box-shadow: 4px 4px 24px 0px rgba(0, 0, 0, 0.04);
 }
 @media screen and (max-width: 768px) {
   .questions .questions-container .questions-body .accordion .accordion-item {
@@ -5457,6 +5444,7 @@ textarea.form-control-lg {
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-sm .navbar-toggler {
     display: none;
@@ -5504,6 +5492,7 @@ textarea.form-control-lg {
   .navbar-expand-md .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-md .navbar-toggler {
     display: none;
@@ -5551,6 +5540,7 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-lg .navbar-toggler {
     display: none;
@@ -5598,6 +5588,7 @@ textarea.form-control-lg {
   .navbar-expand-xl .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-xl .navbar-toggler {
     display: none;
@@ -5645,6 +5636,7 @@ textarea.form-control-lg {
   .navbar-expand-xxl .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-xxl .navbar-toggler {
     display: none;
@@ -5691,6 +5683,7 @@ textarea.form-control-lg {
 .navbar-expand .navbar-collapse {
   display: flex !important;
   flex-basis: auto;
+  justify-content: flex-end;
 }
 .navbar-expand .navbar-toggler {
   display: none;
@@ -13556,4 +13549,29 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.accordion-button {
+  color: var(--gray-01) !important;
+  background-color: #fff;
+  font-size: 1.25rem !important;
+}
+@media screen and (max-width: 768px) {
+  .accordion-button {
+    font-size: 1rem !important;
+  }
+}
+.accordion-button:not(.collapsed) {
+  background-color: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  color: #1E1E1E;
+  background-color: var(--bs-body-bg);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #1E1E1E;
 }/*# sourceMappingURL=all.css.map */
