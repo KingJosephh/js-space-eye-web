@@ -90,7 +90,7 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-between">
             <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="">長期方案</button>
             </div>
         </div>
     </div>`);
@@ -220,6 +220,9 @@ axios.get(`http://localhost:3000/600/users/${usersId}`, {
             if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
                 alert('請先登入')
             }
+            // if(likeBtn.textContent === '長期方案'){
+            //     console.log(likeBtn)
+            // }
         })
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
