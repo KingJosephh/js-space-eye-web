@@ -292,6 +292,12 @@ footer [src="Assests/icon/maskGroup-02.png"] {
   .navbar-nav .nav-item {
     padding: 14px 0 14px 16px;
   }
+  .navbar-brand {
+    width: 176px;
+  }
+  .navbar-brand img {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 768px) {
   button.btn-light-solid-m {
@@ -906,7 +912,7 @@ header .banner-bg {
   max-height: 560px;
 }
 @media screen and (max-width: 768px) {
-  header img {
+  header .banner-bg {
     display: none;
   }
 }
@@ -931,7 +937,7 @@ header .banner-bg {
 }
 @media screen and (max-width: 768px) {
   .banner {
-    padding: 0 0 76px 0;
+    padding: 0 0 96px 0;
     text-align: center;
   }
   .banner h1, .banner .h1 {
@@ -1004,6 +1010,9 @@ header .banner-bg {
   /* icon */
 }
 .features-main .features-intro .features-intro-item .features-intro-item-icon {
+  padding: 0;
+}
+.features-main .features-intro .features-intro-item .features-intro-item-icon .features-intro-item-icon-img {
   margin-bottom: 20px;
 }
 .features-main .features-intro .features-intro-item div:nth-of-type(2) {
@@ -1024,6 +1033,9 @@ header .banner-bg {
   }
 }
 @media screen and (max-width: 768px) {
+  .features-main {
+    padding-top: 24px;
+  }
   .features-main .features-intro {
     gap: 24px;
   }
@@ -1036,6 +1048,12 @@ header .banner-bg {
     align-items: start;
     text-align: left;
     gap: 16px;
+  }
+  .features-main .features-intro .features-intro-item .features-intro-item-icon {
+    padding: 0 16px 0 0;
+  }
+  .features-main .features-intro .features-intro-item .features-intro-item-icon .features-intro-item-icon-img {
+    width: 48px;
   }
   .features-main .features-intro .features-intro-item div:nth-of-type(2) {
     width: 100%;
@@ -1245,6 +1263,8 @@ header .banner-bg {
 @media screen and (max-width: 768px) {
   .questions .questions-container .questions-title {
     height: 160px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 .questions .questions-container .questions-body .accordion {

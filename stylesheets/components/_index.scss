@@ -16,7 +16,7 @@ header{
     max-height: 560px;//560, 500
   }
   @media screen and (max-width: 768px){
-    img{
+    .banner-bg{
       display: none;
     }
   }
@@ -38,7 +38,7 @@ header{
     }
   }
   @media screen and (max-width: 768px) {
-    padding: 0 0 76px 0;
+    padding: 0 0 96px 0;
     text-align: center;
     h1 {
       margin-bottom: 16px;
@@ -116,7 +116,10 @@ header{
       align-items: center;
       /* icon */
       .features-intro-item-icon{
-        margin-bottom: 20px;
+        padding: 0;
+        .features-intro-item-icon-img{
+          margin-bottom: 20px;
+        }
       }
       div:nth-of-type(2) { 
           /* line */
@@ -137,6 +140,7 @@ header{
     background-color: var(--gray-01);
   }
   @media screen and (max-width: 768px){
+    padding-top: 24px;
     .features-intro{
       gap: 24px;
       &>div {
@@ -149,7 +153,13 @@ header{
         align-items: start;
         text-align: left;
         gap: 16px;
-    
+        .features-intro-item-icon {
+          padding: 0 16px 0 0;
+      
+          .features-intro-item-icon-img{
+            width: 48px;
+          }
+          }
         div:nth-of-type(2) {
           width: 100%;
           /* line */
@@ -342,6 +352,8 @@ header{
       justify-content: center;
       @media screen and (max-width: 768px){
         height: 160px;
+        padding-top: 60px;
+        padding-bottom: 60px;
       }
     }
     .questions-body{
