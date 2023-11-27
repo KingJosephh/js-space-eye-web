@@ -217,12 +217,12 @@ axios.get(`http://localhost:3000/600/users/${usersId}`, {
     .catch((error) => {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
-            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
-            }
-            // if(likeBtn.textContent === '長期方案'){
-            //     console.log(likeBtn)
+            // if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+            //     alert('請先登入')
             // }
+            if(likeBtn.textContent === '長期方案'){
+                console.log(likeBtn)
+            }
         })
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
