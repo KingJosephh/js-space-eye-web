@@ -23,7 +23,7 @@ header{
 };
 
 .banner{
-  padding: 96px 0 280px 0;
+  padding: 96px 0 330px 0;
   h1{
     margin-bottom: 40px;
     font-size: 60px;
@@ -58,16 +58,17 @@ header{
         padding: 16px 0 24px 12px;
       }
     }
-    .search-bar-container{
-      /* justify-content: center; */
-      width: 90%;
-      .search-bar-l{
-        width: 100%;
+    .search-bar-part {
+      display: flex;
+      justify-content: center;
+      .search-bar-container{
+        width: 90%;
+        .search-bar-l{
+          width: 100%;
+        }
       }
     }
   }
-  
-  
 };
 
 /* 分開寫是為了背景圖不要包到標題 */

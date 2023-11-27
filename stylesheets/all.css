@@ -918,7 +918,7 @@ header .banner-bg {
 }
 
 .banner {
-  padding: 96px 0 280px 0;
+  padding: 96px 0 330px 0;
 }
 .banner h1, .banner .h1 {
   margin-bottom: 40px;
@@ -956,11 +956,14 @@ header .banner-bg {
     border-bottom-left-radius: 300px;
     padding: 16px 0 24px 12px;
   }
-  .banner .search-bar-container {
-    /* justify-content: center; */
+  .banner .search-bar-part {
+    display: flex;
+    justify-content: center;
+  }
+  .banner .search-bar-part .search-bar-container {
     width: 90%;
   }
-  .banner .search-bar-container .search-bar-l {
+  .banner .search-bar-part .search-bar-container .search-bar-l {
     width: 100%;
   }
 }
