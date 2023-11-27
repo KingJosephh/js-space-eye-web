@@ -173,28 +173,28 @@ footer {
   background: var(--gray-01);
   border-radius: 40px;
 }
-footer [src="/Assests/icon/maskGroup-01.png"],
-footer [src="/Assests/icon/maskGroup-02.png"] {
+footer [src="Assests/icon/maskGroup-01.png"],
+footer [src="Assests/icon/maskGroup-02.png"] {
   width: 200px;
   height: 80px;
   top: 44px;
   position: absolute;
 }
-footer [src="/Assests/icon/maskGroup-01.png"] {
+footer [src="Assests/icon/maskGroup-01.png"] {
   left: 0;
 }
-footer [src="/Assests/icon/maskGroup-02.png"] {
+footer [src="Assests/icon/maskGroup-02.png"] {
   right: 0;
 }
 @media screen and (min-width: 1200px) {
-  footer [src="/Assests/icon/maskGroup-01.png"],
-  footer [src="/Assests/icon/maskGroup-02.png"] {
+  footer [src="Assests/icon/maskGroup-01.png"],
+  footer [src="Assests/icon/maskGroup-02.png"] {
     width: 354px;
   }
 }
 @media screen and (max-width: 992px) {
-  footer [src="/Assests/icon/maskGroup-01.png"],
-  footer [src="/Assests/icon/maskGroup-02.png"] {
+  footer [src="Assests/icon/maskGroup-01.png"],
+  footer [src="Assests/icon/maskGroup-02.png"] {
     display: none;
   }
 }
@@ -981,7 +981,7 @@ header .banner-bg {
 .features-main {
   padding-top: 50px;
   padding-bottom: 190px;
-  background-image: url(Assests/img/features-bg.png);
+  background-image: url(../../Assests/img/features-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -1236,7 +1236,7 @@ header .banner-bg {
   border-radius: 134px;
   padding-top: 102px;
   padding-bottom: 102px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), url(Assests/img/questions-bg-01.png), lightgray 50%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), url(../../Assests/img/questions-bg-01.png), lightgray 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -13562,10 +13562,9 @@ textarea.form-control-lg {
 }
 .accordion-button:not(.collapsed) {
   background-color: #fff;
-  background-image: url(Assests/icon/icon-accordion-active.png);
 }
 .accordion-button::after {
-  background-image: url(Assests/icon/icon-accordion-normal.png);
+  background-image: url(../../Assests/icon/icon-accordion-normal.png);
 }
 
 body {
