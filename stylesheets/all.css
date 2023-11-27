@@ -13563,8 +13563,11 @@ textarea.form-control-lg {
 .accordion-button:not(.collapsed) {
   background-color: #fff;
 }
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../Assests/icon/icon-accordion-active.png);
+}
 .accordion-button::after {
-  background-image: url(Assests/icon/icon-accordion-normal.png);
+  background-image: url(../Assests/icon/icon-accordion-normal.png);
 }
 
 body {
