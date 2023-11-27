@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden;
-}
+};
 
 header{
   position: relative;
@@ -20,7 +20,7 @@ header{
       display: none;
     }
   }
-}
+};
 
 .banner{
   padding: 96px 0 280px 0;
@@ -68,7 +68,7 @@ header{
   }
   
   
-}
+};
 
 /* 分開寫是為了背景圖不要包到標題 */
 .features-title-container {
@@ -88,11 +88,11 @@ header{
   @media screen and (max-width: 768px) {
     padding: 32px 12px 24px 12px;
   }
-}
+};
 .features-main{
   padding-top: 50px;
   padding-bottom: 190px;
-  background-image: url(../../Assests/img/features-bg.png);
+  background-image: url(Assests/img/features-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -164,7 +164,7 @@ header{
       }
     }
   }
-}
+};
 
 .introCarousel{
   padding-bottom: 80px;
@@ -243,7 +243,7 @@ header{
       }
     }
   }
-}
+};
 
 .reviews{
   padding-top: 80px;
@@ -314,7 +314,7 @@ header{
       }
     }
   }
-}
+};
 
 .questions{
   padding-top: 80px;
@@ -335,7 +335,7 @@ header{
       border-radius: 134px;
       padding-top: 102px;
       padding-bottom: 102px;
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), url(../../Assests/img/questions-bg-01.png), lightgray 50%;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), url(Assests/img/questions-bg-01.png), lightgray 50%;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -376,4 +376,4 @@ header{
       }
     }
   }
-}
+};
