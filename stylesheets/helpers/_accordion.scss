@@ -12,5 +12,9 @@
 
   &:not(.collapsed) {
     background-color: #fff;
+    background-image: url(Assests/icon/icon-accordion-active.png)
+  }
+  &::after{
+    background-image: url(Assests/icon/icon-accordion-normal.png)
   }
 }
