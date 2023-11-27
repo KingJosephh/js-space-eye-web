@@ -19,4 +19,15 @@
   &::after{
     background-image: url(../Assests/icon/icon-accordion-normal.png);
   }
+  /* &:hover{
+    &:not(.collapsed) {
+      &::after {
+        background-image: url(../Assests/icon/icon-accordion-active-hover.png);
+      }
+    }
+  
+    &::after {
+      background-image: url(../Assests/icon/icon-accordion-normal-hover.png);
+    }
+  } */
 };

@@ -368,9 +368,33 @@ header{
         .accordion-item{
           background: #fff;
           padding: 16px 24px 24px 24px;
-          border: none;
+          border: 2px solid #fff;
           border-radius: 24px;
           box-shadow: 4px 4px 24px 0px rgba(0, 0, 0, 0.04);
+          &:hover{
+            background: var(--gray-01);
+            border: 2px solid var(--brand-01);
+            .accordion-button{
+              &:not(.collapsed) {
+                  &::after {
+                    background-image: url(../Assests/icon/icon-accordion-active-hover.png);
+                  }
+                }
+              
+                &::after {
+                  background-image: url(../Assests/icon/icon-accordion-normal-hover.png);
+                }
+            }
+            h2{
+              button{
+                color: #fff !important;
+                background: var(--gray-01);
+              }
+            }
+            .accordion-body{
+              color: var(--gray-04);
+            }
+          }
           @media screen and (max-width: 768px) {
             padding: 16px 16px 16px 16px;
           }
