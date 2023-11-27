@@ -79,9 +79,8 @@ body {
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
-    margin: 0 auto;
-    padding: 0;
-    width: 50%;
+    margin: 100 auto;
+    width: 100%;
     table-layout: fixed;
     justify-content: center;
     text-align: center;
@@ -431,7 +430,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    max-width: 1000px;
+    max-width: 1500px;
     margin: auto;
   }
 
@@ -449,8 +448,7 @@ body {
     width: 33.33%;
     height: 100%;
     margin: 10px;
-    max-width: 300px;
-
+    max-width: 500px;
   }
 
   .plan:hover {

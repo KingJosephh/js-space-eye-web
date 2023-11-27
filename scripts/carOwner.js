@@ -28,7 +28,15 @@ let saveLikePark = [];
 const Url = 'http://localhost:3000'
 const token = localStorage.getItem('token')
 const usersId = localStorage.getItem('usersId')
+// 從 localStorage 中讀取進場和出場時間和方案選擇
+const entryTimeHeader = localStorage.getItem("entryTime");
+const exitTimeHeader = localStorage.getItem("exitTime");
+const chosePlanHeader = localStorage.getItem("chosePlan");
 
+// 將這些時間設置到表頭的相應元素中
+document.getElementById("entryTimeHeader").textContent = entryTimeHeader;
+document.getElementById("exitTimeHeader").textContent = exitTimeHeader;
+document.getElementById("chosePlanHeader").textContent = chosePlanHeader;
 
 //切換六個項目按鈕
 function getNum(x) {

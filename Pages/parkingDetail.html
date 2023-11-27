@@ -36,7 +36,7 @@
                     </div>
                     <div class="plan-section">
                       <div class="annual-plan">
-                          <p>方案選擇: <span> 即時方案</span></p>
+                          <p id="chosePlan">方案選擇: <span></span></p>
                       </div>
                       <div class="change">
                           <a href="#">Change</a>
@@ -109,19 +109,19 @@
         </form>
         <h1 style="text-align: center">方案選擇</h1>
         <div class="plan-container">
-            <div onclick="select(this, false)" class="plan">
+            <div onclick="select(this, false)" class="plan" id="monthPlan">
                 <h3>每月停車</h3>
                 <p style="margin-top: 0">monthly</p>
                 <ul>
                     <li>NT 349</li>
                     <li>全月自由停車，方便又節省。</li>
                     <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-                    <li>省時省力，停車不再是煩惱。</li>
+                    <li>一次訂閱，一整年無限次數停車。</li>
                 </ul>
             </div>
-            <div onclick="select(this, true)" class="plan">
+            <div onclick="select(this, true)" class="plan" id="weekPlan">
                 <h3>每週停車</h3>
-                <p style="margin-top: 0">monthly</p>
+                <p style="margin-top: 0">week</p>
                 <ul>
                     <li>NT 149</li>
                     <li>縮短週末中的尋找停車位的時間。</li>
@@ -129,9 +129,19 @@
                     <li>省時省力，停車不再是煩惱。</li>
                 </ul>
             </div>
-            <div onclick="select(this, false)" class="plan">
+            <div onclick="select(this, false)" class="plan" id="dayPlan">
+                <h3>單次停車</h3>
+                <p style="margin-top: 0">day</p>
+                <ul>
+                    <li>NT 30</li>
+                    <li>縮短週末中的尋找停車位的時間。</li>
+                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+                    <li>省時省力，停車不再是煩惱。</li>
+                </ul>
+            </div>
+            <div onclick="select(this, false)" class="plan" id="yearPlan">
                 <h3>每年停車</h3>
-                <p style="margin-top: 0">monthly</p>
+                <p style="margin-top: 0">year</p>
                 <ul>
                     <li>NT 749</li>
                     <li>長期停車需求的理想選擇</li>

@@ -3,7 +3,7 @@
 var btn = document.getElementById("next");
 
 function select(el, left) {
-    var plan = "";
+    var plan = el.id;
     if (!plan) {
         btn.disabled = false;
     }
@@ -14,15 +14,21 @@ function select(el, left) {
 
     el.classList.add("plan-active");
 
-    if (left) {
-        el.parentElement.children[2].classList.remove("plan-active");
-        btn.innerHTML = "每週停車";
-    } else if (el.nextElementSibling) {
-        el.nextElementSibling.classList.remove("plan-active");
-        btn.innerHTML = "每月停車";
-    } else if (el.previousElementSibling) {
-        el.previousElementSibling.classList.remove("plan-active");
-        btn.innerHTML = "每年停車";
+    switch (plan) {
+        case "monthPlan":
+            btn.innerHTML = "每月停車";
+            break;
+        case "weekPlan":
+            btn.innerHTML = "每週停車";
+            break;
+        case "dayPlan":
+            btn.innerHTML = "單次停車";
+            break;
+        case "yearPlan":
+            btn.innerHTML = "每年停車";
+            break;
+        default:
+            btn.innerHTML = "請選擇停車方案";
     }
 }
 
@@ -35,13 +41,47 @@ function updateOrderSummary() {
     const exitDate = document.getElementById("exitDate").value;
     const url = `http://127.0.0.1:5501/Pages/parkingDetail.html`;
 
-    axios.get(url)
+    axios.get(url, {
+        params: {
+            entryDate: entryDate,
+            exitDate: exitDate
+        }
+    })
          .then(response => {
             const entryTimeText = `${entryDate}`;
             const exitTimeText = `${exitDate}`;
 
             document.getElementById('entryTime').getElementsByTagName("span")[0].textContent = entryTimeText;
             document.getElementById('exitTime').getElementsByTagName("span")[0].textContent = exitTimeText;
+            localStorage.setItem("entryTime", entryTimeText)
+            localStorage.setItem("exitTime", exitTimeText)
+         })
+         .catch(error => {
+            console.log("Error fetching data:", error);
+         })
+}
+
+// 抓取方案資料
+document.getElementById("monthPlan").addEventListener("click", () => updatePlanSummary('monthPlan'));
+document.getElementById("weekPlan").addEventListener("click", () => updatePlanSummary('weekPlan'));
+document.getElementById("yearPlan").addEventListener("click", () => updatePlanSummary('yearPlan'));
+document.getElementById("dayPlan").addEventListener("click", () => updatePlanSummary('dayPlan'));
+
+function updatePlanSummary(planId) {
+    const selectedPlan = document.getElementById(planId);
+    const servalUrl = `http://127.0.0.1:5501/Pages/parkingDetail.html`;
+
+    const planText = `${selectedPlan.querySelector('h3').textContent} - ${selectedPlan.querySelector('li:first-child').textContent}`;
+
+    axios.get(servalUrl, {
+        params: {
+            planId: planId,
+            planText: planText
+        }
+    })
+         .then(response => {
+            document.getElementById('chosePlan').getElementsByTagName("span")[0].textContent = planText;
+            localStorage.setItem("chosePlan", planText);
          })
          .catch(error => {
             console.log("Error fetching data:", error);
