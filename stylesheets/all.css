@@ -897,7 +897,7 @@ header {
 header .navbar {
   z-index: 1000;
 }
-header img {
+header .banner-bg {
   position: absolute;
   top: 0;
   right: 0;
