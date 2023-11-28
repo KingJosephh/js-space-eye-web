@@ -38,7 +38,7 @@
                             <img src="/Assests/img/mastercard.logo.png" height="20px">
                             <div class="payment-title">
                                 <h1>Payment Information</h1>
-                            </div>
+                            </div> 
                             <div class="container1 preload">
                                 <div class="creditcard">
                                     <div class="front">
@@ -147,7 +147,6 @@
                                     <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric" class="cardnumber">
                                     <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
-                        
                                     </svg>
                                 </div>
                                 <div class="field-container">
@@ -157,9 +156,28 @@
                                 <div class="field-container">
                                     <label for="securitycode">Security Code</label>
                                     <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" class="securitycode">
-                                </div>
+                                </div> 
                             </div>
-                        </div>                        
+                            <div class="form-notice">
+                                <div class="content">
+                                  <h3>公告事項說明</h3>
+                                  <ul class="notice-list">
+                                    <p>1同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</p>
+                                    <p>2預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</p>
+                                    <p>3本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</p>
+                                    <p>4預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</p>
+                                    <p> ★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。★</p>
+                                  </ul>
+                                </div>
+                            </div> 
+                            <div class="center-vertically">
+                                <label class="checkmark-label">
+                                <input type="checkbox" id="agreeCheckbox">
+                                   同意相關資訊請勾選
+                                </label>
+                                <a href="http://127.0.0.1:5501/Pages/parkingDetail.html" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
+                            </div>
+                        </div>                       
                     <!-- 網路ATM的頁面 -->
                     <div class="content-to-hide-owner" id="page2" style="display: none;">
                         <div class="col-xs-12">
@@ -167,17 +185,17 @@
                                 <div class="form-group">
                                     <label for="bankSelect">選擇銀行:</label>
                                     <select class="form-control" id="bankSelect">
-                                        <option value="bank1">銀行1</option>
-                                        <option value="bank2">銀行2</option>
-                                        <option value="bank3">銀行3</option>
-                                        <option value="bank4">銀行4</option>
+                                        <option value="bank1">士璁銀行</option>
+                                        <option value="bank2">Celine銀行</option>
+                                        <option value="bank3">小廷銀行</option>
+                                        <option value="bank4">景泰銀行</option>
                                     </select>
                                 </div>
                                 <h3>注意事項</h3>
                                 <ul class="list-unstyled list-unstyled-circle">
-                                    <li>♦️注意事项 1</li>
-                                    <li>♦️注意事项 1</li>
-                                    <li>♦️注意事项 1</li>
+                                    <li>♦️ 避免與他人共用電腦或連結至不明網站、下載不明資料，或於公用電腦（如網咖）使用網路ATM服務及輸入個人密碼。</li>
+                                    <li>♦️ 進行網路ATM交易，請選擇具顯示螢幕及鍵盤、可輸入密碼及確認交易內容的確認型讀卡機。</li>
+                                    <li>♦️ 盡量使用約定帳號轉帳。</li>
                                 </ul>
                             </form>
                             <br/>
@@ -186,7 +204,7 @@
                               <input type="checkbox" id="agreeCheckbox">
                                  同意相關資訊請勾選
                               </label>
-                              <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
+                              <a href="http://127.0.0.1:5501/Pages/parkingDetail.html" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
                             </div>
                         </div>
                     </div>
@@ -197,17 +215,17 @@
                             <div class="form-group">
                                 <label for="bankSelect">選擇銀行:</label>
                                 <select class="form-control" id="bankSelect">
-                                    <option value="bank1">銀行1</option>
-                                    <option value="bank2">銀行2</option>
-                                    <option value="bank3">銀行3</option>
-                                    <option value="bank4">銀行4</option>
+                                    <option value="bank1">士璁銀行</option>
+                                    <option value="bank2">Celine銀行</option>
+                                    <option value="bank3">小廷銀行</option>
+                                    <option value="bank4">景泰銀行</option>
                                 </select>
                             </div>
                             <h3>注意事項</h3>
                             <ul class="list-unstyled list-unstyled-circle">
-                                <li>♦️注意事项 1</li>
-                                <li>♦️注意事项 1</li>
-                                <li>♦️注意事项 1</li>
+                                <li>♦️ 避免與他人共用電腦或連結至不明網站、下載不明資料，或於公用電腦（如網咖）使用網路ATM服務及輸入個人密碼。</li>
+                                <li>♦️ 進行網路ATM交易，請選擇具顯示螢幕及鍵盤、可輸入密碼及確認交易內容的確認型讀卡機。</li>
+                                <li>♦️ 盡量使用約定帳號轉帳。</li>
                             </ul>
                         </form>
                         <br/>
@@ -216,7 +234,7 @@
                               <input type="checkbox" id="agreeCheckbox">
                                  同意相關資訊請勾選
                               </label>
-                              <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
+                              <a href="http://127.0.0.1:5501/Pages/parkingDetail.html" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
                             </div>
                      </div>
                     </div>
@@ -230,9 +248,8 @@
                                 <img src="/Assests/img/HI-life.logo.png" height="20px">
                                 <h3>注意事項</h3>
                                 <ul class="list-unstyled list-unstyled-circle">
-                                    <li>♦️注意事项 1</li>
-                                    <li>♦️注意事项 1</li>
-                                    <li>♦️注意事项 1</li>
+                                    <li>♦️ 超商代收-代碼的繳費期限為7天，請務必於期限內進行繳款</li>
+                                    <li>♦️ 例: 11/28的20:15分購買商品，繳費期限為3天，表示於12/01的20:15前您必須前往繳費。</li>
                                 </ul>
                             </form>
                             <br/>
@@ -241,18 +258,17 @@
                                   <input type="checkbox" id="agreeCheckbox">
                                      同意相關資訊請勾選
                                   </label>
+                                  <div class="text-center" id="button5" data-page="page5">
+                                    <button type="button" class="btn btn-success btn-lg btn-block" id="button5" data-page="page5" onclick="generateOrderNumber()">下一步</button>
+                                  </div>
                                 </div>
-                        </div>
-                        <hr/> 
-                        <div class="text-center" id="button5" data-page="page5">
-                            <button type="button" class="btn custom-button" id="button5" data-page="page5">下一步</button>
                         </div>
                         <div class="text-center" id="page5" style="display: none;">
                             <div class="container">
                                 <div class="row">
-                                   <h2>付款方式</h2>  
+                                   <h2>訂單成立</h2>  
                                    <br> 
-                                   <h4>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費!請於時間內使用您選擇的付款方式進行付款!付款資訊已寄至您的Email信箱xxxxxx@gmail.com</h4> 
+                                   <h4>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費!請於時間內使用您選擇的付款方式進行付款!</h4> 
                                    <br>
                                    <h4>本次交易明細如下:</h4>
                                    <div class="col-6 text-right">幣別: 新台幣(元)</div>
@@ -262,15 +278,11 @@
                                 <div class="paper">
                                     <div class="row">
                                       <div class="col-md-4 label-column">訂單編號</div>
-                                      <div class="col-md-8 content-column">1703061340194634</div>
+                                      <div class="col-md-8 content-column" id="orderNumber">17030</div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 label-column">商品名稱</div>
-                                        <div class="col-md-8 content-column">1703061340194634</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 label-column">商品明細</div>
-                                        <div class="col-md-8 content-column">1703061340194634</div>
+                                        <div class="col-md-8 content-column">預約停車</div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 label-column">訂單金額</div>
@@ -282,26 +294,23 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 label-column">超商繳費代碼</div>
-                                        <div class="col-md-8 content-column">1703061340194634</div>
+                                        <div class="col-md-8 content-column" id="orderNumber2">17030</div>
                                     </div>
                                     <!-- QR Code -->
                                     <div class="row">
                                       <div class="col-md-4 label-column">7-ELEVEN ibon QRcode</div>
                                       <div class="col-md-8 content-column">
-                                        <img src="path-to-your-qr-code-image.png" alt="QR Code" class="qr-image">
+                                        <img src="/Assests/img/Q-rcode.png" alt="QR Code" class="qr-image">
                                       </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 label-column">截止日期</div>
-                                        <div class="col-md-8 content-column">1703061340194634</div>
+                                        <div class="col-md-8 content-column" id="deadlineDate"></div>
                                     </div>
                                 </div>       
                             </div> 
-                            <div class="center-vertically">
-                                <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
-                            </div> 
                         </div>                 
-                    </div>   
+                    </div> 
             </div>
         </div>
     </div>

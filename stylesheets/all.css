@@ -169,6 +169,7 @@ button.btn-dark-solid-l:hover, button.btn-dark-solid-m:hover, button.btn-dark-tr
 
 footer {
   position: relative;
+  margin-top: 120px;
   margin-bottom: 40px;
   background: var(--gray-01);
   border-radius: 40px;

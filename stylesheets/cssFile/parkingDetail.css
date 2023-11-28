@@ -178,12 +178,13 @@ h2 {
     justify-content: center;
     align-items: center;
     margin-top: 150px;
+    width: 100%;
   }
 
 .content {
     position: absolute;
     left: 350px;
-    margin: 0;
+    width: 100%;
   }
 
 .btn {
@@ -203,6 +204,7 @@ h2 {
     right: 550px;
   }
 
+  
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
 
 

@@ -41,12 +41,7 @@ function updateOrderSummary() {
     const exitDate = document.getElementById("exitDate").value;
     const url = `http://127.0.0.1:5501/Pages/parkingDetail.html`;
 
-    axios.get(url, {
-        params: {
-            entryDate: entryDate,
-            exitDate: exitDate
-        }
-    })
+    axios.get(url)
          .then(response => {
             const entryTimeText = `${entryDate}`;
             const exitTimeText = `${exitDate}`;
@@ -101,6 +96,7 @@ rightButton.addEventListener("click", function() {
         alert ("請選擇入場日期和離場日期");
     }else{
         showWatermark();
+        return true;
     }
 })
 
