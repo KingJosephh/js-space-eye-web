@@ -15,7 +15,7 @@ const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard =document.querySelector('#showMapCard');
-const modalFooter = document.querySelector('.modal-footer')
+const cardBody = document.querySelector('.card-body');
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map')
@@ -36,98 +36,90 @@ let filteredMapData = [];
 let saveLikePark = [];
 let locatedX = 24.162139;
 let locatedY = 120.647021;
-
 //leaflet資料
-var map = L.map('map').setView([24.162139, 120.647021], 17);
+// var map = L.map('map').setView([24.162139, 120.647021], 17);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// }).addTo(map);
 
-var greenIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-});
-var greyIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });
-// L.marker([24.162139, 120.647021]).addTo(map)
-//     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-//     .openPopup();
-//將資料渲染到地圖上
-// 在创建地图后，将图层保存到一个变量中
-var markersLayer = L.layerGroup().addTo(map);
+// var greenIcon = new L.Icon({
+//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+//     iconSize: [25, 41],
+//     iconAnchor: [12, 41],
+//     popupAnchor: [1, -34],
+//     shadowSize: [41, 41]
+// });
+// var greyIcon = new L.Icon({
+//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+//     iconSize: [25, 41],
+//     iconAnchor: [12, 41],
+//     popupAnchor: [1, -34],
+//     shadowSize: [41, 41]
+//   });
+// //將資料渲染到地圖上
+// // 在创建地图后，将图层保存到一个变量中
+// var markersLayer = L.layerGroup().addTo(map);
 
-const dataToMap = () => {
-    markersLayer.clearLayers();
-    for (let i = 0; i < filteredMapData.length; i++) {
-        let dataDetail = filteredMapData[i]
-        let marker;
-        locatedX = filteredMapData[1].location.latitude,
-        locatedY = filteredMapData[1].location.longitude
-        if (dataDetail.space === '0') {
-            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
-                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
-        <div class="card-body">
-            <div class="d-flex justify-content-between">
-                <h5 class="card-title">${dataDetail.parkName}</h5>
-                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
-            </div>
-            <div class="row">
-                <div class="col-5">地址:</div>
-                <div class="col-7">${dataDetail.address}</div>
-            </div>
-            <div class="row">
-                <div class="col-5">剩餘空位:</div>
-                <div class="col-7">${dataDetail.space}</div>
-            </div>
-            <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
-            </div>
-        </div>
-    </div>`);
-        } else if (dataDetail.space !== '0') {
-            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
-                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
-        <div class="card-body">
-            <div class="d-flex justify-content-between">
-                <h5 class="card-title">${dataDetail.parkName}</h5>
-                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
-            </div>
-            <div class="row">
-                <div class="col-5">地址:</div>
-                <div class="col-7">${dataDetail.address}</div>
-            </div>
-            <div class="row">
-                <div class="col-5">剩餘空位:</div>
-                <div class="col-7">${dataDetail.space}</div>
-            </div>
-            <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
-            </div>
-        </div>
-    </div>`);
-        }
-        markersLayer.addLayer(marker);
-    }
-    // console.log(locatedX, locatedY)
-    map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
-}
-//測試地圖上卡片監聽事件(目前無效)
-// mapLocated.addEventListener('click' , (e) => {
-//     console.log(e.target)
-// })
+// const dataToMap = () => {
+//     markersLayer.clearLayers();
+//     for (let i = 0; i < filteredMapData.length; i++) {
+//         let dataDetail = filteredMapData[i]
+//         let marker;
+//         locatedX = filteredMapData[1].location.latitude,
+//         locatedY = filteredMapData[1].location.longitude
+//         if (dataDetail.space === '0') {
+//             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
+//                 .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+//         <div class="card-body">
+//             <div class="d-flex justify-content-between">
+//                 <h5 class="card-title">${dataDetail.parkName}</h5>
+//                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+//             </div>
+//             <div class="row">
+//                 <div class="col-5">地址:</div>
+//                 <div class="col-7">${dataDetail.address}</div>
+//             </div>
+//             <div class="row">
+//                 <div class="col-5">剩餘空位:</div>
+//                 <div class="col-7">${dataDetail.space}</div>
+//             </div>
+//             <div class="d-flex justify-content-between">
+//             <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+//                 <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="">長期方案</button>
+//             </div>
+//         </div>
+//     </div>`);
+//         } else if (dataDetail.space !== '0') {
+//             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
+//                 .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+//         <div class="card-body">
+//             <div class="d-flex justify-content-between">
+//                 <h5 class="card-title">${dataDetail.parkName}</h5>
+//                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+//             </div>
+//             <div class="row">
+//                 <div class="col-5">地址:</div>
+//                 <div class="col-7">${dataDetail.address}</div>
+//             </div>
+//             <div class="row">
+//                 <div class="col-5">剩餘空位:</div>
+//                 <div class="col-7">${dataDetail.space}</div>
+//             </div>
+//             <div class="d-flex justify-content-between">
+//             <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+//                 <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+//             </div>
+//         </div>
+//     </div>`);
+//         }
+//         markersLayer.addLayer(marker);
+//     }
+//     // console.log(locatedX, locatedY)
+//     map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
+// }
 //搜尋條件與停車場一覽監聽
     btn1.addEventListener('click', () => {
         moveBtn(btn1)
@@ -199,9 +191,6 @@ const parsedLocalParkData = () => {
         saveLikePark.push(...ss)
     }
 }
-let optionPark = '';
-// export default optionPark;
-
 // 在后续请求中，将 token 添加到请求头中
 axios.get(Url + `/600/users/${usersId}`, {
     headers: {
@@ -210,26 +199,7 @@ axios.get(Url + `/600/users/${usersId}`, {
     })
     .then((response) => {
         showMapCard.addEventListener('click' ,(e) => {
-            let likeBtn = e.target
             addLikeParkToLocal(e)
-             //取得停車場資料並存到本地端
-            if (likeBtn.textContent === '長期方案') {
-                optionPark = likeBtn.getAttribute('data-btnId');
-                localStorage.setItem('optionPark', optionPark);
-                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
-            }
-            if(likeBtn.textContent === '詳細資料'){
-                optionPark = likeBtn.getAttribute('data-btnId');
-                localStorage.setItem('optionPark', optionPark);
-                console.log(optionPark)
-            }
-        })
-        modalFooter.addEventListener('click' , (e) => {
-            let likeBtn = e.target
-            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
-                console.log('aa')
-            }
         })
         mapLocated.addEventListener('click' , (e) => {
             addLikeParkToLocal(e)
@@ -241,14 +211,11 @@ axios.get(Url + `/600/users/${usersId}`, {
     .catch((error) => {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
-            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
-            }
-        })
-        modalFooter.addEventListener('click' , (e) => {
-            let likeBtn = e.target
-            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+            // if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+            //     alert('請先登入')
+            // }
+            if(likeBtn.textContent === '長期方案'){
+                console.log(likeBtn)
             }
         })
         //地圖上卡片監聽事件
@@ -439,7 +406,6 @@ const getMapDetail = (a,b,c,d,e) => {
     })
 }
 //將篩選過後的資料渲染到畫面上 
-// href="http://127.0.0.1:5501/Pages/parkingDetail.html#"
 const render = (aa) => {
     let str = '';
     aa.forEach((item) => {
@@ -458,8 +424,8 @@ const render = (aa) => {
                 <div class="col-7">${item.space}</div>
             </div>
             <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="${item.location.latitude}">長期方案</button>
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
             </div>
         </div>
     </div>`

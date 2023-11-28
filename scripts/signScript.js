@@ -7,10 +7,11 @@ const PasswordAgain = document.getElementById('Password-again')
 const CarId = document.getElementById('Car-id')
 const logInBtn = document.querySelector('.logIn-btn')
 let aa = []
+const Url = 'http://localhost:3000'
 
 
 function signUp(a,b,c,d){
-    axios.post('http://localhost:3000/users',{
+    axios.post(Url + '/users',{
         'username': a,
         'email': b,
         'password': c,

@@ -1,9 +1,10 @@
 const emailInput = document.querySelector('.email');
 const passWordInput = document.querySelector('.Password');
 const logInBtn = document.querySelector('.logIn-btn')
+const Url = 'http://localhost:3000'
 
 function logIn(a,b){
-    axios.post('http://localhost:3000/login', {
+    axios.post(Url + '/login', {
         'email': a,
         'password': b,
     }).then(function(response){
