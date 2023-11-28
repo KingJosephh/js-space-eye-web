@@ -1,13 +1,13 @@
 body {
   overflow-x: hidden;
-}
+};
 
 header{
   position: relative;
   .navbar{
     z-index: 1000;
   }
-  img{
+  .banner-bg{
     position: absolute;
     top: 0;
     right: 0;
@@ -16,14 +16,14 @@ header{
     max-height: 560px;//560, 500
   }
   @media screen and (max-width: 768px){
-    img{
+    .banner-bg{
       display: none;
     }
   }
-}
+};
 
 .banner{
-  padding: 96px 0 280px 0;
+  padding: 96px 0 330px 0;
   h1{
     margin-bottom: 40px;
     font-size: 60px;
@@ -38,7 +38,7 @@ header{
     }
   }
   @media screen and (max-width: 768px) {
-    padding: 0 0 76px 0;
+    padding: 0 0 96px 0;
     text-align: center;
     h1 {
       margin-bottom: 16px;
@@ -58,17 +58,18 @@ header{
         padding: 16px 0 24px 12px;
       }
     }
-    .search-bar-container{
-      /* justify-content: center; */
-      width: 90%;
-      .search-bar-l{
-        width: 100%;
+    .search-bar-part {
+      display: flex;
+      justify-content: center;
+      .search-bar-container{
+        width: 90%;
+        .search-bar-l{
+          width: 100%;
+        }
       }
     }
   }
-  
-  
-}
+};
 
 /* 分開寫是為了背景圖不要包到標題 */
 .features-title-container {
@@ -88,11 +89,11 @@ header{
   @media screen and (max-width: 768px) {
     padding: 32px 12px 24px 12px;
   }
-}
+};
 .features-main{
   padding-top: 50px;
   padding-bottom: 190px;
-  background-image: url(/Assests/img/features-bg.png);
+  background-image: url(../Assests/img/features-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -116,7 +117,10 @@ header{
       align-items: center;
       /* icon */
       .features-intro-item-icon{
-        margin-bottom: 20px;
+        padding: 0;
+        .features-intro-item-icon-img{
+          margin-bottom: 20px;
+        }
       }
       div:nth-of-type(2) { 
           /* line */
@@ -137,6 +141,7 @@ header{
     background-color: var(--gray-01);
   }
   @media screen and (max-width: 768px){
+    padding-top: 24px;
     .features-intro{
       gap: 24px;
       &>div {
@@ -149,7 +154,13 @@ header{
         align-items: start;
         text-align: left;
         gap: 16px;
-    
+        .features-intro-item-icon {
+          padding: 0 16px 0 0;
+      
+          .features-intro-item-icon-img{
+            width: 48px;
+          }
+          }
         div:nth-of-type(2) {
           width: 100%;
           /* line */
@@ -164,7 +175,7 @@ header{
       }
     }
   }
-}
+};
 
 .introCarousel{
   padding-bottom: 80px;
@@ -243,7 +254,7 @@ header{
       }
     }
   }
-}
+};
 
 .reviews{
   padding-top: 80px;
@@ -314,7 +325,7 @@ header{
       }
     }
   }
-}
+};
 
 .questions{
   padding-top: 80px;
@@ -335,13 +346,15 @@ header{
       border-radius: 134px;
       padding-top: 102px;
       padding-bottom: 102px;
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), url(/Assests/img/questions-bg-01.png), lightgray 50%;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), url(../Assests/img/questions-bg-01.png), lightgray 50%;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       justify-content: center;
       @media screen and (max-width: 768px){
         height: 160px;
+        padding-top: 60px;
+        padding-bottom: 60px;
       }
     }
     .questions-body{
@@ -355,9 +368,33 @@ header{
         .accordion-item{
           background: #fff;
           padding: 16px 24px 24px 24px;
-          border: none;
+          border: 2px solid #fff;
           border-radius: 24px;
           box-shadow: 4px 4px 24px 0px rgba(0, 0, 0, 0.04);
+          &:hover{
+            background: var(--gray-01);
+            border: 2px solid var(--brand-01);
+            .accordion-button{
+              &:not(.collapsed) {
+                  &::after {
+                    background-image: url(../Assests/icon/icon-accordion-active-hover.png);
+                  }
+                }
+              
+                &::after {
+                  background-image: url(../Assests/icon/icon-accordion-normal-hover.png);
+                }
+            }
+            h2{
+              button{
+                color: #fff !important;
+                background: var(--gray-01);
+              }
+            }
+            .accordion-body{
+              color: var(--gray-04);
+            }
+          }
           @media screen and (max-width: 768px) {
             padding: 16px 16px 16px 16px;
           }
@@ -376,4 +413,4 @@ header{
       }
     }
   }
-}
+};

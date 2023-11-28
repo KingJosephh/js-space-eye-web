@@ -1,7 +1,51 @@
+const Url = 'http://localhost:3000'
+const UrlWebType = 'https://space-eye-web-surver.onrender.com'
+const optionPark = localStorage.getItem('optionPark');
+const detailsCard = document.querySelector('#detailsCard')
+let data = []
+let getSpaceDetails = []
 
+//取得地圖資料
+axios.get(Url + '/parks?_expand=road')
+.then(function(response){
+    data = response.data
+    getFindSpace(data)
+    cardBody()
+    // console.log(getFindSpace)
+}).catch(function(err){
+    console.log(err)
+})
+//選出預約的停車場資料
+const getFindSpace = (aa) => {
+    getSpaceDetails = aa.filter((item) => {
+        if(item.location.latitude == optionPark){
+           return item
+        }
+    })
+}
+//將停車場資訊渲染到畫面上
+const cardBody = () => {
+    console.log(getSpaceDetails)
+    let Card = `<thead>
+    <tr>
+        <th scope="col">停車場資訊</th>
+        <th scope="col">地址</th>
+        <th scope="col">室內/室外</th>
+        <th scope="col">車格種類</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td data-label="Account">${getSpaceDetails[0].parkName}</td>
+        <td data-label="Account">${getSpaceDetails[0].address}</td>
+        <td data-label="Account">${getSpaceDetails[0].inOrOut}</td>
+        <td data-label="Account">${getSpaceDetails[0].type}</td>
+    </tr>
+</tbody>`
+detailsCard.innerHTML = Card;
+}
 // 動態方案選擇
 var btn = document.getElementById("next");
-
 function select(el, left) {
     var plan = el.id;
     if (!plan) {
@@ -133,3 +177,10 @@ var canelButton = document.querySelector(".btn-secondary");
 canelButton.addEventListener("click", function() {
     window.location.href = "../index.html";
 })
+
+// 确保 optionPark 不为空
+if (optionPark) {
+    console.log('Received optionPark in another page:', optionPark);
+} else {
+    console.log('No optionPark data available.');
+}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 
 body {
@@ -204,8 +205,11 @@ h2 {
     right: 550px;
   }
 
+<<<<<<< HEAD
   
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
+=======
+>>>>>>> fccbda1451a9433cc02cc35fbeb391d959f8ccc5
 
 
 .main-container{

@@ -174,28 +174,28 @@ footer {
   background: var(--gray-01);
   border-radius: 40px;
 }
-footer [src="/Assests/icon/maskGroup-01.png"],
-footer [src="/Assests/icon/maskGroup-02.png"] {
+footer [src="Assests/icon/maskGroup-01.png"],
+footer [src="Assests/icon/maskGroup-02.png"] {
   width: 200px;
   height: 80px;
   top: 44px;
   position: absolute;
 }
-footer [src="/Assests/icon/maskGroup-01.png"] {
+footer [src="Assests/icon/maskGroup-01.png"] {
   left: 0;
 }
-footer [src="/Assests/icon/maskGroup-02.png"] {
+footer [src="Assests/icon/maskGroup-02.png"] {
   right: 0;
 }
 @media screen and (min-width: 1200px) {
-  footer [src="/Assests/icon/maskGroup-01.png"],
-  footer [src="/Assests/icon/maskGroup-02.png"] {
+  footer [src="Assests/icon/maskGroup-01.png"],
+  footer [src="Assests/icon/maskGroup-02.png"] {
     width: 354px;
   }
 }
 @media screen and (max-width: 992px) {
-  footer [src="/Assests/icon/maskGroup-01.png"],
-  footer [src="/Assests/icon/maskGroup-02.png"] {
+  footer [src="Assests/icon/maskGroup-01.png"],
+  footer [src="Assests/icon/maskGroup-02.png"] {
     display: none;
   }
 }
@@ -292,6 +292,12 @@ footer [src="/Assests/icon/maskGroup-02.png"] {
   }
   .navbar-nav .nav-item {
     padding: 14px 0 14px 16px;
+  }
+  .navbar-brand {
+    width: 176px;
+  }
+  .navbar-brand img {
+    width: 100%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -898,7 +904,7 @@ header {
 header .navbar {
   z-index: 1000;
 }
-header img {
+header .banner-bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -907,13 +913,13 @@ header img {
   max-height: 560px;
 }
 @media screen and (max-width: 768px) {
-  header img {
+  header .banner-bg {
     display: none;
   }
 }
 
 .banner {
-  padding: 96px 0 280px 0;
+  padding: 96px 0 330px 0;
 }
 .banner h1, .banner .h1 {
   margin-bottom: 40px;
@@ -932,7 +938,7 @@ header img {
 }
 @media screen and (max-width: 768px) {
   .banner {
-    padding: 0 0 76px 0;
+    padding: 0 0 96px 0;
     text-align: center;
   }
   .banner h1, .banner .h1 {
@@ -951,11 +957,14 @@ header img {
     border-bottom-left-radius: 300px;
     padding: 16px 0 24px 12px;
   }
-  .banner .search-bar-container {
-    /* justify-content: center; */
+  .banner .search-bar-part {
+    display: flex;
+    justify-content: center;
+  }
+  .banner .search-bar-part .search-bar-container {
     width: 90%;
   }
-  .banner .search-bar-container .search-bar-l {
+  .banner .search-bar-part .search-bar-container .search-bar-l {
     width: 100%;
   }
 }
@@ -982,7 +991,7 @@ header img {
 .features-main {
   padding-top: 50px;
   padding-bottom: 190px;
-  background-image: url(/Assests/img/features-bg.png);
+  background-image: url(../Assests/img/features-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -1005,6 +1014,9 @@ header img {
   /* icon */
 }
 .features-main .features-intro .features-intro-item .features-intro-item-icon {
+  padding: 0;
+}
+.features-main .features-intro .features-intro-item .features-intro-item-icon .features-intro-item-icon-img {
   margin-bottom: 20px;
 }
 .features-main .features-intro .features-intro-item div:nth-of-type(2) {
@@ -1025,6 +1037,9 @@ header img {
   }
 }
 @media screen and (max-width: 768px) {
+  .features-main {
+    padding-top: 24px;
+  }
   .features-main .features-intro {
     gap: 24px;
   }
@@ -1037,6 +1052,12 @@ header img {
     align-items: start;
     text-align: left;
     gap: 16px;
+  }
+  .features-main .features-intro .features-intro-item .features-intro-item-icon {
+    padding: 0 16px 0 0;
+  }
+  .features-main .features-intro .features-intro-item .features-intro-item-icon .features-intro-item-icon-img {
+    width: 48px;
   }
   .features-main .features-intro .features-intro-item div:nth-of-type(2) {
     width: 100%;
@@ -1237,7 +1258,7 @@ header img {
   border-radius: 134px;
   padding-top: 102px;
   padding-bottom: 102px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), url(/Assests/img/questions-bg-01.png), lightgray 50%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), url(../Assests/img/questions-bg-01.png), lightgray 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1246,6 +1267,8 @@ header img {
 @media screen and (max-width: 768px) {
   .questions .questions-container .questions-title {
     height: 160px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 .questions .questions-container .questions-body .accordion {
@@ -1261,9 +1284,26 @@ header img {
 .questions .questions-container .questions-body .accordion .accordion-item {
   background: #fff;
   padding: 16px 24px 24px 24px;
-  border: none;
+  border: 2px solid #fff;
   border-radius: 24px;
   box-shadow: 4px 4px 24px 0px rgba(0, 0, 0, 0.04);
+}
+.questions .questions-container .questions-body .accordion .accordion-item:hover {
+  background: var(--gray-01);
+  border: 2px solid var(--brand-01);
+}
+.questions .questions-container .questions-body .accordion .accordion-item:hover .accordion-button:not(.collapsed)::after {
+  background-image: url(../Assests/icon/icon-accordion-active-hover.png);
+}
+.questions .questions-container .questions-body .accordion .accordion-item:hover .accordion-button::after {
+  background-image: url(../Assests/icon/icon-accordion-normal-hover.png);
+}
+.questions .questions-container .questions-body .accordion .accordion-item:hover h2 button, .questions .questions-container .questions-body .accordion .accordion-item:hover .h2 button {
+  color: #fff !important;
+  background: var(--gray-01);
+}
+.questions .questions-container .questions-body .accordion .accordion-item:hover .accordion-body {
+  color: var(--gray-04);
 }
 @media screen and (max-width: 768px) {
   .questions .questions-container .questions-body .accordion .accordion-item {
@@ -13555,6 +13595,17 @@ textarea.form-control-lg {
   color: var(--gray-01) !important;
   background-color: #fff;
   font-size: 1.25rem !important;
+  /* &:hover{
+    &:not(.collapsed) {
+      &::after {
+        background-image: url(../Assests/icon/icon-accordion-active-hover.png);
+      }
+    }
+
+    &::after {
+      background-image: url(../Assests/icon/icon-accordion-normal-hover.png);
+    }
+  } */
 }
 @media screen and (max-width: 768px) {
   .accordion-button {
@@ -13563,6 +13614,12 @@ textarea.form-control-lg {
 }
 .accordion-button:not(.collapsed) {
   background-color: #fff;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../Assests/icon/icon-accordion-active.png);
+}
+.accordion-button::after {
+  background-image: url(../Assests/icon/icon-accordion-normal.png);
 }
 
 body {

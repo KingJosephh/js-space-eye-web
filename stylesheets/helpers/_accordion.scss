@@ -12,5 +12,22 @@
 
   &:not(.collapsed) {
     background-color: #fff;
+    &::after {
+      background-image: url(../Assests/icon/icon-accordion-active.png);
+    }
   }
-}
+  &::after{
+    background-image: url(../Assests/icon/icon-accordion-normal.png);
+  }
+  /* &:hover{
+    &:not(.collapsed) {
+      &::after {
+        background-image: url(../Assests/icon/icon-accordion-active-hover.png);
+      }
+    }
+  
+    &::after {
+      background-image: url(../Assests/icon/icon-accordion-normal-hover.png);
+    }
+  } */
+};
