@@ -73,7 +73,7 @@ button{
     color: var(--white);
   }
 
-  a{
+  &:hover a,a{
     text-decoration: none;
     color: inherit;
   }
