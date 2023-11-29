@@ -14,14 +14,14 @@ const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const contentToHide = document.querySelector('.content-to-hide-owner');
 const contentToHide2 = document.querySelector('.content-to-hide-save');
-const contentToHide3 = document.querySelector('.content-to-hide-place-history');
-const contentToHide4 = document.querySelector('.content-to-hide-trading-history');
-const contentToHide5 = document.querySelector('.content-to-hide-appointment');
-const contentToHide6 = document.querySelector('.content-to-hide-storage');
+// const contentToHide3 = document.querySelector('.content-to-hide-place-history');
+const contentToHide3 = document.querySelector('.content-to-hide-trading-history');
+const contentToHide4 = document.querySelector('.content-to-hide-appointment');
+const contentToHide5 = document.querySelector('.content-to-hide-storage');
 const showMapCard = document.querySelector('#showMapCard')
 const btnNumList = 1;
 const btnNumList1 = 1;
-const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, contentToHide5, contentToHide6]
+const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, contentToHide5]
 let getParkValue = 'C01'
 const localParkData = localStorage.getItem('likePark');
 let saveLikePark = [];
@@ -42,9 +42,9 @@ document.getElementById("chosePlanHeader").textContent = chosePlanHeader;
 function getNum(x) {
     let num = parseInt(x.getAttribute('data-num'));
     if (num > btnNumList) {
-        btnBgMove.style.marginLeft = (194 * (num-1)) + 'px';
+        btnBgMove.style.marginLeft = (287 * (num-1)) + 'px';
     } else if (num < btnNumList) {
-        btnBgMove.style.marginLeft = (194 * (num - 1)) + 'px';
+        btnBgMove.style.marginLeft = (287 * (num - 1)) + 'px';
     } else if(num=1){
         btnBgMove.style.marginLeft = 0;
     }
@@ -77,10 +77,11 @@ function showContent(z) {
     }else if(num === 5){
         getHide(z)
         contentToHide5.style.display = 'block';
-    }else if(num === 6){
-        getHide(z)
-        contentToHide6.style.display = 'block';
     }
+    // else if(num === 6){
+    //     getHide(z)
+    //     contentToHide6.style.display = 'block';
+    // }
 }
 
 //按鈕監聽
@@ -92,6 +93,10 @@ btn2.addEventListener('click', () => {
     getNum(btn2)
     showContent(btn2)
 });
+// btn3.addEventListener('click', () => {
+//     getNum(btn3)
+//     showContent(btn3)
+// });
 btn3.addEventListener('click', () => {
     getNum(btn3)
     showContent(btn3)
@@ -103,10 +108,6 @@ btn4.addEventListener('click', () => {
 btn5.addEventListener('click', () => {
     getNum(btn5)
     showContent(btn5)
-});
-btn6.addEventListener('click', () => {
-    getNum(btn6)
-    showContent(btn6)
 });
 btn11.addEventListener('click' , () => {
     getParkValue = btn11.value
@@ -123,7 +124,7 @@ btn12.addEventListener('click' , () => {
 const moveBtn1 = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
-        btnBgMove1.style.marginLeft = (100 * (num-1)) + 'px';
+        btnBgMove1.style.marginLeft = (130 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1.style.marginLeft = 0;
     }
@@ -151,13 +152,13 @@ space.textContent = saveSpace
 inOrOut.textContent = saveIn
 })
 //停車紀錄提示框
-const modalByDelete = document.querySelector('#deleteModal');
-modalByDelete.addEventListener('show.bs.modal', function(event) {
-    const button = event.relatedTarget;
-    const orderId = button.dataset.bsOrderId;
-    const modalText = modalByDelete.querySelector('#deleteText');
-    modalText.textContent = orderId;
-})
+// const modalByDelete = document.querySelector('#deleteModal');
+// modalByDelete.addEventListener('show.bs.modal', function(event) {
+//     const button = event.relatedTarget;
+//     const orderId = button.dataset.bsOrderId;
+//     const modalText = modalByDelete.querySelector('#deleteText');
+//     modalText.textContent = orderId;
+// })
 //交易紀錄提示框
 const TradToDelete = document.querySelector('#deleteTrad');
 TradToDelete.addEventListener('show.bs.modal' , function(event){
@@ -340,7 +341,7 @@ const getLikePark = (aa,bb) => {
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h5 class="card-title">${item.parkName}</h5>
-                <i class="save-like bi bi-suit-heart-fill bi-suit-heart-broke" data-some-value="${item.location.latitude}"></i>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${item.location.latitude}"></i>
             </div>
             <div class="row">
                 <div class="col-5">地址:</div>
@@ -351,14 +352,15 @@ const getLikePark = (aa,bb) => {
                 <div class="col-7">${item.space}</div>
             </div>
             <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${item.parkName}" data-bs-save-type="${item.type}" data-bs-save-address="${item.address}" data-bs-save-space="${item.space}" data-bs-save-in="${item.inOrOut}">詳細資訊</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${item.parkName}" data-bs-save-type="${item.type}" data-bs-save-address="${item.address}" data-bs-save-space="${item.space}" data-bs-save-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="${item.location.latitude}">長期方案</button>
             </div>
         </div>
     </div>`
     str += content
     })
     showMapCard.innerHTML = str
+    // console.log(saveLikePark)
 }
 //監聽愛心按鈕
 showMapCard.addEventListener('click' , (e) => {

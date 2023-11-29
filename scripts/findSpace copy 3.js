@@ -72,8 +72,8 @@ const dataToMap = () => {
     for (let i = 0; i < filteredMapData.length; i++) {
         let dataDetail = filteredMapData[i]
         let marker;
-        locatedX = filteredMapData[1].location.latitude,
-        locatedY = filteredMapData[1].location.longitude
+        locatedX = dataDetail.location.latitude,
+        locatedY = dataDetail.location.longitude
         if (dataDetail.space === '0') {
             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
                 .bindPopup(`<div class="card mt-3" style="width: 16rem;">
@@ -634,6 +634,7 @@ const showRwdChoice = () => {
     }else if(rwdBtn === false){
         let area = areaOptionRwd.value;
         let road = roadOptionRwd.value;
+        console.log(area,road,getType,getSpaceOrNot,getParkValue)
         getMapDetailRwd(area,road,getType,getSpaceOrNot,getParkValue)
         dataToMap()
         searchBg.classList.remove('show');
@@ -653,6 +654,7 @@ const rotateIcon = () => {
         btnX.classList.remove('xBtn2');
     }
 }
+//手機板選出篩選過後停車場資料
 const getMapDetailRwd = (a,b,c,d,e) => {
     filteredMapData = data.filter((item) => {
         if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && (d === 'haveSpace' && item.space !== "0") && item.categoryId === e){
@@ -661,5 +663,5 @@ const getMapDetailRwd = (a,b,c,d,e) => {
             return item
         }
     })
+    console.log(filteredMapData)
 }
-//寫篩選停車場資訊與渲染到地圖上
