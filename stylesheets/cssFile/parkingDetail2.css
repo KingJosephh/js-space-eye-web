@@ -77,6 +77,13 @@ body {
     border: 1px solid greenyellow;
 }
 
+.bi-x-circle {
+    position: absolute;
+    left: 750px;
+    transform: scaleY(-1);
+    margin-top: 30px;
+}
+
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
@@ -502,4 +509,5 @@ body {
     border: 2px solid rgb(230, 230, 230);
     color: rgb(230, 230, 230);
   }
+
 

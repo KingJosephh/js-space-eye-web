@@ -42,7 +42,7 @@
 
 .form-notice {
     grid-area: notice;
-    align-items: flex-start;
+    padding-bottom: 250px;
 }
 
 .content {

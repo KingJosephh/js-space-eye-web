@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/cssFile/payment.css">
     <script src="/scripts/payment.js"></script>
     <script src="/scripts/paymentCard.js"></script>
+    <link rel="stylesheet" href="/stylesheets/cssFile/parkingDetail2.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Rock+Salt|Source+Code+Pro:300,400,600" rel="stylesheet">
 </head>
@@ -28,9 +29,63 @@
                             <button type="button" class="btn custom-button" id="button4" data-page="page4">超商代碼</button>
                         </div>
                     </div>
+                    <div class="watermark"  style="display: none;" id="elementToClose">
+                        <div class="main-container">
+                            <div class="summary-container">
+                                <div class="bottom-part">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi-x-circle" viewBox="0 0 16 16" id="closeBtn">
+                                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                       <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                    <div class="word-section">
+                                        <h1>訂單摘要</h1>
+                                        <hr>
+                                    </div>
+                                    <div class="plan-section">
+                                      <div class="annual-plan">
+                                          <p id="chosePlan">方案選擇: <span></span></p>
+                                      </div>
+                                      <div class="change">
+                                          <a href="#">Change</a>
+                                      </div>
+                                    </div>
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="entryTime">進場時間: <span></span></p>
+                                        </div>
+                                        <div class="change">
+                                            <a href="#">Change</a>
+                                        </div>
+                                    </div>
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="exitTime">出場時間: <span></span></p>
+                                        </div>
+                                        <div class="change">
+                                            <a href="#">Change</a>
+                                        </div>
+                                    </div>
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="cardData">信用卡資料是否填寫: <span></span></p>
+                                        </div>
+                                        <div class="change">
+                                            <a href="#">Change</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="btn-section">
+                                        <button class="btn-payment btn" type="submit">前往結帳</button>
+                                        <button class="btn-submit btn" type="submit">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <hr class="dark-hr">
                     <!-- 寫換頁(隱藏頁面顯示頁面) -->
-                        <div class="content-to-hide-owner" id="page1">
+                        <!-- 信用卡的頁面 -->
+                        <div class="content-to-hide-owner" id="page1"> 
                           <form role="form">
                             <img src="https://files.readme.io/d1a25b4-generic-card.png" height="20px">
                             <img src="/Assests/img/visa.lgog.png" height="20px">
@@ -56,10 +111,10 @@
                                                     <path class="darkcolor greydark" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
                                                 </g>
                                                 <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 1112</text>
-                                                <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">JOHN DOE</text>
+                                                <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">芒果樹</text>
                                                 <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
                                                 <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
-                                                <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
+                                                <text transform="matrix(1 0 0 1 65.1054 241.5)"  class="st7 st5 st8">card number</text>
                                                 <g>
                                                     <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">11/14</text>
                                                     <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
@@ -127,11 +182,11 @@
                                                 </g>
                                                 <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">000</text>
                                                 <g class="st8">
-                                                    <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
+                                                    <text transform="matrix(1 0 0 1 518.083 280.0879)"  class="st9 st6 st10">security code</text>
                                                 </g>
                                                 <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
                                                 <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
-                                                <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">John Doe</text>
+                                                <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">芒果樹</text>
                                             </g>
                                         </svg>
                                     </div>
@@ -158,24 +213,20 @@
                                     <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" class="securitycode">
                                 </div> 
                             </div>
-                            <div class="form-notice">
-                                <div class="content">
-                                  <h3>公告事項說明</h3>
-                                  <ul class="notice-list">
-                                    <p>1同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</p>
-                                    <p>2預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</p>
-                                    <p>3本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</p>
-                                    <p>4預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</p>
-                                    <p> ★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。★</p>
-                                  </ul>
-                                </div>
+                            <div class="payment-title">
+                                <h1>公告事項說明</h1>
+                                <h3>1同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</h3>
+                                <h3>2預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</h3>
+                                <h3>3本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</h3>
+                                <h3>4預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</h3>
+                                <h3> ★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。★</h3>
                             </div> 
                             <div class="center-vertically">
                                 <label class="checkmark-label">
                                 <input type="checkbox" id="agreeCheckbox">
-                                   同意相關資訊請勾選
+                                   <h3>同意相關資訊請勾選</h3>
                                 </label>
-                                <a href="http://127.0.0.1:5501/Pages/parkingDetail.html" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
+                                <button id="showWatermarkBtn" class="btn btn-success btn-lg btn-block">下一步</button>
                             </div>
                         </div>                       
                     <!-- 網路ATM的頁面 -->
@@ -204,7 +255,7 @@
                               <input type="checkbox" id="agreeCheckbox">
                                  同意相關資訊請勾選
                               </label>
-                              <a href="http://127.0.0.1:5501/Pages/parkingDetail.html" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
+                              <button id="showWatermarkBtn" class="btn btn-success btn-lg btn-block">下一步</button>
                             </div>
                         </div>
                     </div>
@@ -234,14 +285,14 @@
                               <input type="checkbox" id="agreeCheckbox">
                                  同意相關資訊請勾選
                               </label>
-                              <a href="http://127.0.0.1:5501/Pages/parkingDetail.html" class="btn btn-success btn-lg btn-block" role="button">下一步</a>
+                              <button id="showWatermarkBtn" class="btn btn-success btn-lg btn-block">下一步</button>
                             </div>
                      </div>
                     </div>
                     <div class="content-to-hide-owner" id="page4" style="display: none;">
                         <div class="col-xs-12">
                             <form>
-                                <h2>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費。</h2>
+                                <h3>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費。</h3>
                                 <img src="/Assests/img/seven.logo.png" height="20px">
                                 <img src="/Assests/img/Family.logo.png" height="20px">
                                 <img src="/Assests/img/OK.logo.png" height="20px">
@@ -266,7 +317,7 @@
                         <div class="text-center" id="page5" style="display: none;">
                             <div class="container">
                                 <div class="row">
-                                   <h2>訂單成立</h2>  
+                                   <h3>訂單成立</h3>  
                                    <br> 
                                    <h4>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費!請於時間內使用您選擇的付款方式進行付款!</h4> 
                                    <br>
