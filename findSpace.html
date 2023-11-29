@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>findSpace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
@@ -31,29 +31,45 @@
     </header> -->
     <header id="header">
         <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
-        <div class="container-md">
-            <!-- logo -->
-            <a class="navbar-brand cursor-pointer" href="#">
-            <img src="Assests/img/Logo-dark.png" alt="" srcset="">
-            </a>
-            <!-- button -->
-            <button class="btn btn-light-solid-m">登入 / 註冊</button>
-            <!-- hamburger -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
-            aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            </button>
+            <div class="container-md">
+                <!-- logo -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
+                </a>
+                <!-- button -->
+                <button class="btn btn-light-solid-m">
+                    <a href="/Pages/login.html">
+                        登入 / 註冊
+                    </a>
+                </button>
+                <!-- hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
+                    aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="28" height="28">
+                            <rect width="28" height="28" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_2609_18108)">
+                            <path
+                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                                fill="#1E1E1E" />
+                        </g>
+                    </svg>
+                </button>
     
-            <div class="collapse navbar-collapse" id="headerNavbar">
-            <ul class="navbar-nav ml-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                <a class="menu-l text-green-black fw-bold" href="#">預約停車</a>
-                </li>
-                <li class="nav-item">
-                <a class="menu-l text-green-black fw-bold" href="#">找停車位</a>
-                </li>
-            </ul>
+                <div class="collapse navbar-collapse" id="headerNavbar">
+                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="menu-l" href="/Pages/ReserveParking.html">預約停車</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="menu-l" href="/findSpace.html">找停車位</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </nav>
     </header>
     <!-- 另外做一個手機板的js然後重新命名這裡的class -->

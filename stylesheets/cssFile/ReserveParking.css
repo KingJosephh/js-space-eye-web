@@ -1,9 +1,5 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 75vh;
-    margin: 0;
 }
 
 .watermark {
@@ -77,8 +73,9 @@ label {
 
 .content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
 
 .content h2 {

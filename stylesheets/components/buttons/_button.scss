@@ -72,6 +72,11 @@ button{
     border-color: var(--gray-02);
     color: var(--white);
   }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 

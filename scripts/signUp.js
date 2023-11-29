@@ -18,12 +18,13 @@ function signUp(a,b,c,d){
         'carId': d
     }).then(function (response) {
         console.log(response);
-        Password.value = '';
+        form.reset();
+        /* Password.value = '';
         PasswordAgain.value = '';
         UserName.value = '';
         Email.value = '';
-        CarId.value = '';
-        window.location.href = 'http://127.0.0.1:5501/spaceEyeHtmlPage/login.html';
+        CarId.value = ''; */
+        //window.location.href = 'http://127.0.0.1:5501/spaceEyeHtmlPage/login.html';
     }).catch(function(err){
         console.log(err)
         if(err.response.data === 'Email format is invalid'){

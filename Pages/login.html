@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./loginStyle.css"> -->
     <link rel="stylesheet" href="/stylesheets/all.css">
-    <title>Document</title>
+    <title>login</title>
 </head>
 <body>
-    <header class="head">
-        <!-- <nav class="navbar">
+    <!-- <header class="head">
+        <nav class="navbar">
             <img src="../Assests/img/parking lot logo.png" alt="logo" class="logo">
             <div class="searchBar">
                 <a>預約停車</a>
@@ -17,7 +17,7 @@
                 <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
                 <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">車主專區</a></button>
             </div>
-        </nav> -->
+        </nav>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid m-lg-4">
                 <div class="container-fluid d-flex justify-content-between">
@@ -36,7 +36,51 @@
                 </div>
             </div>
         </nav>
+    </header> -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
+            <div class="container-md">
+                <!-- logo -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
+                </a>
+                <!-- button -->
+                <button class="btn btn-light-solid-m">
+                    <a href="/Pages/login.html">
+                        登入 / 註冊
+                    </a>
+                </button>
+                <!-- hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
+                    aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="28" height="28">
+                            <rect width="28" height="28" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_2609_18108)">
+                            <path
+                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                                fill="#1E1E1E" />
+                        </g>
+                    </svg>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="headerNavbar">
+                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="menu-l" href="/Pages/ReserveParking.html">預約停車</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="menu-l" href="/findSpace.html">找停車位</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
+
     <div class="background-img"></div>
     <section class="home">
         <div class="content d-none d-sm-block">
@@ -47,7 +91,7 @@
                 Welcome to space eye
                             </p>
         </div>
-        <div class="login col-lg-5 col-md-5 pt-lg-3 pt-5">
+        <form class="login col-lg-5 col-md-5 pt-lg-3 pt-5">
             <h3 class="d-lg-block d-md-none d-sm-block mb-lg-5 mb-5 mt-lg-1 mt-5">login</h3>
             <div class="input">
                 <input class="email" type="text">
@@ -71,11 +115,11 @@
             </div>
             <div class="signIn">
                 <p>還沒擁有會員嗎?</p>
-                <a href="http://127.0.0.1:5501/Pages/signin.html">前往註冊</a>
+                <a href="/Pages/signup.html">前往註冊</a>
             </div>
-        </div>
+        </form>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script type="module" src="../scripts/loginScript copy.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
 </body>
 </html>
