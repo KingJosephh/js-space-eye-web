@@ -63,6 +63,7 @@ $display-none: none;
     padding: 28px 0;
   }
   .interface-main{
+    overflow: auto;
     border-radius: 24px;
     background: #fff;
     height: 504px;

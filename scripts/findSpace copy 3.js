@@ -164,9 +164,9 @@ btn32.addEventListener('click', () => {
 
 //確認送出按鈕監聽
 confirmBtn.addEventListener('click', () => {
-    btnBgMove.style.marginLeft = 214 + 'px';
-    hideSearch.style.display = 'none';
-    hideShowPark.style.display = 'block';
+    // btnBgMove.style.marginLeft = 214 + 'px';
+    // hideSearch.style.display = 'none';
+    // hideShowPark.style.display = 'block';
     let area = areaOption.value;
     let road = roadOption.value;
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
