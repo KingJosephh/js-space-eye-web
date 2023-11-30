@@ -59,7 +59,7 @@ var greyIcon = new L.Icon({
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
-  });
+});
 // L.marker([24.162139, 120.647021]).addTo(map)
 //     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
 //     .openPopup();
@@ -131,78 +131,95 @@ const dataToMap = () => {
 //搜尋條件與停車場一覽監聽
 
 
-    btn1.addEventListener('click', (e) => {
-        // moveBtn(btn1)
-        hidePage(btn1)
-        btnStylingToggler(btn1,btn2);
-    });
-    btn2.addEventListener('click', (e) => {
-        //moveBtn(btn2)
-        hidePage(btn2)
-        btnStylingToggler(btn2, btn1);
-    });
+//車位類別按鈕監聽
+btn1.addEventListener('click', (e) => {
+    hidePage(btn1);
+    btnStylingTogglerToLightL(btn1,btn2);
+});
+btn2.addEventListener('click', (e) => {
+    hidePage(btn2);
+    btnStylingTogglerToLightL(btn2, btn1);
+});
+btn21.addEventListener('click', () => {
+    getType = btn21.value;
+    btnStylingTogglerToDarkM(btn21,btn22,btn23);
+});
+btn22.addEventListener('click', () => {
+    getType = btn22.value;
+    btnStylingTogglerToDarkM(btn22, btn21, btn23);
+});
+btn23.addEventListener('click', () => {
+    getType = btn23.value;
+    btnStylingTogglerToDarkM(btn23, btn21, btn22);
+});
+//顯示有車位或全部停車場按鈕監聽
+btn31.addEventListener('click', () => {
+    btnStylingTogglerToDarkM(btn31, btn32);
+    getSpaceOrNot = btn31.value
+});
+btn32.addEventListener('click', () => {
+    btnStylingTogglerToDarkM(btn32, btn31);
+    getSpaceOrNot = btn32.value
+});
 
-function btnStylingToggler(activeBtn, closeBtn) {
+//確認送出按鈕監聽
+confirmBtn.addEventListener('click', () => {
+    btnBgMove.style.marginLeft = 214 + 'px';
+    hideSearch.style.display = 'none';
+    hideShowPark.style.display = 'block';
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
+    // dataToMap()
+})
+
+//路邊停車與停車場按鈕監聽
+btn11.addEventListener('click' , () => {
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getParkValue = btn11.value
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
+    // moveBtn1(btn11)
+    btnStylingTogglerToLightM(btn11,btn12);
+    // dataToMap()
+})
+btn12.addEventListener('click' , () => {
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getParkValue = btn12.value
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
+    // moveBtn1(btn12)
+    btnStylingTogglerToLightM(btn12, btn11);
+    // dataToMap()
+})
+
+// ! btn點擊樣式更動
+function btnStylingTogglerToLightL(activeBtn, closeBtn) {
     closeBtn.classList.remove('btn-light-solid-l');
     closeBtn.classList.add('btn-dark-trans-l');
     activeBtn.classList.remove('btn-dark-trans-l');
     activeBtn.classList.add('btn-light-solid-l');
 }
+function btnStylingTogglerToLightM(activeBtn, closeBtn) {
+    closeBtn.classList.remove('btn-light-solid-m');
+    closeBtn.classList.add('btn-dark-trans-m');
+    activeBtn.classList.remove('btn-dark-trans-m');
+    activeBtn.classList.add('btn-light-solid-m');
+}
+function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {
+    closeBtn1.classList.remove('btn-dark-solid-m');
+    closeBtn1.classList.add('btn-dark-trans-m');
+    if (closeBtn2) {
+        closeBtn2.classList.remove('btn-dark-solid-m');
+        closeBtn2.classList.add('btn-dark-trans-m');
+    }
+    activeBtn.classList.remove('btn-dark-trans-m');
+    activeBtn.classList.add('btn-dark-solid-m');
+}
 
-
-
-    //確認送出按鈕監聽
-    confirmBtn.addEventListener('click', () => {
-        btnBgMove.style.marginLeft = 214 + 'px';
-        hideSearch.style.display = 'none';
-        hideShowPark.style.display = 'block';
-        let area = areaOption.value;
-        let road = roadOption.value;
-        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-        render(filteredMapData)
-        // dataToMap()
-    })
-    //車位類別按鈕監聽
-    btn21.addEventListener('click', () => {
-        moveBtn2(btn21)
-        getType = btn21.value
-    });
-    btn22.addEventListener('click', () => {
-        moveBtn2(btn22)
-        getType = btn22.value
-    });
-    btn23.addEventListener('click', () => {
-        moveBtn2(btn23)
-        getType = btn23.value
-    });
-    //顯示有車位或全部停車場按鈕監聽
-    btn31.addEventListener('click', () => {
-        moveBtn3(btn31)
-        getSpaceOrNot = btn31.value
-    });
-    btn32.addEventListener('click', () => {
-        moveBtn3(btn32)
-        getSpaceOrNot = btn32.value
-    });
-    //路邊停車與停車場按鈕監聽
-    btn11.addEventListener('click' , () => {
-        let area = areaOption.value;
-        let road = roadOption.value;
-        getParkValue = btn11.value
-        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-        render(filteredMapData)
-        moveBtn1(btn11)
-        // dataToMap()
-    })
-    btn12.addEventListener('click' , () => {
-        let area = areaOption.value;
-        let road = roadOption.value;
-        getParkValue = btn12.value
-        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-        render(filteredMapData)
-        moveBtn1(btn12)
-        // dataToMap()
-    })
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
     if(localParkData === ''){
@@ -279,7 +296,7 @@ axios.get(Url + `/600/users/${usersId}`, {
 function hidePage(a){
     let num = parseInt(a.getAttribute('data-num'));
     if(num === 1){
-        hideSearch.style.display = 'block';
+        hideSearch.style.display = 'flex';// 原本是block，但會導致新寫的樣式跑掉
         hideShowPark.style.display = 'none';
     }else if(num === 2){
         hideSearch.style.display = 'none';
@@ -296,7 +313,7 @@ function hidePage(a){
     }
 } */
 //選車位種類按鈕區塊移動
-function moveBtn2(y) {
+/* function moveBtn2(y) {
     let num = parseInt(y.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove2.style.marginLeft = (110 * (num-1)) + 'px';
@@ -305,9 +322,9 @@ function moveBtn2(y) {
     }else if(num=1){
         btnBgMove2.style.marginLeft = 0;
     }
-}
+} */
 //顯示有車位停車場按鈕區塊移動
-function moveBtn3(z) {
+/* function moveBtn3(z) {
     let num = parseInt(z.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove3.style.marginLeft = (180 * (num-1)) + 'px';
@@ -316,16 +333,16 @@ function moveBtn3(z) {
     }else if(num=1){
         btnBgMove3.style.marginLeft = 0;
     }
-}
+} */
 //選擇路邊或停車唱按鈕區塊移動
-const moveBtn1 = (w) => {
+/* const moveBtn1 = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
         btnBgMove1.style.marginLeft = (135 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1.style.marginLeft = 0;
     }
-}
+} */
 
 //收藏停車場的愛心按鈕監聽
 const addLikeParkToLocal = (e) => {

@@ -86,21 +86,21 @@
             <div>
               <div class="row mt-5">
                 <div class="col-12">
-                  <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
-                    <div class="col-5 p-0">
-                      <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example"
+                  <div class="row g-3 d-flex justify-content-between">
+                    <div class="col-5">
+                      <select class="form-select form-select-lg" aria-label="form-select-lg"
                         id="areaOption-Rwd">
                       </select>
                     </div>
-                    <div class="col-6 p-0">
-                      <select class="form-select form-select-lg mb-5 py-1" aria-label="form-select-lg example"
+                    <div class="col-6">
+                      <select class="form-select form-select-lg" aria-label="form-select-lg"
                         id="roadOption-Rwd">
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row d-flex justify-content-center mb-5">
+              <div class="row d-flex justify-content-center">
                 <div class="col-10 p-0">
                   <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
                     <div class="position-absolute btn-bg-move2-Rwd">
@@ -116,7 +116,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row d-flex justify-content-center mt-4 mb-5">
+              <div class="row d-flex justify-content-center">
                 <div class="col-10 p-0">
                   <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
                     <div class="position-absolute btn-bg-move3-Rwd">
@@ -166,14 +166,10 @@
         <div class="col-lg-8 col p-0">
           <div class="row d-flex justify-content-end position-relative d-lg-block d-none" style="z-index: 2000;">
             <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
-              <div class="btn-bg-move-dad button-group d-flex justify-content-between color-tran-gray rounded-2 py-2">
-                <!-- <div class="position-absolute btn-bg-move1">
-                  <div id="color-block" class="bg-light-green mx-2 d-flex align-center rounded-2"
-                    style="height: 32px; width: 75px;"></div>
-                </div> -->
-                <button id="btn1-1" type="button" class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold text-nowrap"
+              <div class="button-group d-flex justify-content-evenly color-tran-gray rounded-2 py-2"><!-- btn-bg-move-dad  -->
+                <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0"
                   style="z-index: 2;" data-num="1" value="C01">路邊車格</button>
-                <button id="btn1-2" type="button" class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold text-nowrap"
+                <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0"
                   style="z-index: 2;" data-num="2" value="C02">停車場</button>
               </div>
             </div>
@@ -184,82 +180,53 @@
                       </iframe> -->
         </div>
         <!-- 搜尋介面 -->
-        <div class="col-4 d-lg-block d-none searchInterface">
-          <div class="row m-auto">
+        <div class="col-4 d-lg-block d-none interface">
+          <!-- 搜尋條件、停車場一覽btn -->
+          <div class="row">
             <div class="col d-flex justify-content-evenly button-search-container">
-              <!-- <div class="btn-bg-move-dad button-group d-flex justify-content-between bg-green-black rounded-2 py-2 "> -->
-                <!-- <div class="position-absolute btn-bg-move">
-                  <div id="color-block" class=" bg-light-green mx-4 d-flex align-center rounded-2"
-                    style="height: 32px; width: 100px;"></div>
-                </div> -->
-                <button id="btn1" type="button" class="btn btn-light-solid-l px-3 shadow-none fw-bold"
-                  style="z-index: 2;" data-num="1">搜尋條件</button>
-                <button id="btn2" type="button" class="btn btn-dark-trans-l px-3 shadow-none fw-bold"
-                  style="z-index: 2;" data-num="2">停車場一覽</button>
-              <!-- </div> -->
+                <button id="btn1" type="button" class="btn btn-light-solid-l"
+                  data-num="1">搜尋條件</button>
+                <button id="btn2" type="button" class="btn btn-dark-trans-l"
+                  data-num="2">停車場一覽</button>
             </div>
           </div>
-          <div class="row d-flex justify-content-center">
-            <div class="col-10 bg-green-black mt-4 mb-3 rounded-2" style="height: 470px; overflow: auto;">
+          <!-- 主要區塊 -->
+          <div class="row d-flex justify-content-center mx-auto interface-main">
+            <div class="col">
+              <!-- 搜尋條件 -->
               <div class="content-to-hide-search">
-                <div class="row mt-5">
-                  <div class="col-12">
-                    <div class="row g-3 mb-2 mx-3 d-flex justify-content-between">
-                      <div class="col-5 p-0">
-                        <select class="form-select form-select-lg mb-5 py-1 fw-bold"
-                          aria-label="form-select-lg example" id="areaOption">
-                        </select>
-                      </div>
-                      <div class="col-6 p-0">
-                        <select class="form-select form-select-lg mb-5 py-1 fw-bold"
-                          aria-label="form-select-lg example" id="roadOption">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
+                <!-- select區塊 -->
+                <div class="d-flex justify-content-between interface-main-select">
+                  <select class="form-select form-select-lg fw-bold"
+                    aria-label="form-select-lg example" id="areaOption">
+                  </select>
+                  <select class="form-select form-select-lg fw-bold"
+                    aria-label="form-select-lg example" id="roadOption">
+                  </select>
                 </div>
-                <div class="row d-flex justify-content-center mb-5">
-                  <div class="col-10 p-0">
-                    <div
-                      class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
-                      <div class="position-absolute btn-bg-move2">
-                        <div id="color-block" class=" bg-light-green mx-2 d-flex align-center rounded-2"
-                          style="height: 28px; width: 70px;"></div>
-                      </div>
-                      <button id="btn2-1" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none fw-bold"
-                        style="z-index: 2;" data-num="1" value="一般車位">一般車位</button>
-                      <button id="btn2-2" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none fw-bold"
-                        style="z-index: 2;" data-num="2" value="親子車位">親子車位</button>
-                      <button id="btn2-3" type="button" class="btn btn-sm mx-1 py-1 border-0 shadow-none fw-bold"
-                        style="z-index: 2;" data-num="3" value="殘障車位">殘障車位</button>
-                    </div>
-                  </div>
+                <!-- 車位種類type -->
+                <div class="d-flex justify-content-center interface-main-type">
+                  <button id="btn2-1" type="button" class="btn btn-dark-solid-m"
+                    data-num="1" value="一般車位">一般車位</button>
+                  <button id="btn2-2" type="button" class="btn btn-dark-trans-m"
+                    data-num="2" value="親子車位">親子車位</button>
+                  <button id="btn2-3" type="button" class="btn btn-dark-trans-m"
+                    data-num="3" value="殘障車位">殘障車位</button>
                 </div>
-                <div class="row d-flex justify-content-center mt-4">
-                  <div class="col-10 p-0">
-                    <div
-                      class="btn-bg-move-dad button-group d-flex justify-content-between bg-secondary rounded-2 py-2">
-                      <div class="position-absolute btn-bg-move3">
-                        <div id="color-block" class=" bg-light-green mx-3 d-flex align-center rounded-2"
-                          style="height: 28px; width: 90px;"></div>
-                      </div>
-                      <button id="btn3-1" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none fw-bold"
-                        style="z-index: 2;" data-num="1" value="all">全部停車場</button>
-                      <button id="btn3-2" type="button" class="btn btn-sm mx-3 py-1 border-0 shadow-none fw-bold"
-                        style="z-index: 2;" data-num="2" value="haveSpace">有空位停車場</button>
-                    </div>
-                  </div>
+                <!-- 空位狀態available -->
+                <div class="d-flex justify-content-center interface-main-available">
+                  <button id="btn3-1" type="button" class="btn btn-dark-solid-m"
+                    data-num="1" value="all">全部停車場</button>
+                  <button id="btn3-2" type="button" class="btn btn-dark-trans-m"
+                    data-num="2" value="haveSpace">有空位停車場</button>
                 </div>
-                <div class="row">
-                  <div class="col d-flex justify-content-center" style="margin-top: 100px;">
-                    <button id="confirm" type="button"
-                      class="btn btn-light-solid-l">確認送出</button>
-                    <!-- <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button> -->
-                  </div>
+                <div class="col d-flex justify-content-center interface-main-submitBtn">
+                  <button id="confirm" type="button" class="btn btn-light-solid-l">確認送出</button>
                 </div>
               </div>
+              <!-- 停車場一覽 -->
               <div class="content-to-hide-showPark" id="showMapCard">
-                <div class="card mt-3" style="width: 16rem;">
+                <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <h5 class="card-title">西屯停車場</h5>
@@ -273,9 +240,9 @@
                       <div class="col-5">剩餘空位:</div>
                       <div class="col-7">15</div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
-                      <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal"
+                    <div class="d-flex justify-content-between showPark-btns">
+                      <button type="button" class="btn btn-dark-solid-m">長期方案</button>
+                      <button type="button" class="btn btn-dark-solid-m" data-bs-toggle="modal"
                         data-bs-target="#showAllParkModel" data-bs-show-park="西屯停車場" data-bs-show-type="一般車位"
                         data-bs-show-address="台北市松山區八德路3段12巷" data-bs-show-space="15"
                         data-bs-show-in="室外">詳細資料</button>

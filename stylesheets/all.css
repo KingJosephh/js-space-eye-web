@@ -12936,15 +12936,33 @@ li .menu-m:hover::before {
   height: 620px;
 }
 
-.searchInterface {
-  border-radius: 24px;
-  background: #fff;
-}
-
-.button-search-container {
+.interface .button-search-container {
   width: -moz-fit-content;
   width: fit-content;
-  padding: 14px 0;
+  padding: 28px 0;
+}
+.interface .interface-main {
+  border-radius: 24px;
+  background: #fff;
+  height: 504px;
+  gap: 12px;
+  padding-top: 44px;
+}
+.interface .interface-main .content-to-hide-search {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.interface .interface-main .content-to-hide-search .interface-main-select,
+.interface .interface-main .content-to-hide-search .interface-main-type,
+.interface .interface-main .content-to-hide-search .interface-main-available {
+  gap: 12px;
+}
+.interface .interface-main .content-to-hide-search .interface-main-submitBtn {
+  margin-top: 28px;
+}
+.interface .interface-main .content-to-hide-showPark .showPark-btns {
+  margin-top: 12px;
 }
 
 body {
