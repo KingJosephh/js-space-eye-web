@@ -129,14 +129,28 @@ const dataToMap = () => {
 //     console.log(e.target)
 // })
 //搜尋條件與停車場一覽監聽
-    btn1.addEventListener('click', () => {
-        moveBtn(btn1)
+
+
+    btn1.addEventListener('click', (e) => {
+        // moveBtn(btn1)
         hidePage(btn1)
+        btnStylingToggler(btn1,btn2);
     });
-    btn2.addEventListener('click', () => {
-        moveBtn(btn2)
+    btn2.addEventListener('click', (e) => {
+        //moveBtn(btn2)
         hidePage(btn2)
+        btnStylingToggler(btn2, btn1);
     });
+
+function btnStylingToggler(activeBtn, closeBtn) {
+    closeBtn.classList.remove('btn-light-solid-l');
+    closeBtn.classList.add('btn-dark-trans-l');
+    activeBtn.classList.remove('btn-dark-trans-l');
+    activeBtn.classList.add('btn-light-solid-l');
+}
+
+
+
     //確認送出按鈕監聽
     confirmBtn.addEventListener('click', () => {
         btnBgMove.style.marginLeft = 214 + 'px';
@@ -273,14 +287,14 @@ function hidePage(a){
     }
 }
 //選搜尋停建或停車場一覽按鈕區塊移動
-function moveBtn(x) {
+/* function moveBtn(x) {
     let num = parseInt(x.getAttribute('data-num'));
     if (num > btnNumList) {
         btnBgMove.style.marginLeft = (214 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove.style.marginLeft = 0;
     }
-}
+} */
 //選車位種類按鈕區塊移動
 function moveBtn2(y) {
     let num = parseInt(y.getAttribute('data-num'));
