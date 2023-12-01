@@ -577,36 +577,43 @@ const showSectionListRwd = () => {
         areaOptionRwd.innerHTML = content;
 }
 //車位類別按鈕監聽
-btn21Rwd.addEventListener('click', () => {
-    moveBtn2Rwd(btn21Rwd)
-    getType = btn21Rwd.value
-});
-btn22Rwd.addEventListener('click', () => {
-    moveBtn2Rwd(btn22Rwd)
-    getType = btn22Rwd.value
-});
-btn23Rwd.addEventListener('click', () => {
-    moveBtn2Rwd(btn23Rwd)
-    getType = btn23Rwd.value
-});
-//顯示有車位或全部停車場按鈕監聽
-btn31Rwd.addEventListener('click', () => {
-    moveBtn3Rwd(btn31Rwd)
-    getSpaceOrNot = btn31Rwd.value
-});
-btn32Rwd.addEventListener('click', () => {
-    moveBtn3Rwd(btn32Rwd)
-    getSpaceOrNot = btn32Rwd.value
-});
 //路邊停車與停車場按鈕監聽
 btn11Rwd.addEventListener('click' , () => {
     getParkValue = btn11Rwd.value
-    moveBtn1Rwd(btn11Rwd)
+    btnStylingTogglerToLightL(btn11Rwd, btn12Rwd);
+    //moveBtn1Rwd(btn11Rwd)
 })
 btn12Rwd.addEventListener('click' , () => {
     getParkValue = btn12Rwd.value
-    moveBtn1Rwd(btn12Rwd)
+    btnStylingTogglerToLightL(btn12Rwd, btn11Rwd);
+    //moveBtn1Rwd(btn12Rwd)
 })
+btn21Rwd.addEventListener('click', () => {
+    //moveBtn2Rwd(btn21Rwd)
+    getType = btn21Rwd.value;
+    btnStylingTogglerToDarkM(btn21Rwd, btn22Rwd, btn23Rwd);
+});
+btn22Rwd.addEventListener('click', () => {
+    //moveBtn2Rwd(btn22Rwd)
+    getType = btn22Rwd.value;
+    btnStylingTogglerToDarkM(btn22Rwd, btn23Rwd, btn21Rwd);
+});
+btn23Rwd.addEventListener('click', () => {
+    //moveBtn2Rwd(btn23Rwd)
+    getType = btn23Rwd.value;
+    btnStylingTogglerToDarkM(btn23Rwd, btn21Rwd, btn22Rwd);
+});
+//顯示有車位或全部停車場按鈕監聽
+btn31Rwd.addEventListener('click', () => {
+    //moveBtn3Rwd(btn31Rwd)
+    getSpaceOrNot = btn31Rwd.value
+    btnStylingTogglerToDarkM(btn31Rwd, btn32Rwd);
+});
+btn32Rwd.addEventListener('click', () => {
+    //moveBtn3Rwd(btn32Rwd)
+    getSpaceOrNot = btn32Rwd.value
+    btnStylingTogglerToDarkM(btn32Rwd, btn31Rwd);
+});
 //渲染道路資料到畫面上
 const showRoadOptionListRwd = (a) => {
     let content = '';
@@ -620,7 +627,7 @@ const showRoadOptionListRwd = (a) => {
         roadOptionRwd.innerHTML = content;
 }
 //選車位種類按鈕區塊移動
-const moveBtn2Rwd = (y) => {
+/* const moveBtn2Rwd = (y) => {
     let num = parseInt(y.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove2Rwd.style.marginLeft = (100 * (num-1)) + 'px';
@@ -629,25 +636,25 @@ const moveBtn2Rwd = (y) => {
     }else if(num=1){
         btnBgMove2Rwd.style.marginLeft = 0;
     }
-}
+} */
 //顯示有車位停車場按鈕區塊移動
-const moveBtn3Rwd = (z) => {
+/* const moveBtn3Rwd = (z) => {
     let num = parseInt(z.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove3Rwd.style.marginLeft = (158 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove3Rwd.style.marginLeft = 0;
     }
-}
+} */
 //選擇路邊或停車唱按鈕區塊移動
-const moveBtn1Rwd = (w) => {
+/* const moveBtn1Rwd = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
         btnBgMove1Rwd.style.marginLeft = (170 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1Rwd.style.marginLeft = 0;
     }
-}
+} */
 //控制篩選藍
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
