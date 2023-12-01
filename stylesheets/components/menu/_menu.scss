@@ -1,8 +1,9 @@
 li{
   .menu-l,
   .menu-m{
-    color: var(--white);
+    color: var(--gray-01);//var(--white);
     position: relative;
+    font-weight: 500;
     cursor: pointer;
   }
   

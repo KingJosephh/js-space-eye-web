@@ -24,12 +24,12 @@ $display-none: none;
     color: red;
     display: none;
 }
-
-#btn1,#btn2,#btn3,#btn4,#btn5,#btn6{
+// 用id取優先級太高會覆蓋掉樣式，先關起來
+/* #btn1,#btn2,#btn3,#btn4,#btn5,#btn6{
     color: rgb(2, 149, 0);
 
     &:hover {
         color: #93FF00;
         border-radius: 5px;
     }
-}
+} */

@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Space Eye</title>
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -19,11 +15,15 @@
     <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
       <div class="container-md">
         <!-- logo -->
-        <a class="navbar-brand cursor-pointer" href="#">
+        <a class="navbar-brand cursor-pointer" href="/index.html">
           <img src="Assests/img/Logo-dark.png" alt="" srcset="">
         </a>
         <!-- button -->
-        <button class="btn btn-light-solid-m">登入 / 註冊</button>
+        <button class="btn btn-light-solid-m">
+          <a href="/Pages/login.html">
+            登入 / 註冊
+          </a>
+        </button>
         <!-- hamburger -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
           aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +43,10 @@
         <div class="collapse navbar-collapse" id="headerNavbar">
           <ul class="navbar-nav ml-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="menu-l" href="#">預約停車</a>
+              <a class="menu-l" href="/Pages/ReserveParking.html" data-indexMenu>預約停車</a>
             </li>
             <li class="nav-item">
-              <a class="menu-l" href="#">找停車位</a>
+              <a class="menu-l" href="/findSpace.html" data-indexMenu>找停車位</a>
             </li>
           </ul>
         </div>
@@ -192,7 +192,7 @@
         <div class="fs-2 fw-bold">輕鬆預定,立即享受</div>
         <img src="Assests/icon/Vector-bend.png" alt="">
       </div>
-      <div id="introCarouselInterval" class="carousel slide" data-bs-ride="carousel"><!--  data-bs-ride="carousel" -->
+      <div id="introCarouselInterval" class="carousel slide"><!--  data-bs-ride="carousel" -->
         <div class="carousel-inner">
           <div class="carousel-item active container" data-bs-interval="3000">
             <div class="row d-flex justify-content-center align-items-center">
@@ -280,9 +280,9 @@
           <div class="fs-2 fw-bold">聽聽用戶怎麼說</div>
           <img src="Assests/icon/Vector-bend.png" alt="">
         </div>
-        <div class="col reviews-controller">
-          <button class="" id="prev"><img src="Assests/icon/icon-arrow-left.png" alt="" srcset=""></button>
-          <button class="" id="next"><img src="Assests/icon/icon-arrow-right.png" alt="" srcset=""></button>
+        <div class="col reviews-controller"><!-- 做出按鈕功能再打開cursor:pointer -->
+          <button class="" id="prev" type="button" style="cursor: unset"><img src="Assests/icon/icon-arrow-left.png" alt="" srcset=""></button>
+          <button class="" id="next" type="button" style="cursor: unset"><img src="Assests/icon/icon-arrow-right.png" alt="" srcset=""></button>
         </div>
       </div>
       <div class="row reviews-body">
@@ -494,7 +494,7 @@
   </footer>
 
 
-  <!-- components部分，之後用webpack處理 -->
+  <!-- components -->
   <script src="stylesheets/components/buttons/button.js"></script>
   <script src="stylesheets/components/header/header.js"></script>
   <!-- bootstrap -->

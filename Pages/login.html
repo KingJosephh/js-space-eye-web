@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./loginStyle.css"> -->
-    <link rel="stylesheet" href="/stylesheets/all.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./loginStyle.css"> -->
+  <link rel="stylesheet" href="/stylesheets/all.css">
+  <title>login</title>
 </head>
+
 <body>
-    <header class="head">
-        <!-- <nav class="navbar">
+  <!-- <header class="head">
+        <nav class="navbar">
             <img src="../Assests/img/parking lot logo.png" alt="logo" class="logo">
             <div class="searchBar">
                 <a>預約停車</a>
@@ -17,7 +19,7 @@
                 <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
                 <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">車主專區</a></button>
             </div>
-        </nav> -->
+        </nav>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid m-lg-4">
                 <div class="container-fluid d-flex justify-content-between">
@@ -36,46 +38,93 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="background-img"></div>
-    <section class="home">
-        <div class="content d-none d-sm-block">
-            <div class="logo"></div>
-            <h2>Space</h2>
-            <h2>Eye</h2>
-            <p>your space my space
-                Welcome to space eye
-                            </p>
+    </header> -->
+  <header id="header">
+    <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
+      <div class="container-md">
+        <!-- logo -->
+        <a class="navbar-brand" href="/index.html">
+          <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
+        </a>
+        <!-- button -->
+        <button class="btn btn-light-solid-m">
+          <a href="/Pages/login.html">
+            登入 / 註冊
+          </a>
+        </button>
+        <!-- hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
+          aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28"
+              height="28">
+              <rect width="28" height="28" fill="#D9D9D9" />
+            </mask>
+            <g mask="url(#mask0_2609_18108)">
+              <path
+                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                fill="#1E1E1E" />
+            </g>
+          </svg>
+        </button>
+
+        <div class="collapse navbar-collapse" id="headerNavbar">
+          <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="menu-l" href="/Pages/ReserveParking.html">預約停車</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-l" href="/findSpace.html">找停車位</a>
+            </li>
+          </ul>
         </div>
-        <div class="login col-lg-5 col-md-5 pt-lg-3 pt-5">
-            <h3 class="d-lg-block d-md-none d-sm-block mb-lg-5 mb-5 mt-lg-1 mt-5">login</h3>
-            <div class="input">
-                <input class="email" type="text">
-                <label for="">Email</label>
-                <p class="email-warn">* 請輸入正確帳號 *</p>
-            </div>
-            <div class="input">
-                <input class="Password" type="text">
-                <label for="">Password</label>
-                <p class="Password-warn">* 請輸入正確密碼 *</p>
-            </div>
-            <div class="aboutAccount">
-                <div class="check">
-                    <input type="checkbox">
-                    <p>記住帳號</p>
-                </div>
-                <a href="">忘記密碼?</a>
-            </div>
-            <div class="logIn-btn">
-                <button class="btn">登入會員</button>
-            </div>
-            <div class="signIn">
-                <p>還沒擁有會員嗎?</p>
-                <a href="http://127.0.0.1:5501/Pages/signin.html">前往註冊</a>
-            </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- <div class="background-img"></div> -->
+  <section class="main">
+    <div class="content d-none d-sm-block">
+      <div class="logo"></div>
+      <h2>Space</h2>
+      <h2>Eye</h2>
+      <p>your space my space
+        Welcome to space eye
+      </p>
+    </div>
+    <form class="login col-lg-5 col-md-5 pt-lg-3 pt-5" id="logInForm">
+      <h3 class="d-lg-block d-md-none d-sm-block mb-lg-5 mb-5 mt-lg-1 mt-5">login</h3>
+      <div class="input">
+        <input class="email" type="text">
+        <label for="">Email</label>
+        <p class="email-warn">* 請輸入正確帳號 *</p>
+      </div>
+      <div class="input">
+        <input class="Password" type="text">
+        <label for="">Password</label>
+        <p class="Password-warn">* 請輸入正確密碼 *</p>
+      </div>
+      <div class="aboutAccount">
+        <div class="check">
+          <input type="checkbox">
+          <p>記住帳號</p>
         </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script type="module" src="../scripts/loginScript copy.js"></script>
+        <a href="">忘記密碼?</a>
+      </div>
+      <div class="logIn-btn">
+        <!-- <button class="btn">登入會員</button> -->
+        <button type="button" class="btn btn-light-solid-l">
+          <a>登入會員</a></button><!-- href="/findSpace.html" -->
+      </div>
+      <div class="signIn">
+        <p>還沒擁有會員嗎?</p>
+        <a href="/Pages/signup.html">前往註冊</a>
+      </div>
+    </form>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script type="module" src="../scripts/login.js"></script>
 </body>
+
 </html>
