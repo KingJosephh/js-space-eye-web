@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +13,12 @@
 
   <!-- 畫面處理用，不需複製 -->
   <style>
-    body{
+    body {
       background: #bdbdbd;
-    } 
+    }
   </style>
 </head>
+
 <body>
   <header id="header">
     <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
@@ -26,9 +28,9 @@
           <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
         </a>
         <!-- button -->
-        <button class="btn btn-light-solid-m">
-          <a href="/Pages/login.html">
-            登入 / 註冊
+        <button class="btn btn-light-solid-m" id="userBtn">
+          <a href="/Pages/carOwnerNew.html">
+            車主專區
           </a>
         </button>
         <!-- hamburger -->
@@ -41,12 +43,13 @@
               <rect width="28" height="28" fill="#D9D9D9" />
             </mask>
             <g mask="url(#mask0_2609_18108)">
-              <path d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+              <path
+                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
                 fill="#1E1E1E" />
             </g>
           </svg>
         </button>
-  
+
         <div class="collapse navbar-collapse" id="headerNavbar">
           <ul class="navbar-nav ml-auto mb-2 mb-md-0">
             <li class="nav-item">
@@ -61,16 +64,19 @@
     </nav>
   </header>
 
-  
 
-  
+
+
 
   <!-- bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <!-- script -->
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <script src="/stylesheets/components/buttons/button.js"></script>
   <script src="/stylesheets/components/header/header.js"></script>
 
 </body>
+
 </html>
