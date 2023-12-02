@@ -1,131 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlanSelection</title>
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" href="/stylesheets/all.css">
-    <link rel="stylesheet" href="/stylesheets/cssFile/planSelection.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</head>
-<body>
-    <!-- <header class="head">
-        <nav class="navbar">
-            <img src="" alt="logo" class="logo">
-            <div class="searchBar">
-                <a>預約停車</a>
-                <a>找停車位</a>
-                <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html">登入/註冊</a></button> 
-                <button class="btn">車主專區</button>
-            </div>
-        </nav>
-    </header> -->
-    <header id="header">
-        <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
-            <div class="container-md">
-                <!-- logo -->
-                <a class="navbar-brand" href="/index.html">
-                    <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
-                </a>
-                <!-- button -->
-                <button class="btn btn-light-solid-m">
-                    <a href="/Pages/login.html">
-                        登入 / 註冊
-                    </a>
-                </button>
-                <!-- hamburger -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
-                    aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="28" height="28">
-                            <rect width="28" height="28" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_2609_18108)">
-                            <path
-                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
-                                fill="#1E1E1E" />
-                        </g>
-                    </svg>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="headerNavbar">
-                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="menu-l" href="/Pages/ReserveParking.html">預約停車</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="menu-l" href="/findSpace.html">找停車位</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <div class="watermark" style="display: none;" id="elementToClose">
-        <div class="main-container">
-            <div class="summary-container">
-                <div class="bottom-part">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi-x-circle" viewBox="0 0 16 16" id="closeBtn">
-                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                       <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                    <div class="word-section">
-                        <h1>訂單摘要</h1>
-                        <hr>
-                    </div>
-                    <div class="plan-section">
-                      <div class="annual-plan">
-                          <p id="chosePlan">方案選擇: <span></span></p>
-                      </div>
-                      <div class="change">
-                          <a href="#">Change</a>
-                      </div>
-                    </div>
-                    <div class="plan-section">
-                        <div class="annual-plan">
-                            <p id="entryTime">進場時間: <span></span></p>
-                        </div>
-                        <div class="change">
-                            <a href="#">Change</a>
-                        </div>
-                    </div>
-                    <div class="plan-section">
-                        <div class="annual-plan">
-                            <p id="exitTime">出場時間: <span></span></p>
-                        </div>
-                        <div class="change">
-                            <a href="#">Change</a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="btn-section">
-                        <button class="btn-payment btn" type="submit">前往結帳</button>
-                        <button class="btn-submit btn" type="submit">取消</button>
-                    </div>
-                </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanSelection</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/stylesheets/all.css">
+  <link rel="stylesheet" href="/stylesheets/cssFile/planSelection.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
+      <div class="container-md">
+        <!-- logo -->
+        <a class="navbar-brand" href="/index.html">
+          <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
+        </a>
+        <!-- button -->
+        <button class="btn btn-light-solid-m" id="userBtn">
+          <a href="/Pages/carOwnerNew.html">
+            車主專區
+          </a>
+        </button>
+        <!-- hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
+          aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28"
+              height="28">
+              <rect width="28" height="28" fill="#D9D9D9" />
+            </mask>
+            <g mask="url(#mask0_2609_18108)">
+              <path d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                fill="#1E1E1E" />
+            </g>
+          </svg>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="headerNavbar">
+          <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="menu-l" href="/Pages/ReserveParking.html">預約停車</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-l" href="/findSpace.html">找停車位</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="watermark" style="display: none;" id="elementToClose">
+    <div class="main-container">
+      <div class="summary-container">
+        <div class="bottom-part">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi-x-circle"
+            viewBox="0 0 16 16" id="closeBtn">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+          <div class="word-section">
+            <h1>訂單摘要</h1>
+            <hr>
+          </div>
+          <div class="plan-section">
+            <div class="annual-plan">
+              <p id="chosePlan">方案選擇: <span></span></p>
             </div>
+            <div class="change">
+              <a href="#">Change</a>
+            </div>
+          </div>
+          <div class="plan-section">
+            <div class="annual-plan">
+              <p id="entryTime">進場時間: <span></span></p>
+            </div>
+            <div class="change">
+              <a href="#">Change</a>
+            </div>
+          </div>
+          <div class="plan-section">
+            <div class="annual-plan">
+              <p id="exitTime">出場時間: <span></span></p>
+            </div>
+            <div class="change">
+              <a href="#">Change</a>
+            </div>
+          </div>
+          <hr>
+          <div class="btn-section">
+            <button class="btn-payment btn" type="submit">前往結帳</button>
+            <button class="btn-submit btn" type="submit">取消</button>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="container">
-        <div class="top">
-            <!-- <img src="/Assests/img/parking.png" alt="parkingLogo"> -->
-            <h1>預約停車</h1>
-        </div>
-        <hr>
-        <table id="detailsCard">
-            <!-- <thead>
+  </div>
+  <div class="container">
+    <div class="top">
+      <!-- <img src="/Assests/img/parking.png" alt="parkingLogo"> -->
+      <h1>預約停車</h1>
+    </div>
+    <hr>
+    <table id="detailsCard">
+      <!-- <thead>
                 <tr>
                     <th scope="col">停車場資訊</th>
                     <th scope="col">停車場</th>
@@ -143,80 +135,84 @@
                     <td data-label="Account">一般車位</td>
                 </tr>
             </tbody> -->
-        </table>
-        <form id="reservationForm">
-            <label for="entryDate">入場日期:</label>
-            <input type="date" id="entryDate" name="date" class="form-input" required>
-            <label for="exitDate">離場日期:</label>
-            <input type="date" id="exitDate" name="date" class="form-input" required>
-        </form>
-        <h1 style="text-align: center">方案選擇</h1>
-        <div class="plan-container">
-            <div onclick="select(this, false)" class="plan" id="monthPlan">
-                <h3>每月停車</h3>
-                <p style="margin-top: 0">monthly</p>
-                <ul>
-                    <li>NT 349</li>
-                    <li>全月自由停車，方便又節省。</li>
-                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-                    <li>一次訂閱，一整年無限次數停車。</li>
-                </ul>
-            </div>
-            <div onclick="select(this, true)" class="plan" id="weekPlan">
-                <h3>每週停車</h3>
-                <p style="margin-top: 0">week</p>
-                <ul>
-                    <li>NT 149</li>
-                    <li>縮短週末中的尋找停車位的時間。</li>
-                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-                    <li>省時省力，停車不再是煩惱。</li>
-                </ul>
-            </div>
-            <div onclick="select(this, false)" class="plan" id="dayPlan">
-                <h3>單次停車</h3>
-                <p style="margin-top: 0">day</p>
-                <ul>
-                    <li>NT 30</li>
-                    <li>縮短週末中的尋找停車位的時間。</li>
-                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-                    <li>省時省力，停車不再是煩惱。</li>
-                </ul>
-            </div>
-            <div onclick="select(this, false)" class="plan" id="yearPlan">
-                <h3>每年停車</h3>
-                <p style="margin-top: 0">year</p>
-                <ul>
-                    <li>NT 749</li>
-                    <li>長期停車需求的理想選擇</li>
-                    <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-                    <li>一次訂閱，一整年無限次數停車。</li>
-                </ul>
-            </div>
-        </div>
-          <div style="display: flex; justify-content: center; padding-top: 20px; width: 100%">
-            <button id="next" type="button" disabled>Register</button>
-          </div>
-        </div> 
-        <button type="button" class="btn btn-secondary" aria-pressed="false" autocomplete="off">
-            取消
-        </button>
-        <button type="button" class="btn-primary" aria-pressed="false" autocomplete="off">
-            確認送出
-        </button>
-        <div class="notice">
-            <div class="content">
-              <h3>公告事項說明</h3>
-              <ul class="notice-list">
-                <li>1同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</li>
-                <li>2預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</li>
-                <li>3本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</li>
-                <li>4預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</li>
-                <li> ★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。★</li>
-              </ul>
-            </div>
-        </div>
+    </table>
+    <form id="reservationForm">
+      <label for="entryDate">入場日期:</label>
+      <input type="date" id="entryDate" name="date" class="form-input" required>
+      <label for="exitDate">離場日期:</label>
+      <input type="date" id="exitDate" name="date" class="form-input" required>
+    </form>
+    <h1 style="text-align: center">方案選擇</h1>
+    <div class="plan-container">
+      <div onclick="select(this, false)" class="plan" id="monthPlan">
+        <h3>每月停車</h3>
+        <p style="margin-top: 0">monthly</p>
+        <ul>
+          <li>NT 349</li>
+          <li>全月自由停車，方便又節省。</li>
+          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+          <li>一次訂閱，一整年無限次數停車。</li>
+        </ul>
+      </div>
+      <div onclick="select(this, true)" class="plan" id="weekPlan">
+        <h3>每週停車</h3>
+        <p style="margin-top: 0">week</p>
+        <ul>
+          <li>NT 149</li>
+          <li>縮短週末中的尋找停車位的時間。</li>
+          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+          <li>省時省力，停車不再是煩惱。</li>
+        </ul>
+      </div>
+      <div onclick="select(this, false)" class="plan" id="dayPlan">
+        <h3>單次停車</h3>
+        <p style="margin-top: 0">day</p>
+        <ul>
+          <li>NT 30</li>
+          <li>縮短週末中的尋找停車位的時間。</li>
+          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+          <li>省時省力，停車不再是煩惱。</li>
+        </ul>
+      </div>
+      <div onclick="select(this, false)" class="plan" id="yearPlan">
+        <h3>每年停車</h3>
+        <p style="margin-top: 0">year</p>
+        <ul>
+          <li>NT 749</li>
+          <li>長期停車需求的理想選擇</li>
+          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+          <li>一次訂閱，一整年無限次數停車。</li>
+        </ul>
+      </div>
     </div>
-    <script src="/scripts/click2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <div style="display: flex; justify-content: center; padding-top: 20px; width: 100%">
+      <button id="next" type="button" disabled>Register</button>
+    </div>
+  </div>
+  <button type="button" class="btn btn-secondary" aria-pressed="false" autocomplete="off">
+    取消
+  </button>
+  <button type="button" class="btn-primary" aria-pressed="false" autocomplete="off">
+    確認送出
+  </button>
+  <div class="notice">
+    <div class="content">
+      <h3>公告事項說明</h3>
+      <ul class="notice-list">
+        <li>1同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</li>
+        <li>2預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</li>
+        <li>3本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</li>
+        <li>4預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</li>
+        <li> ★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。★</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <script src="/scripts/click2.js"></script>
+  <script src="/stylesheets/components/header/header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

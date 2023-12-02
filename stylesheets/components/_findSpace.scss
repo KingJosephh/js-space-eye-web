@@ -119,3 +119,17 @@ $display-none: none;
   }
 
 }
+
+.searchBtn{
+  z-index: 2200;
+  right: 150px;
+  top: 150px;
+  @media screen and (max-width: 768px) {
+    right: 130px;
+    top: 100px;
+  }
+  @media screen and (max-width: 576px) {
+    right: 30px;
+    top: 100px;
+  }
+}

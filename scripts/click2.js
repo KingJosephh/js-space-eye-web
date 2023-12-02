@@ -1,4 +1,6 @@
 const Url = 'http://localhost:3000'
+const token = localStorage.getItem('token');
+const usersId = localStorage.getItem('usersId'); // tokem與uersId為header辨識登入用，勿刪
 const UrlWebType = 'https://space-eye-web-surver.onrender.com'
 const optionPark = localStorage.getItem('optionPark');
 const detailsCard = document.querySelector('#detailsCard')

@@ -1,7 +1,7 @@
 var followButton = document.getElementById("followButton");
 
 followButton.addEventListener("click", function() {
-    window.location.href = "parkingDetail.html";
+    window.location.href = "planSelection.html";
 });
 
 var canelButton = document.getElementById("cancelButton");

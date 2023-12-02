@@ -12327,6 +12327,7 @@ footer [src="Assests/icon/maskGroup-02.png"] {
   }
   .navbar-brand {
     width: 176px;
+    margin: 0;
   }
   .navbar-brand img {
     width: 100%;
@@ -12989,6 +12990,24 @@ li .menu-m:hover::before {
 }
 .interface .interface-main .content-to-hide-showPark .showPark-btns {
   margin-top: 12px;
+}
+
+.searchBtn {
+  z-index: 2200;
+  right: 150px;
+  top: 150px;
+}
+@media screen and (max-width: 768px) {
+  .searchBtn {
+    right: 130px;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .searchBtn {
+    right: 30px;
+    top: 100px;
+  }
 }
 
 body {

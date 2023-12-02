@@ -196,7 +196,7 @@ btn12.addEventListener('click' , () => {
     // dataToMap()
 })
 
-// ! btn點擊樣式更動
+// btn點擊樣式更動
 function btnStylingTogglerToLightL(activeBtn, closeBtn) {
     closeBtn.classList.remove('btn-light-solid-l');
     closeBtn.classList.add('btn-dark-trans-l');
