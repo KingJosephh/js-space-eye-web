@@ -14,6 +14,7 @@ const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const contentToHide = document.querySelector('.content-to-hide-owner');
 const contentToHide2 = document.querySelector('.content-to-hide-save');
+const btnList = document.querySelector('#list')
 // const contentToHide3 = document.querySelector('.content-to-hide-place-history');
 const contentToHide3 = document.querySelector('.content-to-hide-trading-history');
 const contentToHide4 = document.querySelector('.content-to-hide-appointment');
@@ -89,26 +90,31 @@ btn1.addEventListener('click', () => {
   getNum(btn1);
   showContent(btn1);
   btnStylingTogglerToLightL(btn1, btn2, btn3, btn4, btn5);
+  ctrBtnBg()
 });
 btn2.addEventListener('click', () => {
   getNum(btn2);
   showContent(btn2);
   btnStylingTogglerToLightL(btn2, btn1, btn3, btn4, btn5);
+  ctrBtnBg()
 });
 btn3.addEventListener('click', () => {
   getNum(btn3);
   showContent(btn3);
   btnStylingTogglerToLightL(btn3, btn2, btn1, btn4, btn5);
+  ctrBtnBg()
 });
 btn4.addEventListener('click', () => {
   getNum(btn4);
   showContent(btn4);
   btnStylingTogglerToLightL(btn4, btn2, btn3, btn1, btn5);
+  ctrBtnBg()
 });
 btn5.addEventListener('click', () => {
   getNum(btn5);
   showContent(btn5);
   btnStylingTogglerToLightL(btn5, btn2, btn3, btn4, btn1);
+  ctrBtnBg()
 });
 btn11.addEventListener('click', () => {
   getParkValue = btn11.value
@@ -120,7 +126,23 @@ btn12.addEventListener('click', () => {
   getLikePark(saveLikePark, getParkValue)
   moveBtn1(btn12)
 })
-
+var windowWidth = window.innerWidth
+btn.addEventListener('click', function () {
+  if (btnList.classList.contains('sticky')) {
+    btnList.classList.remove('sticky');
+  }
+});
+const ctrBtnBg = () => {
+  btnList.classList.add('sticky');
+}
+window.addEventListener('resize', function () {
+  var windowWidth = window.innerWidth
+  if (windowWidth < 780) {
+    btnList.classList.add('sticky');
+  }else if(windowWidth > 780){
+    btnList.classList.remove('sticky');
+  }
+});
 // btn點擊樣式更動
 function btnStylingTogglerToLightL(activeBtn, closeBtn1, closeBtn2, closeBtn3, closeBtn4) {
   closeBtn1.classList.remove('btn-light-solid-l');
@@ -245,8 +267,8 @@ axios.get(Url + `/600/users/${usersId}`, {
   })
 //將會員資料渲染至畫面
 const getMemberData = (aa) => {
-  let content = `<div class="row mt-5 d-flex justify-content-between gx-5">
-    <div class="col-6">
+  let content = `<div class="row mt-5 d-flex justify-content-lg-between gx-5">
+    <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
             <label for="inputPassword" class="col-sm-2 col-form-label">姓名</label>
             <div class="col-8">
@@ -281,7 +303,7 @@ const getMemberData = (aa) => {
                 </div>
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
             <label for="inputPassword" class="col-sm-2 col-form-label">車牌號碼</label>
             <div class="col-8">
