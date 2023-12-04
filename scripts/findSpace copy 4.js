@@ -15,7 +15,7 @@ const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard =document.querySelector('#showMapCard');
-const cardBody = document.querySelector('.card-body');
+const modalFooter = document.querySelector('.modal-footer')
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map')
@@ -36,151 +36,187 @@ let filteredMapData = [];
 let saveLikePark = [];
 let locatedX = 24.162139;
 let locatedY = 120.647021;
+
 //leaflet資料
-// var map = L.map('map').setView([24.162139, 120.647021], 17);
+var map = L.map('map').setView([24.162139, 120.647021], 17);
 
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-// var greenIcon = new L.Icon({
-//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-//     iconSize: [25, 41],
-//     iconAnchor: [12, 41],
-//     popupAnchor: [1, -34],
-//     shadowSize: [41, 41]
-// });
-// var greyIcon = new L.Icon({
-//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
-//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-//     iconSize: [25, 41],
-//     iconAnchor: [12, 41],
-//     popupAnchor: [1, -34],
-//     shadowSize: [41, 41]
-//   });
-// //將資料渲染到地圖上
-// // 在创建地图后，将图层保存到一个变量中
-// var markersLayer = L.layerGroup().addTo(map);
+var greenIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var greyIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+//將資料渲染到地圖上
+// 在创建地图后，将图层保存到一个变量中
+var markersLayer = L.layerGroup().addTo(map);
 
-// const dataToMap = () => {
-//     markersLayer.clearLayers();
-//     for (let i = 0; i < filteredMapData.length; i++) {
-//         let dataDetail = filteredMapData[i]
-//         let marker;
-//         locatedX = filteredMapData[1].location.latitude,
-//         locatedY = filteredMapData[1].location.longitude
-//         if (dataDetail.space === '0') {
-//             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
-//                 .bindPopup(`<div class="card mt-3" style="width: 16rem;">
-//         <div class="card-body">
-//             <div class="d-flex justify-content-between">
-//                 <h5 class="card-title">${dataDetail.parkName}</h5>
-//                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
-//             </div>
-//             <div class="row">
-//                 <div class="col-5">地址:</div>
-//                 <div class="col-7">${dataDetail.address}</div>
-//             </div>
-//             <div class="row">
-//                 <div class="col-5">剩餘空位:</div>
-//                 <div class="col-7">${dataDetail.space}</div>
-//             </div>
-//             <div class="d-flex justify-content-between">
-//             <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-//                 <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="">長期方案</button>
-//             </div>
-//         </div>
-//     </div>`);
-//         } else if (dataDetail.space !== '0') {
-//             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
-//                 .bindPopup(`<div class="card mt-3" style="width: 16rem;">
-//         <div class="card-body">
-//             <div class="d-flex justify-content-between">
-//                 <h5 class="card-title">${dataDetail.parkName}</h5>
-//                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
-//             </div>
-//             <div class="row">
-//                 <div class="col-5">地址:</div>
-//                 <div class="col-7">${dataDetail.address}</div>
-//             </div>
-//             <div class="row">
-//                 <div class="col-5">剩餘空位:</div>
-//                 <div class="col-7">${dataDetail.space}</div>
-//             </div>
-//             <div class="d-flex justify-content-between">
-//             <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-//                 <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
-//             </div>
-//         </div>
-//     </div>`);
-//         }
-//         markersLayer.addLayer(marker);
-//     }
-//     // console.log(locatedX, locatedY)
-//     map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
-// }
+const dataToMap = () => {
+    markersLayer.clearLayers();
+    for (let i = 0; i < filteredMapData.length; i++) {
+        let dataDetail = filteredMapData[i]
+        let marker;
+        locatedX = dataDetail.location.latitude,
+        locatedY = dataDetail.location.longitude
+        if (dataDetail.space === '0') {
+            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
+                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title">${dataDetail.parkName}</h5>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+            </div>
+            <div class="row">
+                <div class="col-5">地址:</div>
+                <div class="col-7">${dataDetail.address}</div>
+            </div>
+            <div class="row">
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7">${dataDetail.space}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            </div>
+        </div>
+    </div>`);
+        } else if (dataDetail.space !== '0') {
+            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
+                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title">${dataDetail.parkName}</h5>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+            </div>
+            <div class="row">
+                <div class="col-5">地址:</div>
+                <div class="col-7">${dataDetail.address}</div>
+            </div>
+            <div class="row">
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7">${dataDetail.space}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            </div>
+        </div>
+    </div>`);
+        }
+        markersLayer.addLayer(marker);
+    }
+    // console.log(locatedX, locatedY)
+    map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
+}
+//測試地圖上卡片監聽事件(目前無效)
+// mapLocated.addEventListener('click' , (e) => {
+//     console.log(e.target)
+// })
 //搜尋條件與停車場一覽監聽
-    btn1.addEventListener('click', () => {
-        moveBtn(btn1)
-        hidePage(btn1)
-    });
-    btn2.addEventListener('click', () => {
-        moveBtn(btn2)
-        hidePage(btn2)
-    });
-    //確認送出按鈕監聽
-    confirmBtn.addEventListener('click', () => {
-        btnBgMove.style.marginLeft = 214 + 'px';
-        hideSearch.style.display = 'none';
-        hideShowPark.style.display = 'block';
-        let area = areaOption.value;
-        let road = roadOption.value;
-        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-        render(filteredMapData)
-        // dataToMap()
-    })
-    //車位類別按鈕監聽
-    btn21.addEventListener('click', () => {
-        moveBtn2(btn21)
-        getType = btn21.value
-    });
-    btn22.addEventListener('click', () => {
-        moveBtn2(btn22)
-        getType = btn22.value
-    });
-    btn23.addEventListener('click', () => {
-        moveBtn2(btn23)
-        getType = btn23.value
-    });
-    //顯示有車位或全部停車場按鈕監聽
-    btn31.addEventListener('click', () => {
-        moveBtn3(btn31)
-        getSpaceOrNot = btn31.value
-    });
-    btn32.addEventListener('click', () => {
-        moveBtn3(btn32)
-        getSpaceOrNot = btn32.value
-    });
-    //路邊停車與停車場按鈕監聽
-    btn11.addEventListener('click' , () => {
-        let area = areaOption.value;
-        let road = roadOption.value;
-        getParkValue = btn11.value
-        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-        render(filteredMapData)
-        moveBtn1(btn11)
-        // dataToMap()
-    })
-    btn12.addEventListener('click' , () => {
-        let area = areaOption.value;
-        let road = roadOption.value;
-        getParkValue = btn12.value
-        getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-        render(filteredMapData)
-        moveBtn1(btn12)
-        // dataToMap()
-    })
+
+
+//車位類別按鈕監聽
+btn1.addEventListener('click', (e) => {
+    hidePage(btn1);
+    btnStylingTogglerToLightL(btn1,btn2);
+});
+btn2.addEventListener('click', (e) => {
+    hidePage(btn2);
+    btnStylingTogglerToLightL(btn2, btn1);
+});
+btn21.addEventListener('click', () => {
+    getType = btn21.value;
+    btnStylingTogglerToDarkM(btn21,btn22,btn23);
+});
+btn22.addEventListener('click', () => {
+    getType = btn22.value;
+    btnStylingTogglerToDarkM(btn22, btn21, btn23);
+});
+btn23.addEventListener('click', () => {
+    getType = btn23.value;
+    btnStylingTogglerToDarkM(btn23, btn21, btn22);
+});
+//顯示有車位或全部停車場按鈕監聽
+btn31.addEventListener('click', () => {
+    btnStylingTogglerToDarkM(btn31, btn32);
+    getSpaceOrNot = btn31.value
+});
+btn32.addEventListener('click', () => {
+    btnStylingTogglerToDarkM(btn32, btn31);
+    getSpaceOrNot = btn32.value
+});
+
+//確認送出按鈕監聽
+confirmBtn.addEventListener('click', () => {
+    // btnBgMove.style.marginLeft = 214 + 'px';
+    // hideSearch.style.display = 'none';
+    // hideShowPark.style.display = 'block';
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
+    // dataToMap()
+})
+
+//路邊停車與停車場按鈕監聽
+btn11.addEventListener('click' , () => {
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getParkValue = btn11.value
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
+    // moveBtn1(btn11)
+    btnStylingTogglerToLightM(btn11,btn12);
+    // dataToMap()
+})
+btn12.addEventListener('click' , () => {
+    let area = areaOption.value;
+    let road = roadOption.value;
+    getParkValue = btn12.value
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
+    render(filteredMapData)
+    // moveBtn1(btn12)
+    btnStylingTogglerToLightM(btn12, btn11);
+    // dataToMap()
+})
+
+// btn點擊樣式更動
+function btnStylingTogglerToLightL(activeBtn, closeBtn) {
+    closeBtn.classList.remove('btn-light-solid-l');
+    closeBtn.classList.add('btn-dark-trans-l');
+    activeBtn.classList.remove('btn-dark-trans-l');
+    activeBtn.classList.add('btn-light-solid-l');
+}
+function btnStylingTogglerToLightM(activeBtn, closeBtn) {
+    closeBtn.classList.remove('btn-light-solid-m');
+    closeBtn.classList.add('btn-dark-trans-m');
+    activeBtn.classList.remove('btn-dark-trans-m');
+    activeBtn.classList.add('btn-light-solid-m');
+}
+function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {
+    closeBtn1.classList.remove('btn-dark-solid-m');
+    closeBtn1.classList.add('btn-dark-trans-m');
+    if (closeBtn2) {
+        closeBtn2.classList.remove('btn-dark-solid-m');
+        closeBtn2.classList.add('btn-dark-trans-m');
+    }
+    activeBtn.classList.remove('btn-dark-trans-m');
+    activeBtn.classList.add('btn-dark-solid-m');
+}
+
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
     if(localParkData === ''){
@@ -191,6 +227,9 @@ const parsedLocalParkData = () => {
         saveLikePark.push(...ss)
     }
 }
+let optionPark = '';
+// export default optionPark;
+
 // 在后续请求中，将 token 添加到请求头中
 axios.get(Url + `/600/users/${usersId}`, {
     headers: {
@@ -199,7 +238,26 @@ axios.get(Url + `/600/users/${usersId}`, {
     })
     .then((response) => {
         showMapCard.addEventListener('click' ,(e) => {
+            let likeBtn = e.target
             addLikeParkToLocal(e)
+             //取得停車場資料並存到本地端
+            if (likeBtn.textContent === '長期方案') {
+                optionPark = likeBtn.getAttribute('data-btnId');
+                localStorage.setItem('optionPark', optionPark);
+                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
+            }
+            if(likeBtn.textContent === '詳細資料'){
+                optionPark = likeBtn.getAttribute('data-btnId');
+                localStorage.setItem('optionPark', optionPark);
+                console.log(optionPark)
+            }
+        })
+        modalFooter.addEventListener('click' , (e) => {
+            let likeBtn = e.target
+            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
+                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
+                console.log('aa')
+            }
         })
         mapLocated.addEventListener('click' , (e) => {
             addLikeParkToLocal(e)
@@ -211,11 +269,14 @@ axios.get(Url + `/600/users/${usersId}`, {
     .catch((error) => {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
-            // if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-            //     alert('請先登入')
-            // }
-            if(likeBtn.textContent === '長期方案'){
-                console.log(likeBtn)
+            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+                alert('請先登入')
+            }
+        })
+        modalFooter.addEventListener('click' , (e) => {
+            let likeBtn = e.target
+            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
+                alert('請先登入')
             }
         })
         //地圖上卡片監聽事件
@@ -232,7 +293,7 @@ axios.get(Url + `/600/users/${usersId}`, {
 function hidePage(a){
     let num = parseInt(a.getAttribute('data-num'));
     if(num === 1){
-        hideSearch.style.display = 'block';
+        hideSearch.style.display = 'flex';// 原本是block，但會導致新寫的樣式跑掉
         hideShowPark.style.display = 'none';
     }else if(num === 2){
         hideSearch.style.display = 'none';
@@ -240,16 +301,16 @@ function hidePage(a){
     }
 }
 //選搜尋停建或停車場一覽按鈕區塊移動
-function moveBtn(x) {
+/* function moveBtn(x) {
     let num = parseInt(x.getAttribute('data-num'));
     if (num > btnNumList) {
         btnBgMove.style.marginLeft = (214 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove.style.marginLeft = 0;
     }
-}
+} */
 //選車位種類按鈕區塊移動
-function moveBtn2(y) {
+/* function moveBtn2(y) {
     let num = parseInt(y.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove2.style.marginLeft = (110 * (num-1)) + 'px';
@@ -258,9 +319,9 @@ function moveBtn2(y) {
     }else if(num=1){
         btnBgMove2.style.marginLeft = 0;
     }
-}
+} */
 //顯示有車位停車場按鈕區塊移動
-function moveBtn3(z) {
+/* function moveBtn3(z) {
     let num = parseInt(z.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove3.style.marginLeft = (180 * (num-1)) + 'px';
@@ -269,16 +330,16 @@ function moveBtn3(z) {
     }else if(num=1){
         btnBgMove3.style.marginLeft = 0;
     }
-}
+} */
 //選擇路邊或停車唱按鈕區塊移動
-const moveBtn1 = (w) => {
+/* const moveBtn1 = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
         btnBgMove1.style.marginLeft = (135 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1.style.marginLeft = 0;
     }
-}
+} */
 
 //收藏停車場的愛心按鈕監聽
 const addLikeParkToLocal = (e) => {
@@ -406,6 +467,7 @@ const getMapDetail = (a,b,c,d,e) => {
     })
 }
 //將篩選過後的資料渲染到畫面上 
+// href="http://127.0.0.1:5501/Pages/parkingDetail.html#"
 const render = (aa) => {
     let str = '';
     aa.forEach((item) => {
@@ -424,8 +486,8 @@ const render = (aa) => {
                 <div class="col-7">${item.space}</div>
             </div>
             <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="${item.location.latitude}">長期方案</button>
             </div>
         </div>
     </div>`
@@ -512,36 +574,43 @@ const showSectionListRwd = () => {
         areaOptionRwd.innerHTML = content;
 }
 //車位類別按鈕監聽
-btn21Rwd.addEventListener('click', () => {
-    moveBtn2Rwd(btn21Rwd)
-    getType = btn21Rwd.value
-});
-btn22Rwd.addEventListener('click', () => {
-    moveBtn2Rwd(btn22Rwd)
-    getType = btn22Rwd.value
-});
-btn23Rwd.addEventListener('click', () => {
-    moveBtn2Rwd(btn23Rwd)
-    getType = btn23Rwd.value
-});
-//顯示有車位或全部停車場按鈕監聽
-btn31Rwd.addEventListener('click', () => {
-    moveBtn3Rwd(btn31Rwd)
-    getSpaceOrNot = btn31Rwd.value
-});
-btn32Rwd.addEventListener('click', () => {
-    moveBtn3Rwd(btn32Rwd)
-    getSpaceOrNot = btn32Rwd.value
-});
 //路邊停車與停車場按鈕監聽
 btn11Rwd.addEventListener('click' , () => {
     getParkValue = btn11Rwd.value
-    moveBtn1Rwd(btn11Rwd)
+    btnStylingTogglerToLightL(btn11Rwd, btn12Rwd);
+    //moveBtn1Rwd(btn11Rwd)
 })
 btn12Rwd.addEventListener('click' , () => {
     getParkValue = btn12Rwd.value
-    moveBtn1Rwd(btn12Rwd)
+    btnStylingTogglerToLightL(btn12Rwd, btn11Rwd);
+    //moveBtn1Rwd(btn12Rwd)
 })
+btn21Rwd.addEventListener('click', () => {
+    //moveBtn2Rwd(btn21Rwd)
+    getType = btn21Rwd.value;
+    btnStylingTogglerToDarkM(btn21Rwd, btn22Rwd, btn23Rwd);
+});
+btn22Rwd.addEventListener('click', () => {
+    //moveBtn2Rwd(btn22Rwd)
+    getType = btn22Rwd.value;
+    btnStylingTogglerToDarkM(btn22Rwd, btn23Rwd, btn21Rwd);
+});
+btn23Rwd.addEventListener('click', () => {
+    //moveBtn2Rwd(btn23Rwd)
+    getType = btn23Rwd.value;
+    btnStylingTogglerToDarkM(btn23Rwd, btn21Rwd, btn22Rwd);
+});
+//顯示有車位或全部停車場按鈕監聽
+btn31Rwd.addEventListener('click', () => {
+    //moveBtn3Rwd(btn31Rwd)
+    getSpaceOrNot = btn31Rwd.value
+    btnStylingTogglerToDarkM(btn31Rwd, btn32Rwd);
+});
+btn32Rwd.addEventListener('click', () => {
+    //moveBtn3Rwd(btn32Rwd)
+    getSpaceOrNot = btn32Rwd.value
+    btnStylingTogglerToDarkM(btn32Rwd, btn31Rwd);
+});
 //渲染道路資料到畫面上
 const showRoadOptionListRwd = (a) => {
     let content = '';
@@ -555,7 +624,7 @@ const showRoadOptionListRwd = (a) => {
         roadOptionRwd.innerHTML = content;
 }
 //選車位種類按鈕區塊移動
-const moveBtn2Rwd = (y) => {
+/* const moveBtn2Rwd = (y) => {
     let num = parseInt(y.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove2Rwd.style.marginLeft = (100 * (num-1)) + 'px';
@@ -564,25 +633,25 @@ const moveBtn2Rwd = (y) => {
     }else if(num=1){
         btnBgMove2Rwd.style.marginLeft = 0;
     }
-}
+} */
 //顯示有車位停車場按鈕區塊移動
-const moveBtn3Rwd = (z) => {
+/* const moveBtn3Rwd = (z) => {
     let num = parseInt(z.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove3Rwd.style.marginLeft = (158 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove3Rwd.style.marginLeft = 0;
     }
-}
+} */
 //選擇路邊或停車唱按鈕區塊移動
-const moveBtn1Rwd = (w) => {
+/* const moveBtn1Rwd = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
         btnBgMove1Rwd.style.marginLeft = (170 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1Rwd.style.marginLeft = 0;
     }
-}
+} */
 //控制篩選藍
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
@@ -600,6 +669,7 @@ const showRwdChoice = () => {
     }else if(rwdBtn === false){
         let area = areaOptionRwd.value;
         let road = roadOptionRwd.value;
+        console.log(area,road,getType,getSpaceOrNot,getParkValue)
         getMapDetailRwd(area,road,getType,getSpaceOrNot,getParkValue)
         dataToMap()
         searchBg.classList.remove('show');
@@ -619,6 +689,7 @@ const rotateIcon = () => {
         btnX.classList.remove('xBtn2');
     }
 }
+//手機板選出篩選過後停車場資料
 const getMapDetailRwd = (a,b,c,d,e) => {
     filteredMapData = data.filter((item) => {
         if(item.road.sectionId === a && item.roadId === b && item.type.includes(c) && (d === 'haveSpace' && item.space !== "0") && item.categoryId === e){
@@ -627,5 +698,5 @@ const getMapDetailRwd = (a,b,c,d,e) => {
             return item
         }
     })
+    console.log(filteredMapData)
 }
-//寫篩選停車場資訊與渲染到地圖上

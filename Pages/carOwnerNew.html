@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
     <link rel="stylesheet" href="../stylesheets/all.css">
 </head>
 
@@ -72,23 +73,21 @@
                         <!-- <div id="color-block" class=" bg-light-green mx-4 d-flex align-center rounded-2"
               style="height: 34px; width: 100px;"></div> -->
                     </div>
-                    <button id="btn" type="button" class="d-lg-none mx-2 col-lg-2 col-5 btn mb-lg-0 mb-3" style="z-index: 2;"
-                        data-num="1">
-                        <span></span>
-                        <span></span>
+                    <button id="btn" type="button" class="d-lg-none mx-2 col-lg-2 col-5 btn mb-lg-0 mb-3 pt-0 fw-bold" style="z-index: 2500;">
+                        <span class="mt-5" id="changeText">車主資訊</span>
                     </button>
                     <!-- <div class="BgShow position-absolute show">
                     </div> -->
-                    <button id="btn1" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-light-solid-l" style="z-index: 2;"
+                    <button id="btn1" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-light-solid-l" style="z-index: 2500;"
                         data-num="1">車主資訊</button>
-                    <button id="btn2" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2;"
+                    <button id="btn2" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
                         data-num="2">我的收藏</button>
-                    <!-- <button id="btn3" type="button" class="btn" style="z-index: 2;" data-num="3">停車紀錄</button> -->
-                    <button id="btn3" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2;"
+                    <!-- <button id="btn3" type="button" class="btn" style="z-index: 2500;" data-num="3">停車紀錄</button> -->
+                    <button id="btn3" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
                         data-num="3">交易紀錄</button>
-                    <button id="btn4" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2;"
+                    <button id="btn4" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
                         data-num="4">預約紀錄</button>
-                    <button id="btn5" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2;"
+                    <button id="btn5" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
                         data-num="5">儲值專區</button>
                 </div>
             </div>
@@ -129,29 +128,22 @@
             </div>
             <div class="content-to-hide-save">
                 <div class="row mx-1">
-                    <div class="col-8 p-0">
-                        <div class="row d-flex justify-content-end position-relative ">
+                    <div class="col-lg-8 col p-0">
+                        <div class="row d-flex justify-content-end position-relative"
+                            style="z-index: 2000;">
                             <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
-                                <div class="button-group d-flex justify-content-between color-tran-gray rounded-2 py-2">
-                                    <div class="position-absolute btn-bg-move1">
-                                        <div id="color-block" class="bg-light-green mx-2 d-flex align-center rounded-2"
-                                            style="height: 32px; width: 75px;"></div>
-                                    </div>
-                                    <button id="btn1-1" type="button"
-                                        class="btn mx-2 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;"
-                                        data-num="1" value="C01">路邊车格</button>
-                                    <button id="btn1-2" type="button"
-                                        class="btn mx-3 px-1 py-1 border-0 shadow-none fw-bold" style="z-index: 2;"
-                                        data-num="2" value="C02">停車場</button>
+                                <div class="button-group d-flex justify-content-evenly color-tran-gray rounded-2 py-2">
+                                    <!-- btn-bg-move-dad  -->
+                                    <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0"
+                                        style="z-index: 2;" data-num="1" value="C01">路邊車格</button>
+                                    <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0"
+                                        style="z-index: 2;" data-num="2" value="C02">停車場</button>
                                 </div>
                             </div>
                         </div>
-                        <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
-                            marginwidth="0"
-                            src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=25.033963,121.564472(台北 101)&z=16&output=embed&markers=25.033963,121.564472">
-                        </iframe>
+                        <div id="map" style="height: 450px;"></div>
                     </div>
-                    <div class="col-4 bg-light-gray">
+                    <div class="col-4 d-lg-block d-none interface">
                         <div class="row d-flex justify-content-center">
                             <div class="col-10 bg-secondary mt-4 py-2 text-center rounded-2">
                                 <h5 class="my-1">我的收藏</h5>
@@ -159,7 +151,7 @@
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col-10 bg-white mt-4 rounded-2" id="showMapCard"
-                                style="height: 288px; overflow: auto;">
+                                style="height: 350px; overflow: auto;">
                                 <div class="card mt-3" style="width: 16rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">西屯停車場</h5>
@@ -497,6 +489,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="../scripts/carOwner.js"></script>
     <script src="/stylesheets/components/header/header.js"></script>
 </body>
