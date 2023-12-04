@@ -491,10 +491,10 @@ body {
 
   }
 
-  button:hover {
+  /* button:hover {
     padding: 3px 28px;
     border-width: 4px;
-  }
+  } */
 
   button:disabled {
     padding: 5px 30px;
