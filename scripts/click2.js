@@ -83,7 +83,7 @@ document.getElementById("exitDate").addEventListener("change", updateOrderSummar
 function updateOrderSummary() {
     const entryDate = document.getElementById("entryDate").value;
     const exitDate = document.getElementById("exitDate").value;
-    const url = `http://127.0.0.1:5501/Pages/parkingDetail.html`;
+    const url = `http://127.0.0.1:5502/Pages/planSelection.html`;
 
     axios.get(url)
          .then(response => {
@@ -108,7 +108,7 @@ document.getElementById("dayPlan").addEventListener("click", () => updatePlanSum
 
 function updatePlanSummary(planId) {
     const selectedPlan = document.getElementById(planId);
-    const servalUrl = `http://127.0.0.1:5501/Pages/parkingDetail.html`;
+    const servalUrl = `http://127.0.0.1:5502/Pages/planSelection.html`;
 
     const planText = `${selectedPlan.querySelector('h3').textContent} - ${selectedPlan.querySelector('li:first-child').textContent}`;
 
@@ -168,7 +168,7 @@ paymentButton.addEventListener("click", function() {
 var closeButton2 = document.querySelector(".btn-submit");
 
 closeButton2.addEventListener("click", function() {
-    window.location.href = "parkingDetail.html";
+    window.location.href = "planSelection.html";
 })
 
 // 跳回找車位
@@ -184,3 +184,4 @@ if (optionPark) {
 } else {
     console.log('No optionPark data available.');
 }
+
