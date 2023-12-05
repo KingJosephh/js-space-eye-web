@@ -60,9 +60,6 @@ var greyIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
-// L.marker([24.162139, 120.647021]).addTo(map)
-//     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-//     .openPopup();
 //將資料渲染到地圖上
 // 在创建地图后，将图层保存到一个变量中
 var markersLayer = L.layerGroup().addTo(map);
