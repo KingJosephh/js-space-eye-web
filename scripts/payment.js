@@ -4,8 +4,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const button3 = document.getElementById("button3");
     const button4 = document.getElementById("button4");
     const button5 = document.getElementById("button5");
+
+    // 前往網路ATM按扭
+    const paymentButton = document.querySelector(".btn-payment");
     const summaryButton = document.getElementById("showWatermarkBtn");
     const summaryWindow = document.getElementById("elementToClose"); 
+    // 前往車主專區按扭
+    const cardButton = document.querySelector(".btn-card");
+    const cardButton2 = document.getElementById("button6");
+    // 儲存選擇銀行資料
+    const bankSelect = document.getElementById("bankSelect");
+    const showBankDataBtn = document.getElementById("showWatermarkBtn2");
+    const bankDataContainer = document.getElementById("bankData");
 
     function showPage(pageId, pagesClass) {
         const allPages = document.querySelectorAll(`.${pagesClass}`);
@@ -30,6 +40,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         deadlineDate.setDate(deadlineDate.getDate() + 3);
         var formattedDeadline = deadlineDate.toISOString().slice(0, 19).replace("T", " ");
         document.getElementById("deadlineDate").textContent = formattedDeadline;
+
+        // 取得 localStorage 中的值
+        const chosePlanHeader = localStorage.getItem("chosePlan");
+        // 顯示進場時間、出場時間和方案選擇
+        document.getElementById("chosePlan").textContent = `方案選擇: ${chosePlanHeader}`;
+
+        // 將訊息顯現在訂單方案區域
+        const orderPlanElement = document.getElementById("paymoney");
+        if (orderPlanElement) {
+            orderPlanElement.textContent = chosePlanHeader;
+        }
     }
 
     button1.addEventListener("click", () => {
@@ -49,6 +70,36 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
     button5.addEventListener("click", generateOrderNumber);
+
+    document.getElementById("button5").addEventListener("click",function(){
+        swal("Success!", "訂單成立!", "success");
+    });
+
+    paymentButton.addEventListener("click", () => {
+        showPage("page2", "content-to-hide-owner")
+        summaryWindow.style.display = "none";
+    })
+
+    showBankDataBtn.addEventListener("click", () => {
+        const selectedBank = bankSelect.value;   
+        // 在指定區域顯示選取的bank
+        bankDataContainer.innerHTML = `選擇銀行: <span>${selectedBank}</span>`;
+
+        summaryWindow.style.display = "block";
+
+        cardButton.addEventListener("click", function() {
+            window.location.href = "carOwnerNew.html";
+        })
+    })
+
+    cardButton2.addEventListener("click", function() {
+        window.location.href = "carOwnerNew.html";
+    })
+
+    document.getElementById("showWatermarkBtn2").addEventListener("click",function(){
+        swal("Success!", "訂單確認成功!", "success");
+    });
+    
     
     // 檢查是否填寫信用卡卡號
     summaryButton.addEventListener("click", (event) => {
@@ -61,6 +112,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         
         // 顯示訂單摘要視窗
         summaryWindow.style.display = "block";
+
+        // 取得 localStorage 中的值
+        const entryTimeHeader = localStorage.getItem("entryTime");
+        const exitTimeHeader = localStorage.getItem("exitTime");
+        const chosePlanHeader = localStorage.getItem("chosePlan");
+
+        // 顯示進場時間、出場時間和方案選擇
+        document.getElementById("entryTime").textContent = `進場時間: ${entryTimeHeader}`;
+        document.getElementById("exitTime").textContent = `出場時間: ${exitTimeHeader}`;
+        document.getElementById("chosePlan").textContent = `方案選擇: ${chosePlanHeader}`;
+
       } else {
         document.getElementById("cardData").textContent = "信用卡資料是否填寫: 否";
         alert("请填寫完整的信用卡信息！");
@@ -74,5 +136,6 @@ const closeButton = document.getElementById("closeBtn");
     summaryWindow.style.display = "none";
    });
 });
+
 
 

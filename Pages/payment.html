@@ -45,37 +45,31 @@
                                       <div class="annual-plan">
                                           <p id="chosePlan">方案選擇: <span></span></p>
                                       </div>
-                                      <div class="change">
-                                          <a href="#">Change</a>
-                                      </div>
                                     </div>
                                     <div class="plan-section">
                                         <div class="annual-plan">
                                             <p id="entryTime">進場時間: <span></span></p>
-                                        </div>
-                                        <div class="change">
-                                            <a href="#">Change</a>
                                         </div>
                                     </div>
                                     <div class="plan-section">
                                         <div class="annual-plan">
                                             <p id="exitTime">出場時間: <span></span></p>
                                         </div>
-                                        <div class="change">
-                                            <a href="#">Change</a>
-                                        </div>
                                     </div>
                                     <div class="plan-section">
                                         <div class="annual-plan">
                                             <p id="cardData">信用卡資料是否填寫: <span></span></p>
                                         </div>
-                                        <div class="change">
-                                            <a href="#">Change</a>
+                                    </div>
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="bankData">選擇銀行: <span></span></p>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="btn-section">
                                         <button class="btn-payment btn" type="submit">前往結帳</button>
+                                        <button class="btn-card btn" type="submit">前往車主專區</button>
                                         <button class="btn-submit btn" type="submit">取消</button>
                                     </div>
                                 </div>
@@ -236,10 +230,10 @@
                                 <div class="form-group">
                                     <label for="bankSelect">選擇銀行:</label>
                                     <select class="form-control" id="bankSelect">
-                                        <option value="bank1">士璁銀行</option>
-                                        <option value="bank2">Celine銀行</option>
-                                        <option value="bank3">小廷銀行</option>
-                                        <option value="bank4">景泰銀行</option>
+                                        <option value="士璁銀行">士璁銀行</option>
+                                        <option value="Celine銀行">Celine銀行</option>
+                                        <option value="小廷銀行">小廷銀行</option>
+                                        <option value="景泰銀行">景泰銀行</option>
                                     </select>
                                 </div>
                                 <h3>注意事項</h3>
@@ -255,7 +249,7 @@
                               <input type="checkbox" id="agreeCheckbox">
                                  同意相關資訊請勾選
                               </label>
-                              <button id="showWatermarkBtn" class="btn btn-success btn-lg btn-block">下一步</button>
+                              <button id="showWatermarkBtn2" class="btn btn-success btn-lg btn-block">下一步</button>
                             </div>
                         </div>
                     </div>
@@ -336,12 +330,12 @@
                                         <div class="col-md-8 content-column">預約停車</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 label-column">訂單金額</div>
-                                        <div class="col-md-8 content-column">1703061340194634</div>
+                                        <div class="col-md-4 label-column">訂單方案</div>
+                                        <div class="col-md-8 content-column" id="paymoney">1703</div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 label-column">付款方式</div>
-                                        <div class="col-md-8 content-column">1703061340194634</div>
+                                        <div class="col-md-8 content-column">超商代碼繳費</div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 label-column">超商繳費代碼</div>
@@ -358,6 +352,9 @@
                                         <div class="col-md-4 label-column">截止日期</div>
                                         <div class="col-md-8 content-column" id="deadlineDate"></div>
                                     </div>
+                                    <div class="text-center" id="button6" data-page="page6">
+                                        <button type="button" class="btn-card" id="button6" data-page="page6">下一步</button>
+                                    </div>
                                 </div>       
                             </div> 
                         </div>                 
@@ -367,5 +364,6 @@
     </div>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html> 
