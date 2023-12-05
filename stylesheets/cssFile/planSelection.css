@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 
 body {
-    font-family: "Open Sans", sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
     line-height: 1.25;
     -webkit-font-smoothing: antialiased; 
     text-rendering: optimizeLegibility;
@@ -178,15 +178,14 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
-    width: 100%;
+    padding-top: 150px;
   }
 
-.content {
+/* .content {
     position: absolute;
     left: 350px;
     width: 100%;
-  }
+  } */
 
 .btn {
     display: flex;

@@ -18,6 +18,20 @@
         "24.179646",
         "24.180181"
       ]
+    },
+    {
+      "email": "celine123@gmail.com",
+      "password": "$2a$10$e8oQUAQXqXDVxm5gr5Agcu5SF.RmTZCoU2rEMVPuSJMOdkP67u8h.",
+      "username": "celine",
+      "carId": "12345",
+      "id": 3
+    },
+    {
+      "email": "celine@gmail.com",
+      "password": "$2a$10$OWcZq3Cinw8Vh859Uapu3uGAfeG030escKsxKCNmdvZQfXkS6ojdC",
+      "username": "celine",
+      "carId": "12345",
+      "id": 4
     }
   ],
   "sections": [

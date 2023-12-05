@@ -1,19 +1,20 @@
 $display-none: none;
 
-.bi-suit-heart-fill{
-    color: #b0b0b0;
+.bi-suit-heart-fill {
+  color: #b0b0b0;
 }
+
 .bi-suit-heart-broke {
-    color: #ff0000;
+  color: #ff0000;
 }
 
 
 .content-to-hide-search {
-    display: block;
+  display: block;
 }
 
-.content-to-hide-showPark{
-    display: $display-none;
+.content-to-hide-showPark {
+  display: $display-none;
 }
 
 .btn-bg-move,
@@ -23,31 +24,98 @@ $display-none: none;
 .btn-bg-move1-Rwd,
 .btn-bg-move2-Rwd,
 .btn-bg-move3-Rwd {
-    transition: margin-left 0.3s;
-    margin-left: 0;
+  transition: margin-left 0.3s;
+  margin-left: 0;
 }
 
 .color-tran-gray {
-    background: rgba(30, 30, 30, 0.4);
+  background: rgba(30, 30, 30, 0.4);
 }
 
 .xBtn {
-    transform: rotate(0deg);
-    transition: transform 0.5s ease;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
 }
 
 .xBtn2 {
-    transform: rotate(45deg);
-    transition: transform 1s ease;
+  transform: rotate(45deg);
+  transition: transform 1s ease;
 }
 
 .searchBg {
-    opacity: 0;
-    transition: opacity 1s ease;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.searchBg.show 
-{
-    opacity: 1;
+.searchBg.show {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  z-index: 2100;
+  width: 100%;
 }
-#map { width: 100%; height: 620px; }
+
+.mobile-search-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px;
+  
+  .mobile-search-container-main{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-radius: 24px;
+    padding: 30px 12px;
+    .interface-main-select{
+      gap: 12px;
+      padding-top: 8px;
+    }
+    .interface-main-type,
+    .interface-main-available{
+      gap: 8px;
+    }
+  }
+}
+
+#map {
+  width: 100%;
+  height: 620px;
+}
+
+
+.interface {
+  .button-search-container {
+    width: fit-content;
+    padding: 28px 0;
+  }
+  .interface-main{
+    overflow: auto;
+    border-radius: 24px;
+    background: #fff;
+    height: 504px;
+    gap: 12px;
+    padding-top: 44px;
+    .content-to-hide-search{
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      .interface-main-select,
+      .interface-main-type,
+      .interface-main-available{
+        gap: 12px;
+      }
+      .interface-main-submitBtn{
+        margin-top: 28px;
+      }
+    }
+    .content-to-hide-showPark{
+      .showPark-btns{
+        margin-top: 12px;
+      }
+    }
+    
+  }
+
+}
