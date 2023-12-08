@@ -83,7 +83,7 @@ document.getElementById("exitDate").addEventListener("change", updateOrderSummar
 function updateOrderSummary() {
     const entryDate = document.getElementById("entryDate").value;
     const exitDate = document.getElementById("exitDate").value;
-    const url = `http://127.0.0.1:5502/Pages/planSelection.html`;
+    const url = `/Pages/planSelection.html`;
 
     axios.get(url)
          .then(response => {
@@ -108,7 +108,7 @@ document.getElementById("dayPlan").addEventListener("click", () => updatePlanSum
 
 function updatePlanSummary(planId) {
     const selectedPlan = document.getElementById(planId);
-    const servalUrl = `http://127.0.0.1:5502/Pages/planSelection.html`;
+    const servalUrl = `/Pages/planSelection.html`;
 
     const planText = `${selectedPlan.querySelector('h3').textContent} - ${selectedPlan.querySelector('li:first-child').textContent}`;
 
