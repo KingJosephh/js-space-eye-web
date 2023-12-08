@@ -8,7 +8,7 @@ const PasswordAgain = document.getElementById('Password-again')
 const CarId = document.getElementById('Car-id')
 const logInBtn = document.querySelector('.logIn-btn')
 let aa = []
-const Url = 'http://localhost:3000'
+let Url = 'http://localhost:3000'
 
 
 function signUp(a, b, c, d) {

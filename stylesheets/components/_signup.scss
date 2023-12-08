@@ -128,8 +128,9 @@
 
 .signIn2 {
     //width: 100%;
+    position: absolute;
     right: 0;
-    position: relative;
+    height: 100%;
     padding: 20px 40px;
     background-color: rgba(220, 220, 220, 0.5);
     backdrop-filter: blur(10px);

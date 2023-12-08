@@ -1,4 +1,4 @@
-
+const change = document.querySelector('#changeText')
 const enterPassword = document.querySelector('#enterPassword')
 const reEnterPassword = document.querySelector('#reEnterPassword')
 const getNewPassword = document.querySelector('#getNewPass')
@@ -14,6 +14,7 @@ const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const contentToHide = document.querySelector('.content-to-hide-owner');
 const contentToHide2 = document.querySelector('.content-to-hide-save');
+const btnList = document.querySelector('#list')
 // const contentToHide3 = document.querySelector('.content-to-hide-place-history');
 const contentToHide3 = document.querySelector('.content-to-hide-trading-history');
 const contentToHide4 = document.querySelector('.content-to-hide-appointment');
@@ -21,8 +22,8 @@ const contentToHide5 = document.querySelector('.content-to-hide-storage');
 const showMapCard = document.querySelector('#showMapCard')
 const btnNumList = 1;
 const btnNumList1 = 1;
-const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, contentToHide5]
-let getParkValue = 'C01'
+const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, contentToHide5];
+let getParkValue = 'C01';
 const localParkData = localStorage.getItem('likePark');
 let saveLikePark = [];
 const Url = 'http://localhost:3000'
@@ -40,116 +41,164 @@ document.getElementById("chosePlanHeader").textContent = `${chosePlanHeader}`;
 
 //切換六個項目按鈕
 function getNum(x) {
-    let num = parseInt(x.getAttribute('data-num'));
-    if (num > btnNumList) {
-        btnBgMove.style.marginLeft = (287 * (num-1)) + 'px';
-    } else if (num < btnNumList) {
-        btnBgMove.style.marginLeft = (287 * (num - 1)) + 'px';
-    } else if(num=1){
-        btnBgMove.style.marginLeft = 0;
-    }
+  let num = parseInt(x.getAttribute('data-num'));
+  if (num > btnNumList) {
+    btnBgMove.style.marginLeft = (287 * (num - 1)) + 'px';
+  } else if (num < btnNumList) {
+    btnBgMove.style.marginLeft = (287 * (num - 1)) + 'px';
+  } else if (num = 1) {
+    btnBgMove.style.marginLeft = 0;
+  }
 }
 //將未被選種項目style加上none
 function getHide(same) {
-    const differentBtn = allHide
+  const differentBtn = allHide
     .filter((item) => item instanceof HTMLElement) // 過滤出DOM元素
     .filter((item) => item !== same);
-    differentBtn.forEach((e) => {
+  differentBtn.forEach((e) => {
     e.style.display = 'none';
-    });
+  });
 }
 //如果num跟取得數值一樣將項目style加上block
 function showContent(z) {
-    let num = parseInt(z.getAttribute('data-num'));
-    // console.log(num);
-    if (num === 1) {
-        getHide(z)
-        contentToHide.style.display = 'block';
-    }else if(num === 2){
-        getHide(z)
-        contentToHide2.style.display = 'block';
-    }else if(num === 3){
-        getHide(z)
-        contentToHide3.style.display = 'block';
-    }else if(num === 4){
-        getHide(z)
-        contentToHide4.style.display = 'block';
-    }else if(num === 5){
-        getHide(z)
-        contentToHide5.style.display = 'block';
-    }
-    // else if(num === 6){
-    //     getHide(z)
-    //     contentToHide6.style.display = 'block';
-    // }
+  let num = parseInt(z.getAttribute('data-num'));
+  // console.log(num);
+  if (num === 1) {
+    getHide(z)
+    contentToHide.style.display = 'block';
+  } else if (num === 2) {
+    getHide(z)
+    contentToHide2.style.display = 'block';
+  } else if (num === 3) {
+    getHide(z)
+    contentToHide3.style.display = 'block';
+  } else if (num === 4) {
+    getHide(z)
+    contentToHide4.style.display = 'block';
+  } else if (num === 5) {
+    getHide(z)
+    contentToHide5.style.display = 'block';
+  }
+  // else if(num === 6){
+  //     getHide(z)
+  //     contentToHide6.style.display = 'block';
+  // }
 }
-
+let grayBtnText = '車主專區'
 //按鈕監聽
-btn1.addEventListener('click', () => {
-    getNum(btn1)
-    showContent(btn1)
+btn1.addEventListener('click', (e) => {
+  grayBtnText = e.target.textContent
+  changeText()
+  getNum(btn1);
+  showContent(btn1);
+  btnStylingTogglerToLightL(btn1, btn2, btn3, btn4, btn5);
+  ctrBtnBg()
 });
-btn2.addEventListener('click', () => {
-    getNum(btn2)
-    showContent(btn2)
+btn2.addEventListener('click', (e) => { 
+  grayBtnText = e.target.textContent
+  changeText()
+  getNum(btn2);
+  showContent(btn2);
+  btnStylingTogglerToLightL(btn2, btn1, btn3, btn4, btn5);
+  ctrBtnBg()
 });
-// btn3.addEventListener('click', () => {
-//     getNum(btn3)
-//     showContent(btn3)
-// });
-btn3.addEventListener('click', () => {
-    getNum(btn3)
-    showContent(btn3)
+btn3.addEventListener('click', (e) => {
+  grayBtnText = e.target.textContent
+  changeText()
+  getNum(btn3);
+  showContent(btn3);
+  btnStylingTogglerToLightL(btn3, btn2, btn1, btn4, btn5);
+  ctrBtnBg()
 });
-btn4.addEventListener('click', () => {
-    getNum(btn4)
-    showContent(btn4)
+btn4.addEventListener('click', (e) => {
+  grayBtnText = e.target.textContent
+  changeText()
+  getNum(btn4);
+  showContent(btn4);
+  btnStylingTogglerToLightL(btn4, btn2, btn3, btn1, btn5);
+  ctrBtnBg()
 });
-btn5.addEventListener('click', () => {
-    getNum(btn5)
-    showContent(btn5)
+btn5.addEventListener('click', (e) => {
+  grayBtnText = e.target.textContent
+  changeText()
+  getNum(btn5);
+  showContent(btn5);
+  btnStylingTogglerToLightL(btn5, btn2, btn3, btn4, btn1);
+  ctrBtnBg()
 });
-btn11.addEventListener('click' , () => {
-    getParkValue = btn11.value
-    getLikePark(saveLikePark,getParkValue)
-    moveBtn1(btn11)
+btn11.addEventListener('click', () => {
+  getParkValue = btn11.value
+  getLikePark(saveLikePark, getParkValue)
 })
-btn12.addEventListener('click' , () => {
-    getParkValue = btn12.value
-    getLikePark(saveLikePark,getParkValue)
-    moveBtn1(btn12)
+btn12.addEventListener('click', () => {
+  getParkValue = btn12.value
+  getLikePark(saveLikePark, getParkValue)
 })
+var windowWidth = window.innerWidth
+btn.addEventListener('click', function () {
+  if (btnList.classList.contains('sticky')) {
+    btnList.classList.remove('sticky');
+  }
+});
+
+const changeText = () => {
+  change.innerHTML = grayBtnText
+}
+const ctrBtnBg = () => {
+  btnList.classList.add('sticky');
+}
+window.addEventListener('resize', function () {
+  var windowWidth = window.innerWidth
+  if (windowWidth < 780) {
+    btnList.classList.add('sticky');
+  }else if(windowWidth > 780){
+    btnList.classList.remove('sticky');
+  }
+});
+// btn點擊樣式更動
+function btnStylingTogglerToLightL(activeBtn, closeBtn1, closeBtn2, closeBtn3, closeBtn4) {
+  closeBtn1.classList.remove('btn-light-solid-l');
+  closeBtn1.classList.add('btn-dark-trans-l');
+  closeBtn2.classList.remove('btn-light-solid-l');
+  closeBtn2.classList.add('btn-dark-trans-l');
+  closeBtn3.classList.remove('btn-light-solid-l');
+  closeBtn3.classList.add('btn-dark-trans-l');
+  closeBtn4.classList.remove('btn-light-solid-l');
+  closeBtn4.classList.add('btn-dark-trans-l');
+  activeBtn.classList.remove('btn-dark-trans-l');
+  activeBtn.classList.add('btn-light-solid-l');
+}
 
 //選擇路邊或停車唱按鈕區塊移動
-const moveBtn1 = (w) => {
-    let num = parseInt(w.getAttribute('data-num'));
-    if (num > btnNumList1) {
-        btnBgMove1.style.marginLeft = (130 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove1.style.marginLeft = 0;
-    }
-}
+// const moveBtn1 = (w) => {
+//   let num = parseInt(w.getAttribute('data-num'));
+//   if (num > btnNumList1) {
+//     btnBgMove1.style.marginLeft = (130 * (num - 1)) + 'px';
+//   } else if (num = 1) {
+//     btnBgMove1.style.marginLeft = 0;
+//   }
+// }
 
 //我的收藏盤出視窗
 const saveParkModel = document.querySelector('#saveModel')
-saveParkModel.addEventListener('show.bs.modal' , function (e) {
-const saveButton = e.relatedTarget
-const savePark = saveButton.dataset.bsSavePark
-const saveType = saveButton.dataset.bsSaveType
-const saveAddress = saveButton.dataset.bsSaveAddress
-const saveSpace = saveButton.dataset.bsSaveSpace
-const saveIn = saveButton.dataset.bsSaveIn
-// console.log(saveButton,savePark)
-const park = saveParkModel.querySelector('#park')
-const type = saveParkModel.querySelector('#type')
-const address = saveParkModel.querySelector('#address')
-const space = saveParkModel.querySelector('#space')
-const inOrOut = saveParkModel.querySelector('#in')
-park.textContent = savePark
-type.textContent = saveType
-address.textContent = saveAddress
-space.textContent = saveSpace
-inOrOut.textContent = saveIn
+saveParkModel.addEventListener('show.bs.modal', function (e) {
+  const saveButton = e.relatedTarget
+  const savePark = saveButton.dataset.bsSavePark
+  const saveType = saveButton.dataset.bsSaveType
+  const saveAddress = saveButton.dataset.bsSaveAddress
+  const saveSpace = saveButton.dataset.bsSaveSpace
+  const saveIn = saveButton.dataset.bsSaveIn
+  // console.log(saveButton,savePark)
+  const park = saveParkModel.querySelector('#park')
+  const type = saveParkModel.querySelector('#type')
+  const address = saveParkModel.querySelector('#address')
+  const space = saveParkModel.querySelector('#space')
+  const inOrOut = saveParkModel.querySelector('#in')
+  park.textContent = savePark
+  type.textContent = saveType
+  address.textContent = saveAddress
+  space.textContent = saveSpace
+  inOrOut.textContent = saveIn
 })
 //停車紀錄提示框
 // const modalByDelete = document.querySelector('#deleteModal');
@@ -161,75 +210,77 @@ inOrOut.textContent = saveIn
 // })
 //交易紀錄提示框
 const TradToDelete = document.querySelector('#deleteTrad');
-TradToDelete.addEventListener('show.bs.modal' , function(event){
-    const button = event.relatedTarget;
-    const tradId = button.dataset.bsTradId;
-    const tradText = TradToDelete.querySelector('#deleteTradText')
-    tradText.textContent = tradId;
+TradToDelete.addEventListener('show.bs.modal', function (event) {
+  const button = event.relatedTarget;
+  const tradId = button.dataset.bsTradId;
+  const tradText = TradToDelete.querySelector('#deleteTradText')
+  tradText.textContent = tradId;
 })
 //預約紀錄提示框
 const deleteAppointmentModel = document.querySelector('#deleteAppointment')
-deleteAppointmentModel.addEventListener('show.bs.modal', function(p){
-    const AppointmentButton = p.relatedTarget
-    const getAppointment = AppointmentButton.dataset.bsPaId
-    const text = deleteAppointmentModel.querySelector('#deleteAppointmentText')
-    text.textContent = getAppointment
+deleteAppointmentModel.addEventListener('show.bs.modal', function (p) {
+  const AppointmentButton = p.relatedTarget
+  const getAppointment = AppointmentButton.dataset.bsPaId
+  const text = deleteAppointmentModel.querySelector('#deleteAppointmentText')
+  text.textContent = getAppointment
 })
 //預約紀錄提示框
 const storageModel = document.querySelector('#storageModel')
-storageModel.addEventListener('show.bs.modal' , function(event){
-    const UnitValue = document.querySelector('#unitId').value.trim()
-    const AmountValue = document.querySelector('#amountId').value.trim()
-    const storageButton = event.relatedTarget
-    const unit = storageModel.querySelector('#unit')
-    const amount = storageModel.querySelector('#amount')
-    unit.textContent = UnitValue
-    amount.textContent = AmountValue
+storageModel.addEventListener('show.bs.modal', function (event) {
+  const UnitValue = document.querySelector('#unitId').value.trim()
+  const AmountValue = document.querySelector('#amountId').value.trim()
+  const storageButton = event.relatedTarget
+  const unit = storageModel.querySelector('#unit')
+  const amount = storageModel.querySelector('#amount')
+  unit.textContent = UnitValue
+  amount.textContent = AmountValue
 })
 //更改密碼按鈕監聽
-getNewPassword.addEventListener('click' , (e) => {
-    let passwordV = '';
-    const enterV = enterPassword.value
-    const reEnterV = reEnterPassword.value
-    if(enterV === reEnterV && enterV !== '' && reEnterV !== ''){
-        document.querySelector('.Password-warn').style.display = 'none';
-        passwordV = enterV
-        applyChangePassWord(passwordV)
-    }else if(enterV === '' || reEnterV === ''){
-        document.querySelector('.Password-warn').style.display = 'block';
-    }
+getNewPassword.addEventListener('click', (e) => {
+  let passwordV = '';
+  const enterV = enterPassword.value
+  const reEnterV = reEnterPassword.value
+  if (enterV === reEnterV && enterV !== '' && reEnterV !== '') {
+    document.querySelector('.Password-warn').style.display = 'none';
+    passwordV = enterV
+    applyChangePassWord(passwordV)
+  } else if (enterV === '' || reEnterV === '') {
+    document.querySelector('.Password-warn').style.display = 'block';
+  }
 })
 //更改密碼
 const applyChangePassWord = (aa) => {
-    axios.patch(Url + `/600/users/${usersId}` , {
-        'password': `${aa}`
-    } , {
-        headers: {
-            Authorization: `Bearer ${token}`,
-            },
-    }).then((response) => {
-        console.log(response)
-        alert('密碼修改成功')
-    }).catch((err) => {
-        console,log(err)
-    })
+  axios.patch(Url + `/600/users/${usersId}`, {
+    'password': `${aa}`
+  }, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((response) => {
+    console.log(response)
+    alert('密碼修改成功')
+  }).catch((err) => {
+    console, log(err)
+  })
 }
 
 //取得用戶資料
-axios.get(Url + `/600/users/${usersId}` , {
-    headers: {
-        Authorization: `Bearer ${token}`,
-        },
-}).then((response) => {
+axios.get(Url + `/600/users/${usersId}`, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+  })
+  .then((response) => {
     let memberData = response.data
     getMemberData(memberData)
-}).catch((err) => {
+  })
+  .catch((err) => {
     console.log(err)
-})
+  })
 //將會員資料渲染至畫面
 const getMemberData = (aa) => {
-    let content = `<div class="row mt-5 d-flex justify-content-between gx-5">
-    <div class="col-6">
+  let content = `<div class="row mt-5 d-flex justify-content-lg-between gx-5">
+    <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
             <label for="inputPassword" class="col-sm-2 col-form-label">姓名</label>
             <div class="col-8">
@@ -264,7 +315,7 @@ const getMemberData = (aa) => {
                 </div>
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
             <label for="inputPassword" class="col-sm-2 col-form-label">車牌號碼</label>
             <div class="col-8">
@@ -296,48 +347,132 @@ const getMemberData = (aa) => {
         </div>
     </div>
 </div>`
-contentToHide.innerHTML = content
+  contentToHide.innerHTML = content
 }
+//leaflet語法
+var map = L.map('map').setView([24.162139, 120.647021], 11);
 
-console.log(saveLikePark)
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+var greyIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+//將資料渲染到地圖上
+// 在创建地图后，将图层保存到一个变量中
+var markersLayer = L.layerGroup().addTo(map);
+
+const dataToMap = (aa) => {
+  markersLayer.clearLayers();
+  for (let i = 0; i < aa.length; i++) {
+      let dataDetail = aa[i]
+      let marker;
+      locatedX = dataDetail.location.latitude
+      locatedY = dataDetail.location.longitude
+      if (dataDetail.space === '0') {
+        console.log('執行')
+          marker = L.marker([locatedX, locatedY], { icon: greyIcon })
+              .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+      <div class="card-body">
+          <div class="d-flex justify-content-between">
+              <h5 class="card-title">${dataDetail.parkName}</h5>
+              <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+          </div>
+          <div class="row">
+              <div class="col-5">地址:</div>
+              <div class="col-7">${dataDetail.address}</div>
+          </div>
+          <div class="row">
+              <div class="col-5">剩餘空位:</div>
+              <div class="col-7">${dataDetail.space}</div>
+          </div>
+          <div class="d-flex justify-content-between">
+          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+              <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+          </div>
+      </div>
+  </div>`);
+      } else if (dataDetail.space !== '0') {
+        console.log('執行')
+          marker = L.marker([locatedX, locatedY], { icon: greenIcon })
+              .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+      <div class="card-body">
+          <div class="d-flex justify-content-between">
+              <h5 class="card-title">${dataDetail.parkName}</h5>
+              <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+          </div>
+          <div class="row">
+              <div class="col-5">地址:</div>
+              <div class="col-7">${dataDetail.address}</div>
+          </div>
+          <div class="row">
+              <div class="col-5">剩餘空位:</div>
+              <div class="col-7">${dataDetail.space}</div>
+          </div>
+          <div class="d-flex justify-content-between">
+          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+              <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+          </div>
+      </div>
+  </div>`);
+      }
+      markersLayer.addLayer(marker);
+  }
+  console.log(locatedX, locatedY)
+}
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
-    if(localParkData === ''){
-        saveLikePark = [];
-    }else{
-        let ss = localParkData.split(',').map(parseFloat);
-        console.log(ss)
-        saveLikePark.push(...ss)
-    }
+  if (localParkData === '') {
+    saveLikePark = [];
+  } else {
+    let ss = localParkData.split(',').map(parseFloat);
+    console.log(ss)
+    saveLikePark.push(...ss)
+  }
 }
 parsedLocalParkData()
 //取得所有停車場資料
 let data = [];
 const getMapData = () => {
-    axios.get(Url + '/parks?_expand=road')
+  axios.get(Url + '/parks?_expand=road')
     .then((response) => {
-        data = response.data
-        getLikePark(saveLikePark,getParkValue)
-        console.log(response)
+      data = response.data
+      getLikePark(saveLikePark, getParkValue)
+      console.log(response)
     }).catch((err) => {
-        console.log(err)
+      console.log(err)
     })
 }
 getMapData()
 //取得全部停車場資料中與收藏停車場資料相符
-const getLikePark = (aa,bb) => {
-    let mapDataFilterA = [];
-    let str = '';
-    aa.forEach((item) => {
-        let mapDataFilter = data.filter((elm) => {
-            return (elm.location.latitude === item) && (elm.categoryId === bb)
-        })
-        mapDataFilterA.push(...mapDataFilter)
+const getLikePark = (aa, bb) => {
+  let mapDataFilterA = [];
+  let str = '';
+  aa.forEach((item) => {
+    let mapDataFilter = data.filter((elm) => {
+      return (elm.location.latitude === item) && (elm.categoryId === bb)
     })
-    console.log(mapDataFilterA)
-//渲染我的收藏至畫面
-    mapDataFilterA.forEach((item) => {
-        let content = `<div class="card mt-3" style="width: 16rem;">
+    mapDataFilterA.push(...mapDataFilter)
+  })
+  console.log(mapDataFilterA)
+  //渲染我的收藏至畫面
+  mapDataFilterA.forEach((item) => {
+    let content = `<div class="card mt-3" style="width: 16rem;">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h5 class="card-title">${item.parkName}</h5>
@@ -358,24 +493,43 @@ const getLikePark = (aa,bb) => {
         </div>
     </div>`
     str += content
-    })
-    showMapCard.innerHTML = str
-    // console.log(saveLikePark)
+  })
+  showMapCard.innerHTML = str
+  plusLike(mapDataFilterA)
+  dataToMap(mapDataFilterA)
 }
 //監聽愛心按鈕
-showMapCard.addEventListener('click' , (e) => {
-    let btnValue = e.target.getAttribute('data-some-value')
-    removeLikePark(saveLikePark, btnValue)
-    localStorage.setItem('likePark', saveLikePark);
-    getLikePark(saveLikePark,getParkValue)
-    // console.log(e.target)
+showMapCard.addEventListener('click', (e) => {
+  let btnValue = e.target.getAttribute('data-some-value')
+  removeLikePark(saveLikePark, btnValue)
+  localStorage.setItem('likePark', saveLikePark);
+  getLikePark(saveLikePark, getParkValue)
+  // console.log(e.target)
 })
+//將收藏停車場愛心換成紅色
+const plusLike = (aa) => {
+  const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
+  aa.forEach((item) => {
+      let locatedId = item.location.latitude;
+      // console.log(locatedId)
+      for (let i = 0; i < saveLikePark.length; i++) {
+          if (locatedId === saveLikePark[i]) {
+              let saveLikeElement = saveLikePark[i];
+              for (let x = 0; x < saveLikes.length; x++) {
+                  if (saveLikeElement.toString() === saveLikes[x].getAttribute('data-some-value')) {
+                      saveLikes[x].classList.add('bi-suit-heart-broke');
+                  }
+              }
+          }
+      }
+  });
+};
 //刪除收藏停車場
 const removeLikePark = (cc, dd) => {
-    const removeInd = cc.findIndex((item) => {
-        return item.toString() === dd;
-    });
-    if (removeInd !== -1) {
-        cc.splice(removeInd, 1);
-    }
+  const removeInd = cc.findIndex((item) => {
+    return item.toString() === dd;
+  });
+  if (removeInd !== -1) {
+    cc.splice(removeInd, 1);
+  }
 };

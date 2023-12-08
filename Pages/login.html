@@ -10,35 +10,6 @@
 </head>
 
 <body>
-  <!-- <header class="head">
-        <nav class="navbar">
-            <img src="../Assests/img/parking lot logo.png" alt="logo" class="logo">
-            <div class="searchBar">
-                <a>預約停車</a>
-                <a>找停車位</a>
-                <button class="btn"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
-                <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">車主專區</a></button>
-            </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid m-lg-4">
-                <div class="container-fluid d-flex justify-content-between">
-                    <a class="logo navbar-brand" href="#"><img src="../Assests/img/parking lot logo.png" alt="" style="height: 50px;"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse searchBar" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">服務介紹</p></a>
-                        <a class="nav-link text-start text-nowrap" href="#"><p class="mb-0 ms-lg-0 ms-3">熱門車款</p></a>
-                        <button class="btn ms-2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold text-nowrap">登入/註冊</a></button>
-                        <button class="btn2"><a href="http://127.0.0.1:5501/loginPape/login2/login.html" class="text-dark fw-bold">登入/註冊</a></button>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header> -->
   <header id="header">
     <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
       <div class="container-md">
@@ -47,9 +18,9 @@
           <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
         </a>
         <!-- button -->
-        <button class="btn btn-light-solid-m">
-          <a href="/Pages/login.html">
-            登入 / 註冊
+        <button class="btn btn-light-solid-m" id="userBtn">
+          <a href="/Pages/carOwnerNew.html">
+            車主專區
           </a>
         </button>
         <!-- hamburger -->
@@ -125,6 +96,7 @@
   </section>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script type="module" src="../scripts/login.js"></script>
+  <script src="/stylesheets/components/header/header.js"></script>
 </body>
 
 </html>
