@@ -4163,6 +4163,7 @@ textarea.form-control-lg {
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-sm .navbar-toggler {
     display: none;
@@ -4210,6 +4211,7 @@ textarea.form-control-lg {
   .navbar-expand-md .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-md .navbar-toggler {
     display: none;
@@ -4257,6 +4259,7 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-lg .navbar-toggler {
     display: none;
@@ -4304,6 +4307,7 @@ textarea.form-control-lg {
   .navbar-expand-xl .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-xl .navbar-toggler {
     display: none;
@@ -4351,6 +4355,7 @@ textarea.form-control-lg {
   .navbar-expand-xxl .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    justify-content: flex-end;
   }
   .navbar-expand-xxl .navbar-toggler {
     display: none;
@@ -4397,6 +4402,7 @@ textarea.form-control-lg {
 .navbar-expand .navbar-collapse {
   display: flex !important;
   flex-basis: auto;
+  justify-content: flex-end;
 }
 .navbar-expand .navbar-toggler {
   display: none;
@@ -4660,7 +4666,7 @@ textarea.form-control-lg {
   font-size: 1rem;
   color: var(--bs-accordion-btn-color);
   text-align: left;
-  background-color: var(--bs-accordion-btn-bg);
+  background-color: #fff;
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
@@ -4673,7 +4679,7 @@ textarea.form-control-lg {
 }
 .accordion-button:not(.collapsed) {
   color: var(--bs-accordion-active-color);
-  background-color: var(--bs-accordion-active-bg);
+  background-color: #fff;
   box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
 }
 .accordion-button:not(.collapsed)::after {
@@ -12968,8 +12974,9 @@ li .menu-m:hover::before {
   }
 }
 .signIn2 {
+  position: absolute;
   right: 0;
-  position: relative;
+  height: 100%;
   padding: 20px 40px;
   background-color: rgba(220, 220, 220, 0.5);
   -webkit-backdrop-filter: blur(10px);
@@ -13091,7 +13098,9 @@ li .menu-m:hover::before {
 } */
 .login {
   width: 450px;
-  position: relative;
+  position: absolute;
+  right: 0;
+  height: 100%;
   padding: 70px 40px;
   background-color: rgba(220, 220, 220, 0.5);
   -webkit-backdrop-filter: blur(10px);
