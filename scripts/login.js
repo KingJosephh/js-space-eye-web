@@ -22,7 +22,7 @@ function logIn(a, b) {
       showConfirmButton: false,
       timer: 1500
     }).then(res => {
-      window.location.href = '/findSpace.html';
+      window.location.href = '../index.html';
     })
 
   }).catch(function (err) {
