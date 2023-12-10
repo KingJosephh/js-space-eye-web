@@ -13214,6 +13214,36 @@ li .menu-m:hover::before {
   color: #93FF00;
 }
 
+.findSpace-main-container {
+  margin-top: 40px;
+  margin-bottom: 140px;
+}
+@media screen and (max-width: 768px) {
+  .findSpace-main-container {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+}
+
+.modal-header, .modal-body {
+  padding: 28px;
+}
+
+.modal-footer {
+  padding: 16px 28px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .bi-suit-heart-fill {
   color: #b0b0b0;
 }
@@ -13306,7 +13336,7 @@ li .menu-m:hover::before {
   background: #fff;
   height: 504px;
   gap: 12px;
-  padding-top: 44px;
+  padding: 18px 0;
 }
 .interface .interface-main .content-to-hide-search {
   display: flex;
@@ -13320,6 +13350,11 @@ li .menu-m:hover::before {
 }
 .interface .interface-main .content-to-hide-search .interface-main-submitBtn {
   margin-top: 28px;
+}
+.interface .interface-main .content-to-hide-showPark {
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
 }
 .interface .interface-main .content-to-hide-showPark .showPark-btns {
   margin-top: 12px;

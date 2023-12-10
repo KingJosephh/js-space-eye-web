@@ -103,7 +103,7 @@
       </div>
     </div>
     <!-- 以上是手機板 -->
-    <div class="container mb-4">
+    <div class="container findSpace-main-container">
       <div class="row mt-lg-4">
         <!-- 地圖 -->
         <!-- 停車環境 -->
@@ -165,7 +165,7 @@
               </div>
               <!-- 停車場一覽 -->
               <div class="content-to-hide-showPark" id="showMapCard">
-                <div class="card">
+                <!-- <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <h5 class="card-title">西屯停車場</h5>
@@ -186,7 +186,7 @@
                         data-bs-show-address="台北市松山區八德路3段12巷" data-bs-show-space="15" data-bs-show-in="室外">詳細資料</button>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -197,30 +197,30 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title mt-3 mx-4" id="park"></h5>
+                <div class="modal-title h4" id="park"></div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="row mx-3 mb-3">
-                  <div class="col-5">停車場樣式:</div>
-                  <div class="col-7" id="type"></div>
+                <div class="row">
+                  <div class="col-4">停車場類別:</div>
+                  <div class="col-8" id="type"></div>
                 </div>
-                <div class="row mx-3 mb-3">
-                  <div class="col-5">地址:</div>
-                  <div class="col-7" id="address"></div>
+                <div class="row">
+                  <div class="col-4">地址:</div>
+                  <div class="col-8" id="address"></div>
                 </div>
-                <div class="row mx-3 mb-3">
-                  <div class="col-5">剩餘空位:</div>
-                  <div class="col-7" id="space"></div>
+                <div class="row">
+                  <div class="col-4">剩餘空位:</div>
+                  <div class="col-8" id="space"></div>
                 </div>
-                <div class="row mx-3 mb-3">
-                  <div class="col-5">室內/室外:</div>
-                  <div class="col-7" id="in"></div>
+                <div class="row">
+                  <div class="col-4">室內/室外:</div>
+                  <div class="col-8" id="in"></div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary">預約停車</button>
-                <button type="button" class="btn btn-primary">長期方案</button>
+                <button type="button" class="btn btn-light-solid-m">預約停車</button>
+                <button type="button" class="btn btn-dark-solid-m">長期方案</button>
               </div>
             </div>
           </div>
