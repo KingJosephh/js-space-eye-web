@@ -215,7 +215,8 @@ function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {
 }
 
 //將取得的本地端值加入saveLikePark
-const parsedLocalParkData = () => {
+// console跳錯先關起來
+/* const parsedLocalParkData = () => {
     if(localParkData === ''){
         saveLikePark = [];
     }else{
@@ -223,7 +224,7 @@ const parsedLocalParkData = () => {
         console.log(ss)
         saveLikePark.push(...ss)
     }
-}
+} */
 let optionPark = '';
 // export default optionPark;
 
@@ -241,7 +242,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             if (likeBtn.textContent === '長期方案') {
                 optionPark = likeBtn.getAttribute('data-btnId');
                 localStorage.setItem('optionPark', optionPark);
-                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
+                window.location.href = "../Pages/planSelection.html"
             }
             if(likeBtn.textContent === '詳細資料'){
                 optionPark = likeBtn.getAttribute('data-btnId');
@@ -252,14 +253,14 @@ axios.get(Url + `/600/users/${usersId}`, {
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
+                window.location.href = "../Pages/planSelection.html"
                 console.log('aa')
             }
         })
         mapLocated.addEventListener('click' , (e) => {
             addLikeParkToLocal(e)
         })
-        parsedLocalParkData()
+        // parsedLocalParkData()
         const data = response.data;
         console.log('从受保护的端点获取的数据:', data);
     })
@@ -267,20 +268,32 @@ axios.get(Url + `/600/users/${usersId}`, {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
             if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+                Swal.fire({
+                    icon: "error",
+                    title: "請先登入",
+                    timer: 1500
+                });
             }
         })
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+                Swal.fire({
+                    icon: "error",
+                    title: "請先登入",
+                    timer: 1500
+                });
             }
         })
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+                Swal.fire({
+                    icon: "error",
+                    title: "請先登入",
+                    timer: 1500
+                });
             }
         })
         console.error('请求受保护的端点失败:', error);
