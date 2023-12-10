@@ -12850,6 +12850,10 @@ li .menu-m:hover::before {
     display: none;
   }
 }
+.modal {
+  z-index: 3000;
+}
+
 /* .head {
     position: fixed;
     width: 100%;
