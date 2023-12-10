@@ -56,7 +56,7 @@
 
   <!-- <div class="background-img"></div> -->
   <section class="main">
-    <div class="content d-none d-sm-block">
+    <div class="content d-none d-lg-block">
       <div class="logo"></div>
       <h2>Space</h2>
       <h2>Eye</h2>
@@ -64,36 +64,39 @@
         Welcome to space eye
       </p>
     </div>
-    <form class="login col-lg-5 col-md-5 pt-lg-3 pt-5" id="logInForm">
-      <h3 class="d-lg-block d-md-none d-sm-block mb-lg-5 mb-5 mt-lg-1 mt-5">login</h3>
-      <div class="input">
+    <form class="logInForm col-5 pt-5" id="logInForm">
+      <h3 class="d-lg-block d-sm-block mb-5 mt-5">login</h3>
+      <div class="logInForm-input">
         <input class="email" type="text">
         <label for="">Email</label>
         <p class="email-warn">* 請輸入正確帳號 *</p>
       </div>
-      <div class="input">
+      <div class="logInForm-input">
         <input class="Password" type="text">
         <label for="">Password</label>
         <p class="Password-warn">* 請輸入正確密碼 *</p>
       </div>
       <div class="aboutAccount">
         <div class="check">
-          <input type="checkbox">
+          <input type="checkbox" disabled>
           <p>記住帳號</p>
         </div>
         <a href="">忘記密碼?</a>
       </div>
       <div class="logIn-btn">
-        <!-- <button class="btn">登入會員</button> -->
         <button type="button" class="btn btn-light-solid-l">
-          <a>登入會員</a></button><!-- href="/findSpace.html" -->
+          <a>登入會員</a>
+        </button>
       </div>
-      <div class="signIn">
-        <p>還沒擁有會員嗎?</p>
+      <div class="goSignUp-btn text-end">
+        <p class="d-inline">還沒擁有會員嗎?</p>
         <a href="/Pages/signup.html">前往註冊</a>
       </div>
     </form>
   </section>
+
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="/stylesheets/components/header/header.js"></script>
   <script src="../scripts/login.js"></script><!-- type="module"  -->

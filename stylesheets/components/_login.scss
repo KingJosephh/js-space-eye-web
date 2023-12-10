@@ -33,8 +33,8 @@
 } */
 
 
-.login {
-    width: 450px;
+.logInForm {
+    width: 40%;
     position: absolute;
     right: 0;
     height: 100%;
@@ -44,6 +44,12 @@
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
 
+    @media screen and (max-width: 1440px) {
+            width: 55%;
+        }
+    @media screen and (max-width: 992px) {
+            width: 80%;
+        }
     h3 {
         font-size: 2.5rem;
         text-align: center;
@@ -52,7 +58,7 @@
     }
 
 }
-.input {
+.logInForm-input {
     width: 100%;
     height: 40px;
     margin-bottom: 40px;
@@ -129,39 +135,9 @@
         }
     }
 
-    /*  .logIn-btn {
-        display: flex;
-        justify-content: center;
-        height: 20%;
-
-        button {
-            width: 100%;
-            height: 40px;
-            border-radius: 8px;
-            background-color: rgb(75, 75, 75);
-            border: 0;
-            margin-bottom: 16px;
-            transition: 0.3s;
-
-            &:hover {
-                background: #93FF00;
-                color: #fff;
-                border-radius: 5px;
-                box-shadow: 0 0 5px #93FF00, 0 0 25px #93FF00, 0 0 50px #93FF00, 0 0 100px #93FF00;
-
-                &::after {
-                    width: 90%;
-                    height: 40px;
-                    background-color: rgb(75, 75, 75);
-                }
-            }
-        }
-    }  */
-
-    .signIn {
-        display: flex;
-        justify-content: space-between;
+    .goSignUp-btn {
         color: #fff;
+        margin-top: 18px;
 
         a {
             text-decoration: none;

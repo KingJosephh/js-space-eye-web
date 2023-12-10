@@ -12973,7 +12973,8 @@ li .menu-m:hover::before {
     padding: 80px;
   }
 }
-.signIn2 {
+.signUpForm {
+  width: 40%;
   position: absolute;
   right: 0;
   height: 100%;
@@ -12984,19 +12985,29 @@ li .menu-m:hover::before {
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
 }
-.signIn2 h3, .signIn2 .h3 {
+@media screen and (max-width: 1440px) {
+  .signUpForm {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .signUpForm {
+    width: 80%;
+  }
+}
+.signUpForm h3, .signUpForm .h3 {
   font-size: 2.5rem;
   text-align: center;
   color: #fff;
   margin-bottom: 10px;
 }
-.signIn2 .input {
+.signUpForm .input {
   width: 100%;
   height: 40px;
   margin-bottom: 20px;
   position: relative;
 }
-.signIn2 .input .all-input {
+.signUpForm .input .all-input {
   width: 100%;
   height: 100%;
   font-style: 16px;
@@ -13010,7 +13021,7 @@ li .menu-m:hover::before {
   border-bottom: 2px solid #fff;
   color: #fff;
 }
-.signIn2 .input label {
+.signUpForm .input label {
   position: absolute;
   top: 0;
   left: 0;
@@ -13020,46 +13031,46 @@ li .menu-m:hover::before {
   pointer-events: none;
   transition: 0.5s;
 }
-.signIn2 .input input:focus ~ label,
-.signIn2 .input input[data-state=UserName]:valid ~ label,
-.signIn2 .input input[data-state=Email]:valid ~ label,
-.signIn2 .input input[data-state=Password-sign]:valid ~ label,
-.signIn2 .input input[data-state=Password-again-sign]:valid ~ label,
-.signIn2 .input input[data-state=Car-id]:valid ~ label {
+.signUpForm .input input:focus ~ label,
+.signUpForm .input input[data-state=UserName]:valid ~ label,
+.signUpForm .input input[data-state=Email]:valid ~ label,
+.signUpForm .input input[data-state=Password-sign]:valid ~ label,
+.signUpForm .input input[data-state=Password-again-sign]:valid ~ label,
+.signUpForm .input input[data-state=Car-id]:valid ~ label {
   top: -20px;
   left: 0;
   color: #93FF00;
   font-size: 12px;
 }
-.signIn2 .input .warn-UserName,
-.signIn2 .input .warn-Email,
-.signIn2 .input .warn-Email-exists,
-.signIn2 .input .warn-Password,
-.signIn2 .input .warn-Password-again,
-.signIn2 .input .warn-Car-id {
+.signUpForm .input .warn-UserName,
+.signUpForm .input .warn-Email,
+.signUpForm .input .warn-Email-exists,
+.signUpForm .input .warn-Password,
+.signUpForm .input .warn-Password-again,
+.signUpForm .input .warn-Car-id {
   text-align: end;
   font-size: 12px;
   color: #ff0000;
   display: none;
 }
-.signIn2 .aboutAccount {
+.signUpForm .aboutAccount {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
   color: #fff;
   margin-bottom: 32px;
 }
-.signIn2 .aboutAccount .check {
+.signUpForm .aboutAccount .check {
   display: flex;
 }
-.signIn2 .aboutAccount a {
+.signUpForm .aboutAccount a {
   text-decoration: none;
   color: #fff;
 }
-.signIn2 .word a {
+.signUpForm .word a {
   text-decoration: none;
   color: #fff;
-  font-size: 8px;
+  font-size: 12px;
   margin-top: 16px;
 }
 
@@ -13096,8 +13107,8 @@ li .menu-m:hover::before {
         }
     }
 } */
-.login {
-  width: 450px;
+.logInForm {
+  width: 40%;
   position: absolute;
   right: 0;
   height: 100%;
@@ -13108,21 +13119,31 @@ li .menu-m:hover::before {
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
 }
-.login h3, .login .h3 {
+@media screen and (max-width: 1440px) {
+  .logInForm {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .logInForm {
+    width: 80%;
+  }
+}
+.logInForm h3, .logInForm .h3 {
   font-size: 2.5rem;
   text-align: center;
   color: #fff;
   margin-bottom: 10px;
 }
 
-.input {
+.logInForm-input {
   width: 100%;
   height: 40px;
   margin-bottom: 40px;
   position: relative;
 }
-.input .email,
-.input .Password {
+.logInForm-input .email,
+.logInForm-input .Password {
   width: 100%;
   height: 100%;
   font-size: 16px;
@@ -13136,19 +13157,19 @@ li .menu-m:hover::before {
   border-bottom: 2px solid #fff;
   color: #fff;
 }
-.input .email-warn {
+.logInForm-input .email-warn {
   text-align: end;
   font-size: 12px;
   color: red;
   display: none;
 }
-.input .Password-warn {
+.logInForm-input .Password-warn {
   text-align: end;
   font-size: 12px;
   color: red;
   display: none;
 }
-.input label {
+.logInForm-input label {
   position: absolute;
   top: 0;
   left: 0;
@@ -13157,9 +13178,9 @@ li .menu-m:hover::before {
   pointer-events: none;
   transition: 0.5s;
 }
-.input input:focus ~ label,
-.input input#email:valid ~ label,
-.input input#Password:valid ~ label {
+.logInForm-input input:focus ~ label,
+.logInForm-input input#email:valid ~ label,
+.logInForm-input input#Password:valid ~ label {
   top: -20px;
   left: 0;
   color: #93FF00;
@@ -13184,40 +13205,11 @@ li .menu-m:hover::before {
   margin: 0;
 }
 
-/*  .logIn-btn {
-    display: flex;
-    justify-content: center;
-    height: 20%;
-
-    button {
-        width: 100%;
-        height: 40px;
-        border-radius: 8px;
-        background-color: rgb(75, 75, 75);
-        border: 0;
-        margin-bottom: 16px;
-        transition: 0.3s;
-
-        &:hover {
-            background: #93FF00;
-            color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px #93FF00, 0 0 25px #93FF00, 0 0 50px #93FF00, 0 0 100px #93FF00;
-
-            &::after {
-                width: 90%;
-                height: 40px;
-                background-color: rgb(75, 75, 75);
-            }
-        }
-    }
-}  */
-.signIn {
-  display: flex;
-  justify-content: space-between;
+.goSignUp-btn {
   color: #fff;
+  margin-top: 18px;
 }
-.signIn a {
+.goSignUp-btn a {
   text-decoration: none;
   color: #93FF00;
 }
@@ -13663,16 +13655,16 @@ li .menu-m:hover::before {
   background-color: rgb(240, 240, 240);
 }
 
-button {
+/* button {
   background-color: rgba(0, 0, 0, 0);
   border: 2px solid #0C505D;
   color: #0C505D;
   text-transform: uppercase;
   font-weight: bold;
   padding: 5px 30px;
-  transition: all 0.2s;
-}
+  transition: all .2s;
 
+} */
 /* button:hover {
     padding: 3px 28px;
     border-width: 4px;

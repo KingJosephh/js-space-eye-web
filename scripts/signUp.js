@@ -19,33 +19,37 @@ function signUp(a, b, c, d) {
   }).then(function (response) {
     console.log(response);
     signUpForm.reset();
-    /* Password.value = '';
-    PasswordAgain.value = '';
-    UserName.value = '';
-    Email.value = '';
-    CarId.value = ''; */
-    // 註冊成功
+    
+    // 註冊成功提示
     alert('註冊成功！');
-    // 跳轉到登入頁面
-    window.location.href = '/Pages/login.html'; 
-    // window.location.href = 'http://127.0.0.1:5501/spaceEyeHtmlPage/login.html';
+    Swal.fire({
+      icon: "success",
+      title: "登入成功",
+      showConfirmButton: false,
+      timer: 1500
+    }).then(res => {
+      window.location.href = '/Pages/login.html';
+    })
   }).catch(function (err) {
     console.log(err)
     console.dir(err)
+    hideError('.warn-Email');
+    hideError('.warn-Email-exists');
     if (err.response.data === 'Email format is invalid') {
       showError('.warn-Email');
     } else if (err.response.data === 'Email and password are required') {
       showError('.warn-Email');
     }
-    else {
-      hideError('.warn-Email');
-    }
     if (err.response.data === 'Email already exists') {
       showError('.warn-Email-exists');
-    } else {
-      hideError('.warn-Email-exists');
     }
-
+    // else if (err.response.data === 'Cannot find user') {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "登入失敗",
+    //     text: "請確認您已註冊"
+    //   });
+    // }
   });
 }
 // 檢查輸入是否正確

@@ -62,8 +62,8 @@
         Welcome to space eye
       </p>
     </div>
-    <form class="signIn2 col-lg-5 col-md-5 pt-lg-3 pt-5" id="signUpForm">
-      <h3 class="d-lg-block d-md-none d-sm-block mb-lg-5 mb-5 mt-lg-1 mt-5">SignUp</h3>
+    <form class="signUpForm col-5 pt-5" id="signUpForm">
+      <h3 class="d-lg-block d-sm-block mb-lg-5 mb-5 mt-lg-5 mt-5">SignUp</h3>
       <div class="input">
         <input id="UserName" class="all-input" type="text">
         <label for="UserName">UserName</label>
@@ -90,13 +90,15 @@
         <label for="Car-id">Car ID</label>
         <p class="warn-Car-id">* 請輸入車牌號碼 *</p>
       </div>
-      <div class="word">
-        <a href="">* 加入之前同意使用規範及個人資料保護 *</a>
+      <div class="word pb-3">
+        <a href="">* 加入視同同意使用規範及個人資料保護 *</a>
       </div>
-      <!-- <div class="logIn-btn"> -->
-        <button class="btn logIn-btn" type="button">註冊會員</button>
+      <button class="btn logIn-btn btn-light-solid-l" type="button">註冊會員</button>
     </form>
   </section>
+
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/stylesheets/components/header/header.js"></script>
