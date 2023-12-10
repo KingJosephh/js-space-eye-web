@@ -15,13 +15,16 @@ header{
     max-width: 996px;//996, 890
     max-height: 560px;//560, 500
   }
+  [data-indexMenu]{
+    color: #fff;
+  }
   @media screen and (max-width: 768px){
     .banner-bg{
       display: none;
     }
-  }
-  [data-indexMenu]{
-    color: #fff;
+    [data-indexMenu]{
+      color: var(--gray-01);
+    }
   }
 };
 

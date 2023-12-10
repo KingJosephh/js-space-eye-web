@@ -1,0 +1,374 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"); */
+
+/* body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+} */
+
+/* .top {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  text-align: center;
+}
+
+.top h1 {
+  padding-top: 20px;
+} */
+
+.watermark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* 設定背景透明度 */
+  background: rgb(31, 31, 31, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* .bottom-part hr {
+  border: 1px solid greenyellow;
+} */
+
+.planSelection-mainContent-container{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+#detailsCard {
+  // border: 1px solid #fff;
+  border-collapse: collapse;
+  margin-top: 50px;
+  width: 100%;
+  table-layout: fixed;
+  justify-content: center;
+  text-align: center;
+  // padding-top: 40px;
+
+  caption {
+    // font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+
+  tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  th,
+  td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+}
+
+#reservationForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input {
+  margin-left: 10px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #11cc00;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: #11cc00;
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cancelButton {
+  position: absolute;
+  right: 650px;
+}
+
+.rightButton {
+  position: absolute;
+  right: 550px;
+}
+
+.main-container {
+  min-width: 100vw;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.summary-container {
+  width: 450px;
+  min-height: 550px;
+  margin: auto;
+  border-radius: 16px;
+  background: var(--gray-04);
+}
+
+/* .top-part {
+  height: 221px;
+  background: url('../images/illustration-hero.svg') no-repeat center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+} */
+
+.bi-x-circle {
+  position: absolute;
+  right: 30px;
+  top: 35px;
+  transform: scaleY(-1);
+}
+
+.bottom-part {
+  position: relative;
+}
+
+.word-section {
+  text-align: center;
+  padding: 22px 0;
+}
+
+.plan-section-container{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px 30px;
+  
+  .plan-section {
+    background-color: hsl(225, 100%, 98%);
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    border-radius: 12px;
+    align-items: center;
+    
+    .annual-plan p {
+      color: var(--gray-02);
+      font-weight: bold;
+    }
+    
+    // 暫時用不到，先關起來
+    /* .change {
+      margin: auto;
+      margin-right: 0px;
+    }
+    
+    .change a {
+      color: hsl(245, 75%, 52%);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: 0.3s ease-out;
+      transition-property: color, text;
+    }
+    
+    .change a:hover {
+      color: #766CF1;
+      text-decoration: none;
+    } */
+  }
+}
+
+
+.btn-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 30px;
+}
+
+.submit-btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  /* .btn-payment {
+    color: #fff;
+    transition: 0.3s ease-in;
+    transition-property: background;
+    box-shadow: 0 18px 14px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-submit {
+    color: hsl(226, 20%, 71%);
+    background-color: #fff;
+    transition: 0.3s ease-in;
+    transition-property: color;
+  } */
+}
+
+@media (min-width: 1440px) {
+  .main-container {
+    background-image: none;
+  }
+}
+
+@media (max-height: 700px) {
+  .main-container {
+    padding: 35px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-container {
+    padding: 35px 35px;
+  }
+
+  .plan-section .annual-plan h2 {
+    font-size: 16px;
+  }
+
+  .plan-section .annual-plan p {
+    font-size: 14px;
+  }
+
+  .plan-section .change a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .main-container {
+    background-image: url('../images/pattern-background-mobile.svg');
+    padding: 25px 25px;
+  }
+
+  .container {
+    max-width: 350px !important;
+  }
+
+  br {
+    display: none;
+  }
+
+  .word-section p {
+    margin: 0 18px;
+  }
+
+  .plan-section {
+    margin: 0 20px;
+  }
+
+  .annual-plan {
+    margin-right: 15px;
+  }
+}
+
+.plan-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  max-width: 1500px;
+  margin: auto;
+  gap: 18px;
+  .plan {
+    text-align: center;
+    // border: 1px solid var(--gray-02);
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    transition: all .2s;
+    width: 33.33%;
+    height: 100%;
+    // margin: 10px;
+    max-width: 500px;
+  
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, .1);
+    }
+  
+    .plan-price {
+      font-weight: bold;
+    }
+    // ul li{}
+  }
+}
+
+.description {
+  padding-bottom: 22px;
+  margin: 10px;
+  width: 33.33%;
+}
+
+
+
+.plan-active {
+  border: 2px solid #0C505D;
+  padding: 19px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0) !important;
+
+}
+
+.plan-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-container li {
+  padding: 10px;
+  min-height: 22px;
+}
+
+.plan-container ul :nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #0C505D;
+  color: #0C505D;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 30px;
+  transition: all .2s;
+
+}
+
+/* button:hover {
+    padding: 3px 28px;
+    border-width: 4px;
+  } */
+
+button:disabled {
+  padding: 5px 30px;
+  border: 2px solid rgb(230, 230, 230);
+  color: rgb(230, 230, 230);
+}

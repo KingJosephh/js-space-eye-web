@@ -244,7 +244,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             if (likeBtn.textContent === '長期方案') {
                 optionPark = likeBtn.getAttribute('data-btnId');
                 localStorage.setItem('optionPark', optionPark);
-                window.location.href = "/pages/planSelection.html"
+                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
             }
             if(likeBtn.textContent === '詳細資料'){
                 optionPark = likeBtn.getAttribute('data-btnId');
@@ -255,7 +255,7 @@ axios.get(Url + `/600/users/${usersId}`, {
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                window.location.href = "/pages/planSelection.html"
+                window.location.href = "http://127.0.0.1:5501/Pages/parkingDetail.html"
                 console.log('aa')
             }
         })

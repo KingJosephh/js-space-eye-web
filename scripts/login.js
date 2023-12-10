@@ -1,8 +1,10 @@
 const logInForm = document.querySelector('#logInForm');
 const emailInput = document.querySelector('.email');
 const passWordInput = document.querySelector('.Password');
-const logInBtn = document.querySelector('.logIn-btn')
-const Url = 'http://localhost:3000'
+const logInBtn = document.querySelector('.logIn-btn');
+const Url = 'http://localhost:3000';
+const token = localStorage.getItem('token');
+const usersId = localStorage.getItem('usersId'); // token與usersId為header辨識登入用，勿刪
 
 function logIn(a, b) {
   axios.post(Url + '/login', {
