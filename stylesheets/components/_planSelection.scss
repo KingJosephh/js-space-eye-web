@@ -35,28 +35,21 @@
   padding: 20px;
 }
 
-/* .bottom-part hr {
-  border: 1px solid greenyellow;
-} */
-
 .planSelection-mainContent-container{
   display: flex;
   flex-direction: column;
   gap: 60px;
+  padding: 60px 0;
 }
 
 #detailsCard {
-  // border: 1px solid #fff;
   border-collapse: collapse;
-  margin-top: 50px;
   width: 100%;
   table-layout: fixed;
   justify-content: center;
   text-align: center;
-  // padding-top: 40px;
 
   caption {
-    // font-size: 1.5em;
     margin: .5em 0 .75em;
   }
 

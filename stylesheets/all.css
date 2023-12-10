@@ -13385,18 +13385,15 @@ li .menu-m:hover::before {
   padding: 20px;
 }
 
-/* .bottom-part hr {
-  border: 1px solid greenyellow;
-} */
 .planSelection-mainContent-container {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  padding: 60px 0;
 }
 
 #detailsCard {
   border-collapse: collapse;
-  margin-top: 50px;
   width: 100%;
   table-layout: fixed;
   justify-content: center;

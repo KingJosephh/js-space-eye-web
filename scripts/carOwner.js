@@ -26,9 +26,6 @@ const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, 
 let getParkValue = 'C01';
 const localParkData = localStorage.getItem('likePark');
 let saveLikePark = [];
-const Url = 'http://localhost:3000'
-const token = localStorage.getItem('token')
-const usersId = localStorage.getItem('usersId')
 // 從 localStorage 中讀取進場和出場時間和方案選擇
 const entryTimeHeader = localStorage.getItem("entryTime");
 const exitTimeHeader = localStorage.getItem("exitTime");

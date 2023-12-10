@@ -1,11 +1,8 @@
-const Url = 'http://localhost:3000'
-const token = localStorage.getItem('token');
-const usersId = localStorage.getItem('usersId'); // token與usersId為header辨識登入用，勿刪
 const UrlWebType = 'https://space-eye-web-surver.onrender.com'
 const optionPark = localStorage.getItem('optionPark');
-const detailsCard = document.querySelector('#detailsCard')
-let data = []
-let getSpaceDetails = []
+const detailsCard = document.querySelector('#detailsCard');
+let data = [];
+let getSpaceDetails = [];
 
 // 辨識是否登入，未登入跳往'登入頁面'
 axios.get(Url + `/600/users/${usersId}`, {

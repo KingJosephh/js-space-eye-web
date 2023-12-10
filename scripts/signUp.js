@@ -7,10 +7,7 @@ const Password = document.getElementById('Password-signIn')
 const PasswordAgain = document.getElementById('Password-again')
 const CarId = document.getElementById('Car-id')
 const logInBtn = document.querySelector('.logIn-btn')
-let aa = []
-let Url = 'http://localhost:3000'
-const token = localStorage.getItem('token');
-const usersId = localStorage.getItem('usersId'); // token與usersId為header辨識登入用，勿刪
+let aa = [];
 
 
 function signUp(a, b, c, d) {
