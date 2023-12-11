@@ -1,5 +1,35 @@
 $display-none: none;
 
+.findSpace-main-container{
+  margin-top: 40px;
+  margin-bottom: 140px;
+  @media screen and (max-width: 768px) {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+}
+
+.card{
+  background: #fff;
+  border-radius: 12px;
+}
+.modal-header,.modal-body{
+  padding: 28px;
+}
+.modal-footer{
+  padding: 16px 28px;
+}
+.modal-body{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#btnX{
+  height: 28px;
+  width: 26px;
+}
+
 .bi-suit-heart-fill {
   color: #b0b0b0;
 }
@@ -50,9 +80,10 @@ $display-none: none;
 .searchBg.show {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.8);
-  height: 10%;
-  width: 10%;
+  height: 100%;
+  width: 100%;
   z-index: 2100;
+  justify-content: center;
 }
 
 .mobile-search-container{
@@ -96,7 +127,7 @@ $display-none: none;
     background: #fff;
     height: 504px;
     gap: 12px;
-    padding-top: 44px;
+    padding: 18px 0;
     .content-to-hide-search{
       display: flex;
       flex-direction: column;
@@ -111,6 +142,9 @@ $display-none: none;
       }
     }
     .content-to-hide-showPark{
+      flex-direction: column;
+      gap: 16px;
+      padding: 12px;
       .showPark-btns{
         margin-top: 12px;
       }
@@ -123,13 +157,13 @@ $display-none: none;
 .searchBtn{
   z-index: 2200;
   right: 150px;
-  top: 150px;
+  top: 180px;
   @media screen and (max-width: 768px) {
     right: 130px;
-    top: 100px;
+    top: 150px;
   }
   @media screen and (max-width: 576px) {
     right: 30px;
-    top: 100px;
+    top: 130px;
   }
 }

@@ -1,18 +1,18 @@
 const saveLike = document.querySelector('#save-like');
 const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');;
-const btn21 = document.querySelector('#btn2-1');
+/* const btn21 = document.querySelector('#btn2-1');
 const btn22 = document.querySelector('#btn2-2');
 const btn23 = document.querySelector('#btn2-3');
 const btn31 = document.querySelector('#btn3-1');
 const btn32 = document.querySelector('#btn3-2');
 const btn11 = document.querySelector('#btn1-1')
-const btn12 = document.querySelector('#btn1-2')
+const btn12 = document.querySelector('#btn1-2') */
 const confirmBtn = document.querySelector('#confirm');
-const btnBgMove = document.querySelector('.btn-bg-move');
+/* const btnBgMove = document.querySelector('.btn-bg-move');
 const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const btnBgMove2 = document.querySelector('.btn-bg-move2');
-const btnBgMove3 = document.querySelector('.btn-bg-move3');
+const btnBgMove3 = document.querySelector('.btn-bg-move3'); */
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard =document.querySelector('#showMapCard')
@@ -28,7 +28,7 @@ let data = [];
 
 
 //控制顯示或隱藏頁面
-function hidePage(a){
+/* function hidePage(a){
     let num = parseInt(a.getAttribute('data-num'));
     console.log(num)
     if(num === 1){
@@ -38,18 +38,18 @@ function hidePage(a){
         hideSearch.style.display = 'none';
         hideShowPark.style.display = 'block';
     }
-}
+} */
 //選搜尋停建或停車場一覽按鈕區塊移動
-function moveBtn(x) {
+/* function moveBtn(x) {
     let num = parseInt(x.getAttribute('data-num'));
     if (num > btnNumList) {
         btnBgMove.style.marginLeft = (162 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove.style.marginLeft = 0;
     }
-}
+} */
 //選車位種類按鈕區塊移動
-function moveBtn2(y) {
+/* function moveBtn2(y) {
     let num = parseInt(y.getAttribute('data-num'));
     // console.log(num)
     if (num > btnNumList2) {
@@ -59,9 +59,9 @@ function moveBtn2(y) {
     }else if(num=1){
         btnBgMove2.style.marginLeft = 0;
     }
-}
+} */
 //顯示有車位停車場按鈕區塊移動
-function moveBtn3(z) {
+/* function moveBtn3(z) {
     let num = parseInt(z.getAttribute('data-num'));
     if (num > btnNumList2) {
         btnBgMove3.style.marginLeft = (136 * (num-1)) + 'px';
@@ -70,28 +70,30 @@ function moveBtn3(z) {
     }else if(num=1){
         btnBgMove3.style.marginLeft = 0;
     }
-}
+} */
 //選擇路邊或停車唱按鈕區塊移動
-const moveBtn1 = (w) => {
+/* const moveBtn1 = (w) => {
     let num = parseInt(w.getAttribute('data-num'));
     if (num > btnNumList1) {
         btnBgMove1.style.marginLeft = (105 * (num-1)) + 'px';
     }else if(num=1){
         btnBgMove1.style.marginLeft = 0;
     }
-}
+} */
 
 //各種按鈕監聽
-btn1.addEventListener('click', () => {
+/* btn1.addEventListener('click', () => {
     moveBtn(btn1)
     hidePage(btn1)
 });
 btn2.addEventListener('click', () => {
     moveBtn(btn2)
     hidePage(btn2)
-});
+}); */
 // let area =  areaOption.value;
 // let road =  roadOption.value;
+
+// 送出搜尋條件
 confirmBtn.addEventListener('click', () => {
     // btnBgMove.style.marginLeft = 162 + 'px';
     // hideSearch.style.display = 'none';
@@ -101,7 +103,7 @@ confirmBtn.addEventListener('click', () => {
     getMapDetail(area,road,getType,getSpaceOrNot)
     console.log(area ,road ,getType ,getSpaceOrNot)
 })
-btn21.addEventListener('click', () => {
+/* btn21.addEventListener('click', () => {
     moveBtn2(btn21)
     getType = btn21.value
 });
@@ -126,7 +128,7 @@ btn11.addEventListener('click' , () => {
 })
 btn12.addEventListener('click' , () => {
     moveBtn1(btn12)
-})
+}) */
 
 //收藏停車場的愛心按鈕監聽
 saveLike.addEventListener('click', (e) =>{
@@ -138,24 +140,24 @@ saveLike.addEventListener('click', (e) =>{
 })
 //控制彈出視窗(modal)
 const showAllPark = document.querySelector('#showAllParkModel')
-                        showAllPark.addEventListener('show.bs.modal' , function (e) {
-                        const showButton = e.relatedTarget
-                        const showPark = showButton.dataset.bsShowPark
-                        const showType = showButton.dataset.bsShowType
-                        const showAddress = showButton.dataset.bsShowAddress
-                        const showSpace = showButton.dataset.bsShowSpace
-                        const showIn = showButton.dataset.bsShowIn
-                        const park = showAllPark.querySelector('#park')
-                        const type = showAllPark.querySelector('#type')
-                        const address = showAllPark.querySelector('#address')
-                        const space = showAllPark.querySelector('#space')
-                        const inOrOut = showAllPark.querySelector('#in')
-                        park.textContent = showPark
-                        type.textContent = showType
-                        address.textContent = showAddress
-                        space.textContent = showSpace
-                        inOrOut.textContent = showIn
-                        })
+showAllPark.addEventLFistener('show.bs.modal' , function (e) {
+  const showButton = e.relatedTarget
+  const showPark = showButton.dataset.bsShowPark
+  const showType = showButton.dataset.bsShowType
+  const showAddress = showButton.dataset.bsShowAddress
+  const showSpace = showButton.dataset.bsShowSpace
+  const showIn = showButton.dataset.bsShowIn
+  const park = showAllPark.querySelector('#park')
+  const type = showAllPark.querySelector('#type')
+  const address = showAllPark.querySelector('#address')
+  const space = showAllPark.querySelector('#space')
+  const inOrOut = showAllPark.querySelector('#in')
+  park.textContent = showPark
+  type.textContent = showType
+  address.textContent = showAddress
+  space.textContent = showSpace
+  inOrOut.textContent = showIn
+})
 //取得區域資料
 let sectionData = [];
 const getSection = () => {
@@ -218,6 +220,7 @@ const showRoadOptionList = (a) => {
         }
         roadOption.innerHTML = content;
 }
+
 //取得停車場資訊
 const getMap = () => {
     axios.get('http://localhost:3000/parks?_expand=road')
@@ -230,6 +233,8 @@ const getMap = () => {
     })
 }
 getMap()
+
+// 取得地圖資料
 const getMapDetail = (a,b,c,d) => {
     let str = '';
     const filteredData = data.filter((item) => {

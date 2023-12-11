@@ -70,45 +70,45 @@ const dataToMap = () => {
         locatedY = dataDetail.location.longitude
         if (dataDetail.space === '0') {
             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
-                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+                .bindPopup(`<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <h5 class="card-title">${dataDetail.parkName}</h5>
+                <div class="h4 card-title">${dataDetail.parkName}</div>
                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
             </div>
             <div class="row">
-                <div class="col-5">地址:</div>
-                <div class="col-7">${dataDetail.address}</div>
+                <div class="col-4">地址:</div>
+                <div class="col-8">${dataDetail.address}</div>
             </div>
             <div class="row">
-                <div class="col-5">剩餘空位:</div>
-                <div class="col-7">${dataDetail.space}</div>
+                <div class="col-4">剩餘空位:</div>
+                <div class="col-8">${dataDetail.space}</div>
             </div>
-            <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            <div class="d-flex justify-content-end pt-2">
+            <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
             </div>
         </div>
     </div>`);
         } else if (dataDetail.space !== '0') {
             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
-                .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+                .bindPopup(`<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <h5 class="card-title">${dataDetail.parkName}</h5>
+                <div class="h4 card-title">${dataDetail.parkName}</div>
                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
             </div>
             <div class="row">
-                <div class="col-5">地址:</div>
-                <div class="col-7">${dataDetail.address}</div>
+                <div class="col-4">地址:</div>
+                <div class="col-8">${dataDetail.address}</div>
             </div>
             <div class="row">
-                <div class="col-5">剩餘空位:</div>
-                <div class="col-7">${dataDetail.space}</div>
+                <div class="col-4">剩餘空位:</div>
+                <div class="col-8">${dataDetail.space}</div>
             </div>
-            <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
+            <div class="d-flex justify-content-end pt-2">
+            <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
             </div>
         </div>
     </div>`);
@@ -215,7 +215,8 @@ function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {
 }
 
 //將取得的本地端值加入saveLikePark
-const parsedLocalParkData = () => {
+// console跳錯先關起來
+/* const parsedLocalParkData = () => {
     if(localParkData === ''){
         saveLikePark = [];
     }else{
@@ -223,7 +224,7 @@ const parsedLocalParkData = () => {
         console.log(ss)
         saveLikePark.push(...ss)
     }
-}
+} */
 let optionPark = '';
 // export default optionPark;
 
@@ -241,7 +242,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             if (likeBtn.textContent === '長期方案') {
                 optionPark = likeBtn.getAttribute('data-btnId');
                 localStorage.setItem('optionPark', optionPark);
-                window.location.href = "/Pages/planSelection.html"
+                window.location.href = "../Pages/planSelection.html"
             }
             if(likeBtn.textContent === '詳細資料'){
                 optionPark = likeBtn.getAttribute('data-btnId');
@@ -252,14 +253,14 @@ axios.get(Url + `/600/users/${usersId}`, {
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                window.location.href = "/Pages/planSelection.html"
+                window.location.href = "../Pages/planSelection.html"
                 console.log('aa')
             }
         })
         mapLocated.addEventListener('click' , (e) => {
             addLikeParkToLocal(e)
         })
-        parsedLocalParkData()
+        // parsedLocalParkData()
         const data = response.data;
         console.log('从受保护的端点获取的数据:', data);
     })
@@ -267,20 +268,32 @@ axios.get(Url + `/600/users/${usersId}`, {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
             if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+                Swal.fire({
+                    icon: "error",
+                    title: "請先登入",
+                    timer: 1500
+                });
             }
         })
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+                Swal.fire({
+                    icon: "error",
+                    title: "請先登入",
+                    timer: 1500
+                });
             }
         })
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
-                alert('請先登入')
+                Swal.fire({
+                    icon: "error",
+                    title: "請先登入",
+                    timer: 1500
+                });
             }
         })
         console.error('请求受保护的端点失败:', error);
@@ -290,11 +303,11 @@ axios.get(Url + `/600/users/${usersId}`, {
 function hidePage(a){
     let num = parseInt(a.getAttribute('data-num'));
     if(num === 1){
-        hideSearch.style.display = 'flex';// 原本是block，但會導致新寫的樣式跑掉
+        hideSearch.style.display = 'flex';
         hideShowPark.style.display = 'none';
     }else if(num === 2){
         hideSearch.style.display = 'none';
-        hideShowPark.style.display = 'block';
+        hideShowPark.style.display = 'flex';
     }
 }
 //選搜尋停建或停車場一覽按鈕區塊移動
@@ -468,23 +481,23 @@ const getMapDetail = (a,b,c,d,e) => {
 const render = (aa) => {
     let str = '';
     aa.forEach((item) => {
-        let content = `<div class="card mt-3" style="width: 16rem;">
+        let content = `<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <h5 class="card-title">${item.parkName}</h5>
+                <div class="h4 card-title">${item.parkName}</div>
                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${item.location.latitude}"></i>
             </div>
             <div class="row">
-                <div class="col-5">地址:</div>
-                <div class="col-7">${item.address}</div>
+                <div class="col-4">地址:</div>
+                <div class="col-8">${item.address}</div>
             </div>
             <div class="row">
-                <div class="col-5">剩餘空位:</div>
-                <div class="col-7">${item.space}</div>
+                <div class="col-4">剩餘空位:</div>
+                <div class="col-8">${item.space}</div>
             </div>
-            <div class="d-flex justify-content-between">
-            <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="${item.location.latitude}">長期方案</button>
+            <div class="d-flex justify-content-end pt-2">
+                <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2" data-btnId="${item.location.latitude}">長期方案</button>
             </div>
         </div>
     </div>`
@@ -659,7 +672,7 @@ searchBtn.addEventListener('click' , (e) => {
 //讓篩選藍出現或消失的出發方法
 const showRwdChoice = () => {
     if(rwdBtn === true){
-        searchBg.style.display = 'block'
+        searchBg.style.display = 'flex'
         setTimeout(() => {
             searchBg.classList.add('show');
         }, 1);
