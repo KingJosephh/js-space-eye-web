@@ -2,170 +2,175 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>findSpace</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-  <link rel="stylesheet" href="./stylesheets/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>findSpace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="./stylesheets/all.css">
 </head>
 
 <body>
-  <header id="header">
-    <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
-      <div class="container-md">
-        <!-- logo -->
-        <a class="navbar-brand" href="/index.html">
-          <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
-        </a>
-        <!-- button -->
-        <button class="btn btn-light-solid-m" id="userBtn">
-          <a href="/Pages/carOwnerNew.html">
-            車主專區
-          </a>
-        </button>
-        <!-- hamburger -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
-          aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28"
-              height="28">
-              <rect width="28" height="28" fill="#D9D9D9" />
-            </mask>
-            <g mask="url(#mask0_2609_18108)">
-              <path
-                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
-                fill="#1E1E1E" />
-            </g>
-          </svg>
-        </button>
-        <div class="collapse navbar-collapse" id="headerNavbar">
-          <ul class="navbar-nav ml-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="menu-l" href="/findSpace.html">找停車位</a>
-            </li>
-            <li class="nav-item">
-              <a class="menu-l" href="/index.html#questions">常見問題</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- 另外做一個手機板的js然後重新命名這裡的class -->
-  <section>
-    <!-- 以下是手機板 -->
-    <div class="searchBg position-absolute show">
-      <!-- 主要內容 -->
-      <div class="row mobile-search-container p-2">
-        <!-- </div> style="margin-top: 110px; width: 100%;"> -->
-        <div class="col mobile-search-container-main">
-          <!-- 停車環境 -->
-          <div class="btn-bg-move-dad button-group d-flex justify-content-evenly gap-2">
-            <button id="btn1-1-Rwd" type="button" class="btn btn-light-solid-l" style="z-index: 2;" data-num="1"
-              value="C01">路邊車格</button>
-            <button id="btn1-2-Rwd" type="button" class="btn btn-dark-trans-l" style="z-index: 2;" data-num="2"
-              value="C02">停車場</button>
-          </div>
-          <!-- select區塊 -->
-          <div class="d-flex justify-content-between interface-main-select">
-            <select class="form-select form-select-lg" aria-label="form-select-lg" id="areaOption-Rwd">
-            </select>
-            <select class="form-select form-select-lg" aria-label="form-select-lg" id="roadOption-Rwd">
-            </select>
-          </div>
-          <!-- 車位種類type -->
-          <div class="d-flex justify-content-center interface-main-type">
-            <button id="btn2-1-Rwd" type="button" class="btn btn-dark-solid-m" style="z-index: 2;" data-num="1"
-              value="一般車位">一般車位</button>
-            <button id="btn2-2-Rwd" type="button" class="btn btn-dark-trans-m" style="z-index: 2;" data-num="2"
-              value="親子車位">親子車位</button>
-            <button id="btn2-3-Rwd" type="button" class="btn btn-dark-trans-m" style="z-index: 2;" data-num="3"
-              value="殘障車位">殘障車位</button>
-          </div>
-          <!-- 空位狀態available -->
-          <div class="d-flex justify-content-center interface-main-available">
-            <button id="btn3-1-Rwd" type="button" class="btn btn-dark-solid-m" style="z-index: 2;" data-num="1"
-              value="all">全部停車場</button>
-            <button id="btn3-2-Rwd" type="button" class="btn btn-dark-trans-m" style="z-index: 2;" data-num="2"
-              value="haveSpace">有空位停車場</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col d-lg-none d-block">
-        <button class="searchBtn btn btn-light-green position-absolute rounded-circle">
-          <img class="" id="btnX" src="./Assests/img/x2.png" alt="X"></button>
-      </div>
-    </div>
-    <!-- 以上是手機板 -->
-    <div class="container findSpace-main-container">
-      <div class="row mt-lg-4">
-        <!-- 地圖 -->
-        <!-- 停車環境 -->
-        <div class="col-lg-8 col p-0">
-          <div class="row d-flex justify-content-end position-relative d-lg-block d-none" style="z-index: 2000;">
-            <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
-              <div class="button-group d-flex justify-content-evenly color-tran-gray rounded-2 py-2">
-                <!-- btn-bg-move-dad  -->
-                <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0" style="z-index: 2;"
-                  data-num="1" value="C01">路邊車格</button>
-                <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0" style="z-index: 2;" data-num="2"
-                  value="C02">停車場</button>
-              </div>
+    <header id="header">
+        <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
+            <div class="container-md">
+                <!-- logo -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/Assests/img/Logo-dark.png" alt="" srcset="">
+                </a>
+                <!-- button -->
+                <button class="btn btn-light-solid-m" id="userBtn">
+                    <a href="/Pages/carOwnerNew.html">
+                        車主專區
+                    </a>
+                </button>
+                <!-- hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
+                    aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="28" height="28">
+                            <rect width="28" height="28" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_2609_18108)">
+                            <path
+                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                                fill="#1E1E1E" />
+                        </g>
+                    </svg>
+                </button>
+                <div class="collapse navbar-collapse" id="headerNavbar">
+                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="menu-l" href="/findSpace.html">找停車位</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="menu-l" href="/index.html#questions">常見問題</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div id="map" style="height: 620px;"></div>
-          <!-- <iframe width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        </nav>
+    </header>
+    <!-- 另外做一個手機板的js然後重新命名這裡的class -->
+    <section>
+        <!-- 以下是手機板 -->
+        <div class="searchBg position-absolute show">
+            <!-- 主要內容 -->
+            <div class="row mobile-search-container p-2">
+                <!-- </div> style="margin-top: 110px; width: 100%;"> -->
+                <div class="col mobile-search-container-main">
+                    <!-- 停車環境 -->
+                    <div class="btn-bg-move-dad button-group d-flex justify-content-evenly gap-2">
+                        <button id="btn1-1-Rwd" type="button" class="btn btn-light-solid-l" style="z-index: 2;"
+                            data-num="1" value="C01">路邊車格</button>
+                        <button id="btn1-2-Rwd" type="button" class="btn btn-dark-trans-l" style="z-index: 2;"
+                            data-num="2" value="C02">停車場</button>
+                    </div>
+                    <!-- select區塊 -->
+                    <div class="d-flex justify-content-between interface-main-select">
+                        <select class="form-select form-select-lg" aria-label="form-select-lg" id="areaOption-Rwd">
+                        </select>
+                        <select class="form-select form-select-lg" aria-label="form-select-lg" id="roadOption-Rwd">
+                        </select>
+                    </div>
+                    <!-- 車位種類type -->
+                    <div class="d-flex justify-content-center interface-main-type">
+                        <button id="btn2-1-Rwd" type="button" class="btn btn-dark-solid-m" style="z-index: 2;"
+                            data-num="1" value="一般車位">一般車位</button>
+                        <button id="btn2-2-Rwd" type="button" class="btn btn-dark-trans-m" style="z-index: 2;"
+                            data-num="2" value="親子車位">親子車位</button>
+                        <button id="btn2-3-Rwd" type="button" class="btn btn-dark-trans-m" style="z-index: 2;"
+                            data-num="3" value="殘障車位">殘障車位</button>
+                    </div>
+                    <!-- 空位狀態available -->
+                    <div class="d-flex justify-content-center interface-main-available">
+                        <button id="btn3-1-Rwd" type="button" class="btn btn-dark-solid-m" style="z-index: 2;"
+                            data-num="1" value="all">全部停車場</button>
+                        <button id="btn3-2-Rwd" type="button" class="btn btn-dark-trans-m" style="z-index: 2;"
+                            data-num="2" value="haveSpace">有空位停車場</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-lg-none d-block">
+                <button class="searchBtn btn btn-light-green position-absolute rounded-circle">
+                    <img class="" id="btnX" src="./Assests/img/x2.png" alt="X"></button>
+            </div>
+        </div>
+        <!-- 以上是手機板 -->
+        <div class="container findSpace-main-container">
+            <div class="row mt-lg-4">
+                <!-- 地圖 -->
+                <!-- 停車環境 -->
+                <div class="col-lg-8 col p-0">
+                    <div class="row d-flex justify-content-end position-relative d-lg-block d-none"
+                        style="z-index: 2000;">
+                        <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
+                            <div class="button-group d-flex justify-content-evenly color-tran-gray rounded-2 py-2">
+                                <!-- btn-bg-move-dad  -->
+                                <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0"
+                                    style="z-index: 2;" data-num="1" value="C01">路邊車格</button>
+                                <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0"
+                                    style="z-index: 2;" data-num="2" value="C02">停車場</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="map" style="height: 620px;"></div>
+                    <!-- <iframe width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                           src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=24.146183,120.682009(凤凰停车场)&z=16&output=embed&markers=24.146183,120.682009">
                       </iframe> -->
-        </div>
-        <!-- 搜尋介面 -->
-        <div class="col-4 d-lg-block d-none interface">
-          <!-- 搜尋條件、停車場一覽btn -->
-          <div class="row">
-            <div class="col d-flex justify-content-evenly button-search-container">
-              <button id="btn1" type="button" class="btn btn-light-solid-l" data-num="1">搜尋條件</button>
-              <button id="btn2" type="button" class="btn btn-dark-trans-l" data-num="2">停車場一覽</button>
-            </div>
-          </div>
-          <!-- 主要區塊 -->
-          <div class="row d-flex justify-content-center mx-auto interface-main">
-            <div class="col">
-              <!-- 搜尋條件 -->
-              <div class="content-to-hide-search pt-5">
-                <!-- select區塊 -->
-                <div class="d-flex justify-content-between interface-main-select">
-                  <select class="form-select form-select-lg fw-bold" aria-label="form-select-lg example"
-                    id="areaOption">
-                  </select>
-                  <select class="form-select form-select-lg fw-bold" aria-label="form-select-lg example"
-                    id="roadOption">
-                  </select>
                 </div>
-                <!-- 車位種類type -->
-                <div class="d-flex justify-content-center interface-main-type">
-                  <button id="btn2-1" type="button" class="btn btn-dark-solid-m" data-num="1" value="一般車位">一般車位</button>
-                  <button id="btn2-2" type="button" class="btn btn-dark-trans-m" data-num="2" value="親子車位">親子車位</button>
-                  <button id="btn2-3" type="button" class="btn btn-dark-trans-m" data-num="3" value="殘障車位">殘障車位</button>
-                </div>
-                <!-- 空位狀態available -->
-                <div class="d-flex justify-content-center interface-main-available">
-                  <button id="btn3-1" type="button" class="btn btn-dark-solid-m" data-num="1" value="all">全部停車場</button>
-                  <button id="btn3-2" type="button" class="btn btn-dark-trans-m" data-num="2"
-                    value="haveSpace">有空位停車場</button>
-                </div>
-                <div class="col d-flex justify-content-center interface-main-submitBtn">
-                  <button id="confirm" type="button" class="btn btn-light-solid-l">確認送出</button>
-                </div>
-              </div>
-              <!-- 停車場一覽 -->
-              <div class="content-to-hide-showPark" id="showMapCard">
-                <!-- <div class="card">
+                <!-- 搜尋介面 -->
+                <div class="col-4 d-lg-block d-none interface">
+                    <!-- 搜尋條件、停車場一覽btn -->
+                    <div class="row">
+                        <div class="col d-flex justify-content-evenly button-search-container">
+                            <button id="btn1" type="button" class="btn btn-light-solid-l" data-num="1">搜尋條件</button>
+                            <button id="btn2" type="button" class="btn btn-dark-trans-l" data-num="2">停車場一覽</button>
+                        </div>
+                    </div>
+                    <!-- 主要區塊 -->
+                    <div class="row d-flex justify-content-center mx-auto interface-main">
+                        <div class="col">
+                            <!-- 搜尋條件 -->
+                            <div class="content-to-hide-search pt-5">
+                                <!-- select區塊 -->
+                                <div class="d-flex justify-content-between interface-main-select">
+                                    <select class="form-select form-select-lg fw-bold"
+                                        aria-label="form-select-lg example" id="areaOption">
+                                    </select>
+                                    <select class="form-select form-select-lg fw-bold"
+                                        aria-label="form-select-lg example" id="roadOption">
+                                    </select>
+                                </div>
+                                <!-- 車位種類type -->
+                                <div class="d-flex justify-content-center interface-main-type">
+                                    <button id="btn2-1" type="button" class="btn btn-dark-solid-m" data-num="1"
+                                        value="一般車位">一般車位</button>
+                                    <button id="btn2-2" type="button" class="btn btn-dark-trans-m" data-num="2"
+                                        value="親子車位">親子車位</button>
+                                    <button id="btn2-3" type="button" class="btn btn-dark-trans-m" data-num="3"
+                                        value="殘障車位">殘障車位</button>
+                                </div>
+                                <!-- 空位狀態available -->
+                                <div class="d-flex justify-content-center interface-main-available">
+                                    <button id="btn3-1" type="button" class="btn btn-dark-solid-m" data-num="1"
+                                        value="all">全部停車場</button>
+                                    <button id="btn3-2" type="button" class="btn btn-dark-trans-m" data-num="2"
+                                        value="haveSpace">有空位停車場</button>
+                                </div>
+                                <div class="col d-flex justify-content-center interface-main-submitBtn">
+                                    <button id="confirm" type="button" class="btn btn-light-solid-l">確認送出</button>
+                                </div>
+                            </div>
+                            <!-- 停車場一覽 -->
+                            <div class="content-to-hide-showPark" id="showMapCard">
+                                <!-- <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <h5 class="card-title">西屯停車場</h5>
@@ -187,141 +192,146 @@
                     </div>
                   </div>
                 </div> -->
-              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="showAllParkModel" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title h4" id="park"></div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-4">停車場類別:</div>
+                                    <div class="col-8" id="type"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">地址:</div>
+                                    <div class="col-8" id="address"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">剩餘空位:</div>
+                                    <div class="col-8" id="space"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">室內/室外:</div>
+                                    <div class="col-8" id="in"></div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light-solid-m">預約停車</button>
+                                <button type="button" class="btn btn-dark-solid-m">長期方案</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="showAllParkModel" tabindex="-1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <div class="modal-title h4" id="park"></div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-4">停車場類別:</div>
-                  <div class="col-8" id="type"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <!-- 斜線條 -->
+        <img src="Assests/icon/maskGroup-01.png" alt="" srcset="">
+        <div class="container-md container-footer-l">
+            <!-- 向上箭頭 -->
+            <a class="btn-up btn-up-l" href="#header">
+                <svg width="21" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.175 14.6L11 7.42501L3.825 14.6L0.5 11.3333L11 0.833344L21.5 11.3333L18.175 14.6Z"
+                        fill="#1E1E1E" />
+                </svg>
+            </a>
+            <!-- 內容區塊 -->
+            <div class="footer-content">
+                <!-- logo -->
+                <img src="Assests/img/Logo-white.png" alt="" srcset="">
+                <p class="footer-content-p-l fs-4">現在就與我們聯絡!</p>
+                <!-- btn -->
+                <div class="footer-content-button-l">
+                    <!-- email -->
+                    <button class="btn-mail btn-mail-l">
+                        <!-- icon -->
+                        <div class="icon-mail-l">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L2 4V14H18V4L10 9ZM10 7L18 2H2L10 7ZM2 4V2V14V4Z"
+                                    fill="#1E1E1E" />
+                            </svg>
+                        </div>
+                        <div class="btn-mail-part-l">
+                            <div class="btn-mail-title-l">歡迎免費諮詢</div>
+                            <!-- 箭頭 -->
+                            <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                    y="0" width="24" height="24">
+                                    <rect width="24" height="24" fill="#D9D9D9" />
+                                </mask>
+                                <g mask="url(#mask0_2910_7237)">
+                                    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z"
+                                        fill="white" />
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- phone -->
+                    <button class="btn-mail btn-mail-l">
+                        <!-- icon -->
+                        <div class="icon-mail-l">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_2910_7143" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                    y="0" width="24" height="24">
+                                    <rect width="24" height="24" fill="#D9D9D9" />
+                                </mask>
+                                <g mask="url(#mask0_2910_7143)">
+                                    <path
+                                        d="M19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
+                                        fill="#1E1E1E" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="btn-mail-part-l">
+                            <div class="btn-mail-title-l">02-2326-8575</div>
+                            <!-- 箭頭 -->
+                            <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                    y="0" width="24" height="24">
+                                    <rect width="24" height="24" fill="#D9D9D9" />
+                                </mask>
+                                <g mask="url(#mask0_2910_7237)">
+                                    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z"
+                                        fill="white" />
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
                 </div>
-                <div class="row">
-                  <div class="col-4">地址:</div>
-                  <div class="col-8" id="address"></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">剩餘空位:</div>
-                  <div class="col-8" id="space"></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">室內/室外:</div>
-                  <div class="col-8" id="in"></div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-light-solid-m">預約停車</button>
-                <button type="button" class="btn btn-dark-solid-m">長期方案</button>
-              </div>
+                <!-- copyright -->
+                <span class="footer-content-copyright-l fs-16">© 2023 SPACE EYE</span>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <!-- 斜線條 -->
-    <img src="Assests/icon/maskGroup-01.png" alt="" srcset="">
-    <div class="container-md container-footer-l">
-      <!-- 向上箭頭 -->
-      <a class="btn-up btn-up-l" href="#header">
-        <svg width="21" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18.175 14.6L11 7.42501L3.825 14.6L0.5 11.3333L11 0.833344L21.5 11.3333L18.175 14.6Z"
-            fill="#1E1E1E" />
-        </svg>
-      </a>
-      <!-- 內容區塊 -->
-      <div class="footer-content">
-        <!-- logo -->
-        <img src="Assests/img/Logo-white.png" alt="" srcset="">
-        <p class="footer-content-p-l fs-4">現在就與我們聯絡!</p>
-        <!-- btn -->
-        <div class="footer-content-button-l">
-          <!-- email -->
-          <button class="btn-mail btn-mail-l">
-            <!-- icon -->
-            <div class="icon-mail-l">
-              <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L2 4V14H18V4L10 9ZM10 7L18 2H2L10 7ZM2 4V2V14V4Z"
-                  fill="#1E1E1E" />
-              </svg>
-            </div>
-            <div class="btn-mail-part-l">
-              <div class="btn-mail-title-l">歡迎免費諮詢</div>
-              <!-- 箭頭 -->
-              <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
-                  height="24">
-                  <rect width="24" height="24" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_2910_7237)">
-                  <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
-                </g>
-              </svg>
-            </div>
-          </button>
-          <!-- phone -->
-          <button class="btn-mail btn-mail-l">
-            <!-- icon -->
-            <div class="icon-mail-l">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="mask0_2910_7143" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
-                  height="24">
-                  <rect width="24" height="24" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_2910_7143)">
-                  <path
-                    d="M19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
-                    fill="#1E1E1E" />
-                </g>
-              </svg>
-            </div>
-            <div class="btn-mail-part-l">
-              <div class="btn-mail-title-l">02-2326-8575</div>
-              <!-- 箭頭 -->
-              <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
-                  height="24">
-                  <rect width="24" height="24" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_2910_7237)">
-                  <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
-                </g>
-              </svg>
-            </div>
-          </button>
-        </div>
-        <!-- copyright -->
-        <span class="footer-content-copyright-l fs-16">© 2023 SPACE EYE</span>
-      </div>
-    </div>
-    <!-- 斜線條 -->
-    <img src="Assests/icon/maskGroup-02.png" alt="" srcset="">
-  </footer>
+        <!-- 斜線條 -->
+        <img src="Assests/icon/maskGroup-02.png" alt="" srcset="">
+    </footer>
 
 
-  <!-- sweet alert -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="/stylesheets/components/header/header.js"></script>
-  <script src="./scripts/findSpace copy 3.js"></script>
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/stylesheets/components/header/header.js"></script>
+    <script src="./scripts/findSpace copy 3.js"></script>
 </body>
 
 </html>

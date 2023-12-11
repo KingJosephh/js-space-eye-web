@@ -242,11 +242,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             if (likeBtn.textContent === '長期方案') {
                 optionPark = likeBtn.getAttribute('data-btnId');
                 localStorage.setItem('optionPark', optionPark);
-<<<<<<< HEAD
-                window.location.href = "../Pages/planSelection.html"
-=======
                 window.location.href = "/Pages/planSelection.html"
->>>>>>> 7a200a0b3b0473a3b85ee9cc30b6a0053f769361
             }
             if(likeBtn.textContent === '詳細資料'){
                 optionPark = likeBtn.getAttribute('data-btnId');
@@ -257,11 +253,7 @@ axios.get(Url + `/600/users/${usersId}`, {
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-<<<<<<< HEAD
-                window.location.href = "../Pages/planSelection.html"
-=======
                 window.location.href = "/Pages/planSelection.html"
->>>>>>> 7a200a0b3b0473a3b85ee9cc30b6a0053f769361
                 console.log('aa')
             }
         })
@@ -673,6 +665,12 @@ const showRoadOptionListRwd = (a) => {
 //控制篩選藍
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
+    rwdBtn = !rwdBtn;
+    showRwdChoice()
+    rotateIcon()
+})
+//監聽彈跳視窗背景
+searchBg.addEventListener('click' , (e) => {
     rwdBtn = !rwdBtn;
     showRwdChoice()
     rotateIcon()
