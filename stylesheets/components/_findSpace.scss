@@ -25,6 +25,11 @@ $display-none: none;
   gap: 14px;
 }
 
+#btnX{
+  height: 28px;
+  width: 26px;
+}
+
 .bi-suit-heart-fill {
   color: #b0b0b0;
 }
@@ -75,9 +80,10 @@ $display-none: none;
 .searchBg.show {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.8);
-  height: 10%;
-  width: 10%;
+  height: 100%;
+  width: 100%;
   z-index: 2100;
+  justify-content: center;
 }
 
 .mobile-search-container{
@@ -151,13 +157,13 @@ $display-none: none;
 .searchBtn{
   z-index: 2200;
   right: 150px;
-  top: 150px;
+  top: 180px;
   @media screen and (max-width: 768px) {
     right: 130px;
-    top: 100px;
+    top: 150px;
   }
   @media screen and (max-width: 576px) {
     right: 30px;
-    top: 100px;
+    top: 130px;
   }
 }

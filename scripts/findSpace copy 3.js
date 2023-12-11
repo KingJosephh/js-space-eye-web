@@ -672,7 +672,7 @@ searchBtn.addEventListener('click' , (e) => {
 //讓篩選藍出現或消失的出發方法
 const showRwdChoice = () => {
     if(rwdBtn === true){
-        searchBg.style.display = 'block'
+        searchBg.style.display = 'flex'
         setTimeout(() => {
             searchBg.classList.add('show');
         }, 1);
