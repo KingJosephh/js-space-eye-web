@@ -32,9 +32,9 @@ const exitTimeHeader = localStorage.getItem("exitTime");
 const chosePlanHeader = localStorage.getItem("chosePlan");
 
 // 將這些時間設置到表頭的相應元素中
-document.getElementById("entryTimeHeader").textContent = `${entryTimeHeader}`;
-document.getElementById("exitTimeHeader").textContent = `${exitTimeHeader}`;
-document.getElementById("chosePlanHeader").textContent = `${chosePlanHeader}`;
+// document.getElementById("entryTimeHeader").textContent = `${entryTimeHeader}`;
+// document.getElementById("exitTimeHeader").textContent = `${exitTimeHeader}`;
+// document.getElementById("chosePlanHeader").textContent = `${chosePlanHeader}`;
 
 //切換六個項目按鈕
 function getNum(x) {
