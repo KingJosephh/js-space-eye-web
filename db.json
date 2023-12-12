@@ -24,17 +24,7 @@
       "password": "$2a$10$OWcZq3Cinw8Vh859Uapu3uGAfeG030escKsxKCNmdvZQfXkS6ojdC",
       "username": "celine",
       "carId": "12345",
-      "id": 3,
-      "orders": [
-        {
-          "id": 1,
-          "orderId": "1111111111111",
-          "plan": "每週停車 - NT 149",
-          "entryTime": "2023-12-14",
-          "exitTime": "2023-12-15",
-          "parkId": 3
-        }
-      ]
+      "id": 3
     }
   ],
   "sections": [

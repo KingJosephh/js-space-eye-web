@@ -21,7 +21,6 @@ function signUp(a, b, c, d) {
     signUpForm.reset();
     
     // 註冊成功提示
-    alert('註冊成功！');
     Swal.fire({
       icon: "success",
       title: "登入成功",

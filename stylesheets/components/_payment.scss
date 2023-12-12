@@ -21,8 +21,12 @@
     }
     .payment-method-group {
       display: flex;
+      flex-direction: row;
       justify-content: flex-start;
       gap: 18px;
+      @media screen and (max-width: 576px) {
+        flex-direction: column;
+      }
   
       .btn-light {
         border: 1px solid #888;
