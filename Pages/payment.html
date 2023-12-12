@@ -319,7 +319,6 @@
                 <button data-showSummaryBtn class="btn btn-light-solid-l checkout-btn">結帳</button>
               </div>
             </div>
-
           </div>
         </div>
         <!-- 超商代碼 - Supermarket code -->
@@ -346,57 +345,56 @@
                 <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
                 <p class="mb-0">同意相關資訊請勾選</p>
               </label>
-              <div class="text-center" id="button5" data-page="page5">
-                <button type="button" class="btn btn-light-solid-l checkout-btn" id="button5" data-page="page5"
-                  onclick="generateOrderNumber()">下一步</button>
+              <div class="text-center">
+                <button data-showDetailsBtn type="button" class="btn btn-light-solid-l checkout-btn">
+                  下一步
+                </button>
               </div>
             </div>
           </div>
-          <!-- 產出交易明細 -->
-          <div class="col text-center" id="page5" style="display: none;">
-            <div class="payment-supermarket-details-container">
-              <div class="payment-supermarket-details-msg">
-                <hr>
-                <div class="h2">訂單成立</div>
-                <div>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費!請於時間內使用您選擇的付款方式進行付款!</div>
-                <div>本次交易明細如下:</div>
+          <!-- 超商-交易明細 -->
+          <!--  <div class="col text-center" id="page5" > --><!-- </div>style="display: none;"> -->
+          <div class="payment-supermarket-details-container" style="display: none;">
+            <div class="payment-supermarket-details-msg">
+              <div class="h2 text-center">超商代碼繳費明細</div>
+              <div>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費!請於時間內使用您選擇的付款方式進行付款!</div>
+              <div>本次交易明細如下:</div>
+            </div>
+            
+            <div class="payment-supermarket-details-info container">
+              <div class="row">
+                <div class="col-md-4 label-column">訂單編號</div>
+                <div class="col-md-8 content-column" id="supermarketOrderId"></div>
               </div>
-              
-              <div class="payment-supermarket-details-info container">
-                <div class="row">
-                  <div class="col-md-4 label-column">訂單編號</div>
-                  <div class="col-md-8 content-column" id="orderNumber">17030</div>
+              <div class="row">
+                <div class="col-md-4 label-column">停車方案</div>
+                <div class="col-md-8 content-column" id="supermarketChosePlan"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 label-column">付款方式</div>
+                <div class="col-md-8 content-column">超商代碼繳費</div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 label-column">超商繳費代碼</div>
+                <div class="col-md-8 content-column">CNmdvZQfXkS6o</div>
+              </div>
+              <!-- QR Code -->
+              <div class="row">
+                <div class="col-md-4 label-column">7-ELEVEN ibon QRcode</div>
+                <div class="col-md-8 content-column">
+                  <img src="/Assests/img/qrcode-supermarket.png" alt="QR Code" class="qr-image">
                 </div>
-                <div class="row">
-                  <div class="col-md-4 label-column">商品名稱</div>
-                  <div class="col-md-8 content-column">預約停車</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 label-column">訂單方案</div>
-                  <div class="col-md-8 content-column" id="paymoney">1703</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 label-column">付款方式</div>
-                  <div class="col-md-8 content-column">超商代碼繳費</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 label-column">超商繳費代碼</div>
-                  <div class="col-md-8 content-column" id="orderNumber2">17030</div>
-                </div>
-                <!-- QR Code -->
-                <div class="row">
-                  <div class="col-md-4 label-column">7-ELEVEN ibon QRcode</div>
-                  <div class="col-md-8 content-column">
-                    <img src="/Assests/img/Q-rcode.png" alt="QR Code" class="qr-image">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 label-column">截止日期</div>
-                  <div class="col-md-8 content-column" id="deadlineDate"></div>
-                </div>
-                <div class="text-center" id="button6" data-page="page6">
-                  <button type="button" class="btn btn-light-solid-l checkout-btn" id="button6" data-page="page6">前往車主專區</button>
-                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 label-column">繳費期限</div>
+                <div class="col-md-8 content-column" id="supermarketPaymentDeadline"></div>
+              </div>
+              <div class="btn-section">
+                <a href="carOwnerNew.html">                  
+                  <button class="btn-card btn btn-light-solid-l" type="button" data-goCarOwnerPage>
+                  前往車主專區
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -406,7 +404,7 @@
   </div>
 
 
-  <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>

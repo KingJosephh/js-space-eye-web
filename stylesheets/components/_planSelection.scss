@@ -113,13 +113,6 @@
   background: var(--gray-04);
 }
 
-/* .top-part {
-  height: 221px;
-  background: url('../images/illustration-hero.svg') no-repeat center;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-} */
-
 .bi-x-circle {
   position: absolute;
   right: 30px;
@@ -143,7 +136,7 @@
   padding: 30px 30px;
   
   .plan-section {
-    background-color: hsl(225, 100%, 98%);
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     padding: 16px;
@@ -154,25 +147,6 @@
       color: var(--gray-02);
       font-weight: bold;
     }
-    
-    // 暫時用不到，先關起來
-    /* .change {
-      margin: auto;
-      margin-right: 0px;
-    }
-    
-    .change a {
-      color: hsl(245, 75%, 52%);
-      text-decoration: underline;
-      font-weight: 600;
-      transition: 0.3s ease-out;
-      transition-property: color, text;
-    }
-    
-    .change a:hover {
-      color: #766CF1;
-      text-decoration: none;
-    } */
   }
 }
 
@@ -180,8 +154,15 @@
 .btn-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   padding: 30px 30px;
+  button{
+    width: 160px;
+  }
+  a{
+    color: var(--gray-01)
+  }
 }
 
 .submit-btn-container{
@@ -322,25 +303,8 @@
   background-color: rgb(240, 240, 240);
 }
 
-
-/* button {
-  background-color: rgba(0, 0, 0, 0);
-  border: 2px solid #0C505D;
-  color: #0C505D;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 5px 30px;
-  transition: all .2s;
-
-} */
-
-/* button:hover {
-    padding: 3px 28px;
-    border-width: 4px;
-  } */
-
-button:disabled {
+/* button:disabled {
   padding: 5px 30px;
   border: 2px solid rgb(230, 230, 230);
   color: rgb(230, 230, 230);
-}
+} */
