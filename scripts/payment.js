@@ -1,141 +1,121 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    const button1 = document.getElementById("button1");
-    const button2 = document.getElementById("button2");
-    const button3 = document.getElementById("button3");
-    const button4 = document.getElementById("button4");
-    const button5 = document.getElementById("button5");
-
-    // 前往網路ATM按扭
-    const paymentButton = document.querySelector(".btn-payment");
-    const summaryButton = document.getElementById("showWatermarkBtn");
-    const summaryWindow = document.getElementById("elementToClose"); 
-    // 前往車主專區按扭
-    const cardButton = document.querySelector(".btn-card");
-    const cardButton2 = document.getElementById("button6");
-    // 儲存選擇銀行資料
-    const bankSelect = document.getElementById("bankSelect");
-    const showBankDataBtn = document.getElementById("showWatermarkBtn2");
-    const bankDataContainer = document.getElementById("bankData");
-
-    function showPage(pageId, pagesClass) {
-        const allPages = document.querySelectorAll(`.${pagesClass}`);
-        allPages.forEach((page) => {
-            page.style.display = page.id === pageId ? "block" : "none";
-        });
-
-        const selectedPage = document.getElementById(pageId);
-        if (selectedPage) {
-            selectedPage.style.display = "block";
-        }
-    }
-    
-    function generateOrderNumber() {
-        var randomOrderNumber = Math.floor(Math.random() * 10000);
-        document.getElementById("orderNumber").textContent = randomOrderNumber;
-        document.getElementById("orderNumber2").textContent = randomOrderNumber;
-        showPage("page5");
-        
-        // 設定三天內
-        var deadlineDate = new Date();
-        deadlineDate.setDate(deadlineDate.getDate() + 3);
-        var formattedDeadline = deadlineDate.toISOString().slice(0, 19).replace("T", " ");
-        document.getElementById("deadlineDate").textContent = formattedDeadline;
-
-        // 取得 localStorage 中的值
-        const chosePlanHeader = localStorage.getItem("chosePlan");
-        // 顯示進場時間、出場時間和方案選擇
-        document.getElementById("chosePlan").textContent = `方案選擇: ${chosePlanHeader}`;
-
-        // 將訊息顯現在訂單方案區域
-        const orderPlanElement = document.getElementById("paymoney");
-        if (orderPlanElement) {
-            orderPlanElement.textContent = chosePlanHeader;
-        }
-    }
-
-    button1.addEventListener("click", () => {
-        showPage("page1", "content-to-hide-owner");
-    });
-
-    button2.addEventListener("click", () => {
-        showPage("page2", "content-to-hide-owner");
-    });
-
-    button3.addEventListener("click", () => {
-        showPage("page3", "content-to-hide-owner");
-    });
-
-    button4.addEventListener("click", () => {
-        showPage("page4", "content-to-hide-owner");
-    });
-
-    button5.addEventListener("click", generateOrderNumber);
-
-    document.getElementById("button5").addEventListener("click",function(){
-        swal("Success!", "訂單成立!", "success");
-    });
-
-    paymentButton.addEventListener("click", () => {
-        showPage("page2", "content-to-hide-owner")
-        summaryWindow.style.display = "none";
-    })
-
-    showBankDataBtn.addEventListener("click", () => {
-        const selectedBank = bankSelect.value;   
-        // 在指定區域顯示選取的bank
-        bankDataContainer.innerHTML = `選擇銀行: <span>${selectedBank}</span>`;
-
-        summaryWindow.style.display = "block";
-
-        cardButton.addEventListener("click", function() {
-            window.location.href = "carOwnerNew.html";
-        })
-    })
-
-    cardButton2.addEventListener("click", function() {
-        window.location.href = "carOwnerNew.html";
-    })
-
-    document.getElementById("showWatermarkBtn2").addEventListener("click",function(){
-        swal("Success!", "訂單確認成功!", "success");
-    });
-    
-    
-    // 檢查是否填寫信用卡卡號
-    summaryButton.addEventListener("click", (event) => {
-      const cardNumber = document.getElementById("cardnumber").value;
-      const expirationDate = document.getElementById("expirationdate").value;
-      const securityCode = document.getElementById("securitycode").value;
-
-      if (cardNumber && expirationDate && securityCode) {
-        document.getElementById("cardData").textContent = "信用卡資料是否填寫: 是";
-        
-        // 顯示訂單摘要視窗
-        summaryWindow.style.display = "block";
-
-        // 取得 localStorage 中的值
-        const entryTimeHeader = localStorage.getItem("entryTime");
-        const exitTimeHeader = localStorage.getItem("exitTime");
-        const chosePlanHeader = localStorage.getItem("chosePlan");
-
-        // 顯示進場時間、出場時間和方案選擇
-        document.getElementById("entryTime").textContent = `進場時間: ${entryTimeHeader}`;
-        document.getElementById("exitTime").textContent = `出場時間: ${exitTimeHeader}`;
-        document.getElementById("chosePlan").textContent = `方案選擇: ${chosePlanHeader}`;
-
-      } else {
-        document.getElementById("cardData").textContent = "信用卡資料是否填寫: 否";
-        alert("请填寫完整的信用卡信息！");
-    }
+let nowPageId = 'page1';
+// 換頁顯示
+const paymentMethods = document.querySelectorAll('.payment-method-group');
+paymentMethods.forEach(method => {
+  method.addEventListener('click',e => {
+    nowPageId = e.target.dataset.page;
+    pageChange(e.target.dataset.page);
+  })
 });
 
-// 新增關閉按鈕點擊事件處理
-const closeButton = document.getElementById("closeBtn");
-    closeButton.addEventListener("click", () => {
-    // 關閉訂單摘要視窗
-    summaryWindow.style.display = "none";
-   });
+const allPages = document.querySelectorAll('.payment-content-page');
+function pageChange(id){
+  allPages.forEach(page => {
+    const selectedPage = document.getElementById(id);
+    if(page.id === id){
+      selectedPage.style.display = 'block';
+    }else{
+      page.style.display = 'none';
+    }
+  })
+};
+
+// 產出訂單摘要
+const showSummaryBtns = document.querySelectorAll('[data-showSummaryBtn]');
+const OrderSummary = document.querySelector('#OrderSummary');
+
+// 監聽結帳按鈕
+showSummaryBtns.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    // 信用卡-驗證
+    if (nowPageId === 'page1'){
+      const creditCardForm = document.querySelector('.payment-creditCard-input-container');
+      // 驗證限制條件
+      const constraints = {
+        name: {
+          presence: { message: "必填" }
+        },
+        cardnumber: {
+          presence: { message: "必填" },
+          length: {
+            is: 19,
+            message: "信用卡須為16碼"
+          }
+        },
+        expirationdate: {
+          presence: { message: "必填" },
+          length: {
+            is: 5,
+            message: "日期須為4碼"
+          }
+        },
+        securitycode: {
+          presence: { message: "必填" }
+        }
+      };
+      // 回傳錯誤
+      const errors = validate(creditCardForm, constraints);
+      // 取得全部輸入框
+      const inputs = document.querySelectorAll("input[type=text]");
+      inputs.forEach((item) => {
+        // 取得輸入框的下一個元素
+        // 清空所有錯誤提示 
+        item.nextElementSibling.textContent = '';
+
+        if (errors) {
+          // Object.keys(errors) 取得errors的所有屬性
+          Object.keys(errors).forEach(key => {
+            // 用 input name屬性的值、p data-msg屬性的值來找對應項目
+            document.querySelector(`p[data-msg=${key}]`).textContent = errors[key];
+          })
+        };
+      });
+
+      // 如果表單驗證未通過，不繼續結帳流程
+      if (errors) return
+    };
+
+    // 同意相關資訊按鈕-驗證
+    const agreeCheckbox = document.querySelector(`[data-page${nowPageId[4]*1}]`);
+    if(agreeCheckbox.checked){
+      agreeCheckbox.nextElementSibling.textContent = '';
+    } else if (!agreeCheckbox.checked){
+      agreeCheckbox.nextElementSibling.textContent = '未勾選';
+      return
+    }
+    
+    // 通知結帳成功
+    Swal.fire({
+      title: "付款成功",
+      icon: "success"
+    })
+    .then(res => {
+      // 顯示訂單摘要
+      OrderSummary.style.display = 'flex';
+      
+      const orderSummaryPlan = document.querySelector('[data-orderSummaryPlan]');
+      const orderSummaryEntryTime = document.querySelector('[data-orderSummaryEntryTime]');
+      const orderSummaryExitTime = document.querySelector('[data-orderSummaryExitTime]');
+
+      orderSummaryPlan.textContent = localStorage.getItem('chosePlan');
+      orderSummaryEntryTime.textContent = localStorage.getItem('entryTime');
+      orderSummaryExitTime.textContent = localStorage.getItem('exitTime');
+      
+      // 監聽訂單摘要按鈕 - 訂單資料上傳、前往車主專區
+      const goCarOwnerPageBtn = document.querySelector('[data-goCarOwnerPage]');
+      goCarOwnerPageBtn.addEventListener('click',e => {
+        e.preventDefault();
+        postOrder();
+        // window.location.href = 'carOwnerNew.html';
+      });
+    })
+  })
 });
 
-
-
+// 訂單資料上傳
+// function postOrder() { 
+//   axios.post(Url + '/users', {
+//     // 注意連結指向
+//   }).then
+// }

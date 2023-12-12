@@ -240,14 +240,14 @@ axios.get(Url + `/600/users/${usersId}`, {
             addLikeParkToLocal(e)
              //取得停車場資料並存到本地端
             if (likeBtn.textContent === '長期方案') {
-                optionPark = likeBtn.getAttribute('data-btnId');
-                localStorage.setItem('optionPark', optionPark);
-                window.location.href = "/Pages/planSelection.html"
+                optionParkId = likeBtn.getAttribute('data-parkId');
+                localStorage.setItem('parkId', optionParkId);
+                window.location.href = "../Pages/planSelection.html"
             }
             if(likeBtn.textContent === '詳細資料'){
-                optionPark = likeBtn.getAttribute('data-btnId');
-                localStorage.setItem('optionPark', optionPark);
-                console.log(optionPark)
+                optionParkId = likeBtn.getAttribute('data-parkId');
+                localStorage.setItem('parkId', optionParkId);
+                // console.log(optionPark)
             }
         })
         modalFooter.addEventListener('click' , (e) => {
@@ -496,8 +496,8 @@ const render = (aa) => {
                 <div class="col-8">${item.space}</div>
             </div>
             <div class="d-flex justify-content-end pt-2">
-                <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2" data-btnId="${item.location.latitude}">長期方案</button>
+                <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-parkId="${item.id}">詳細資料</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2" data-parkId="${item.id}">長期方案</button>
             </div>
         </div>
     </div>`

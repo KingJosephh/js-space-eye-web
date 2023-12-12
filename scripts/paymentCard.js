@@ -32,8 +32,8 @@ window.onload = function () {
     
     
     // CREDIT CARD IMAGE JS
-     document.querySelector('.preload').classList.remove('preload');
-    document.querySelector('.creditcard').addEventListener('click', function () {
+    document.querySelector('.preload').classList.remove('preload');
+    document.querySelector('.creditCard').addEventListener('click', function () {
         if (this.classList.contains('flipped')) {
             this.classList.remove('flipped');
         } else {
@@ -78,18 +78,18 @@ window.onload = function () {
     
     //On Focus Events
     name.addEventListener('focus', function () {
-        document.querySelector('.creditcard').classList.remove('flipped');
+        document.querySelector('.creditCard').classList.remove('flipped');
     });
     
     cardnumber.addEventListener('focus', function () {
-        document.querySelector('.creditcard').classList.remove('flipped');
+        document.querySelector('.creditCard').classList.remove('flipped');
     });
     
     expirationdate.addEventListener('focus', function () {
-        document.querySelector('.creditcard').classList.remove('flipped');
+        document.querySelector('.creditCard').classList.remove('flipped');
     });
     
     securitycode.addEventListener('focus', function () {
-        document.querySelector('.creditcard').classList.add('flipped');
+        document.querySelector('.creditCard').classList.add('flipped');
     });
     };

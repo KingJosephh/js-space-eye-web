@@ -47,7 +47,7 @@ if (btnUpL){
     </svg>
     `
   });
-}
+};
 
 if (btnUpM){
   btnUpM.addEventListener('mouseover',e=>{
@@ -64,4 +64,4 @@ if (btnUpM){
     </svg>
     `
   });
-}
+};
