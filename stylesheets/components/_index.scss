@@ -12,8 +12,8 @@ header{
     top: 0;
     right: 0;
     width: 55%;
-    max-width: 996px;//996, 890
-    max-height: 560px;//560, 500
+    max-width: 996px;
+    max-height: 560px;
   }
   [data-indexMenu]{
     color: #fff;
@@ -30,6 +30,11 @@ header{
 
 .banner{
   padding: 96px 0 330px 0;
+  .banner-col{
+    @media screen and (width: 768px){
+      width: 100%;
+    }
+  }
   h1{
     margin-bottom: 40px;
     font-size: 60px;

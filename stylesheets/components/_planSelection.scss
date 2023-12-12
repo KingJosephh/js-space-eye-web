@@ -1,24 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"); */
-
-/* body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-} */
-
-/* .top {
-  display: flex;
-  margin-top: 100px;
-  justify-content: center;
-  text-align: center;
-}
-
-.top h1 {
-  padding-top: 20px;
-} */
-
 .watermark {
   position: fixed;
   top: 0;
@@ -120,7 +99,7 @@
 }
 
 .main-container {
-  min-width: 100vw;
+  // min-width: 100vw;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -128,7 +107,7 @@
 
 .summary-container {
   width: 450px;
-  min-height: 550px;
+  min-height: 450px;
   margin: auto;
   border-radius: 16px;
   background: var(--gray-04);

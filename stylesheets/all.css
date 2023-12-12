@@ -12850,6 +12850,345 @@ li .menu-m:hover::before {
     display: none;
   }
 }
+.payment-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.payment-container .payment-method-container,
+.payment-container .payment-content-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.payment-container .payment-method-container {
+  display: flex;
+  flex-direction: column;
+}
+.payment-container .payment-method-container .payment-title {
+  padding-bottom: 18px;
+  margin-bottom: 0;
+}
+.payment-container .payment-method-container .payment-method-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 18px;
+}
+.payment-container .payment-method-container .payment-method-group .btn-light {
+  border: 1px solid #888;
+}
+.payment-container .payment-content-container .payment-creditCard-info-title,
+.payment-container .payment-content-container .payment-creditCard-announcement-title {
+  font-weight: bold;
+}
+.payment-container .payment-creditCard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.payment-container .payment-creditCard-container .payment-creditCards-img {
+  display: flex;
+  gap: 14px;
+}
+.payment-container .payment-creditCard-container .payment-creditCards-img img {
+  height: 26px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container {
+  width: 100%;
+  max-width: 400px;
+  max-height: 320px;
+  height: 54vw;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard {
+  width: 100%;
+  max-width: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #ccsingle {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #ccsingle svg {
+  width: 100px;
+  max-height: 60px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard svg#cardfront,
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard svg#cardback {
+  width: 100%;
+  box-shadow: 1px 5px 6px 0px black;
+  border-radius: 22px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .front,
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .back {
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  color: #47525d;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .back {
+  transform: rotateY(180deg);
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard.flipped {
+  transform: rotateY(180deg);
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .lightcolor,
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .darkcolor {
+  transition: fill 0.5s;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .lightblue {
+  fill: #03A9F4;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .lightbluedark {
+  fill: #0288D1;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .red {
+  fill: #ef5350;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .reddark {
+  fill: #d32f2f;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .purple {
+  fill: #ab47bc;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .purpledark {
+  fill: #7b1fa2;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .cyan {
+  fill: #26c6da;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .cyandark {
+  fill: #0097a7;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .green {
+  fill: #66bb6a;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .greendark {
+  fill: #388e3c;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .lime {
+  fill: #d4e157;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .limedark {
+  fill: #afb42b;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .yellow {
+  fill: #ffeb3b;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .yellowdark {
+  fill: #f9a825;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .orange {
+  fill: #ff9800;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .orangedark {
+  fill: #ef6c00;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .grey {
+  fill: #bdbdbd;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard .greydark {
+  fill: #616161;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #svgname {
+  text-transform: uppercase;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st2 {
+  fill: #FFFFFF;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st3 {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st4 {
+  font-size: 54.7817px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st5 {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st6 {
+  font-size: 33.1112px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st7 {
+  opacity: 0.6;
+  fill: #FFFFFF;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st8 {
+  font-size: 24px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st9 {
+  font-size: 36.5498px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st10 {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 300;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st11 {
+  font-size: 16.1716px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardfront .st12 {
+  fill: #4C4C4C;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st0 {
+  fill: none;
+  stroke: #0F0F0F;
+  stroke-miterlimit: 10;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st2 {
+  fill: #111111;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st3 {
+  fill: #F2F2F2;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st4 {
+  fill: #D8D2DB;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st5 {
+  fill: #C4C4C4;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st6 {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st7 {
+  font-size: 27px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st8 {
+  opacity: 0.6;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st9 {
+  fill: #FFFFFF;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st10 {
+  font-size: 24px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st11 {
+  fill: #EAEAEA;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st12 {
+  font-family: "Rock Salt", cursive;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-pic-container .creditCard #cardback .st13 {
+  font-size: 37.769px;
+}
+.payment-container .payment-creditCard-container .preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-areas: "name name" "number number" "expiration security";
+  max-width: 400px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .ccicon {
+  height: 38px;
+  position: absolute;
+  right: 6px;
+  top: calc(50% - 17px);
+  width: 60px;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .field-container:first-of-type {
+  grid-area: name;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .field-container:nth-of-type(2) {
+  grid-area: number;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .field-container:nth-of-type(3) {
+  grid-area: expiration;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .field-container:nth-of-type(4) {
+  grid-area: security;
+}
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .name,
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .cardnumber,
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .expirationdate,
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .securitycode {
+  margin-top: 3px;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+.payment-container .checkout-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.payment-container .checkout-btn-container .checkmark-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.payment-container .checkout-btn {
+  width: 160px;
+}
+.payment-container .alert-danger {
+  color: red;
+}
+.payment-container .Precautions-ul {
+  padding: 0;
+  margin: 0;
+}
+.payment-container .ATM-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.payment-container .payment-supermarket-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.payment-container .payment-supermarket-container .payment-supermarket-logo-ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 14px;
+}
+.payment-container .payment-supermarket-container .payment-supermarket-logo-ul li img {
+  height: 26px;
+}
+.payment-container .payment-supermarket-details-container {
+  padding-top: 28px;
+}
+.payment-container .payment-supermarket-details-container .payment-supermarket-details-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.payment-container .payment-supermarket-details-container .payment-supermarket-details-info {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.payment-container .payment-supermarket-details-container .payment-supermarket-details-info .label-column {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 1.2em;
+}
+.payment-container .payment-supermarket-details-container .payment-supermarket-details-info .content-column {
+  padding: 20px;
+  font-size: 1.2em;
+}
+.payment-container .payment-supermarket-details-container .payment-supermarket-details-info .qr-image {
+  width: 150px;
+  height: auto;
+}
+
 /* .head {
     position: fixed;
     width: 100%;
@@ -13384,24 +13723,6 @@ li .menu-m:hover::before {
   }
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"); */
-/* body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-} */
-/* .top {
-  display: flex;
-  margin-top: 100px;
-  justify-content: center;
-  text-align: center;
-}
-
-.top h1 {
-  padding-top: 20px;
-} */
 .watermark {
   position: fixed;
   top: 0;
@@ -13500,7 +13821,6 @@ li .menu-m:hover::before {
 }
 
 .main-container {
-  min-width: 100vw;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -13508,7 +13828,7 @@ li .menu-m:hover::before {
 
 .summary-container {
   width: 450px;
-  min-height: 550px;
+  min-height: 450px;
   margin: auto;
   border-radius: 16px;
   background: var(--gray-04);
@@ -13748,6 +14068,11 @@ header [data-indexMenu] {
 
 .banner {
   padding: 96px 0 330px 0;
+}
+@media screen and (width: 768px) {
+  .banner .banner-col {
+    width: 100%;
+  }
 }
 .banner h1, .banner .h1 {
   margin-bottom: 40px;
