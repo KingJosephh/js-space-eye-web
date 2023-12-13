@@ -12858,10 +12858,6 @@ li .menu-m:hover::before {
     display: none;
   }
 }
-.modal {
-  z-index: 3000;
-}
-
 .payment-container {
   padding: 20px;
   display: flex;
@@ -13657,7 +13653,7 @@ li .menu-m:hover::before {
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
   width: 100%;
-  z-index: 2100;
+  z-index: 1000;
   justify-content: center;
 }
 
@@ -13724,7 +13720,7 @@ li .menu-m:hover::before {
 }
 
 .searchBtn {
-  z-index: 2200;
+  z-index: 1000;
   right: 150px;
   top: 180px;
 }
@@ -13739,6 +13735,10 @@ li .menu-m:hover::before {
     right: 30px;
     top: 130px;
   }
+}
+
+.leaflet-popup-content {
+  width: 200px;
 }
 
 .watermark {

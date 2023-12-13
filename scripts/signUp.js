@@ -145,4 +145,3 @@ CarId.addEventListener('input', function () {
     CarId.removeAttribute('data-state', 'Car-id');
   }
 });
-// 在 Google Cloud Console 中创建 OAuth 2.0 客户端 ID

@@ -32,19 +32,18 @@ axios.get(Url + '/parks?_expand=road')
     cardBody()
     // console.log(getFindSpace)
   }).catch(function (err) {
-    console.log(err)
+    // console.log(err)
   })
 //選出預約的停車場資料
 const getFindSpace = (aa) => {
   getSpaceDetails = aa.filter((item) => {
-    if (item.location.latitude == optionPark) {
+    if (item.id == optionPark) {
       return item
     }
   })
 }
 //將停車場資訊渲染到畫面上
 const cardBody = () => {
-  // console.log(getSpaceDetails)
   let Card = `<thead>
                 <tr>
                   <th scope="col" class="fs-6">停車場資訊</th>

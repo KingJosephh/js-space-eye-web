@@ -77,16 +77,16 @@ const dataToMap = () => {
                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
             </div>
             <div class="row">
-                <div class="col-4">地址:</div>
-                <div class="col-8">${dataDetail.address}</div>
+                <div class="col-5">地址:</div>
+                <div class="col-7 ps-0">${dataDetail.address}</div>
             </div>
             <div class="row">
-                <div class="col-4">剩餘空位:</div>
-                <div class="col-8">${dataDetail.space}</div>
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7 ps-0">${dataDetail.space}</div>
             </div>
-            <div class="d-flex justify-content-end pt-2">
+            <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
+                <!-- <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button> -->
             </div>
         </div>
     </div>`);
@@ -99,19 +99,20 @@ const dataToMap = () => {
                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
             </div>
             <div class="row">
-                <div class="col-4">地址:</div>
-                <div class="col-8">${dataDetail.address}</div>
+                <div class="col-5">地址:</div>
+                <div class="col-7 ps-0">${dataDetail.address}</div>
             </div>
             <div class="row">
-                <div class="col-4">剩餘空位:</div>
-                <div class="col-8">${dataDetail.space}</div>
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7 ps-0">${dataDetail.space}</div>
             </div>
-            <div class="d-flex justify-content-end pt-2">
+            <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
+                <!-- <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button> -->
             </div>
         </div>
     </div>`);
+            
         }
         markersLayer.addLayer(marker);
     }
@@ -251,7 +252,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             }
         })
         modalFooter.addEventListener('click' , (e) => {
-            let likeBtn = e.target
+            let likeBtn = e.target;
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
                 window.location.href = "planSelection.html"
                 console.log('aa')
@@ -437,7 +438,6 @@ const getMapDetail = (a,b,c,d,e) => {
     })
 }
 //將篩選過後的資料渲染到畫面上 
-// href="http://127.0.0.1:5501/Pages/parkingDetail.html#"
 const render = (aa) => {
     let str = '';
     aa.forEach((item) => {
@@ -548,36 +548,29 @@ const showSectionListRwd = () => {
 btn11Rwd.addEventListener('click' , () => {
     getParkValue = btn11Rwd.value
     btnStylingTogglerToLightL(btn11Rwd, btn12Rwd);
-    //moveBtn1Rwd(btn11Rwd)
 })
 btn12Rwd.addEventListener('click' , () => {
     getParkValue = btn12Rwd.value
     btnStylingTogglerToLightL(btn12Rwd, btn11Rwd);
-    //moveBtn1Rwd(btn12Rwd)
 })
 btn21Rwd.addEventListener('click', () => {
-    //moveBtn2Rwd(btn21Rwd)
     getType = btn21Rwd.value;
     btnStylingTogglerToDarkM(btn21Rwd, btn22Rwd, btn23Rwd);
 });
 btn22Rwd.addEventListener('click', () => {
-    //moveBtn2Rwd(btn22Rwd)
     getType = btn22Rwd.value;
     btnStylingTogglerToDarkM(btn22Rwd, btn23Rwd, btn21Rwd);
 });
 btn23Rwd.addEventListener('click', () => {
-    //moveBtn2Rwd(btn23Rwd)
     getType = btn23Rwd.value;
     btnStylingTogglerToDarkM(btn23Rwd, btn21Rwd, btn22Rwd);
 });
 //顯示有車位或全部停車場按鈕監聽
 btn31Rwd.addEventListener('click', () => {
-    //moveBtn3Rwd(btn31Rwd)
     getSpaceOrNot = btn31Rwd.value
     btnStylingTogglerToDarkM(btn31Rwd, btn32Rwd);
 });
 btn32Rwd.addEventListener('click', () => {
-    //moveBtn3Rwd(btn32Rwd)
     getSpaceOrNot = btn32Rwd.value
     btnStylingTogglerToDarkM(btn32Rwd, btn31Rwd);
 });
