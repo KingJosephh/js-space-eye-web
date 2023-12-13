@@ -1,5 +1,5 @@
 const UrlWebType = 'https://space-eye-web-surver.onrender.com'
-const optionPark = localStorage.getItem('optionPark');
+const optionPark = localStorage.getItem('parkId');
 const detailsCard = document.querySelector('#detailsCard');
 let data = [];
 let getSpaceDetails = [];
@@ -20,7 +20,7 @@ axios.get(Url + `/600/users/${usersId}`, {
       title: "尚未登入",
       text: "請前往登入，開通預約車位功能"
     }).then(res=>{
-      window.location.href = "/Pages/login.html";
+      window.location.href = "login.html";
     })
   });
 
