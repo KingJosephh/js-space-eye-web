@@ -177,13 +177,13 @@ function storeOrderInfo(){
 function generateOrderNumber() {
   const timestamp = Date.now();
   // 將時間轉為字串，只取前面的一部分作為訂單編號的前綴
-  const timePrefix = timestamp.toString().slice(0, 10);
+  const timePrefix = timestamp.toString().slice(0, 6);
 
   // 定義可能的字符
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
   // 訂單編號的長度
-  const orderNumberLength = 8;
+  const orderNumberLength = 4;
 
   // 生成隨機訂單編號
   let orderNumber = timePrefix;
