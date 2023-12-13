@@ -1,6 +1,6 @@
 const Url = 'http://localhost:3000';
 const token = localStorage.getItem('token');
-const usersId = localStorage.getItem('usersId'); // token與usersId為header辨識登入用，勿刪
+const usersId = localStorage.getItem('usersId');
 // 辨識是否已登入
 const userBtn = document.querySelector('#userBtn');
 axios.get(Url + `/600/users/${usersId}`, {
