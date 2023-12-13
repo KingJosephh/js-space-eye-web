@@ -114,7 +114,7 @@ showSummaryBtns.forEach(btn => {
       goCarOwnerPageBtn.addEventListener('click', e => {
         e.preventDefault();
         // 換頁
-        window.location.href = 'carOwnerNew.html';
+        window.location.href = 'carOwner.html';
       });
     })
   })
