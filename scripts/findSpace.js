@@ -242,7 +242,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             if (likeBtn.textContent === '長期方案') {
                 optionParkId = likeBtn.getAttribute('data-parkId');
                 localStorage.setItem('parkId', optionParkId);
-                window.location.href = "../Pages/planSelection.html"
+                window.location.href = "planSelection.html";
             }
             if(likeBtn.textContent === '詳細資料'){
                 optionParkId = likeBtn.getAttribute('data-parkId');
@@ -253,7 +253,7 @@ axios.get(Url + `/600/users/${usersId}`, {
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
             if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
-                window.location.href = "/Pages/planSelection.html"
+                window.location.href = "planSelection.html"
                 console.log('aa')
             }
         })
@@ -310,46 +310,6 @@ function hidePage(a){
         hideShowPark.style.display = 'flex';
     }
 }
-//選搜尋停建或停車場一覽按鈕區塊移動
-/* function moveBtn(x) {
-    let num = parseInt(x.getAttribute('data-num'));
-    if (num > btnNumList) {
-        btnBgMove.style.marginLeft = (214 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove.style.marginLeft = 0;
-    }
-} */
-//選車位種類按鈕區塊移動
-/* function moveBtn2(y) {
-    let num = parseInt(y.getAttribute('data-num'));
-    if (num > btnNumList2) {
-        btnBgMove2.style.marginLeft = (110 * (num-1)) + 'px';
-    }else if(num > btnNumList2){
-        btnBgMove2.style.marginLeft = (110 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove2.style.marginLeft = 0;
-    }
-} */
-//顯示有車位停車場按鈕區塊移動
-/* function moveBtn3(z) {
-    let num = parseInt(z.getAttribute('data-num'));
-    if (num > btnNumList2) {
-        btnBgMove3.style.marginLeft = (180 * (num-1)) + 'px';
-    }else if(num > btnNumList2){
-        btnBgMove3.style.marginLeft = (100 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove3.style.marginLeft = 0;
-    }
-} */
-//選擇路邊或停車唱按鈕區塊移動
-/* const moveBtn1 = (w) => {
-    let num = parseInt(w.getAttribute('data-num'));
-    if (num > btnNumList1) {
-        btnBgMove1.style.marginLeft = (135 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove1.style.marginLeft = 0;
-    }
-} */
 
 //收藏停車場的愛心按鈕監聽
 const addLikeParkToLocal = (e) => {
