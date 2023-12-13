@@ -11,10 +11,10 @@ axios.get(Url + `/600/users/${usersId}`, {
   .then((response) => {
     // console.log(response);
     userBtn.children[0].innerText = "車主專區";
-    userBtn.children[0].setAttribute('href', 'Pages/carOwnerNew.html');
+    userBtn.children[0].setAttribute('href', 'carOwnerNew.html');
   })
   .catch((error) => {
     // console.log(error);
     userBtn.children[0].innerText = "登入 / 註冊";
-    userBtn.children[0].setAttribute('href', 'Pages/login.html');
+    userBtn.children[0].setAttribute('href', 'login.html');
   });
