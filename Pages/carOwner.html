@@ -286,11 +286,12 @@
                                 <thead class="bg-light">
                                     <tr class="align-middle">
                                         <th scope="col" class="py-4">訂單編號</th>
-                                        <th scope="col">入場時間: <span id="entryTimeHeader"></span>出場時間: <span
-                                                id="exitTimeHeader"></span></th>
+                                        <th scope="col">入場時間</th>
+                                        <th scope="col">出場時間</th>
+                                        <th scope="col">方案</th>
                                         <th scope="col" class="text-center">金額</th>
-                                        <th scope="col" class="text-center">方案選擇: <span id="chosePlanHeader"></span>
-                                        </th>
+                                        <th scope="col" class="text-center">付款方式</th>
+                                        <th scope="col" class="text-center">付款狀態</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
@@ -298,10 +299,13 @@
                                     <tr>
                                         <td scope="row" class="py-4">CCC1245678912456</td>
                                         <td class="py-4">2022/03/01</td>
+                                        <td class="py-4">2022/03/01</td>
+                                        <td class="py-4">當日預約</td>
                                         <td class="py-4 text-center">
                                             NT$ 60
                                         </td>
-                                        <td class="py-4 text-center">完成 2022-03-01</td>
+                                        <td class="py-4 text-center">信用卡</td>
+                                        <td class="py-4 text-center">完成付款</td>
                                         <td class="text-end pe-4 py-4">
                                             <div class="btn-group">
                                                 <a href="#" class="btn btn-sm btn-outline-dark">
@@ -327,7 +331,7 @@
                     <div class="card-footer bg-transparent py-3">
                     </div>
                     <div class="modal fade" id="deleteTrad" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index: 3000;">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -355,22 +359,22 @@
                                 <thead class="bg-light">
                                     <tr class="align-middle">
                                         <th scope="col" class="py-4">訂單編號</th>
-                                        <th scope="col">日期</th>
-                                        <th scope="col">停車場</th>
-                                        <th scope="col">地址</th>
-                                        <th scope="col">時間</th>
+                                        <th scope="col">入場時間</th>
+                                        <th scope="col">出場時間</th>
+                                        <th scope="col">方案</th>
+                                        <th scope="col" class="text-center">停車場名</th>
+                                        <th scope="col" class="text-center">停車場地址</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-nowrap">
                                     <tr>
-                                        <td scope="row" class="py-4">CBA5678912456789</td>
+                                        <td scope="row" class="py-4">CCC1245678912456</td>
                                         <td class="py-4">2022/03/01</td>
-                                        <td class="py-4">南屯停車場</td>
-                                        <td class="py-4">
-                                            台中市松山區七七路5段777號
-                                        </td>
-                                        <td class="py-4">2022-03-01 11:30 - 13:30</td>
+                                        <td class="py-4">2022/03/01</td>
+                                        <td class="py-4">當日預約</td>
+                                        <td class="py-4 text-center">路邊停車格</td>
+                                        <td class="py-4 text-center">台中市中區中山路123號</td>
                                         <td class="text-end pe-4 py-4">
                                             <div class="btn-group">
                                                 <a href="#" class="btn btn-sm btn-outline-dark">
@@ -384,7 +388,7 @@
                                                     <li><a class="dropdown-item" href="#">修改狀態</a></li>
                                                     <li><a class="dropdown-item text-danger" href="#"
                                                             data-bs-toggle="modal" data-bs-target="#deleteAppointment"
-                                                            data-bs-pa-id="CBA5678912456789">刪除訂單</a></li>
+                                                            data-bs-trad-id="CCC1245678912456">刪除訂單</a></li>
                                                 </ul>
                                             </div>
                                         </td>
@@ -395,8 +399,7 @@
                     </div>
                     <div class="card-footer bg-transparent py-3">
                     </div>
-                    <div class="modal fade" id="deleteAppointment" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <div class="modal fade" id="deleteAppointment" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true" style="z-index: 3000;">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">

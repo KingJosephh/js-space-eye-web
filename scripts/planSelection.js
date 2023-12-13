@@ -3,6 +3,7 @@ const optionPark = localStorage.getItem('optionPark');
 const detailsCard = document.querySelector('#detailsCard');
 let data = [];
 let getSpaceDetails = [];
+let getData = {}
 
 // 辨識是否登入，未登入跳往'登入頁面'
 axios.get(Url + `/600/users/${usersId}`, {
@@ -112,8 +113,10 @@ function updateOrderSummary() {
 
       document.getElementById('entryTime').getElementsByTagName("span")[0].textContent = entryTimeText;
       document.getElementById('exitTime').getElementsByTagName("span")[0].textContent = exitTimeText;
-      localStorage.setItem("entryTime", entryTimeText)
-      localStorage.setItem("exitTime", exitTimeText)
+      // localStorage.setItem("entryTime", entryTimeText)
+      // localStorage.setItem("exitTime", exitTimeText)
+      getData.entryTime = entryTimeText
+      getData.exitTime = exitTimeText
     })
     .catch(error => {
       console.log("Error fetching data:", error);
@@ -130,17 +133,22 @@ function updatePlanSummary(planId) {
   const selectedPlan = document.getElementById(planId);
   const servalUrl = `/Pages/planSelection.html`;
 
-  const planText = `${selectedPlan.querySelector('[class="h4"]').textContent} - ${selectedPlan.querySelector('[class="plan-price"]').textContent}`;
+  const planText = `${selectedPlan.querySelector('[class="h4"]').textContent}`;
+  const planePrice = `${selectedPlan.querySelector('[class="plan-price"]').textContent}`
 
   axios.get(servalUrl, {
     params: {
       planId: planId,
-      planText: planText
+      planText: planText,
+      planePrice: planePrice
     }
   })
     .then(response => {
       document.querySelector('[data-orderSummaryPlan]').textContent = planText;
-      localStorage.setItem('chosePlan', planText);
+      // localStorage.setItem('chosePlan', planText);
+      getData.planText = planText
+      getData.planPrice = planePrice
+      // getData.planText = planText
     })
     .catch(error => {
       console.log("Error fetching data:", error);
@@ -162,6 +170,8 @@ submitPlanBtn.addEventListener("click", function () {
       icon: "question"
     });
   } else {
+    console.log(getData)
+    localStorage.setItem('plan' , JSON.stringify(getData))
     showWatermark();
     return true;
   }

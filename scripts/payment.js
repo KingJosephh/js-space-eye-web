@@ -1,4 +1,7 @@
 let nowPageId = 'page1';
+const plan = localStorage.getItem('plan')
+const planData = JSON.parse(plan)
+console.log(planData)
 
 // 換頁顯示
 const paymentMethods = document.querySelectorAll('.payment-method-group');
@@ -171,6 +174,7 @@ function storeOrderInfo(){
   localStorage.setItem('paymentMethod', paymentMethod); 
   // 信用卡跟網路ATM付款狀態預設為true，其二為false
   localStorage.setItem('paymentStatus', paymentStatus); 
+  console.log(orderNum, paymentMethod, paymentStatus)
 }
 
 // 產出隨機訂單編號
