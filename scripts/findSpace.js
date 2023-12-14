@@ -166,7 +166,7 @@ confirmBtn.addEventListener('click', () => {
     let road = roadOption.value;
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
     render(filteredMapData)
-    // dataToMap()
+    dataToMap()
 })
 
 //路邊停車與停車場按鈕監聽
