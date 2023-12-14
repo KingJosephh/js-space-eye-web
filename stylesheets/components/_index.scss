@@ -35,7 +35,7 @@ header{
       width: 100%;
     }
   }
-  h1{
+  h1{ 
     margin-bottom: 40px;
     font-size: 60px;
   }
@@ -399,7 +399,7 @@ header{
             h2{
               button{
                 color: #fff !important;
-                background: var(--gray-01);
+                background-color: inherit;
               }
             }
             .accordion-body{

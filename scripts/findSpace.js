@@ -164,8 +164,8 @@ confirmBtn.addEventListener('click', () => {
     // hideShowPark.style.display = 'block';
     let area = areaOption.value;
     let road = roadOption.value;
-    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue);
+    render(filteredMapData);
     // dataToMap()
 })
 
@@ -201,7 +201,9 @@ function btnStylingTogglerToLightL(activeBtn, closeBtn) {
 function btnStylingTogglerToLightM(activeBtn, closeBtn) {
     closeBtn.classList.remove('btn-light-solid-m');
     closeBtn.classList.add('btn-dark-trans-m');
+    closeBtn.classList.add('color-white');
     activeBtn.classList.remove('btn-dark-trans-m');
+    activeBtn.classList.remove('color-white');
     activeBtn.classList.add('btn-light-solid-m');
 }
 function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {

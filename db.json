@@ -25,6 +25,13 @@
       "username": "celine",
       "carId": "12345",
       "id": 3
+    },
+    {
+      "email": "celine123@gmail.com",
+      "password": "$2a$10$QfboOSPvwaw7gHD/SSyXG.7mSzDLTEwgrDdzv9r.uYN3bccwMNETC",
+      "username": "celine",
+      "carId": "ccc456",
+      "id": 4
     }
   ],
   "sections": [
