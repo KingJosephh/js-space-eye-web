@@ -166,7 +166,7 @@ confirmBtn.addEventListener('click', () => {
     let road = roadOption.value;
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue);
     render(filteredMapData);
-    // dataToMap()
+    dataToMap()
 })
 
 //路邊停車與停車場按鈕監聽
@@ -178,7 +178,7 @@ btn11.addEventListener('click' , () => {
     render(filteredMapData)
     // moveBtn1(btn11)
     btnStylingTogglerToLightM(btn11,btn12);
-    // dataToMap()
+    dataToMap()
 })
 btn12.addEventListener('click' , () => {
     let area = areaOption.value;
@@ -188,7 +188,7 @@ btn12.addEventListener('click' , () => {
     render(filteredMapData)
     // moveBtn1(btn12)
     btnStylingTogglerToLightM(btn12, btn11);
-    // dataToMap()
+    dataToMap()
 })
 
 // btn點擊樣式更動
@@ -620,6 +620,7 @@ const showRoadOptionListRwd = (a) => {
 //控制篩選藍
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
+    e.preventDefault();
     rwdBtn = !rwdBtn;
     showRwdChoice()
     rotateIcon()
