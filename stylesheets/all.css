@@ -13517,6 +13517,7 @@ li .menu-m:hover::before {
   z-index: 2;
   text-wrap: nowrap;
 }
+
 .color-white {
   color: #fff !important;
 }
@@ -13652,6 +13653,7 @@ li .menu-m:hover::before {
 }
 .interface .interface-main {
   border-radius: 18px;
+  overflow-y: scroll;
   background: #fff;
   box-shadow: 8px 8px 12px rgba(31, 31, 31, 0.1);
   height: 504px;
