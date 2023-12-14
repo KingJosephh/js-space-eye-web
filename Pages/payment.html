@@ -2,284 +2,449 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>payment</title>
   <link rel="stylesheet" href="/stylesheets/all.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway|Rock+Salt|Source+Code+Pro:300,400,600" rel="stylesheet">
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Rock+Salt|Source+Code+Pro:300,400,600" rel="stylesheet">
+
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+>>>>>>> space/mangotreee
 </head>
 
 <body>
-  <div class="container payment-container">
-    <div class="row payment-method-container">
-      <!-- 標題 -->
-      <div class="col">
-        <h1 class="payment-title fw-bold h2">
-          付款方式
-        </h1>
-      </div>
-      <!-- 付款方式 payment method -->
-      <div class="col">
-        <div class="payment-method-group">
-          <button type="button" class="btn btn-light" id="btn-creditCard" data-page="page1" required
-            autofocus>信用卡</button>
-          <button type="button" class="btn btn-light" id="btn-InternetATM" data-page="page2">網路ATM</button>
-          <button type="button" class="btn btn-light" id="btn-ATMTellerMachine" data-page="page3">ATM櫃員機</button>
-          <button type="button" class="btn btn-light" id="btn-SupermarketCode" data-page="page4">超商代碼</button>
+    <div class="container payment-container">
+        <div class="row payment-method-container">
+            <!-- 標題 -->
+            <div class="col">
+                <h1 class="payment-title fw-bold h2">
+                    付款方式
+                </h1>
+            </div>
+            <!-- 付款方式 payment method -->
+            <div class="col">
+                <div class="payment-method-group">
+                    <button type="button" class="btn btn-light" id="btn-creditCard" data-page="page1" required
+                        autofocus>信用卡</button>
+                    <button type="button" class="btn btn-light" id="btn-InternetATM" data-page="page2">網路ATM</button>
+                    <button type="button" class="btn btn-light" id="btn-ATMTellerMachine"
+                        data-page="page3">ATM櫃員機</button>
+                    <button type="button" class="btn btn-light" id="btn-SupermarketCode" data-page="page4">超商代碼</button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- 付款方式頁面 -->
-    <div class="row payment-content-container">
-      <div class="col">
-        <!-- 訂單摘要 Order summary -->
-        <div style="display: none;" id="OrderSummary" class="watermark">
-          <div class="main-container">
-            <div class="summary-container">
-              <div class="bottom-part">
-                <!-- 關閉按鈕 -->
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi-x-circle"
+        <!-- 付款方式頁面 -->
+        <div class="row payment-content-container">
+            <div class="col">
+                <!-- 訂單摘要 Order summary -->
+                <div style="display: none;" id="OrderSummary" class="watermark">
+                    <div class="main-container">
+                        <div class="summary-container">
+                            <div class="bottom-part">
+                                <!-- 關閉按鈕 -->
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi-x-circle"
                   viewBox="0 0 16 16" id="closeBtn">
                   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                   <path
                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                 </svg> -->
-                <!-- 標題 -->
-                <div class="word-section">
-                  <div class="h2">訂單摘要</div>
-                </div>
-                <hr class="m-0">
-                <!-- 內容 -->
-                <div class="plan-section-container">
-                  <div class="plan-section">
-                    <div class="annual-plan">
-                      <p id="chosePlan" class="mb-0 p-2">方案選擇: <span data-orderSummaryPlan></span></p>
+                                <!-- 標題 -->
+                                <div class="word-section">
+                                    <div class="h2">訂單摘要</div>
+                                </div>
+                                <hr class="m-0">
+                                <!-- 內容 -->
+                                <div class="plan-section-container">
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="chosePlan" class="mb-0 p-2">方案選擇: <span data-orderSummaryPlan></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="entryTime" class="mb-0 p-2">進場時間: <span
+                                                    data-orderSummaryEntryTime></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="plan-section">
+                                        <div class="annual-plan">
+                                            <p id="exitTime" class="mb-0 p-2">出場時間: <span
+                                                    data-orderSummaryExitTime></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="m-0">
+                                <!-- 按鈕 -->
+                                <div class="btn-section">
+                                    <button class="btn-card btn btn-light-solid-l" type="submit" data-goCarOwnerPage>
+                                        前往車主專區
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="plan-section">
-                    <div class="annual-plan">
-                      <p id="entryTime" class="mb-0 p-2">進場時間: <span data-orderSummaryEntryTime></span></p>
-                    </div>
-                  </div>
-                  <div class="plan-section">
-                    <div class="annual-plan">
-                      <p id="exitTime" class="mb-0 p-2">出場時間: <span data-orderSummaryExitTime></span></p>
-                    </div>
-                  </div>
                 </div>
-                <hr class="m-0">
-                <!-- 按鈕 -->
-                <div class="btn-section">
-                  <button class="btn-card btn btn-light-solid-l" type="submit" data-goCarOwnerPage>
-                    前往車主專區
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 寫換頁(隱藏頁面顯示頁面) -->
-        <!-- 信用卡 - credit Card -->
-        <div class="payment-content-page" id="page1">
-          <form class="payment-creditCard-container">
-            <!-- 信用卡icon -->
-            <div class="payment-creditCards-img">
-              <img src="https://files.readme.io/d1a25b4-generic-card.png">
-              <img src="/Assests/img/visa.lgog.png">
-              <img src="/Assests/img/jcb.logo.png">
-              <img src="/Assests/img/mastercard.logo.png">
-            </div>
-            <!-- 信用卡圖示 -->
-            <div class="payment-creditCard-pic-container preload">
-              <!-- 付款資訊 -->
-              <h2 class="payment-creditCard-info-title h2">付款資訊</h2>
-              <div class="creditCard">
-                <div class="front">
-                  <div id="ccsingle"></div>
-                  <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 471"
-                    style="enable-background:new 0 0 750 471;" xml:space="preserve">
-                    <g id="Front">
-                      <g id="CardBackground">
-                        <g id="Page-1_1_">
-                          <g id="amex_1_">
-                            <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                <!-- 寫換頁(隱藏頁面顯示頁面) -->
+                <!-- 信用卡 - credit Card -->
+                <div class="payment-content-page" id="page1">
+                    <form class="payment-creditCard-container">
+                        <!-- 信用卡icon -->
+                        <div class="payment-creditCards-img">
+                            <img src="https://files.readme.io/d1a25b4-generic-card.png">
+                            <img src="/Assests/img/visa.lgog.png">
+                            <img src="/Assests/img/jcb.logo.png">
+                            <img src="/Assests/img/mastercard.logo.png">
+                        </div>
+                        <!-- 信用卡圖示 -->
+                        <div class="payment-creditCard-pic-container preload">
+                            <!-- 付款資訊 -->
+                            <h2 class="payment-creditCard-info-title h2">付款資訊</h2>
+                            <div class="creditCard">
+                                <div class="front">
+                                    <div id="ccsingle"></div>
+                                    <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 471"
+                                        style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                                        <g id="Front">
+                                            <g id="CardBackground">
+                                                <g id="Page-1_1_">
+                                                    <g id="amex_1_">
+                                                        <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
                                                   C0,17.9,17.9,0,40,0z" />
-                          </g>
-                        </g>
-                        <path class="darkcolor greydark"
-                          d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
-                      </g>
-                      <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">1234 5678
-                        1234 5678</text>
-                      <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6"></text>
-                      <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
-                      <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
-                      <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
-                      <g>
-                        <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire"
-                          class="st2 st5 st9">00/00</text>
-                        <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
-                        <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
-                        <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
-                      </g>
-                      <g id="cchip">
-                        <g>
-                          <path class="st2"
-                            d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
+                                                    </g>
+                                                </g>
+                                                <path class="darkcolor greydark"
+                                                    d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
+                                            </g>
+                                            <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber"
+                                                class="st2 st3 st4">1234 5678
+                                                1234 5678</text>
+                                            <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname"
+                                                class="st2 st5 st6"></text>
+                                            <text transform="matrix(1 0 0 1 54.1074 389.8793)"
+                                                class="st7 st5 st8">cardholder name</text>
+                                            <text transform="matrix(1 0 0 1 479.7754 388.8793)"
+                                                class="st7 st5 st8">expiration</text>
+                                            <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card
+                                                number</text>
+                                            <g>
+                                                <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire"
+                                                    class="st2 st5 st9">00/00</text>
+                                                <text transform="matrix(1 0 0 1 479.3848 417.0097)"
+                                                    class="st2 st10 st11">VALID</text>
+                                                <text transform="matrix(1 0 0 1 479.3848 435.6762)"
+                                                    class="st2 st10 st11">THRU</text>
+                                                <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
+                                            </g>
+                                            <g id="cchip">
+                                                <g>
+                                                    <path class="st2" d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
                                               c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z" />
-                        </g>
-                        <g>
-                          <g>
-                            <rect x="82" y="70" class="st12" width="1.5" height="60" />
-                          </g>
-                          <g>
-                            <rect x="167.4" y="70" class="st12" width="1.5" height="60" />
-                          </g>
-                          <g>
-                            <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
+                                                </g>
+                                                <g>
+                                                    <g>
+                                                        <rect x="82" y="70" class="st12" width="1.5" height="60" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="167.4" y="70" class="st12" width="1.5" height="60" />
+                                                    </g>
+                                                    <g>
+                                                        <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
                                                   c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
                                                   C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
                                                   c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
                                                   c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z" />
-                          </g>
-                          <g>
-                            <rect x="82.8" y="82.1" class="st12" width="25.8" height="1.5" />
-                          </g>
-                          <g>
-                            <rect x="82.8" y="117.9" class="st12" width="26.1" height="1.5" />
-                          </g>
-                          <g>
-                            <rect x="142.4" y="82.1" class="st12" width="25.8" height="1.5" />
-                          </g>
-                          <g>
-                            <rect x="142" y="117.9" class="st12" width="26.2" height="1.5" />
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                    <g id="Back">
-                    </g>
-                  </svg>
-                </div>
-                <div class="back">
-                  <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 471"
-                    style="enable-background:new 0 0 750 471;" xml:space="preserve">
-                    <g id="Front">
-                      <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11" />
-                    </g>
-                    <g id="Back">
-                      <g id="Page-1_2_">
-                        <g id="amex_2_">
-                          <path id="Rectangle-1_2_" class="darkcolor greydark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                                    </g>
+                                                    <g>
+                                                        <rect x="82.8" y="82.1" class="st12" width="25.8"
+                                                            height="1.5" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="82.8" y="117.9" class="st12" width="26.1"
+                                                            height="1.5" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="142.4" y="82.1" class="st12" width="25.8"
+                                                            height="1.5" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="142" y="117.9" class="st12" width="26.2"
+                                                            height="1.5" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <g id="Back">
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="back">
+                                    <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 471"
+                                        style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                                        <g id="Front">
+                                            <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11" />
+                                        </g>
+                                        <g id="Back">
+                                            <g id="Page-1_2_">
+                                                <g id="amex_2_">
+                                                    <path id="Rectangle-1_2_" class="darkcolor greydark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
                                               C0,17.9,17.9,0,40,0z" />
-                        </g>
-                      </g>
-                      <rect y="61.6" class="st2" width="750" height="78" />
-                      <g>
-                        <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
+                                                </g>
+                                            </g>
+                                            <rect y="61.6" class="st2" width="750" height="78" />
+                                            <g>
+                                                <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
                                           C707.1,246.4,704.4,249.1,701.1,249.1z" />
-                        <rect x="42.9" y="198.6" class="st4" width="664.1" height="10.5" />
-                        <rect x="42.9" y="224.5" class="st4" width="664.1" height="10.5" />
-                        <path class="st5"
-                          d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z" />
-                      </g>
-                      <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">000</text>
-                      <g class="st8">
-                        <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
-                      </g>
-                      <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
-                      <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
-                      <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13"></text>
-                    </g>
-                  </svg>
+                                                <rect x="42.9" y="198.6" class="st4" width="664.1" height="10.5" />
+                                                <rect x="42.9" y="224.5" class="st4" width="664.1" height="10.5" />
+                                                <path class="st5"
+                                                    d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z" />
+                                            </g>
+                                            <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity"
+                                                class="st6 st7">000</text>
+                                            <g class="st8">
+                                                <text transform="matrix(1 0 0 1 518.083 280.0879)"
+                                                    class="st9 st6 st10">security code</text>
+                                            </g>
+                                            <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
+                                            <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
+                                            <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback"
+                                                class="st12 st13"></text>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 信用卡資訊 -->
+                        <div class="payment-creditCard-input-container">
+                            <div class="field-container mb-1">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" maxlength="20" type="text" class="name">
+                                <p class="text-danger" data-msg="name"></p>
+                            </div>
+                            <div class="field-container mb-1">
+                                <label for="cardnumber">Card Number</label>
+                                <input id="cardnumber" name="cardnumber" type="text" pattern="[0-9]*"
+                                    inputmode="numeric" class="cardnumber">
+                                <p class="text-danger" data-msg="cardnumber"></p>
+                                <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471"
+                                    version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                </svg>
+                            </div>
+                            <div class="field-container mb-1">
+                                <label for="expirationdate">Expiration (mm/yy)</label>
+                                <input id="expirationdate" name="expirationdate" type="text" pattern="[0-9]*"
+                                    inputmode="numeric" class="expirationdate">
+                                <p class="text-danger" data-msg="expirationdate"></p>
+                            </div>
+                            <div class="field-container mb-1">
+                                <label for="securitycode">Security Code</label>
+                                <input id="securitycode" name="securitycode" type="text" pattern="[0-9]*"
+                                    inputmode="numeric" class="securitycode">
+                                <p class="text-danger" data-msg="securitycode"></p>
+                            </div>
+                        </div>
+                        <!-- 公告事項說明 -->
+                        <div class="payment-creditCard-info-container">
+                            <div class="payment-creditCard-announcement-title h2">公告事項說明</div>
+                            <ul class="ps-0">
+                                <li>1. 同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</li>
+                                <li>2. 預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</li>
+                                <li>3. 本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</li>
+                                <li>4. 預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</li>
+                                <li>★ 近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。 ★</li>
+                            </ul>
+                        </div>
+                        <!-- 按鈕區 -->
+                        <div class="checkout-btn-container">
+                            <label class="checkmark-label">
+                                <input type="checkbox" id="agreeCheckbox" data-page1 name="agreeCheckbox">
+                                <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
+                                <p class="mb-0">同意相關資訊請勾選</p>
+                            </label>
+                            <button data-showSummaryBtn
+                                class="btn btn-light-solid-l checkout-btn btn-payment">結帳</button>
+                        </div>
                 </div>
-              </div>
-            </div>
-            <!-- 信用卡資訊 -->
-            <div class="payment-creditCard-input-container">
-              <div class="field-container mb-1">
-                <label for="name">Name</label>
-                <input id="name" name="name" maxlength="20" type="text" class="name">
-                <p class="text-danger" data-msg="name"></p>
-              </div>
-              <div class="field-container mb-1">
-                <label for="cardnumber">Card Number</label>
-                <input id="cardnumber" name="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric" class="cardnumber">
-                <p class="text-danger" data-msg="cardnumber"></p>
-                <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                </svg>
-              </div>
-              <div class="field-container mb-1">
-                <label for="expirationdate">Expiration (mm/yy)</label>
-                <input id="expirationdate" name="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric" class="expirationdate">
-                <p class="text-danger" data-msg="expirationdate"></p>
-              </div>
-              <div class="field-container mb-1">
-                <label for="securitycode">Security Code</label>
-                <input id="securitycode" name="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" class="securitycode">
-                <p class="text-danger" data-msg="securitycode"></p>
-              </div>
-            </div>
-            <!-- 公告事項說明 -->
-            <div class="payment-creditCard-info-container">
-              <div class="payment-creditCard-announcement-title h2">公告事項說明</div>
-              <ul class="ps-0">
-                <li>1. 同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</li>
-                <li>2. 預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</li>
-                <li>3. 本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</li>
-                <li>4. 預約車位僅能預約一個 禮拜之內，如需長期租約請點擊長期方案按鈕。</li>
-                <li>★ 近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。 ★</li>
-              </ul>
-            </div>
-            <!-- 按鈕區 -->
-            <div class="checkout-btn-container">
-              <label class="checkmark-label">
-                <input type="checkbox" id="agreeCheckbox" data-page1 name="agreeCheckbox">
-                <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
-                <p class="mb-0">同意相關資訊請勾選</p>
-              </label>
-              <button data-showSummaryBtn class="btn btn-light-solid-l checkout-btn btn-payment">結帳</button>
+                <!-- 網路ATM - Internet ATM -->
+                <div class="payment-content-page" id="page2" style="display: none;">
+                    <div class="col">
+                        <div class="ATM-container">
+                            <div class="form-group">
+                                <label for="bankSelect">選擇銀行:</label>
+                                <select class="form-control" id="bankSelect">
+                                    <option value="台灣銀行">台灣銀行</option>
+                                    <option value="中國信託商業銀行">中國信託商業銀行</option>
+                                    <option value="台北富邦銀行">台北富邦銀行</option>
+                                    <option value="第一銀行">第一銀行</option>
+                                    <option value="台新銀行">台新銀行</option>
+                                    <option value="永豐銀行">永豐銀行</option>
+                                    <option value="兆豐國際商業銀行">兆豐國際商業銀行</option>
+                                    <option value="國泰世華商業銀行">國泰世華商業銀行</option>
+                                </select>
+                            </div>
+                            <div>
+                                <div class="h2">注意事項</div>
+                                <ul class="Precautions-ul">
+                                    <li>♦️ 避免與他人共用電腦或連結至不明網站、下載不明資料，或於公用電腦（如網咖）使用網路ATM服務及輸入個人密碼。</li>
+                                    <li>♦️ 進行網路ATM交易，請選擇具顯示螢幕及鍵盤、可輸入密碼及確認交易內容的確認型讀卡機。</li>
+                                    <li>♦️ 盡量使用約定帳號轉帳。</li>
+                                </ul>
+                            </div>
+                            <!-- 按鈕區 -->
+                            <div class="checkout-btn-container">
+                                <label class="checkmark-label">
+                                    <input type="checkbox" id="agreeCheckbox" data-page2 name="agreeCheckbox">
+                                    <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
+                                    <p class="mb-0">同意相關資訊請勾選</p>
+                                </label>
+                                <button data-showSummaryBtn class="btn btn-light-solid-l checkout-btn">結帳</button>
+                            </div>
+                        </div>
+
+<<<<<<< HEAD
+                    </div>
+                </div>
+                <!-- ATM櫃員機 - ATM teller machine -->
+                <div class="payment-content-page" id="page3" style="display: none;">
+                    <div class="col">
+                        <div class="ATM-container">
+                            <div class="form-group">
+                                <label for="bankSelect">選擇銀行:</label>
+                                <select class="form-control" id="bankSelect">
+                                    <option value="台灣銀行">台灣銀行</option>
+                                    <option value="中國信託商業銀行">中國信託商業銀行</option>
+                                    <option value="台北富邦銀行">台北富邦銀行</option>
+                                    <option value="第一銀行">第一銀行</option>
+                                    <option value="台新銀行">台新銀行</option>
+                                    <option value="永豐銀行">永豐銀行</option>
+                                    <option value="兆豐國際商業銀行">兆豐國際商業銀行</option>
+                                    <option value="國泰世華商業銀行">國泰世華商業銀行</option>
+                                </select>
+                            </div>
+                            <div>
+                                <div class="h2">注意事項</div>
+                                <ul class="Precautions-ul">
+                                    <li>♦️ 避免與他人共用電腦或連結至不明網站、下載不明資料，或於公用電腦（如網咖）使用網路ATM服務及輸入個人密碼。</li>
+                                    <li>♦️ 進行網路ATM交易，請選擇具顯示螢幕及鍵盤、可輸入密碼及確認交易內容的確認型讀卡機。</li>
+                                    <li>♦️ 盡量使用約定帳號轉帳。</li>
+                                </ul>
+                            </div>
+                            <!-- 按鈕區 -->
+                            <div class="checkout-btn-container">
+                                <label class="checkmark-label">
+                                    <input type="checkbox" id="agreeCheckbox" data-page3 name="agreeCheckbox">
+                                    <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
+                                    <p class="mb-0">同意相關資訊請勾選</p>
+                                </label>
+                                <button data-showSummaryBtn class="btn btn-light-solid-l checkout-btn">結帳</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 超商代碼 - Supermarket code -->
+                <div class="payment-content-page" id="page4" style="display: none;">
+                    <div class="col payment-supermarket-container">
+                        <ul class="payment-supermarket-logo-ul">
+                            <li><img src="/Assests/img/seven.logo.png"></li>
+                            <li><img src="/Assests/img/Family.logo.png"></li>
+                            <li><img src="/Assests/img/OK.logo.png"></li>
+                            <li><img src="/Assests/img/HI-life.logo.png"></li>
+                        </ul>
+                        <div>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費。</div>
+                        <div>
+                            <div class="h2">注意事項</div>
+                            <ul class="Precautions-ul">
+                                <li>♦️ 超商代收-代碼的繳費期限為7天，請務必於期限內進行繳款</li>
+                                <li>♦️ 例: 11/28的20:15分購買商品，繳費期限為3天，表示於12/01的20:15前您必須前往繳費。</li>
+                            </ul>
+                        </div>
+                        <!-- 按鈕區 -->
+                        <div class="checkout-btn-container">
+                            <label class="checkmark-label">
+                                <input type="checkbox" id="agreeCheckbox" data-page4 name="agreeCheckbox">
+                                <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
+                                <p class="mb-0">同意相關資訊請勾選</p>
+                            </label>
+                            <div class="text-center" id="button5" data-page="page5">
+                                <button type="button" class="btn btn-light-solid-l checkout-btn" id="button5"
+                                    data-page="page5" onclick="generateOrderNumber()">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 產出交易明細 -->
+                    <div class="col text-center" id="page5" style="display: none;">
+                        <div class="payment-supermarket-details-container">
+                            <div class="payment-supermarket-details-msg">
+                                <hr>
+                                <div class="h2">訂單成立</div>
+                                <div>需自行至超商機台輸入代碼，產生繳費單後前往櫃檯繳費!請於時間內使用您選擇的付款方式進行付款!</div>
+                                <div>本次交易明細如下:</div>
+                            </div>
+
+                            <div class="payment-supermarket-details-info container">
+                                <div class="row">
+                                    <div class="col-md-4 label-column">訂單編號</div>
+                                    <div class="col-md-8 content-column" id="orderNumber">17030</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 label-column">商品名稱</div>
+                                    <div class="col-md-8 content-column">預約停車</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 label-column">訂單方案</div>
+                                    <div class="col-md-8 content-column" id="paymoney">1703</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 label-column">付款方式</div>
+                                    <div class="col-md-8 content-column">超商代碼繳費</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 label-column">超商繳費代碼</div>
+                                    <div class="col-md-8 content-column" id="orderNumber2">17030</div>
+                                </div>
+                                <!-- QR Code -->
+                                <div class="row">
+                                    <div class="col-md-4 label-column">7-ELEVEN ibon QRcode</div>
+                                    <div class="col-md-8 content-column">
+                                        <img src="/Assests/img/Q-rcode.png" alt="QR Code" class="qr-image">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 label-column">截止日期</div>
+                                    <div class="col-md-8 content-column" id="deadlineDate"></div>
+                                </div>
+                                <div class="text-center" id="button6" data-page="page6">
+                                    <button type="button" class="btn btn-light-solid-l checkout-btn" id="button6"
+                                        data-page="page6">前往車主專區</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- 網路ATM - Internet ATM -->
-        <div class="payment-content-page" id="page2" style="display: none;">
-          <div class="col">
-            <div class="ATM-container">
-              <div class="form-group">
-                <label for="bankSelect">選擇銀行:</label>
-                <select class="form-control" id="bankSelect">
-                  <option value="台灣銀行">台灣銀行</option>
-                  <option value="中國信託商業銀行">中國信託商業銀行</option>
-                  <option value="台北富邦銀行">台北富邦銀行</option>
-                  <option value="第一銀行">第一銀行</option>
-                  <option value="台新銀行">台新銀行</option>
-                  <option value="永豐銀行">永豐銀行</option>
-                  <option value="兆豐國際商業銀行">兆豐國際商業銀行</option>
-                  <option value="國泰世華商業銀行">國泰世華商業銀行</option>
-                </select>
-              </div>
-              <div>
-                <div class="h2">注意事項</div>
-                <ul class="Precautions-ul">
-                  <li>♦️ 避免與他人共用電腦或連結至不明網站、下載不明資料，或於公用電腦（如網咖）使用網路ATM服務及輸入個人密碼。</li>
-                  <li>♦️ 進行網路ATM交易，請選擇具顯示螢幕及鍵盤、可輸入密碼及確認交易內容的確認型讀卡機。</li>
-                  <li>♦️ 盡量使用約定帳號轉帳。</li>
-                </ul>
-              </div>
-              <!-- 按鈕區 -->
-              <div class="checkout-btn-container">
-                <label class="checkmark-label">
-                  <input type="checkbox" id="agreeCheckbox" data-page2 name="agreeCheckbox">
-                  <p class="mb-0 alert-danger" data-msg="agreeCheckbox"></p>
-                  <p class="mb-0">同意相關資訊請勾選</p>
-                </label>
-                <button data-showSummaryBtn class="btn btn-light-solid-l checkout-btn">結帳</button>
-              </div>
-            </div>
+    </div>
 
+
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="/scripts/payment.js"></script>
+    <script src="/scripts/paymentCard.js"></script>
+=======
           </div>
         </div>
         <!-- ATM櫃員機 - ATM teller machine -->
@@ -408,6 +573,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
   <script src="/scripts/payment.js"></script>
   <script src="/scripts/paymentCard.js"></script>
+>>>>>>> e6e5ed72d9c45629c29e31b38d0ce0c4130fd6e6
 </body>
 
 </html>
