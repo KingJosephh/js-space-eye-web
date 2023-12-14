@@ -214,11 +214,11 @@ TradToDelete.addEventListener('show.bs.modal', function (event) {
   tradText.textContent = tradId;
 })
 //預約紀錄提示框
-const deleteAppointmentModel = document.querySelector('#deleteAppointment')
+const deleteAppointmentModel = document.querySelector('#deleteReserve')
 deleteAppointmentModel.addEventListener('show.bs.modal', function (p) {
   const AppointmentButton = p.relatedTarget
-  const getAppointment = AppointmentButton.dataset.bsPaId
-  const text = deleteAppointmentModel.querySelector('#deleteAppointmentText')
+  const getAppointment = AppointmentButton.dataset.bsTradId
+  const text = deleteAppointmentModel.querySelector('#deleteReserveText')
   text.textContent = getAppointment
 })
 //預約紀錄提示框
@@ -530,3 +530,103 @@ const removeLikePark = (cc, dd) => {
     cc.splice(removeInd, 1);
   }
 };
+//將交易紀錄渲染至畫面上
+const order = localStorage.getItem('orderDetail')
+const orderDetail = JSON.parse(order)
+const tradingHistory = document.querySelector('#tradingHistory')
+
+const showOrderDeal = (aa) => {
+  let pay ;
+  let str = ''
+  aa.forEach(item  => {
+    pay = item.paymentStatus ? '已付款' : '未付款';
+    str +=`<tr>
+    <td scope="row" class="py-4">${item.orderId}</td>
+    <td class="py-4">${item.planData.entryTime}</td>
+    <td class="py-4">${item.planData.exitTime}</td>
+    <td class="py-4">${item.planData.planText}</td>
+    <td class="py-4 text-center">
+      ${item.planData.planPrice}
+    </td>
+    <td class="py-4 text-center">${item.paymentMethod}</td>
+    <td class="py-4 text-center">${pay}</td>
+    <td class="text-end pe-4 py-4">
+        <div class="btn-group">
+            <button class="btn btn-sm btn-outline-dark dropdown-toggle"
+                type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                操作
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                <li><a class="dropdown-item text-danger" href="#"
+                        data-bs-toggle="modal" data-bs-target="#deleteTrad"
+                        data-bs-trad-id="${item.orderId}">刪除訂單</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>`
+  })
+  tradingHistory.innerHTML = str
+}
+showOrderDeal(orderDetail)
+
+//完成編輯(刪除)交易紀錄
+const deleteTradText = document.querySelector('#deleteTradText')
+const deleteTradBtn = document.querySelector('#deleteTradBtn')
+
+deleteTradBtn.addEventListener('click' , (e) => {
+  let deleteId = deleteTradText.textContent;
+  let num = orderDetail.findIndex(item => item.orderId === deleteId);
+  orderDetail.splice(num ,1)
+  localStorage.setItem('orderDetail' , JSON.stringify(orderDetail))
+  showOrderDeal(orderDetail)
+})
+
+
+// 2.渲染預約紀錄到畫面上
+const reserve = localStorage.getItem('reserveData')
+const reserveLocal = JSON.parse(reserve)
+const reserveHistory = document.querySelector('#reserveHistory')
+console.log(reserveLocal)
+const showReserveDetail = (bb) => {
+  let str = ''
+  bb.forEach(item => {
+    str +=`<tr>
+    <td scope="row" class="py-4">${item.reserveId}</td>
+    <td class="py-4">${item.getData.entryTime}</td>
+    <td class="py-4">${item.getData.exitTime}</td>
+    <td class="py-4">${item.getData.planText}</td>
+    <td class="py-4 text-center">${item.getSpaceDetails[0].parkName}</td>
+    <td class="py-4 text-center">${item.getSpaceDetails[0].address}</td>
+    <td class="text-end pe-4 py-4">
+        <div class="btn-group">
+            <button class="btn btn-sm btn-outline-dark dropdown-toggle"
+                type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                操作
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                <li><a class="dropdown-item text-danger" href="#"
+                        data-bs-toggle="modal" data-bs-target="#deleteReserve"
+                        data-bs-trad-id="${item.reserveId}">刪除訂單</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>`
+  })
+  reserveHistory.innerHTML = str
+}
+showReserveDetail(reserveLocal)
+//刪除預約紀錄
+const deleteReserveBtn = document.querySelector('#deleteReserveBtn')
+const deleteReserveText = document.querySelector('#deleteReserveText')
+
+deleteReserveBtn.addEventListener('click' , () => {
+  let deleteId = deleteReserveText.textContent;
+  let num = reserveLocal.findIndex(item => item.reserveId === deleteId)
+  reserveLocal.splice(num ,1)
+  localStorage.setItem('reserveData' , JSON.stringify(reserveLocal))
+  showReserveDetail(reserveLocal)
+})

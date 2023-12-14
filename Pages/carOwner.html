@@ -295,7 +295,7 @@
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-nowrap">
+                                <tbody class="text-nowrap" id="tradingHistory">
                                     <tr>
                                         <td scope="row" class="py-4">CCC1245678912456</td>
                                         <td class="py-4">2022/03/01</td>
@@ -344,7 +344,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-danger">確認刪除</button>
+                                    <button type="button" class="btn btn-danger" id="deleteTradBtn" data-bs-dismiss="modal">確認刪除</button>
                                 </div>
                             </div>
                         </div>
@@ -367,7 +367,7 @@
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-nowrap">
+                                <tbody class="text-nowrap" id="reserveHistory">
                                     <tr>
                                         <td scope="row" class="py-4">CCC1245678912456</td>
                                         <td class="py-4">2022/03/01</td>
@@ -399,7 +399,7 @@
                     </div>
                     <div class="card-footer bg-transparent py-3">
                     </div>
-                    <div class="modal fade" id="deleteAppointment" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true" style="z-index: 3000;">
+                    <div class="modal fade" id="deleteReserve" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true" style="z-index: 3000;">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -408,12 +408,12 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>確認刪除「<span id="deleteAppointmentText"></span>」的訂單嗎？</p>
+                                    <p>確認刪除「<span id="deleteReserveText"></span>」的訂單嗎？</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-dark"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">確認刪除</button>
+                                    <button type="button" class="btn btn-danger" id="deleteReserveBtn" data-bs-dismiss="modal">確認刪除</button>
                                 </div>
                             </div>
                         </div>

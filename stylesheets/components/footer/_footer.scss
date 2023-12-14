@@ -6,27 +6,35 @@ footer{
   border-radius: 40px;
 
   [src="Assests/icon/maskGroup-01.png"],
-  [src="Assests/icon/maskGroup-02.png"] {
+  [src="Assests/icon/maskGroup-02.png"],
+  [src="../Assests/icon/maskGroup-01.png"],
+  [src="../Assests/icon/maskGroup-02.png"]{
     width: 200px;
     height: 80px;
     top: 44px;
     position: absolute;
   }
-  [src="Assests/icon/maskGroup-01.png"]{
+  [src="Assests/icon/maskGroup-01.png"],
+  [src="../Assests/icon/maskGroup-01.png"]{
     left: 0;
   }
-  [src="Assests/icon/maskGroup-02.png"]{
+  [src="Assests/icon/maskGroup-02.png"],
+  [src="../Assests/icon/maskGroup-02.png"]{
     right: 0;
   }
   @media screen and (min-width: 1200px) {
     [src="Assests/icon/maskGroup-01.png"],
-    [src="Assests/icon/maskGroup-02.png"] {
+    [src="Assests/icon/maskGroup-02.png"],
+    [src="../Assests/icon/maskGroup-01.png"],
+    [src="../Assests/icon/maskGroup-02.png"] {
       width: 354px;
     }
   }
   @media screen and (max-width: 992px) {
     [src="Assests/icon/maskGroup-01.png"],
-    [src="Assests/icon/maskGroup-02.png"] {
+    [src="Assests/icon/maskGroup-02.png"],
+    [src="../Assests/icon/maskGroup-01.png"],
+    [src="../Assests/icon/maskGroup-02.png"] {
       display: none;
     }
   }

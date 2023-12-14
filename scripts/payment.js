@@ -1,15 +1,28 @@
 let nowPageId = 'page1';
 const plan = localStorage.getItem('plan')
 const planData = JSON.parse(plan)
+const park = localStorage.getItem('parkDetail')
+const parkDetail = JSON.parse(park)
+const order = localStorage.getItem('orderDetail')
+const orderDetailLocal = JSON.parse(order)
+let orderDetail = {}
+let orderDetailAll = []
 console.log(planData)
+//將本地端交易明細抓下來放入orderDetailAll
+if(orderDetailLocal === null){
 
+}else{
+  for(let i = 0 ; i<orderDetailLocal.length ; i++){
+    orderDetailAll.push(orderDetailLocal[i])
+  }
+}
 // 換頁顯示
 const paymentMethods = document.querySelectorAll('.payment-method-group');
 paymentMethods.forEach(method => {
   method.addEventListener('click',e => {
     nowPageId = e.target.dataset.page;
     pageChange(e.target.dataset.page);
-
+    console.log(nowPageId)
     if (nowPageId === 'page4'){
       supermarketDetails();
     }
@@ -108,10 +121,13 @@ showSummaryBtns.forEach(btn => {
       const orderSummaryEntryTime = document.querySelector('[data-orderSummaryEntryTime]');
       const orderSummaryExitTime = document.querySelector('[data-orderSummaryExitTime]');
 
-      orderSummaryPlan.textContent = localStorage.getItem('chosePlan');
-      orderSummaryEntryTime.textContent = localStorage.getItem('entryTime');
-      orderSummaryExitTime.textContent = localStorage.getItem('exitTime');
-      
+      // orderSummaryPlan.textContent = localStorage.getItem('chosePlan');
+      // orderSummaryEntryTime.textContent = localStorage.getItem('entryTime');
+      // orderSummaryExitTime.textContent = localStorage.getItem('exitTime');
+      orderSummaryPlan.textContent = planData.planText;
+      orderSummaryEntryTime.textContent = planData.entryTime;
+      orderSummaryExitTime.textContent = planData.exitTime
+
       // 監聽訂單摘要按鈕 - 前往車主專區
       const goCarOwnerPageBtn = document.querySelector('[data-goCarOwnerPage]');
       goCarOwnerPageBtn.addEventListener('click', e => {
@@ -149,11 +165,11 @@ function supermarketDetails(){
       icon: "success"
     }).then(res => {
       // 取得明細資料
+      const orderNum = generateOrderNumber();
       const orderId = document.querySelector('#supermarketOrderId');
       const orderPlan = document.querySelector('#supermarketChosePlan');
       const paymentDeadline = document.querySelector('#supermarketPaymentDeadline');
-
-      orderId.textContent = localStorage.getItem('orderId');
+      orderId.textContent = orderNum;
       orderPlan.textContent = localStorage.getItem('chosePlan');
       // 繳費期限: 入場日期
       paymentDeadline.textContent = localStorage.getItem('entryTime');
@@ -168,13 +184,20 @@ function supermarketDetails(){
 // 儲存訂單資料到localStorage
 function storeOrderInfo(){
   const orderNum = generateOrderNumber();
-  const paymentMethod = nowPageId[4] === 1 ? "信用卡" : nowPageId[4] === 2 ? "網路ATM" : nowPageId[4] === 3 ? "ATM櫃員機" : "超商代碼";
+  const paymentMethod = nowPageId[4] === '1' ? "信用卡" : nowPageId[4] === '2' ? "網路ATM" : nowPageId[4] === '3' ? "ATM櫃員機" : "超商代碼";
   const paymentStatus = nowPageId[4] === 1 ? true : nowPageId[4] === 2 ? true : false;
-  localStorage.setItem('orderId', orderNum);
-  localStorage.setItem('paymentMethod', paymentMethod); 
-  // 信用卡跟網路ATM付款狀態預設為true，其二為false
-  localStorage.setItem('paymentStatus', paymentStatus); 
-  console.log(orderNum, paymentMethod, paymentStatus)
+  // localStorage.setItem('orderId', orderNum);
+  // localStorage.setItem('paymentMethod', paymentMethod); 
+  // // 信用卡跟網路ATM付款狀態預設為true，其二為false
+  // localStorage.setItem('paymentStatus', paymentStatus); 
+    orderDetail.orderId = orderNum;
+    orderDetail.paymentMethod = paymentMethod;
+    orderDetail.paymentStatus = paymentStatus;
+    orderDetail.planData = planData;
+    orderDetail.parkDetail = parkDetail;
+    orderDetailAll.push(orderDetail)
+    localStorage.setItem('orderDetail' , JSON.stringify(orderDetailAll))
+  // console.log(orderDetail)
 }
 
 // 產出隨機訂單編號

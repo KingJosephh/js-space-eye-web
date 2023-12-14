@@ -12490,27 +12490,35 @@ footer {
   border-radius: 40px;
 }
 footer [src="Assests/icon/maskGroup-01.png"],
-footer [src="Assests/icon/maskGroup-02.png"] {
+footer [src="Assests/icon/maskGroup-02.png"],
+footer [src="../Assests/icon/maskGroup-01.png"],
+footer [src="../Assests/icon/maskGroup-02.png"] {
   width: 200px;
   height: 80px;
   top: 44px;
   position: absolute;
 }
-footer [src="Assests/icon/maskGroup-01.png"] {
+footer [src="Assests/icon/maskGroup-01.png"],
+footer [src="../Assests/icon/maskGroup-01.png"] {
   left: 0;
 }
-footer [src="Assests/icon/maskGroup-02.png"] {
+footer [src="Assests/icon/maskGroup-02.png"],
+footer [src="../Assests/icon/maskGroup-02.png"] {
   right: 0;
 }
 @media screen and (min-width: 1200px) {
   footer [src="Assests/icon/maskGroup-01.png"],
-  footer [src="Assests/icon/maskGroup-02.png"] {
+  footer [src="Assests/icon/maskGroup-02.png"],
+  footer [src="../Assests/icon/maskGroup-01.png"],
+  footer [src="../Assests/icon/maskGroup-02.png"] {
     width: 354px;
   }
 }
 @media screen and (max-width: 992px) {
   footer [src="Assests/icon/maskGroup-01.png"],
-  footer [src="Assests/icon/maskGroup-02.png"] {
+  footer [src="Assests/icon/maskGroup-02.png"],
+  footer [src="../Assests/icon/maskGroup-01.png"],
+  footer [src="../Assests/icon/maskGroup-02.png"] {
     display: none;
   }
 }
@@ -12851,12 +12859,15 @@ li .menu-m:hover::before {
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .modal {
   z-index: 3000;
 }
 
 >>>>>>> e6e5ed72d9c45629c29e31b38d0ce0c4130fd6e6
+=======
+>>>>>>> e02ef57647f90c9a630184e5f289a046cb716218
 .payment-container {
   padding: 20px;
   display: flex;
@@ -13257,7 +13268,7 @@ li .menu-m:hover::before {
 .background-img {
   width: 100%;
   height: 100vh;
-  background-image: url(/Assests/img/bgImg.png);
+  background-image: url(../Assests/img/bgImg.png);
   background-position: center;
   background-size: cover;
   filter: blur(5px);
@@ -13270,7 +13281,7 @@ li .menu-m:hover::before {
   width: 75%;
   height: 75%;
   transform: translate(-50%, -50%);
-  background: url(/Assests/img/bgImg.png);
+  background: url(../Assests/img/bgImg.png);
   background-position: center;
   background-size: cover;
   display: flex;
@@ -13652,7 +13663,7 @@ li .menu-m:hover::before {
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
   width: 100%;
-  z-index: 2100;
+  z-index: 1000;
   justify-content: center;
 }
 
@@ -13719,7 +13730,7 @@ li .menu-m:hover::before {
 }
 
 .searchBtn {
-  z-index: 2200;
+  z-index: 1000;
   right: 150px;
   top: 180px;
 }
@@ -13734,6 +13745,10 @@ li .menu-m:hover::before {
     right: 30px;
     top: 130px;
   }
+}
+
+.leaflet-popup-content {
+  width: 200px;
 }
 
 .watermark {

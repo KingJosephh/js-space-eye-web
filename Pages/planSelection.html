@@ -117,11 +117,6 @@
 
   <!-- 主要內容 -->
   <div class="container planSelection-mainContent-container">
-    <!-- <div class="top"> -->
-    <!-- <img src="/Assests/img/parking.png" alt="parkingLogo"> -->
-    <!-- <h1 class="text-center">預約停車</h1> -->
-    <!-- </div> -->
-    <!-- <hr> -->
     <table id="detailsCard">
       <!-- <thead>
                 <tr>
@@ -151,29 +146,9 @@
     </form>
     <h1 class="text-center">方案選擇</h1>
     <div class="plan-container">
-      <div onclick="select(this, false)" class="plan" id="monthPlan">
-        <div class="h4">每月停車</div>
-        <p style="margin-top: 0">monthly</p>
-        <ul>
-          <li class="plan-price">NT 349</li>
-          <li>全月自由停車，方便又節省。</li>
-          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-          <li>一次訂閱，一整年無限次數停車。</li>
-        </ul>
-      </div>
-      <div onclick="select(this, true)" class="plan" id="weekPlan">
-        <div class="h4">每週停車</div>
-        <p style="margin-top: 0">week</p>
-        <ul>
-          <li class="plan-price">NT 149</li>
-          <li>縮短週末中的尋找停車位的時間。</li>
-          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
-          <li>省時省力，停車不再是煩惱。</li>
-        </ul>
-      </div>
       <div onclick="select(this, false)" class="plan" id="dayPlan">
         <div class="h4">單次停車</div>
-        <p style="margin-top: 0">day</p>
+        <p>day</p>
         <ul>
           <li class="plan-price">NT 30</li>
           <li>縮短週末中的尋找停車位的時間。</li>
@@ -181,9 +156,29 @@
           <li>省時省力，停車不再是煩惱。</li>
         </ul>
       </div>
+      <div onclick="select(this, true)" class="plan" id="weekPlan">
+        <div class="h4">每週停車</div>
+        <p>week</p>
+        <ul>
+          <li class="plan-price">NT 149</li>
+          <li>縮短週末中的尋找停車位的時間。</li>
+          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+          <li>省時省力，停車不再是煩惱。</li>
+        </ul>
+      </div>
+      <div onclick="select(this, false)" class="plan" id="monthPlan">
+        <div class="h4">每月停車</div>
+        <p>monthly</p>
+        <ul>
+          <li class="plan-price">NT 349</li>
+          <li>全月自由停車，方便又節省。</li>
+          <li>享受假日無限次數停車的自由，每日都是好日子。</li>
+          <li>一次訂閱，一整年無限次數停車。</li>
+        </ul>
+      </div>
       <div onclick="select(this, false)" class="plan" id="yearPlan">
         <div class="h4">每年停車</div>
-        <p style="margin-top: 0">year</p>
+        <p>year</p>
         <ul>
           <li class="plan-price">NT 749</li>
           <li>長期停車需求的理想選擇。</li>
@@ -192,10 +187,6 @@
         </ul>
       </div>
     </div>
-    <!-- <div style="display: flex; justify-content: center; padding-top: 20px; width: 100%">
-            <button id="next" type="button" disabled>Register</button>
-          </div>
-        </div>  -->
     <div class="submit-btn-container">
       <button type="button" class="btn btn-dark-trans-l" aria-pressed="false" autocomplete="off" data-cancelSubmitPlan>
         取消
@@ -223,9 +214,6 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../stylesheets/components/header/header.js"></script>
   <script src="../scripts/planSelection.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script> -->
 </body>
 
 </html>

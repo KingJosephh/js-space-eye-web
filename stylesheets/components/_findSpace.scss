@@ -82,7 +82,7 @@ $display-none: none;
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
   width: 100%;
-  z-index: 2100;
+  z-index: 1000;//2100
   justify-content: center;
 }
 
@@ -155,7 +155,7 @@ $display-none: none;
 }
 
 .searchBtn{
-  z-index: 2200;
+  z-index: 1000;//2200
   right: 150px;
   top: 180px;
   @media screen and (max-width: 768px) {
@@ -166,4 +166,9 @@ $display-none: none;
     right: 30px;
     top: 130px;
   }
+}
+
+// 
+.leaflet-popup-content{
+  width: 200px;
 }
