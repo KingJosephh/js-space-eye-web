@@ -32,3 +32,9 @@ btnUp.addEventListener('click',e => {
     behavior: "smooth"
   });
 })
+
+//
+const searchBarBtn = document.querySelector('#searchBarBtn');
+searchBarBtn.addEventListener('click',e=>{
+  window.location.href = './Pages/findSpace.html';
+})

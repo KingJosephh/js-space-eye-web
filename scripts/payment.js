@@ -165,8 +165,8 @@ function supermarketDetails(){
 // 儲存訂單資料到localStorage
 function storeOrderInfo(){
   const orderNum = generateOrderNumber();
-  const paymentMethod = nowPageId[4] === 1 ? "信用卡" : nowPageId[4] === 2 ? "網路ATM" : nowPageId[4] === 3 ? "ATM櫃員機" : "超商代碼";
-  const paymentStatus = nowPageId[4] === 1 ? true : nowPageId[4] === 2 ? true : false;
+  const paymentMethod = nowPageId[4] === '1' ? "信用卡" : nowPageId[4] === '2' ? "網路ATM" : nowPageId[4] === 3 ? "ATM櫃員機" : "超商代碼";
+  const paymentStatus = nowPageId[4] === '1' ? true : nowPageId[4] === '2' ? true : false;
   localStorage.setItem('orderId', orderNum);
   localStorage.setItem('paymentMethod', paymentMethod); 
   // 信用卡跟網路ATM付款狀態預設為true，其二為false
