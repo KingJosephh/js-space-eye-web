@@ -12606,6 +12606,11 @@ footer [src="../Assests/icon/maskGroup-02.png"] {
     width: 320px;
   }
 }
+header {
+  background: var(--gray-04);
+  z-index: 1;
+}
+
 .navbar-collapse {
   justify-content: flex-end;
 }
@@ -13203,58 +13208,6 @@ li .menu-m:hover::before {
   height: auto;
 }
 
-/* .head {
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    // padding: 10px 80px;
-    z-index: 99;
-    background: transparent;
-    background-color: rgba(220, 220, 220, 0.5);
-    backdrop-filter: blur(10px);
-    // padding-bottom: 200px;
-}
-
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    .logo {
-        width: 100px;
-        height: 50px;
-    }
-
-    .searchBar {
-        width: 20em;
-        font-weight: bold;
-        color: #fff;
-
-        .btn,
-        .btn2 {
-            border: 0;
-            width: 30%;
-            height: 20%;
-            border-radius: 5px;
-            background-color: #93FF00;
-            color: #000000;
-
-            &.btn2 {
-                display: none;
-            }
-
-            a {
-                color: #fff;
-                text-decoration: none;
-            }
-
-            // a:hover {
-            //     color: aqua;
-            // }
-        }
-    }
-} */
 .background-img {
   width: 100%;
   height: 100vh;
@@ -13269,7 +13222,8 @@ li .menu-m:hover::before {
   top: 53%;
   left: 50%;
   width: 75%;
-  height: 75%;
+  height: 65%;
+  min-height: 650px;
   transform: translate(-50%, -50%);
   background: url(../Assests/img/bgImg.png);
   background-position: center;
@@ -13301,7 +13255,7 @@ li .menu-m:hover::before {
   border-radius: 24px;
   padding: 110px;
 }
-.content h2, .content .h2 {
+.content .h2 {
   font-size: 4.5em;
   text-align: start;
   color: #fff;
@@ -13314,13 +13268,16 @@ li .menu-m:hover::before {
   font-size: 1.5rem;
 }
 
-/* 在大于 1000px 的屏幕上的样式 */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .content {
-    padding: 110px;
+    padding: 120px;
   }
 }
-/* 在小于 400px 的屏幕上的样式 */
+@media screen and (min-width: 1000px) {
+  .content {
+    padding: 90px;
+  }
+}
 @media screen and (max-width: 900px) {
   .content {
     padding: 80px;
@@ -13348,7 +13305,7 @@ li .menu-m:hover::before {
     width: 80%;
   }
 }
-.signUpForm h3, .signUpForm .h3 {
+.signUpForm h1, .signUpForm .h1 {
   font-size: 2.5rem;
   text-align: center;
   color: #fff;
@@ -13427,39 +13384,6 @@ li .menu-m:hover::before {
   margin-top: 16px;
 }
 
-/* .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    .searchBar {
-        width: 20em;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-weight: bold;
-        color: #fff;
-
-        .btn,
-        .btn1,
-        .btn2 {
-            border: 0;
-            width: 40%;
-            height: 60%;
-            border-radius: 5px;
-            background-color: #93FF00;
-            color: #000000;
-
-            &.btn2 {
-                display: none;
-            }
-        }
-
-        a:hover {
-            color: aqua;
-        }
-    }
-} */
 .logInForm {
   width: 40%;
   position: absolute;
@@ -13482,7 +13406,7 @@ li .menu-m:hover::before {
     width: 80%;
   }
 }
-.logInForm h3, .logInForm .h3 {
+.logInForm h1, .logInForm .h1 {
   font-size: 2.5rem;
   text-align: center;
   color: #fff;
@@ -13695,19 +13619,41 @@ li .menu-m:hover::before {
   gap: 8px;
 }
 
+.jumping-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  animation: jump 1s infinite alternate ease-out;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+}
+.jumping-button:focus {
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
 #map {
   width: 100%;
 }
 
+.interface {
+  padding-left: 18px;
+}
 .interface .button-search-container {
   width: -moz-fit-content;
   width: fit-content;
   padding: 28px 0;
 }
 .interface .interface-main {
-  overflow: auto;
-  border-radius: 24px;
+  border-radius: 18px;
   background: #fff;
+  box-shadow: 8px 8px 12px rgba(31, 31, 31, 0.1);
   height: 504px;
   gap: 12px;
   padding: 18px 0;
@@ -14479,7 +14425,7 @@ header [data-indexMenu] {
 }
 .questions .questions-container .questions-body .accordion .accordion-item:hover h2 button, .questions .questions-container .questions-body .accordion .accordion-item:hover .h2 button {
   color: #fff !important;
-  background: var(--gray-01);
+  background-color: inherit;
 }
 .questions .questions-container .questions-body .accordion .accordion-item:hover .accordion-body {
   color: var(--gray-04);
