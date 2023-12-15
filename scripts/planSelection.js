@@ -155,7 +155,7 @@ const submitPlanBtn = document.querySelector("[data-submitPlan]");
 submitPlanBtn.addEventListener("click", function () {
   const entryDateValue = document.getElementById("entryDate").value;
   const exitDateValue = document.getElementById("exitDate").value;
-  // const planSelected = document.querySelector('[class="plan plan-active"]');
+  const planSelected = document.querySelector('[class="plan plan-active"]');
   const reserveNum = generateReserveNumber();
 
   // console.log(planSelected);

@@ -274,60 +274,60 @@ axios.get(Url + `/600/users/${usersId}`, {
   .catch((err) => {
     console.log(err)
   })
-//將會員資料渲染至畫面
+// 車主資訊-將會員資料渲染至畫面
 const getMemberData = (aa) => {
-  let content = `<div class="row mt-5 d-flex justify-content-lg-between gx-5">
+  let content = `<div class="row mt-5 d-flex justify-content-lg-between gx-5 ps-2 pe-2 pb-5">
     <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
-            <label for="inputPassword" class="col-sm-2 col-form-label">姓名</label>
-            <div class="col-8">
+            <label for="inputPassword" class="col-sm-4 col-form-label">姓名</label>
+            <div class="col col-sm-8">
                 <input class="form-control  bg-white" type="text" value="${aa.username}" aria-label="Disabled input example" disabled readonly>
             </div>
         </div>
         <div class="mb-4 row d-flex justify-content-between">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-8">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Email</label>
+            <div class="col col-sm-8">
                 <input class="form-control  bg-white" type="text" value="${aa.email}" aria-label="Disabled input example" disabled readonly>
             </div>
         </div>
             <div class="row g-3 d-flex justify-content-between mb-4">
-                <label for="PhoneNumber" class="col-sm-2 col-form-label">手機號碼</label>
-                <div class="col-8 d-flex">
-                    <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example">
+                <label for="PhoneNumber" class="col-sm-4 col-form-label">手機號碼</label>
+                <div class="col d-flex">
+                    <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" style="width: fit-content">
                         <option class="text-5" selected>+ 886</option>
                         <option value="1">+ 007</option>
                         <option value="2">+ 125</option>
                         <option value="3">+ 789</option>
                     </select>
-                    <div class="col-8 ms-3">
-                        <input class="form-control bg-white py-1" type="text" value="3524891" aria-label="Disabled input example" disabled readonly>
+                    <div class="ms-3">
+                        <input class="form-control bg-white py-1" type="text" value="" aria-label="Disabled input example" disabled readonly>
                     </div>
                 </div>
             </div>
         </form>
-        <div class="changePassWord d-flex justify-content-between">
-                <label for="inputPassword" class="col-sm-2 col-form-label">密碼</label>
-                <div class="col-8 d-flex align-items-center">
-                    <label for="" class=""><a href="" class="fw-bold text-decoration-none text-strat ps-2" data-bs-toggle="modal" data-bs-target="#changePass">更改密碼</a></label>
+        <div class="changePassWord d-flex justify-content-between mb-4">
+                <label for="inputPassword" class="col-sm-4 col-form-label">密碼</label>
+                <div class="col col-sm-8 d-flex align-items-center">
+                    <label for="" class=""><a href="" class="fw-bold text-decoration-none ps-2" data-bs-toggle="modal" data-bs-target="#changePass">更改密碼</a></label>
                 </div>
         </div>
     </div>
     <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
-            <label for="inputPassword" class="col-sm-2 col-form-label">車牌號碼</label>
-            <div class="col-8">
+            <label for="inputPassword" class="col-sm-4 col-form-label">車牌號碼</label>
+            <div class="col col-sm-8">
                 <input class="form-control  bg-white" type="text" value="${aa.carId}" aria-label="Disabled input example" disabled readonly>
             </div>
         </div>
         <div class="changePassWord d-flex justify-content-between mb-4">
-            <label for="inputPassword" class="col-sm-2 col-form-label">信用卡</label>
-            <div class="col-8 d-flex align-items-center">
-                <label for="" class=""><a href="" class="fw-bold text-decoration-none text-strat ps-2">新增信用卡</a></label>
+            <label for="inputPassword" class="col-sm-4 col-form-label">信用卡</label>
+            <div class="col col-sm-8 d-flex align-items-center">
+                <label for="" class=""><a href="" class="fw-bold text-decoration-none ps-2">新增信用卡</a></label>
             </div>
-    </div>
-    <div class="row g-3 d-flex justify-content-between mb-4">
+      </div>
+      <div class="row g-3 d-flex justify-content-between mb-4">
         <label for="inputPassword" class="col-4 col-form-label">信用卡資訊</label>
-            <div class="col-8 d-flex">
+            <div class="col col-sm-8 d-flex">
                 <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example">
                     <option class="text-5" selected>EASY  **** **** **** 1234</option>
                     <option value="1">EASY  **** **** **** 5147</option>
@@ -338,13 +338,16 @@ const getMemberData = (aa) => {
         </div>
     </div>
     <div class="row">
-        <div class="col d-flex flex-row-reverse" style="margin-top: 50px;">
-            <button type="button" class="btn btn-info mx-3 px-5 py-1">確認送出</button>
-            <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
+        <div class="col d-flex justify-content-end" style="margin-top: 50px;">
+            <button type="button" class="btn btn-light-gray px-4">取消</button>
+            <button type="button" class="btn btn-light-solid-m ms-4 px-4">確認送出</button>
         </div>
     </div>
 </div>`
-  contentToHide.innerHTML = content
+  contentToHide.innerHTML = content;
+
+  const greetName = document.querySelector('#greetName');
+  greetName.textContent = aa.username;
 }
 //leaflet語法
 var map = L.map('map').setView([24.162139, 120.647021], 11);
@@ -430,11 +433,11 @@ const dataToMap = (aa) => {
       }
       markersLayer.addLayer(marker);
   }
-  console.log(locatedX, locatedY)
+  // console.log(locatedX, locatedY)
 }
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
-  if (localParkData === '') {
+  if (localParkData === null) {
     saveLikePark = [];
   } else {
     let ss = localParkData.split(',').map(parseFloat);
@@ -545,11 +548,11 @@ const showOrderDeal = (aa) => {
     <td class="py-4">${item.planData.entryTime}</td>
     <td class="py-4">${item.planData.exitTime}</td>
     <td class="py-4">${item.planData.planText}</td>
-    <td class="py-4 text-center">
+    <td class="py-4">
       ${item.planData.planPrice}
     </td>
-    <td class="py-4 text-center">${item.paymentMethod}</td>
-    <td class="py-4 text-center">${pay}</td>
+    <td class="py-4">${item.paymentMethod}</td>
+    <td class="py-4">${pay}</td>
     <td class="text-end pe-4 py-4">
         <div class="btn-group">
             <button class="btn btn-sm btn-outline-dark dropdown-toggle"
@@ -597,8 +600,8 @@ const showReserveDetail = (bb) => {
     <td class="py-4">${item.getData.entryTime}</td>
     <td class="py-4">${item.getData.exitTime}</td>
     <td class="py-4">${item.getData.planText}</td>
-    <td class="py-4 text-center">${item.getSpaceDetails[0].parkName}</td>
-    <td class="py-4 text-center">${item.getSpaceDetails[0].address}</td>
+    <td class="py-4">${item.getSpaceDetails[0].parkName}</td>
+    <td class="py-4">${item.getSpaceDetails[0].address}</td>
     <td class="text-end pe-4 py-4">
         <div class="btn-group">
             <button class="btn btn-sm btn-outline-dark dropdown-toggle"

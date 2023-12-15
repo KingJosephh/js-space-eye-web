@@ -58,31 +58,23 @@
         </nav>
     </header>
     <section>
-        <!-- <div class="BgShow position-absolute show" style="margin-top: 30%; margin-left: 16%;">
-          </div> -->
         <div class="container">
             <div class="row">
                 <div class="col mt-5">
-                    <p>Hello, <a href="" class="ps-5" style="color: #000;">logout</a></p>
+                    <p>Hello, <span id="greetName"></span><a href="" class="ps-5" style="color: #000;">logout</a></p>
                 </div>
             </div>
             <div class="row position-relative" id="list">
                 <div class="col-lg-12 col-10 button-group d-flex justify-content-lg-between flex-lg-row flex-column rounded-2 py-2 position-absolute" id="btnList">
-                    <!-- btn-bg-move-dad button-group d-flex justify-content-between bg-green-black rounded-2 py-2  -->
                     <div class="position-absolute btn-bg-move">
-                        <!-- <div id="color-block" class=" bg-light-green mx-4 d-flex align-center rounded-2"
-              style="height: 34px; width: 100px;"></div> -->
                     </div>
                     <button id="btn" type="button" class="d-lg-none mx-2 col-lg-2 col-5 btn mb-lg-0 mb-3 pt-0 fw-bold" style="z-index: 2500;">
                         <span class="mt-5" id="changeText">車主資訊</span>
                     </button>
-                    <!-- <div class="BgShow position-absolute show">
-                    </div> -->
                     <button id="btn1" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-light-solid-l" style="z-index: 2500;"
                         data-num="1">車主資訊</button>
                     <button id="btn2" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
                         data-num="2">我的收藏</button>
-                    <!-- <button id="btn3" type="button" class="btn" style="z-index: 2500;" data-num="3">停車紀錄</button> -->
                     <button id="btn3" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
                         data-num="3">交易紀錄</button>
                     <button id="btn4" type="button" class="col-lg-2 m-lg-0 ml-2 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
@@ -103,7 +95,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">更改密碼</h5>
+                            <div class="modal-title h5" id="exampleModalLabel">更改密碼</div>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -146,15 +138,15 @@
                     <div class="col-4 d-lg-block d-none interface">
                         <div class="row d-flex justify-content-center">
                             <div class="col-10 bg-secondary mt-4 py-2 text-center rounded-2">
-                                <h5 class="my-1">我的收藏</h5>
+                                <div class="my-1 h5">我的收藏</div>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-10 bg-white mt-4 rounded-2" id="showMapCard"
+                            <div class="col-10 bg-white mt-4 rounded-2 d-flex justify-content-center" id="showMapCard"
                                 style="height: 350px; overflow: auto;">
-                                <div class="card mt-3" style="width: 16rem;">
+                                <div class="card mt-3" style="width: 16rem; height:fit-content;">
                                     <div class="card-body">
-                                        <h5 class="card-title">西屯停車場</h5>
+                                        <div class="card-title h5">西屯停車場</div>
                                         <div class="row">
                                             <div class="col-5">地址:</div>
                                             <div class="col-7">台北市松山區八德路3段12巷</div>
@@ -163,10 +155,10 @@
                                             <div class="col-5">剩餘空位:</div>
                                             <div class="col-7">15</div>
                                         </div>
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-flex justify-content-between mt-2">
                                             <button type="button"
-                                                class="btn btn-sm btn-light-green px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-green px-3 py-1"
+                                                class="btn btn-sm btn-light-solid-m px-3 py-1">詳細資料</button>
+                                            <button type="button" class="btn btn-sm btn-light-solid-m px-3 py-1"
                                                 data-bs-toggle="modal" data-bs-target="#saveModel"
                                                 data-bs-save-park="西屯停車場" data-bs-save-type="林廷"
                                                 data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15"
@@ -184,7 +176,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title mt-3 mx-4" id="park"></h5>
+                                <div class="modal-title mt-3 mx-4 h5" id="park"></div>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -289,9 +281,9 @@
                                         <th scope="col">入場時間</th>
                                         <th scope="col">出場時間</th>
                                         <th scope="col">方案</th>
-                                        <th scope="col" class="text-center">金額</th>
-                                        <th scope="col" class="text-center">付款方式</th>
-                                        <th scope="col" class="text-center">付款狀態</th>
+                                        <th scope="col">金額</th>
+                                        <th scope="col">付款方式</th>
+                                        <th scope="col">付款狀態</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
@@ -301,11 +293,11 @@
                                         <td class="py-4">2022/03/01</td>
                                         <td class="py-4">2022/03/01</td>
                                         <td class="py-4">當日預約</td>
-                                        <td class="py-4 text-center">
+                                        <td class="py-4">
                                             NT$ 60
                                         </td>
-                                        <td class="py-4 text-center">信用卡</td>
-                                        <td class="py-4 text-center">完成付款</td>
+                                        <td class="py-4">信用卡</td>
+                                        <td class="py-4">完成付款</td>
                                         <td class="text-end pe-4 py-4">
                                             <div class="btn-group">
                                                 <a href="#" class="btn btn-sm btn-outline-dark">
@@ -335,7 +327,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                    <div class="modal-title h5" id="staticBackdropLabel">Modal title</div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -362,8 +354,8 @@
                                         <th scope="col">入場時間</th>
                                         <th scope="col">出場時間</th>
                                         <th scope="col">方案</th>
-                                        <th scope="col" class="text-center">停車場名</th>
-                                        <th scope="col" class="text-center">停車場地址</th>
+                                        <th scope="col">停車場名</th>
+                                        <th scope="col">停車場地址</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
@@ -373,8 +365,8 @@
                                         <td class="py-4">2022/03/01</td>
                                         <td class="py-4">2022/03/01</td>
                                         <td class="py-4">當日預約</td>
-                                        <td class="py-4 text-center">路邊停車格</td>
-                                        <td class="py-4 text-center">台中市中區中山路123號</td>
+                                        <td class="py-4">路邊停車格</td>
+                                        <td class="py-4">台中市中區中山路123號</td>
                                         <td class="text-end pe-4 py-4">
                                             <div class="btn-group">
                                                 <a href="#" class="btn btn-sm btn-outline-dark">
@@ -403,7 +395,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">刪除訂單</h5>
+                                    <div class="modal-title h5" id="exampleModalLabel">刪除訂單</div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -424,10 +416,10 @@
                 <div class="row mt-5">
                     <div class="col-4 d-flex">
                         <div class="col-8">
-                            <h2>剩餘金額:</h2>
+                            <div class="h2">剩餘金額:</div>
                         </div>
                         <div class="col-4">
-                            <h2>1125</h2>
+                            <div class="h2">1125</div>
                         </div>
                     </div>
                 </div>
@@ -452,7 +444,7 @@
                 </div>
                 <div class="row">
                     <div class="col d-flex flex-row-reverse" style="margin-top: 100px;">
-                        <button type="button" class="btn btn-info mx-3 px-5 py-1" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-light-solid-m mx-3 px-5 py-1" data-bs-toggle="modal"
                             data-bs-target="#storageModel">確認送出</button>
                         <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
                     </div>
@@ -463,17 +455,17 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title mt-3 mx-4" id="exampleModalLabel">訂單摘要</h5>
+                                <div class="modal-title mt-3 mx-4 g5" id="exampleModalLabel">訂單摘要</div>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="row mx-3 my-3">
-                                    <h3 class="col-5">訂單金額:</h3>
+                                    <div class="col-5 h3">訂單金額:</div>
                                     <div class="col-7">
                                         <div class="row d-flex">
-                                            <h5 class="col-2 mt-2" id="unit"></h5>
-                                            <h3 class="col-8 text-end" id="amount"></h3>
+                                            <div class="col-2 mt-2 h5" id="unit"></div>
+                                            <div class="col-8 text-end h3" id="amount"></div>
                                         </div>
                                     </div>
                                 </div>
