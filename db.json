@@ -25,13 +25,6 @@
       "username": "celine",
       "carId": "12345",
       "id": 3
-    },
-    {
-      "email": "celine123@gmail.com",
-      "password": "$2a$10$QfboOSPvwaw7gHD/SSyXG.7mSzDLTEwgrDdzv9r.uYN3bccwMNETC",
-      "username": "celine",
-      "carId": "ccc456",
-      "id": 4
     }
   ],
   "sections": [
@@ -528,6 +521,91 @@
       "location": {
         "latitude": 24.181234,
         "longitude": 120.61985
+      }
+    },
+    {
+      "id": 21,
+      "parkName": "路邊停車格",
+      "address": "台中市西屯區自由路2222號",
+      "categoryId": "C01",
+      "roadId": "R002",
+      "space": "3",
+      "charge": "30/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.189945,
+        "longitude": 120.618976
+      }
+    },
+    {
+      "id": 22,
+      "parkName": "路邊停車格",
+      "address": "台中市西屯區自由路3333號",
+      "categoryId": "C01",
+      "roadId": "R002",
+      "space": "2",
+      "charge": "30/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.183456,
+        "longitude": 120.618743
+      }
+    },
+    {
+      "id": 23,
+      "parkName": "路邊停車格",
+      "address": "台中市西屯區自由路4444號",
+      "categoryId": "C01",
+      "roadId": "R002",
+      "space": "1",
+      "charge": "30/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.184567,
+        "longitude": 120.618509
+      }
+    },
+    {
+      "id": 24,
+      "parkName": "路邊停車格",
+      "address": "台中市西屯區自由路5555號",
+      "categoryId": "C01",
+      "roadId": "R002",
+      "space": "4",
+      "charge": "30/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.185678,
+        "longitude": 120.618276
+      }
+    },
+    {
+      "id": 25,
+      "parkName": "路邊停車格",
+      "address": "台中市西屯區自由路6666號",
+      "categoryId": "C01",
+      "roadId": "R002",
+      "space": "6",
+      "charge": "30/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.186789,
+        "longitude": 120.618042
       }
     }
   ]
