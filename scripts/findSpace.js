@@ -164,9 +164,9 @@ confirmBtn.addEventListener('click', () => {
     // hideShowPark.style.display = 'block';
     let area = areaOption.value;
     let road = roadOption.value;
-    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
-    // dataToMap()
+    getMapDetail(area,road,getType,getSpaceOrNot,getParkValue);
+    render(filteredMapData);
+    dataToMap()
 })
 
 //路邊停車與停車場按鈕監聽
@@ -178,7 +178,7 @@ btn11.addEventListener('click' , () => {
     render(filteredMapData)
     // moveBtn1(btn11)
     btnStylingTogglerToLightM(btn11,btn12);
-    // dataToMap()
+    dataToMap()
 })
 btn12.addEventListener('click' , () => {
     let area = areaOption.value;
@@ -188,7 +188,7 @@ btn12.addEventListener('click' , () => {
     render(filteredMapData)
     // moveBtn1(btn12)
     btnStylingTogglerToLightM(btn12, btn11);
-    // dataToMap()
+    dataToMap()
 })
 
 // btn點擊樣式更動
@@ -201,7 +201,9 @@ function btnStylingTogglerToLightL(activeBtn, closeBtn) {
 function btnStylingTogglerToLightM(activeBtn, closeBtn) {
     closeBtn.classList.remove('btn-light-solid-m');
     closeBtn.classList.add('btn-dark-trans-m');
+    closeBtn.classList.add('color-white');
     activeBtn.classList.remove('btn-dark-trans-m');
+    activeBtn.classList.remove('color-white');
     activeBtn.classList.add('btn-light-solid-m');
 }
 function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {
@@ -618,6 +620,7 @@ const showRoadOptionListRwd = (a) => {
 //控制篩選藍
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
+    e.preventDefault();
     rwdBtn = !rwdBtn;
     showRwdChoice()
     rotateIcon()

@@ -78,9 +78,8 @@ const cardBody = () => {
 }
 
 // 方案點擊後樣式
-// var btn = document.getElementById("next");
-function select(el, left) {
-  var plan = el.id;
+function select(el) {
+  const plan = el.id;
   if (!plan) {
     btn.disabled = false;
   }
@@ -90,23 +89,6 @@ function select(el, left) {
   });
 
   el.classList.add("plan-active");
-
-  /* switch (plan) {
-    case "monthPlan":
-      btn.innerHTML = "每月停車";
-      break;
-    case "weekPlan":
-      btn.innerHTML = "每週停車";
-      break;
-    case "dayPlan":
-      btn.innerHTML = "單次停車";
-      break;
-    case "yearPlan":
-      btn.innerHTML = "每年停車";
-      break;
-    default:
-      btn.innerHTML = "請選擇停車方案";
-  } */
 }
 
 // 抓進出場資料
@@ -168,17 +150,28 @@ function updatePlanSummary(planId) {
 
 
 
-// 方案選擇-確認送出按鈕-日期選擇驗證
-var submitPlanBtn = document.querySelector("[data-submitPlan]");
+// 確認送出按鈕-日期、方案選擇驗證
+const submitPlanBtn = document.querySelector("[data-submitPlan]");
 submitPlanBtn.addEventListener("click", function () {
-  var entryDateValue = document.getElementById("entryDate").value;
-  var exitDateValue = document.getElementById("exitDate").value;
+  const entryDateValue = document.getElementById("entryDate").value;
+  const exitDateValue = document.getElementById("exitDate").value;
+  const planSelected = document.querySelector('[class="plan plan-active"]');
   const reserveNum = generateReserveNumber();
-  if (!entryDateValue && !exitDateValue) {
+
+  // console.log(planSelected);
+  if (!entryDateValue || !exitDateValue) {
     Swal.fire({
       title: "入場日期和離場日期未選擇",
       text: "請重新選擇",
-      icon: "question"
+      icon: "question",
+      timer: 1500
+    });
+  } else if (planSelected === null){
+    Swal.fire({
+      title: "方案未選擇",
+      text: "請重新選擇",
+      icon: "question",
+      timer: 1500
     });
   } else {
     localStorage.setItem('plan' , JSON.stringify(getData))
@@ -216,32 +209,32 @@ function showWatermark() {
 }
 
 // 關閉訂單摘要 按鈕
-var closeButton = document.querySelector(".bi-x-circle");
+const closeButton = document.querySelector(".bi-x-circle");
 
 closeButton.addEventListener("click", function () {
-  var elementToClose = document.getElementById("elementToClose")
+  const elementToClose = document.getElementById("elementToClose")
   elementToClose.style.display = "none";
 })
 
 // 訂單摘要-前往結帳按鈕
-var paymentButton = document.querySelector(".btn-payment");
+const paymentButton = document.querySelector(".btn-payment");
 
 paymentButton.addEventListener("click", function () {
   window.location.href = "payment.html";
 })
 
 // 訂單摘要-取消按鈕
-var orderSummaryCancelBtn = document.querySelector("[data-orderSummaryCancel]");
+const orderSummaryCancelBtn = document.querySelector("[data-orderSummaryCancel]");
 
 orderSummaryCancelBtn.addEventListener("click", function () {
-  var elementToClose = document.getElementById("elementToClose")
+  const elementToClose = document.getElementById("elementToClose")
   elementToClose.style.display = "none";
 })
 
 // 方案選擇-取消按紐：跳回找車位頁面
-var cancelSubmitPlanBtn = document.querySelector("[data-cancelSubmitPlan]");
+const cancelSubmitPlanBtn = document.querySelector("[data-cancelSubmitPlan]");
 cancelSubmitPlanBtn.addEventListener("click", function () {
-  window.location.href = "../findSpace.html";
+  window.location.href = "findSpace.html";
 })
 
 // 确保 optionPark 不为空
