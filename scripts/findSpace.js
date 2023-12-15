@@ -218,16 +218,16 @@ function btnStylingTogglerToDarkM(activeBtn, closeBtn1, closeBtn2) {
 }
 
 //將取得的本地端值加入saveLikePark
-// console跳錯先關起來
-/* const parsedLocalParkData = () => {
-    if(localParkData === ''){
+const parsedLocalParkData = () => {
+    if(localParkData === null){
         saveLikePark = [];
     }else{
+        console.log('執行')
         let ss = localParkData.split(',').map(parseFloat);
         console.log(ss)
         saveLikePark.push(...ss)
     }
-} */
+} 
 let optionPark = '';
 // export default optionPark;
 
@@ -238,6 +238,7 @@ axios.get(Url + `/600/users/${usersId}`, {
         },
     })
     .then((response) => {
+        parsedLocalParkData()
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
             addLikeParkToLocal(e)
@@ -443,6 +444,7 @@ const getMapDetail = (a,b,c,d,e) => {
 const render = (aa) => {
     let str = '';
     aa.forEach((item) => {
+        let additionalClass = (item.parkName === "路邊停車格") ? 'd-none' : '';
         let content = `<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
@@ -459,7 +461,7 @@ const render = (aa) => {
             </div>
             <div class="d-flex justify-content-end pt-2">
                 <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${item.parkName}" data-bs-show-type="${item.type}" data-bs-show-address="${item.address}" data-bs-show-space="${item.space}" data-bs-show-in="${item.height}" data-parkId="${item.id}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2" data-parkId="${item.id}">長期方案</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 ${additionalClass}" id="longBtn" data-parkId="${item.id}">長期方案</button>
             </div>
         </div>
     </div>`
@@ -468,6 +470,11 @@ const render = (aa) => {
     showMapCard.innerHTML = str
     // console.log(saveLikePark)
     plusLike(aa)
+}
+const hideBtn = (aa) => {
+    if(aa.parkName === '路邊停車格'){
+        longBtn
+    }
 }
 const getLikePark = (aa, bb) => {
     aa.forEach((item) => {
