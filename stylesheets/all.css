@@ -12851,7 +12851,8 @@ li .menu-m:hover::before {
   }
   .sticky #btn span {
     opacity: 1;
-    transition-delay: 0.3s; /* 加入延遲效果 */
+    transition-delay: 0.3s;
+    /* 加入延遲效果 */
   }
   .sticky #btn1,
   .sticky #btn2,
@@ -13527,7 +13528,8 @@ li .menu-m:hover::before {
   border-radius: 12px;
 }
 
-.modal-header, .modal-body {
+.modal-header,
+.modal-body {
   padding: 28px;
 }
 
@@ -13877,19 +13879,6 @@ li .menu-m:hover::before {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  /* .btn-payment {
-    color: #fff;
-    transition: 0.3s ease-in;
-    transition-property: background;
-    box-shadow: 0 18px 14px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-submit {
-    color: hsl(226, 20%, 71%);
-    background-color: #fff;
-    transition: 0.3s ease-in;
-    transition-property: color;
-  } */
 }
 
 @media (min-width: 1440px) {
@@ -14003,15 +13992,6 @@ li .menu-m:hover::before {
 
 .plan-container ul :nth-child(odd) {
   background-color: rgb(240, 240, 240);
-}
-
-/* button:disabled {
-  padding: 5px 30px;
-  border: 2px solid rgb(230, 230, 230);
-  color: rgb(230, 230, 230);
-} */
-body {
-  overflow-x: hidden;
 }
 
 header {

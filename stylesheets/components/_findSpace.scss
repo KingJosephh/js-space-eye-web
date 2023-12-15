@@ -1,25 +1,27 @@
 $display-none: none;
 
-.findSpace-main-container{
+.findSpace-main-container {
   margin-top: 40px;
   margin-bottom: 140px;
+
   @media screen and (max-width: 768px) {
     margin-top: 30px;
     margin-bottom: 80px;
   }
+
   // 停車環境
-  .parkingCategory-container{
+  .parkingCategory-container {
     position: absolute;
     top: 0;
     right: 0;
     width: fit-content;
+
     .button-group {
-      // background: rgba(31, 31, 31, 0.4);
-      // background: rgba(255, 255, 255, 0.8);
-      background: rgb(31, 31, 31,0.8);
+      background: rgb(31, 31, 31, 0.8);
       border-radius: 18px;
       gap: 10px;
-      button{
+
+      button {
         z-index: 2;
         text-wrap: nowrap;
       }
@@ -27,28 +29,32 @@ $display-none: none;
   }
 }
 
-// 停車種類按鈕切換用
-.color-white{
+// 停車種類按鈕切換用 
+.color-white {
   color: #fff !important;
 }
 
-.card{
+.card {
   background: #fff;
   border-radius: 12px;
 }
-.modal-header,.modal-body{
+
+.modal-header,
+.modal-body {
   padding: 28px;
 }
-.modal-footer{
+
+.modal-footer {
   padding: 16px 28px;
 }
-.modal-body{
+
+.modal-body {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-#btnX{
+#btnX {
   height: 28px;
   width: 26px;
 }
@@ -101,33 +107,36 @@ $display-none: none;
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
   width: 100%;
-  z-index: 1000;//2100
+  z-index: 1000; //2100
   justify-content: center;
 }
 
-.mobile-search-container{
+.mobile-search-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 14px;
-  
-  .mobile-search-container-main{
+
+  .mobile-search-container-main {
     background: #fff;
     display: flex;
     flex-direction: column;
     gap: 28px;
     border-radius: 24px;
     padding: 30px 12px;
-    .interface-main-select{
+
+    .interface-main-select {
       gap: 12px;
       padding-top: 8px;
     }
+
     .interface-main-type,
-    .interface-main-available{
+    .interface-main-available {
       gap: 8px;
     }
   }
 }
+
 // 確認送出按鈕動畫
 .jumping-button {
   display: inline-block;
@@ -135,8 +144,9 @@ $display-none: none;
   font-size: 16px;
   animation: jump 1s infinite alternate ease-out;
   box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
-  &:focus{
-  box-shadow: 2px 7px 10px rgba(0, 0, 0, .2);
+
+  &:focus {
+    box-shadow: 2px 7px 10px rgba(0, 0, 0, .2);
   }
 }
 
@@ -157,11 +167,13 @@ $display-none: none;
 
 .interface {
   padding-left: 18px;
+
   .button-search-container {
     width: fit-content;
     padding: 28px 0;
   }
-  .interface-main{
+
+  .interface-main {
     border-radius: 18px;
     overflow-y: scroll;
     background: #fff;
@@ -169,40 +181,47 @@ $display-none: none;
     height: 504px;
     gap: 12px;
     padding: 18px 0;
-    .content-to-hide-search{
+
+    .content-to-hide-search {
       display: flex;
       flex-direction: column;
       gap: 40px;
+
       .interface-main-select,
       .interface-main-type,
-      .interface-main-available{
+      .interface-main-available {
         gap: 12px;
       }
-      .interface-main-submitBtn{
+
+      .interface-main-submitBtn {
         margin-top: 28px;
       }
     }
-    .content-to-hide-showPark{
+
+    .content-to-hide-showPark {
       flex-direction: column;
       gap: 16px;
       padding: 12px;
-      .showPark-btns{
+
+      .showPark-btns {
         margin-top: 12px;
       }
     }
-    
+
   }
 
 }
 
-.searchBtn{
-  z-index: 1000;//2200
+.searchBtn {
+  z-index: 1000;
   right: 150px;
   top: 180px;
+
   @media screen and (max-width: 768px) {
     right: 130px;
     top: 150px;
   }
+
   @media screen and (max-width: 576px) {
     right: 30px;
     top: 130px;
@@ -210,6 +229,6 @@ $display-none: none;
 }
 
 // 調整手機版內容寬度
-.leaflet-popup-content{
+.leaflet-popup-content {
   width: 200px;
 }

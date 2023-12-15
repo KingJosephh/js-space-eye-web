@@ -1,33 +1,36 @@
-.payment-container{
+.payment-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
   .payment-method-container,
-  .payment-content-container{
+  .payment-content-container {
     background: #fff;
     border-radius: 10px;
     padding: 20px;
   }
-  
+
   // 付款方式
-  .payment-method-container{
+  .payment-method-container {
     display: flex;
     flex-direction: column;
-    .payment-title{
+
+    .payment-title {
       padding-bottom: 18px;
       margin-bottom: 0;
     }
+
     .payment-method-group {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       gap: 18px;
+
       @media screen and (max-width: 576px) {
         flex-direction: column;
       }
-  
+
       .btn-light {
         border: 1px solid #888;
       }
@@ -35,29 +38,31 @@
   }
 
   // 付款方式頁面
-  .payment-content-container{
-    
+  .payment-content-container {
+
     // 標題
     .payment-creditCard-info-title,
-    .payment-creditCard-announcement-title{
+    .payment-creditCard-announcement-title {
       font-weight: bold;
     }
   }
 
   // 信用卡
-  .payment-creditCard-container{
+  .payment-creditCard-container {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
     // 信用卡icon
     .payment-creditCards-img {
-        display: flex;
-        gap: 14px;
-    
-        img {
-          height: 26px;
-        }
+      display: flex;
+      gap: 14px;
+
+      img {
+        height: 26px;
+      }
     }
+
     // 信用卡圖示
     .payment-creditCard-pic-container {
       width: 100%;
@@ -306,12 +311,14 @@
         }
       }
     }
+
     .preload * {
       -webkit-transition: none !important;
       -moz-transition: none !important;
       -ms-transition: none !important;
       -o-transition: none !important;
     }
+
     // 信用卡資訊
     .payment-creditCard-input-container {
       display: grid;
@@ -320,6 +327,7 @@
       // grid-template-rows: 90px 90px 90px;
       grid-template-areas: "name name" "number number" "expiration security";
       max-width: 400px;
+
       .ccicon {
         height: 38px;
         position: absolute;
@@ -327,18 +335,23 @@
         top: calc(50% - 17px);
         width: 60px;
       }
-      .field-container:first-of-type{
+
+      .field-container:first-of-type {
         grid-area: name;
       }
+
       .field-container:nth-of-type(2) {
         grid-area: number;
       }
+
       .field-container:nth-of-type(3) {
         grid-area: expiration;
       }
+
       .field-container:nth-of-type(4) {
         grid-area: security;
       }
+
       .name,
       .cardnumber,
       .expirationdate,
@@ -351,14 +364,14 @@
         border: 1px solid #dcdcdc;
       }
     }
+
     // 公告事項說明
-    .payment-creditCard-info-container{
-  
-    }
+    .payment-creditCard-info-container {}
   }
+
   // 通用
   // 送出按鈕區
-  .checkout-btn-container{
+  .checkout-btn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -370,68 +383,77 @@
       gap: 12px;
     }
   }
-  .checkout-btn{
+
+  .checkout-btn {
     width: 160px;
   }
-  .alert-danger{
+
+  .alert-danger {
     color: red;
   }
-    
-  .Precautions-ul{
+
+  .Precautions-ul {
     padding: 0;
     margin: 0;
   }
+
   // ATM通用
-  .ATM-container{
+  .ATM-container {
     display: flex;
     flex-direction: column;
     gap: 24px;
   }
+
   // 超商代碼
-  .payment-supermarket-container{
+  .payment-supermarket-container {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    .payment-supermarket-logo-ul{
+
+    .payment-supermarket-logo-ul {
       display: flex;
       padding: 0;
       margin: 0;
       gap: 14px;
-      li img{
+
+      li img {
         height: 26px;
       }
     }
   }
+
   // 交易明細
-  .payment-supermarket-details-container{
+  .payment-supermarket-details-container {
     padding-top: 28px;
-    .payment-supermarket-details-msg{
+
+    .payment-supermarket-details-msg {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .payment-supermarket-details-info {
       background: #fff;
       padding: 20px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-top: 20px;
+
       .label-column {
         background-color: #f7f7f7;
         font-weight: bold;
         padding: 20px;
         font-size: 1.2em;
       }
-      
+
       .content-column {
         padding: 20px;
         font-size: 1.2em;
       }
-        
+
       .qr-image {
         width: 150px;
         height: auto;
       }
     }
   }
-  
 }

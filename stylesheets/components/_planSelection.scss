@@ -14,7 +14,7 @@
   padding: 20px;
 }
 
-.planSelection-mainContent-container{
+.planSelection-mainContent-container {
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -37,16 +37,17 @@
     border: 1px solid #ddd;
     padding: .35em;
   }
+
   th,
   td {
     padding: .625em;
     text-align: center;
   }
 
-  td{
+  td {
     background: #fff;
   }
-  
+
   th {
     font-size: .85em;
     letter-spacing: .1em;
@@ -115,6 +116,7 @@
   margin: auto;
   border-radius: 16px;
   background: var(--gray-04);
+
   @media screen and (max-width: 768px) {
     width: auto;
   }
@@ -136,12 +138,12 @@
   padding: 22px 0;
 }
 
-.plan-section-container{
+.plan-section-container {
   display: flex;
   flex-direction: column;
   gap: 18px;
   padding: 30px 30px;
-  
+
   .plan-section {
     background-color: #fff;
     display: flex;
@@ -149,7 +151,7 @@
     padding: 16px;
     border-radius: 12px;
     align-items: center;
-    
+
     .annual-plan p {
       color: var(--gray-02);
       font-weight: bold;
@@ -164,33 +166,21 @@
   align-items: center;
   gap: 20px;
   padding: 30px 30px;
-  button{
+
+  button {
     width: 160px;
   }
-  a{
+
+  a {
     color: var(--gray-01)
   }
 }
 
-.submit-btn-container{
+.submit-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
-
-  /* .btn-payment {
-    color: #fff;
-    transition: 0.3s ease-in;
-    transition-property: background;
-    box-shadow: 0 18px 14px 0px rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn-submit {
-    color: hsl(226, 20%, 71%);
-    background-color: #fff;
-    transition: 0.3s ease-in;
-    transition-property: color;
-  } */
 }
 
 @media (min-width: 1440px) {
@@ -228,9 +218,6 @@
     padding: 25px 25px;
   }
 
-  .container {
-  }
-
   .word-section p {
     margin: 0 18px;
   }
@@ -249,8 +236,8 @@
   justify-content: space-around;
   align-items: flex-end;
   max-width: 1500px;
-  // margin: auto;
   gap: 18px;
+
   .plan {
     text-align: center;
     border-radius: 8px;
@@ -263,27 +250,30 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
-  
+
     &:hover {
       cursor: pointer;
       box-shadow: 0 0 15px 5px rgba(0, 0, 0, .1);
     }
-  
+
     .plan-price {
       font-weight: bold;
     }
   }
+
   @media screen and (max-width: 992px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .plan{
-      width:100%;
+
+    .plan {
+      width: 100%;
       display: flex;
       flex-direction: row;
       max-width: 600px;
       justify-content: space-between;
-      .plan-container-title{
+
+      .plan-container-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -305,7 +295,7 @@
 .plan-active {
   border: 2px solid var(--gray-01);
   padding: 19px;
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1) ;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -322,9 +312,3 @@
 .plan-container ul :nth-child(odd) {
   background-color: rgb(240, 240, 240);
 }
-
-/* button:disabled {
-  padding: 5px 30px;
-  border: 2px solid rgb(230, 230, 230);
-  color: rgb(230, 230, 230);
-} */

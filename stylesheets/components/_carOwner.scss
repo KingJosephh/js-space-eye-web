@@ -24,6 +24,7 @@ $display-none: none;
     color: red;
     display: none;
 }
+
 // 用id取優先級太高會覆蓋掉樣式，先關起來
 /* #btn1,#btn2,#btn3,#btn4,#btn5,#btn6{
     color: rgb(2, 149, 0);
@@ -36,9 +37,9 @@ $display-none: none;
 
 #btn {
     -webkit-appearance: none;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, .3);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,.1);
+    border: 1px solid rgba(255, 255, 255, .1);
     border-radius: 32px;
     padding-bottom: 96%;
     position: absolute;
@@ -57,10 +58,10 @@ $display-none: none;
     //     // transform: scalex(0);
     //     // transition: .6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0s, .3s margin ease-in 0s;
     // }
-    
+
     // &:hover {
     //     border-color: rgba(255,255,255,.5);
-        
+
     //     span {
     //         margin: 10px auto;
     //     }
@@ -70,76 +71,75 @@ $display-none: none;
         // transition: transform 1s ease;
     }
 }
+
 // .BgShow {
 //     opacity: 0;
 //     transition: opacity 1s ease;
 // }
 @media (max-width: 1000px) {
     .sticky {
-            
-            // button {
-            //     transform: scale(1);
-            //     transition-delay: 0.6s;
-                
-            //     // span {
-            //     //     transform: scalex(1);
-            //     //     transition: .6s transform cubic-bezier(0.075, 0.82, 0.165, 1) .8s, .3s margin ease-in 0s;
-            //     // }
+
+        // button {
+        //     transform: scale(1);
+        //     transition-delay: 0.6s;
+
+        //     // span {
+        //     //     transform: scalex(1);
+        //     //     transition: .6s transform cubic-bezier(0.075, 0.82, 0.165, 1) .8s, .3s margin ease-in 0s;
+        //     // }
+        // }
+        #btn {
+            -webkit-appearance: none;
+            background: rgba(0, 0, 0, .3);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 32px;
+            padding-bottom: 0;
+            position: absolute;
+            left: 0;
+            width: 40%;
+            height: 60px;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+            // transform: scale(0);
+
+            // span {
+            //     width: 40%;
+            //     background: #fff;
+            //     height: 5px;
+            //     // display: block;
+            //     // margin: 5px auto;
+            //     // transform: scalex(0);
+            //     // transition: .6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0s, .3s margin ease-in 0s;
             // }
-            #btn {
-                -webkit-appearance: none;
-                background: rgba(0,0,0,.3);
-                backdrop-filter: blur(5px);
-                border: 1px solid rgba(255,255,255,.1);
-                border-radius: 32px;
-                padding-bottom: 0;
-                position: absolute;
-                left: 0;
-                width: 40%;
-                height: 60px;
-                outline: 0;
-                border: 0;
-                cursor: pointer;
-                transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
-                // transform: scale(0);
-            
-                // span {
-                //     width: 40%;
-                //     background: #fff;
-                //     height: 5px;
-                //     // display: block;
-                //     // margin: 5px auto;
-                //     // transform: scalex(0);
-                //     // transition: .6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0s, .3s margin ease-in 0s;
-                // }
-                
-                // &:hover {
-                //     border-color: rgba(255,255,255,.5);
-                    
-                //     span {
-                //         margin: 10px auto;
-                //     }
-                // }
-                span {
-                    opacity: 1;
-                    // transition: transform 1s ease;
-                    transition-delay: 0.3s; /* 加入延遲效果 */
-                }
-            }
-            
-            #btn1,
-            #btn2,
-            #btn3,
-            #btn4,
-            #btn5 { 
-                padding: 0;
-                opacity: 0;
-                display: none;
-                // letter-spacing: 0px;
-                // transform: scale(0.3);
+
+            // &:hover {
+            //     border-color: rgba(255,255,255,.5);
+
+            //     span {
+            //         margin: 10px auto;
+            //     }
+            // }
+            span {
+                opacity: 1;
+                // transition: transform 1s ease;
+                transition-delay: 0.3s;
+                /* 加入延遲效果 */
             }
         }
+
+        #btn1,
+        #btn2,
+        #btn3,
+        #btn4,
+        #btn5 {
+            padding: 0;
+            opacity: 0;
+            display: none;
+            // letter-spacing: 0px;
+            // transform: scale(0.3);
+        }
     }
-// .modal {
-//     z-index: 3000;
-// }
+}

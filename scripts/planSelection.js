@@ -2,8 +2,22 @@ const UrlWebType = 'https://space-eye-web-surver.onrender.com'
 const optionPark = localStorage.getItem('parkId');
 const detailsCard = document.querySelector('#detailsCard');
 let data = [];
+//愈約停車傳到付款葉面資料
 let getSpaceDetails = [];
+let getData = {}
+//預約停車傳到預約紀錄葉面資料
+let reserveData = {}
+let reserveDataAll = []
+let reserve = localStorage.getItem('reserveData')
+let reserveDataLocal = JSON.parse(reserve)
+//將本地端資料先放入reserveDataAll
+if(reserveDataLocal === null){
 
+}else{
+    for(let i = 0 ; i<reserveDataLocal.length ; i++){
+    reserveDataAll.push(reserveDataLocal[i])
+  }
+}
 // 辨識是否登入，未登入跳往'登入頁面'
 axios.get(Url + `/600/users/${usersId}`, {
     headers: {
@@ -93,8 +107,10 @@ function updateOrderSummary() {
 
       document.getElementById('entryTime').getElementsByTagName("span")[0].textContent = entryTimeText;
       document.getElementById('exitTime').getElementsByTagName("span")[0].textContent = exitTimeText;
-      localStorage.setItem("entryTime", entryTimeText)
-      localStorage.setItem("exitTime", exitTimeText)
+      localStorage.setItem("entryTime", entryTimeText)//使用在超商繳費明細資料
+      localStorage.setItem("exitTime", exitTimeText)//使用在超商繳費明細資料
+      getData.entryTime = entryTimeText
+      getData.exitTime = exitTimeText
     })
     .catch(error => {
       console.log("Error fetching data:", error);
@@ -111,17 +127,21 @@ function updatePlanSummary(planId) {
   const selectedPlan = document.getElementById(planId);
   const servalUrl = `/Pages/planSelection.html`;
 
-  const planText = `${selectedPlan.querySelector('[class="h4"]').textContent} - ${selectedPlan.querySelector('[class="plan-price"]').textContent}`;
+  const planText = `${selectedPlan.querySelector('[class="h4"]').textContent}`;
+  const planePrice = `${selectedPlan.querySelector('[class="plan-price"]').textContent}`
 
   axios.get(servalUrl, {
     params: {
       planId: planId,
-      planText: planText
+      planText: planText,
+      planePrice: planePrice
     }
   })
     .then(response => {
       document.querySelector('[data-orderSummaryPlan]').textContent = planText;
-      localStorage.setItem('chosePlan', planText);
+      localStorage.setItem('chosePlan', planText);//使用在超商繳費明細資料
+      getData.planText = planText
+      getData.planPrice = planePrice
     })
     .catch(error => {
       console.log("Error fetching data:", error);
@@ -135,9 +155,10 @@ const submitPlanBtn = document.querySelector("[data-submitPlan]");
 submitPlanBtn.addEventListener("click", function () {
   const entryDateValue = document.getElementById("entryDate").value;
   const exitDateValue = document.getElementById("exitDate").value;
-  const planSelected = document.querySelector('[class="plan plan-active"]');
+  // const planSelected = document.querySelector('[class="plan plan-active"]');
+  const reserveNum = generateReserveNumber();
 
-  console.log(planSelected);
+  // console.log(planSelected);
   if (!entryDateValue || !exitDateValue) {
     Swal.fire({
       title: "入場日期和離場日期未選擇",
@@ -153,11 +174,35 @@ submitPlanBtn.addEventListener("click", function () {
       timer: 1500
     });
   } else {
+    localStorage.setItem('plan' , JSON.stringify(getData))
+    localStorage.setItem('parkDetail' , JSON.stringify(getSpaceDetails))
+    reserveData.reserveId = reserveNum;
+    reserveData.getData = getData;
+    reserveData.getSpaceDetails = getSpaceDetails;
+    reserveDataAll.push(reserveData)
+    localStorage.setItem('reserveData' , JSON.stringify(reserveDataAll))
     showWatermark();
     return true;
   }
 })
 
+// 產出隨機訂單編號
+function generateReserveNumber() {
+  const timestamp = Date.now();
+  // 將時間轉為字串，只取前面的一部分作為訂單編號的前綴
+  const timePrefix = timestamp.toString().slice(0, 6);
+  // 定義可能的字符
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  // 訂單編號的長度
+  const reserveNumberLength = 4;
+  // 生成隨機訂單編號
+  let reserveNumber = timePrefix;
+  for (let i = 0;i < reserveNumberLength;i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    reserveNumber += characters.charAt(randomIndex);
+  }
+  return reserveNumber;
+}
 // 跳出訂單摘要
 function showWatermark() {
   document.querySelector(".watermark").style.display = "flex";
