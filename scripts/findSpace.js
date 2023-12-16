@@ -19,7 +19,6 @@ const modalFooter = document.querySelector('.modal-footer')
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map');
-const longTerm = document.querySelector('#longTerm')
 const reserve = document.querySelector('#reserve')
 const UrlWebType = 'https://space-eye-web-surver.onrender.com';
 const btnNumList = 1;
@@ -70,7 +69,7 @@ const dataToMap = () => {
         let marker;
         locatedX = dataDetail.location.latitude,
         locatedY = dataDetail.location.longitude
-        if (dataDetail.space === '0') {
+        if (dataDetail.space === '0' && dataDetail.parkName === "路邊停車格") {
             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
                 .bindPopup(`<div class="card">
         <div class="card-body">
@@ -88,11 +87,33 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <!-- <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button> -->
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 d-none">長期方案</button>
             </div>
         </div>
     </div>`);
-        } else if (dataDetail.space !== '0') {
+        }else if(dataDetail.space === '0' && dataDetail.parkName !== "路邊停車格"){
+            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon })
+                .bindPopup(`<div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <div class="h4 card-title">${dataDetail.parkName}</div>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+            </div>
+            <div class="row">
+                <div class="col-5">地址:</div>
+                <div class="col-7 ps-0">${dataDetail.address}</div>
+            </div>
+            <div class="row">
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7 ps-0">${dataDetail.space}</div>
+            </div>
+            <div class="d-flex justify-content-center pt-2">
+            <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
+            </div>
+        </div>
+    </div>`);
+        }else if (dataDetail.space !== '0' && dataDetail.parkName === "路邊停車格") {
             marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
                 .bindPopup(`<div class="card">
         <div class="card-body">
@@ -110,12 +131,36 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <!-- <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button> -->
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 d-none">長期方案</button>
+            </div>
+        </div>
+    </div>`);
+        } else if (dataDetail.space !== '0' && dataDetail.parkName !== "路邊停車格") {
+            marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon })
+                .bindPopup(`<div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <div class="h4 card-title">${dataDetail.parkName}</div>
+                <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+            </div>
+            <div class="row">
+                <div class="col-5">地址:</div>
+                <div class="col-7 ps-0">${dataDetail.address}</div>
+            </div>
+            <div class="row">
+                <div class="col-5">剩餘空位:</div>
+                <div class="col-7 ps-0">${dataDetail.space}</div>
+            </div>
+            <div class="d-flex justify-content-center pt-2">
+            <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
             </div>
         </div>
     </div>`);
             
         }
+        // const longTermBtn = marker.getElement().querySelector('#longTermBtn');
+        // longTermBtn.classList.toggle('d-none', dataDetail.parkName === "路邊停車格");
         markersLayer.addLayer(marker);
     }
     // console.log(locatedX, locatedY)
