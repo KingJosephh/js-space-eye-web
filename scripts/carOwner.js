@@ -30,6 +30,8 @@ let saveLikePark = [];
 const entryTimeHeader = localStorage.getItem("entryTime");
 const exitTimeHeader = localStorage.getItem("exitTime");
 const chosePlanHeader = localStorage.getItem("chosePlan");
+let locatedX = 24.162139;
+let locatedY = 120.647021;
 
 // 將這些時間設置到表頭的相應元素中
 // document.getElementById("entryTimeHeader").textContent = `${entryTimeHeader}`;
@@ -386,8 +388,29 @@ const dataToMap = (aa) => {
     let marker;
     locatedX = dataDetail.location.latitude
     locatedY = dataDetail.location.longitude
-    if (dataDetail.space === '0') {
-      console.log('執行')
+    if (dataDetail.space === '0' && dataDetail.parkName === "路邊停車格") {
+      marker = L.marker([locatedX, locatedY], { icon: greyIcon })
+        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+      <div class="card-body">
+          <div class="d-flex justify-content-between">
+              <h5 class="card-title">${dataDetail.parkName}</h5>
+              <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+          </div>
+          <div class="row">
+              <div class="col-5">地址:</div>
+              <div class="col-7">${dataDetail.address}</div>
+          </div>
+          <div class="row">
+              <div class="col-5">剩餘空位:</div>
+              <div class="col-7">${dataDetail.space}</div>
+          </div>
+          <div class="d-flex justify-content-end">
+          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${dataDetail.parkName}" data-bs-save-type="${dataDetail.type}" data-bs-save-address="${dataDetail.address}" data-bs-save-space="${dataDetail.space}" data-bs-save-in="${dataDetail.height}">詳細資料</button>
+              <button type="button" class="btn btn-sm btn-light-gray px-3 py-1 d-none">長期方案</button>
+          </div>
+      </div>
+  </div>`);
+    }else if(dataDetail.space === '0' && dataDetail.parkName !== "路邊停車格") {
       marker = L.marker([locatedX, locatedY], { icon: greyIcon })
         .bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
@@ -404,12 +427,12 @@ const dataToMap = (aa) => {
               <div class="col-7">${dataDetail.space}</div>
           </div>
           <div class="d-flex justify-content-between">
-          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${dataDetail.parkName}" data-bs-save-type="${dataDetail.type}" data-bs-save-address="${dataDetail.address}" data-bs-save-space="${dataDetail.space}" data-bs-save-in="${dataDetail.height}">詳細資料</button>
               <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
           </div>
       </div>
   </div>`);
-    } else if (dataDetail.space !== '0') {
+    } else if (dataDetail.space !== '0' && dataDetail.parkName === "路邊停車格") {
       console.log('執行')
       marker = L.marker([locatedX, locatedY], { icon: greenIcon })
         .bindPopup(`<div class="card mt-3" style="width: 16rem;">
@@ -427,7 +450,30 @@ const dataToMap = (aa) => {
               <div class="col-7">${dataDetail.space}</div>
           </div>
           <div class="d-flex justify-content-between">
-          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
+          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${dataDetail.parkName}" data-bs-save-type="${dataDetail.type}" data-bs-save-address="${dataDetail.address}" data-bs-save-space="${dataDetail.space}" data-bs-save-in="${dataDetail.height}">詳細資料</button>
+              <button type="button" class="btn btn-sm btn-light-gray px-3 py-1 d-none">長期方案</button>
+          </div>
+      </div>
+  </div>`);
+    } else if (dataDetail.space !== '0' && dataDetail.parkName !== "路邊停車格") {
+      console.log('執行')
+      marker = L.marker([locatedX, locatedY], { icon: greenIcon })
+        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+      <div class="card-body">
+          <div class="d-flex justify-content-between">
+              <h5 class="card-title">${dataDetail.parkName}</h5>
+              <i class="save-like bi bi-suit-heart-fill" data-some-value="${dataDetail.location.latitude}"></i>
+          </div>
+          <div class="row">
+              <div class="col-5">地址:</div>
+              <div class="col-7">${dataDetail.address}</div>
+          </div>
+          <div class="row">
+              <div class="col-5">剩餘空位:</div>
+              <div class="col-7">${dataDetail.space}</div>
+          </div>
+          <div class="d-flex justify-content-between">
+          <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${dataDetail.parkName}" data-bs-save-type="${dataDetail.type}" data-bs-save-address="${dataDetail.address}" data-bs-save-space="${dataDetail.space}" data-bs-save-in="${dataDetail.height}">詳細資料</button>
               <button type="button" class="btn btn-sm btn-light-gray px-3 py-1">長期方案</button>
           </div>
       </div>
@@ -435,7 +481,6 @@ const dataToMap = (aa) => {
     }
     markersLayer.addLayer(marker);
   }
-  // console.log(locatedX, locatedY)
 }
 //將取得的本地端值加入saveLikePark
 const parsedLocalParkData = () => {
@@ -474,6 +519,7 @@ const getLikePark = (aa, bb) => {
   console.log(mapDataFilterA)
   //渲染我的收藏至畫面
   mapDataFilterA.forEach((item) => {
+    let additionalClass = (item.parkName === "路邊停車格") ? 'd-none' : '';
     let content = `<div class="card mt-3" style="width: 16rem;">
         <div class="card-body">
             <div class="d-flex justify-content-between">
@@ -488,9 +534,9 @@ const getLikePark = (aa, bb) => {
                 <div class="col-5">剩餘空位:</div>
                 <div class="col-7">${item.space}</div>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-end">
             <button id="detailBtn" type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-bs-toggle="modal" data-bs-target="#saveModel" data-bs-save-park="${item.parkName}" data-bs-save-type="${item.type}" data-bs-save-address="${item.address}" data-bs-save-space="${item.space}" data-bs-save-in="${item.height}" data-btnId="${item.location.latitude}">詳細資料</button>
-                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1" data-btnId="${item.location.latitude}">長期方案</button>
+                <button type="button" class="btn btn-sm btn-light-gray px-3 py-1 ${additionalClass}" data-btnId="${item.location.latitude}">長期方案</button>
             </div>
         </div>
     </div>`
