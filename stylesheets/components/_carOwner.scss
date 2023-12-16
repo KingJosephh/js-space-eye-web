@@ -62,7 +62,6 @@ $display-none: none;
     position: relative;
     background: #fff;
     border-bottom-right-radius: 40px;
-    z-index: -1;
     &::after {
         content: '';
         background: #fff;
@@ -80,12 +79,13 @@ $display-none: none;
             left: -1200px;
         }
     }
-    .btn-light-gray {
-        border-radius: 48px;
-    }
     @media screen and (max-width: 991px) {
         border-top-right-radius: 40px;
     }
+}
+
+.btn-light-gray {
+    border-radius: 48px;
 }
 
 .content-to-hide-save,
@@ -111,6 +111,9 @@ $display-none: none;
             top: 0;
             left: -1200px;
         }
+        @media screen and (max-width: 768px) {
+            left: -1400px;
+        }
     }
     @media screen and (max-width: 991px) {
         border-top-right-radius: 40px;
@@ -131,9 +134,9 @@ $display-none: none;
     padding-right: 30px;
     &::after {
         height: 550px;
-    @media screen and (max-width: 991px) {
+        @media screen and (max-width: 991px) {
         height: 500px;
-    }
+        }
     }
     td{
         background: #fff;
@@ -152,6 +155,11 @@ $display-none: none;
         top: 0;
         &::after {
             height: 498px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &::after {
+            height: 530px;
         }
     }
 }

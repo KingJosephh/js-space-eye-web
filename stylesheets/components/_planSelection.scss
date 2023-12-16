@@ -19,50 +19,58 @@
   flex-direction: column;
   gap: 60px;
   padding: 60px 0;
+  h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    img{
+      width: fit-content;
+    }
+  }
 }
 
 #detailsCard {
-  border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
   justify-content: center;
   text-align: center;
+  border-radius: 18px;
+  background: #fff;
 
   caption {
     margin: .5em 0 .75em;
   }
 
+  thead{
+    border-radius: 24px;
+    border-bottom: 2px solid var(--gray-04);
+  }
+
   tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
     padding: .35em;
   }
 
   th,
   td {
-    padding: .625em;
+    padding: 10px;
     text-align: center;
   }
-
-  td {
-    background: #fff;
-  }
-
-  th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
 }
+
 
 #reservationForm {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.form-input {
-  margin-left: 10px;
+  gap: 10px;
+  .form-input{
+    background: inherit;
+    border: 2px solid var(--gray-03);
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
 }
 
 .search {
@@ -181,6 +189,9 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
+  button{
+    padding: 16px 34px;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -240,8 +251,7 @@
 
   .plan {
     text-align: center;
-    border-radius: 8px;
-    background: #fff;
+    border-radius: 18px;
     padding: 20px;
     transition: all .2s;
     width: 33.33%;
@@ -250,6 +260,7 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
+    box-shadow: 0 0 3px rgba(31,31,31,.5);
 
     &:hover {
       cursor: pointer;
@@ -258,6 +269,14 @@
 
     .plan-price {
       font-weight: bold;
+    }
+
+    .checkIcon{
+      color: var(--gray-01);
+      background: var(--brand-01);
+      padding: 5px;
+      border-radius: 50%;
+      margin-right: 4px;
     }
   }
 
@@ -296,7 +315,15 @@
   border: 2px solid var(--gray-01);
   padding: 19px;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
-
+  // background: #fff;
+  background: var(--gray-01);
+  color: #fff ; 
+  h4{
+    color: var(--brand-01);
+  }
+  .plan-price{
+    color: #fff;
+  }
 }
 
 .plan-container ul {
@@ -309,6 +336,6 @@
   min-height: 22px;
 }
 
-.plan-container ul :nth-child(odd) {
-  background-color: rgb(240, 240, 240);
-}
+// .plan-container ul :nth-child(odd) {
+//   background-color: rgb(240, 240, 240);
+// }

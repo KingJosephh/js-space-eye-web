@@ -12846,7 +12846,6 @@ li .menu-m:hover::before {
   position: relative;
   background: #fff;
   border-bottom-right-radius: 40px;
-  z-index: -1;
 }
 .content-to-hide-owner::after {
   content: "";
@@ -12867,13 +12866,14 @@ li .menu-m:hover::before {
     left: -1200px;
   }
 }
-.content-to-hide-owner .btn-light-gray {
-  border-radius: 48px;
-}
 @media screen and (max-width: 991px) {
   .content-to-hide-owner {
     border-top-right-radius: 40px;
   }
+}
+
+.btn-light-gray {
+  border-radius: 48px;
 }
 
 .content-to-hide-save,
@@ -12907,6 +12907,14 @@ li .menu-m:hover::before {
   .content-to-hide-storage::after {
     top: 0;
     left: -1200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-to-hide-save::after,
+  .content-to-hide-trading-history::after,
+  .content-to-hide-appointment::after,
+  .content-to-hide-storage::after {
+    left: -1400px;
   }
 }
 @media screen and (max-width: 991px) {
@@ -12961,6 +12969,11 @@ li .menu-m:hover::before {
   }
   .content-to-hide-storage::after {
     height: 498px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-to-hide-storage::after {
+    height: 530px;
   }
 }
 
@@ -13903,44 +13916,53 @@ li .menu-m:hover::before {
   gap: 60px;
   padding: 60px 0;
 }
+.planSelection-mainContent-container h1, .planSelection-mainContent-container .h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+.planSelection-mainContent-container h1 img, .planSelection-mainContent-container .h1 img {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 
 #detailsCard {
-  border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
   justify-content: center;
   text-align: center;
+  border-radius: 18px;
+  background: #fff;
 }
 #detailsCard caption {
   margin: 0.5em 0 0.75em;
 }
+#detailsCard thead {
+  border-radius: 24px;
+  border-bottom: 2px solid var(--gray-04);
+}
 #detailsCard tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
   padding: 0.35em;
 }
 #detailsCard th,
 #detailsCard td {
-  padding: 0.625em;
+  padding: 10px;
   text-align: center;
-}
-#detailsCard td {
-  background: #fff;
-}
-#detailsCard th {
-  font-size: 0.85em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 #reservationForm {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
-
-.form-input {
-  margin-left: 10px;
+#reservationForm .form-input {
+  background: inherit;
+  border: 2px solid var(--gray-03);
+  padding: 6px 8px;
+  border-radius: 12px;
 }
 
 .search {
@@ -14055,6 +14077,9 @@ li .menu-m:hover::before {
   align-items: center;
   gap: 24px;
 }
+.submit-btn-container button {
+  padding: 16px 34px;
+}
 
 @media (min-width: 1440px) {
   .main-container {
@@ -14103,8 +14128,7 @@ li .menu-m:hover::before {
 }
 .plan-container .plan {
   text-align: center;
-  border-radius: 8px;
-  background: #fff;
+  border-radius: 18px;
   padding: 20px;
   transition: all 0.2s;
   width: 33.33%;
@@ -14113,6 +14137,7 @@ li .menu-m:hover::before {
   display: flex;
   flex-direction: column;
   gap: 28px;
+  box-shadow: 0 0 3px rgba(31, 31, 31, 0.5);
 }
 .plan-container .plan:hover {
   cursor: pointer;
@@ -14120,6 +14145,13 @@ li .menu-m:hover::before {
 }
 .plan-container .plan .plan-price {
   font-weight: bold;
+}
+.plan-container .plan .checkIcon {
+  color: var(--gray-01);
+  background: var(--brand-01);
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 4px;
 }
 @media screen and (max-width: 992px) {
   .plan-container {
@@ -14153,6 +14185,14 @@ li .menu-m:hover::before {
   border: 2px solid var(--gray-01);
   padding: 19px;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+  background: var(--gray-01);
+  color: #fff;
+}
+.plan-active h4, .plan-active .h4 {
+  color: var(--brand-01);
+}
+.plan-active .plan-price {
+  color: #fff;
 }
 
 .plan-container ul {
@@ -14163,10 +14203,6 @@ li .menu-m:hover::before {
 .plan-container li {
   padding: 10px;
   min-height: 22px;
-}
-
-.plan-container ul :nth-child(odd) {
-  background-color: rgb(240, 240, 240);
 }
 
 header {

@@ -127,8 +127,8 @@ function updatePlanSummary(planId) {
   const selectedPlan = document.getElementById(planId);
   const servalUrl = `/Pages/planSelection.html`;
 
-  const planText = `${selectedPlan.querySelector('[class="h4"]').textContent}`;
-  const planePrice = `${selectedPlan.querySelector('[class="plan-price"]').textContent}`
+  const planText = `${selectedPlan.querySelector('.h4').textContent}`;
+  const planePrice = `${selectedPlan.querySelector('.plan-price').textContent}`
 
   axios.get(servalUrl, {
     params: {

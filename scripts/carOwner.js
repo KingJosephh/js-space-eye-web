@@ -223,17 +223,17 @@ deleteAppointmentModel.addEventListener('show.bs.modal', function (p) {
   const text = deleteAppointmentModel.querySelector('#deleteReserveText')
   text.textContent = getAppointment
 })
-//預約紀錄提示框
-const storageModel = document.querySelector('#storageModel')
-storageModel.addEventListener('show.bs.modal', function (event) {
-  const UnitValue = document.querySelector('#unitId').value.trim()
-  const AmountValue = document.querySelector('#amountId').value.trim()
-  const storageButton = event.relatedTarget
-  const unit = storageModel.querySelector('#unit')
-  const amount = storageModel.querySelector('#amount')
-  unit.textContent = UnitValue
-  amount.textContent = AmountValue
-})
+//儲值專區提示框
+// const storageModel = document.querySelector('#storageModel')
+// storageModel.addEventListener('show.bs.modal', function (event) {
+//   const UnitValue = document.querySelector('#unitId').value.trim()
+//   const AmountValue = document.querySelector('#amountId').value.trim()
+//   const storageButton = event.relatedTarget
+//   const unit = storageModel.querySelector('#unit')
+//   const amount = storageModel.querySelector('#amount')
+//   unit.textContent = UnitValue
+//   amount.textContent = AmountValue
+// })
 //更改密碼按鈕監聽
 getNewPassword.addEventListener('click', (e) => {
   let passwordV = '';
@@ -324,7 +324,7 @@ const getMemberData = (aa) => {
         <div class="changePassWord d-flex justify-content-between mb-4">
             <label for="inputPassword" class="col-sm-4 col-form-label">信用卡</label>
             <div class="col col-sm-8 d-flex align-items-center">
-                <label for="" class=""><a href="" class="fw-bold text-decoration-none ps-2">新增信用卡</a></label>
+                <label for="" class=""><a href="#" class="fw-bold text-decoration-none ps-2">新增信用卡</a></label>
             </div>
       </div>
       <div class="row g-3 d-flex justify-content-between mb-4">
@@ -651,4 +651,20 @@ const modalBtnContainer = document.querySelector('#modalBtnContainer');
 modalBtnContainer.addEventListener('click',e => {
   e.preventDefault();
   window.location.href='planSelection.html';
+})
+
+// 儲值專區
+const storageCheckoutBtn = document.querySelector('#storageCheckout');
+const storageCheckoutCancelBtn = document.querySelector('#storageCheckoutCancel');
+storageCheckoutBtn.addEventListener('click', e => {
+  e.preventDefault();
+  Swal.fire({
+    icon: "warning",
+    title: "尚未開放儲值功能",
+    timer: 1500
+  });
+  // const amount = document.querySelector('#amountId');
+  // console.log(amount.value);
+
+  // window.location.href = 'payment.html';
 })

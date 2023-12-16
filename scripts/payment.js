@@ -7,7 +7,7 @@ const order = localStorage.getItem('orderDetail')
 const orderDetailLocal = JSON.parse(order)
 let orderDetail = {}
 let orderDetailAll = []
-console.log(planData)
+// console.log(planData)
 //將本地端交易明細抓下來放入orderDetailAll
 if(orderDetailLocal === null){
 
@@ -21,8 +21,8 @@ const paymentMethods = document.querySelectorAll('.payment-method-group');
 paymentMethods.forEach(method => {
   method.addEventListener('click',e => {
     nowPageId = e.target.dataset.page;
+    if (nowPageId === undefined)return;
     pageChange(e.target.dataset.page);
-    console.log(nowPageId)
     if (nowPageId === 'page4'){
       supermarketDetails();
     }

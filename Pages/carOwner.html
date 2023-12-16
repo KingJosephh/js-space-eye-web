@@ -112,8 +112,8 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id="getNewPass">Send message</button>
+                            <button type="button" class="btn btn-light-gray px-4" data-bs-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-light-solid-m px-4" id="getNewPass">儲存</button>
                         </div>
                     </div>
                 </div>
@@ -123,8 +123,8 @@
                     <div class="col-lg-8 col p-0 me-4 me-lg-0">
                         <div class="row d-flex justify-content-end position-relative"
                             style="z-index: 2000;">
-                            <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;">
-                                <div class="button-group d-flex justify-content-evenly color-tran-gray py-2">
+                            <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;width: fit-content;">
+                                <div class="button-group d-flex justify-content-evenly color-tran-gray p-2" style="gap: 10px">
                                     <!-- btn-bg-move-dad  -->
                                     <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0"
                                         style="z-index: 2;" data-num="1" value="C01">路邊車格</button>
@@ -506,7 +506,7 @@
                             <div class="h2">剩餘金額:</div>
                         </div>
                         <div class="col-4">
-                            <div class="h2">1125</div>
+                            <div class="h2">150</div>
                         </div>
                     </div>
                 </div>
@@ -518,9 +518,9 @@
                                 <select class="form-select form-select-md mb-3 py-1"
                                     aria-label=".form-select-lg example" id="unitId">
                                     <option class="text-5" value="TWD">TWD</option>
-                                    <option value="USD">USD</option>
+                                    <!-- <option value="USD">USD</option>
                                     <option value="CNY">CNY</option>
-                                    <option value="HKD">HKD</option>
+                                    <option value="HKD">HKD</option> -->
                                 </select>
                                 <div class="col-8 ms-3">
                                     <input class="form-control bg-white py-1" type="number" id="amountId">
@@ -531,13 +531,14 @@
                 </div>
                 <div class="row">
                     <div class="col d-flex flex-row-reverse" style="margin-top: 100px;">
-                        <button type="button" class="btn btn-light-solid-m mx-3 px-5" data-bs-toggle="modal"
-                            data-bs-target="#storageModel">確認送出</button>
-                        <button type="button" class="btn btn-light-gray mx-3 px-5">取消</button>
+                        <!-- <button type="button" class="btn btn-light-solid-m mx-3 px-5" data-bs-toggle="modal"
+                            data-bs-target="#storageModel">確認送出</button> -->
+                        <button type="button" class="btn btn-light-solid-m mx-3 px-5" id="storageCheckout">前往結帳</button>
+                        <button type="button" class="btn btn-light-gray mx-3 px-5" id="storageCheckoutCancel">取消</button>
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="storageModel" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <!-- <div class="modal fade" id="storageModel" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -563,10 +564,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
