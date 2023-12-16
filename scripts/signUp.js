@@ -23,7 +23,7 @@ function signUp(a, b, c, d) {
     // 註冊成功提示
     Swal.fire({
       icon: "success",
-      title: "登入成功",
+      title: "註冊成功",
       showConfirmButton: false,
       timer: 1500
     }).then(res => {
