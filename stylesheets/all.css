@@ -13034,6 +13034,11 @@ li .menu-m:hover::before {
   }
 }
 
+.color-tran-gray {
+  background: rgba(31, 31, 31, 0.8);
+  border-radius: 18px;
+}
+
 .payment-container {
   padding: 20px;
   display: flex;

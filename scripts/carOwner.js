@@ -85,53 +85,55 @@ let grayBtnText = '車主專區'
 //按鈕監聽
 btn1.addEventListener('click', (e) => {
   grayBtnText = e.target.textContent
-  changeText()
+  changeText();
   getNum(btn1);
   showContent(btn1);
   btnStylingTogglerToLightL(btn1, btn2, btn3, btn4, btn5);
-  ctrBtnBg()
+  ctrBtnBg();
 });
-btn2.addEventListener('click', (e) => { 
-  grayBtnText = e.target.textContent
-  changeText()
+btn2.addEventListener('click', (e) => {
+  grayBtnText = e.target.textContent;
+  changeText();
   getNum(btn2);
   showContent(btn2);
   btnStylingTogglerToLightL(btn2, btn1, btn3, btn4, btn5);
-  ctrBtnBg()
+  ctrBtnBg();
 });
 btn3.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent
-  changeText()
+  grayBtnText = e.target.textContent;
+  changeText();
   getNum(btn3);
   showContent(btn3);
   btnStylingTogglerToLightL(btn3, btn2, btn1, btn4, btn5);
-  ctrBtnBg()
+  ctrBtnBg();
 });
 btn4.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent
-  changeText()
+  grayBtnText = e.target.textContent;
+  changeText();
   getNum(btn4);
   showContent(btn4);
   btnStylingTogglerToLightL(btn4, btn2, btn3, btn1, btn5);
-  ctrBtnBg()
+  ctrBtnBg();
 });
 btn5.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent
-  changeText()
+  grayBtnText = e.target.textContent;
+  changeText();
   getNum(btn5);
   showContent(btn5);
   btnStylingTogglerToLightL(btn5, btn2, btn3, btn4, btn1);
-  ctrBtnBg()
+  ctrBtnBg();
 });
 btn11.addEventListener('click', () => {
-  getParkValue = btn11.value
-  getLikePark(saveLikePark, getParkValue)
+  getParkValue = btn11.value;
+  getLikePark(saveLikePark, getParkValue);
+  btnStylingTogglerToLightM(btn11, btn12);
 })
 btn12.addEventListener('click', () => {
-  getParkValue = btn12.value
-  getLikePark(saveLikePark, getParkValue)
+  getParkValue = btn12.value;
+  getLikePark(saveLikePark, getParkValue);
+  btnStylingTogglerToLightM(btn12, btn11);
 })
-var windowWidth = window.innerWidth
+var windowWidth = window.innerWidth;
 btn.addEventListener('click', function () {
   if (btnList.classList.contains('sticky')) {
     btnList.classList.remove('sticky');
@@ -139,7 +141,7 @@ btn.addEventListener('click', function () {
 });
 
 const changeText = () => {
-  change.innerHTML = grayBtnText
+  change.innerHTML = grayBtnText;
 }
 const ctrBtnBg = () => {
   btnList.classList.add('sticky');
@@ -148,7 +150,7 @@ window.addEventListener('resize', function () {
   var windowWidth = window.innerWidth
   if (windowWidth < 780) {
     btnList.classList.add('sticky');
-  }else if(windowWidth > 780){
+  } else if (windowWidth > 780) {
     btnList.classList.remove('sticky');
   }
 });
@@ -266,7 +268,7 @@ axios.get(Url + `/600/users/${usersId}`, {
   headers: {
     Authorization: `Bearer ${token}`,
   },
-  })
+})
   .then((response) => {
     let memberData = response.data
     getMemberData(memberData)
@@ -353,7 +355,7 @@ const getMemberData = (aa) => {
 var map = L.map('map').setView([24.162139, 120.647021], 11);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 var greenIcon = new L.Icon({
@@ -379,15 +381,15 @@ var markersLayer = L.layerGroup().addTo(map);
 
 const dataToMap = (aa) => {
   markersLayer.clearLayers();
-  for (let i = 0; i < aa.length; i++) {
-      let dataDetail = aa[i]
-      let marker;
-      locatedX = dataDetail.location.latitude
-      locatedY = dataDetail.location.longitude
-      if (dataDetail.space === '0') {
-        console.log('執行')
-          marker = L.marker([locatedX, locatedY], { icon: greyIcon })
-              .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+  for (let i = 0;i < aa.length;i++) {
+    let dataDetail = aa[i]
+    let marker;
+    locatedX = dataDetail.location.latitude
+    locatedY = dataDetail.location.longitude
+    if (dataDetail.space === '0') {
+      console.log('執行')
+      marker = L.marker([locatedX, locatedY], { icon: greyIcon })
+        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
           <div class="d-flex justify-content-between">
               <h5 class="card-title">${dataDetail.parkName}</h5>
@@ -407,10 +409,10 @@ const dataToMap = (aa) => {
           </div>
       </div>
   </div>`);
-      } else if (dataDetail.space !== '0') {
-        console.log('執行')
-          marker = L.marker([locatedX, locatedY], { icon: greenIcon })
-              .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+    } else if (dataDetail.space !== '0') {
+      console.log('執行')
+      marker = L.marker([locatedX, locatedY], { icon: greenIcon })
+        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
           <div class="d-flex justify-content-between">
               <h5 class="card-title">${dataDetail.parkName}</h5>
@@ -430,8 +432,8 @@ const dataToMap = (aa) => {
           </div>
       </div>
   </div>`);
-      }
-      markersLayer.addLayer(marker);
+    }
+    markersLayer.addLayer(marker);
   }
   // console.log(locatedX, locatedY)
 }
@@ -510,18 +512,18 @@ showMapCard.addEventListener('click', (e) => {
 const plusLike = (aa) => {
   const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
   aa.forEach((item) => {
-      let locatedId = item.location.latitude;
-      // console.log(locatedId)
-      for (let i = 0; i < saveLikePark.length; i++) {
-          if (locatedId === saveLikePark[i]) {
-              let saveLikeElement = saveLikePark[i];
-              for (let x = 0; x < saveLikes.length; x++) {
-                  if (saveLikeElement.toString() === saveLikes[x].getAttribute('data-some-value')) {
-                      saveLikes[x].classList.add('bi-suit-heart-broke');
-                  }
-              }
+    let locatedId = item.location.latitude;
+    // console.log(locatedId)
+    for (let i = 0;i < saveLikePark.length;i++) {
+      if (locatedId === saveLikePark[i]) {
+        let saveLikeElement = saveLikePark[i];
+        for (let x = 0;x < saveLikes.length;x++) {
+          if (saveLikeElement.toString() === saveLikes[x].getAttribute('data-some-value')) {
+            saveLikes[x].classList.add('bi-suit-heart-broke');
           }
+        }
       }
+    }
   });
 };
 //刪除收藏停車場
@@ -539,11 +541,11 @@ const orderDetail = JSON.parse(order)
 const tradingHistory = document.querySelector('#tradingHistory')
 
 const showOrderDeal = (aa) => {
-  let pay ;
+  let pay;
   let str = ''
-  aa.forEach(item  => {
+  aa.forEach(item => {
     pay = item.paymentStatus ? '已付款' : '未付款';
-    str +=`<tr>
+    str += `<tr>
     <td scope="row" class="py-4">${item.orderId}</td>
     <td class="py-4">${item.planData.entryTime}</td>
     <td class="py-4">${item.planData.exitTime}</td>
@@ -578,11 +580,11 @@ showOrderDeal(orderDetail)
 const deleteTradText = document.querySelector('#deleteTradText')
 const deleteTradBtn = document.querySelector('#deleteTradBtn')
 
-deleteTradBtn.addEventListener('click' , (e) => {
+deleteTradBtn.addEventListener('click', (e) => {
   let deleteId = deleteTradText.textContent;
   let num = orderDetail.findIndex(item => item.orderId === deleteId);
-  orderDetail.splice(num ,1)
-  localStorage.setItem('orderDetail' , JSON.stringify(orderDetail))
+  orderDetail.splice(num, 1)
+  localStorage.setItem('orderDetail', JSON.stringify(orderDetail))
   showOrderDeal(orderDetail)
 })
 
@@ -595,7 +597,7 @@ console.log(reserveLocal)
 const showReserveDetail = (bb) => {
   let str = ''
   bb.forEach(item => {
-    str +=`<tr>
+    str += `<tr>
     <td scope="row" class="py-4">${item.reserveId}</td>
     <td class="py-4">${item.getData.entryTime}</td>
     <td class="py-4">${item.getData.exitTime}</td>
@@ -626,10 +628,27 @@ showReserveDetail(reserveLocal)
 const deleteReserveBtn = document.querySelector('#deleteReserveBtn')
 const deleteReserveText = document.querySelector('#deleteReserveText')
 
-deleteReserveBtn.addEventListener('click' , () => {
+deleteReserveBtn.addEventListener('click', () => {
   let deleteId = deleteReserveText.textContent;
   let num = reserveLocal.findIndex(item => item.reserveId === deleteId)
-  reserveLocal.splice(num ,1)
-  localStorage.setItem('reserveData' , JSON.stringify(reserveLocal))
+  reserveLocal.splice(num, 1)
+  localStorage.setItem('reserveData', JSON.stringify(reserveLocal))
   showReserveDetail(reserveLocal)
+})
+
+// 我的收藏-地圖按鈕樣式切換
+function btnStylingTogglerToLightM(activeBtn, closeBtn) {
+  closeBtn.classList.remove('btn-light-solid-m');
+  closeBtn.classList.add('btn-dark-trans-m');
+  closeBtn.classList.add('color-white');
+  activeBtn.classList.remove('btn-dark-trans-m');
+  activeBtn.classList.remove('color-white');
+  activeBtn.classList.add('btn-light-solid-m');
+}
+
+// 我的收藏-按鈕modal連結往長期方案
+const modalBtnContainer = document.querySelector('#modalBtnContainer');
+modalBtnContainer.addEventListener('click',e => {
+  e.preventDefault();
+  window.location.href='planSelection.html';
 })
