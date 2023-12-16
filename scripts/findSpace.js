@@ -19,6 +19,7 @@ const modalFooter = document.querySelector('.modal-footer')
 const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map');
+const longTerm = document.querySelector('#longTerm')
 const UrlWebType = 'https://space-eye-web-surver.onrender.com';
 const btnNumList = 1;
 const btnNumList1 = 1;
@@ -156,7 +157,7 @@ btn32.addEventListener('click', () => {
     btnStylingTogglerToDarkM(btn32, btn31);
     getSpaceOrNot = btn32.value
 });
-
+//隱藏長期方案按鈕
 //確認送出按鈕監聽
 confirmBtn.addEventListener('click', () => {
     // btnBgMove.style.marginLeft = 214 + 'px';
@@ -353,6 +354,11 @@ showAllPark.addEventListener('show.bs.modal' , function (e) {
     address.textContent = showAddress
     space.textContent = showSpace
     inOrOut.textContent = showIn
+    if(showPark === '路邊停車格'){
+        longTerm.classList.add('d-none')
+    }else{
+        longTerm.classList.remove('d-none')
+    }
 })
 //取得區域資料
 let sectionData = [];
@@ -514,7 +520,7 @@ const plusLike = (aa) => {
 };
 //如果值為空就不儲存
 const updateLocalStorage = () => {
-    if(saveLikePark === ''){
+    if(saveLikePark === null){
         return
     }else{
         localStorage.setItem('likePark', saveLikePark);
