@@ -20,6 +20,7 @@ const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map');
 const longTerm = document.querySelector('#longTerm')
+const reserve = document.querySelector('#reserve')
 const UrlWebType = 'https://space-eye-web-surver.onrender.com';
 const btnNumList = 1;
 const btnNumList1 = 1;
@@ -354,11 +355,8 @@ showAllPark.addEventListener('show.bs.modal' , function (e) {
     address.textContent = showAddress
     space.textContent = showSpace
     inOrOut.textContent = showIn
-    if(showPark === '路邊停車格'){
-        longTerm.classList.add('d-none')
-    }else{
-        longTerm.classList.remove('d-none')
-    }
+    longTerm.classList.toggle('d-none', showPark === '路邊停車格');
+    reserve.classList.toggle('d-none' , showPark === '路邊停車格')
 })
 //取得區域資料
 let sectionData = [];
