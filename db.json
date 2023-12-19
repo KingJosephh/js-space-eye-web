@@ -32,6 +32,20 @@
       "username": "celine",
       "carId": "ccccc",
       "id": 4
+    },
+    {
+      "email": "tom@gmail.com",
+      "password": "$2a$10$PVVHcv/6Ugz9BP6uPQ.9VO0X3v345Gb.dp6zjqncgu6AGE4jmXP5m",
+      "username": "tom",
+      "carId": "aaa-123",
+      "id": 5
+    },
+    {
+      "email": "tomm@gmail.com",
+      "password": "$2a$10$z3LgicWlTTxxON4PAIoB8uEsJ7XSMAg0JD/MWpzFf5MILWF27r2Re",
+      "username": "tom",
+      "carId": "aaa-123",
+      "id": 6
     }
   ],
   "sections": [

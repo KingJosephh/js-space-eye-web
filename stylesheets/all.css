@@ -13864,6 +13864,7 @@ li .menu-m:hover::before {
   margin-top: 28px;
 }
 .interface .interface-main .content-to-hide-showPark {
+  display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 12px;

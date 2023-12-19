@@ -207,8 +207,9 @@ btn32.addEventListener('click', () => {
 //確認送出按鈕監聽
 confirmBtn.addEventListener('click', () => {
     // btnBgMove.style.marginLeft = 214 + 'px';
-    // hideSearch.style.display = 'none';
-    // hideShowPark.style.display = 'block';
+    hideSearch.style.display = 'none';
+    hideShowPark.style.display = 'flex';
+    btnStylingTogglerToLightL(btn2, btn1);
     let area = areaOption.value;
     let road = roadOption.value;
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue);
@@ -495,7 +496,7 @@ const render = (aa) => {
     aa.forEach((item) => {
         let additionalClass = (item.parkName === "路邊停車格") ? 'd-none' : '';
         let content = `<div class="card">
-        <div class="card-body">
+        <div class="card-body g-4">
             <div class="d-flex justify-content-between">
                 <div class="h4 card-title">${item.parkName}</div>
                 <i class="save-like bi bi-suit-heart-fill" data-some-value="${item.location.latitude}"></i>
