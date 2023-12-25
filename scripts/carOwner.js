@@ -590,14 +590,15 @@ const showOrderDeal = (aa) => {
   let pay;
   let str = ''
   aa.forEach(item => {
+    console.log(item)
     pay = item.paymentStatus ? '已付款' : '未付款';
     str += `<tr>
     <td scope="row" class="py-4">${item.orderId}</td>
-    <td class="py-4">${item.planData.entryTime}</td>
-    <td class="py-4">${item.planData.exitTime}</td>
-    <td class="py-4">${item.planData.planText}</td>
+    <td class="py-4">${item.inTime}</td>
+    <td class="py-4">${item.outTime}</td>
+    <td class="py-4">${item.planData}</td>
     <td class="py-4">
-      ${item.planData.planPrice}
+      ${item.totalCharge}
     </td>
     <td class="py-4">${item.paymentMethod}</td>
     <td class="py-4">${pay}</td>
@@ -636,7 +637,7 @@ deleteTradBtn.addEventListener('click', (e) => {
 
 
 // 2.渲染預約紀錄到畫面上
-const reserve = localStorage.getItem('reserveData')
+const reserve = localStorage.getItem('finalDataAll')
 const reserveLocal = JSON.parse(reserve)
 const reserveHistory = document.querySelector('#reserveHistory')
 console.log(reserveLocal)
@@ -645,11 +646,11 @@ const showReserveDetail = (bb) => {
   bb.forEach(item => {
     str += `<tr>
     <td scope="row" class="py-4">${item.reserveId}</td>
-    <td class="py-4">${item.getData.entryTime}</td>
-    <td class="py-4">${item.getData.exitTime}</td>
-    <td class="py-4">${item.getData.planText}</td>
-    <td class="py-4">${item.getSpaceDetails[0].parkName}</td>
-    <td class="py-4">${item.getSpaceDetails[0].address}</td>
+    <td class="py-4">${item.inTime}</td>
+    <td class="py-4">${item.outTime}</td>
+    <td class="py-4">${item.plan}</td>
+    <td class="py-4">${item.parkName}</td>
+    <td class="py-4">${item.address}</td>
     <td class="text-end pe-4 py-4">
         <div class="btn-group">
             <button class="btn btn-sm btn-outline-dark dropdown-toggle"
@@ -678,7 +679,7 @@ deleteReserveBtn.addEventListener('click', () => {
   let deleteId = deleteReserveText.textContent;
   let num = reserveLocal.findIndex(item => item.reserveId === deleteId)
   reserveLocal.splice(num, 1)
-  localStorage.setItem('reserveData', JSON.stringify(reserveLocal))
+  localStorage.setItem('finalDataAll', JSON.stringify(reserveLocal))
   showReserveDetail(reserveLocal)
 })
 

@@ -7,8 +7,11 @@ const order = localStorage.getItem('orderDetail')
 const orderDetailLocal = JSON.parse(order)
 let orderDetail = {}
 let orderDetailAll = []
+const finalData = localStorage.getItem('finalData')
+const finalDataLocal = JSON.parse(finalData)
 // console.log(planData)
 //將本地端交易明細抓下來放入orderDetailAll
+console.log(finalDataLocal)
 if(orderDetailLocal === null){
 
 }else{
@@ -124,9 +127,9 @@ showSummaryBtns.forEach(btn => {
       // orderSummaryPlan.textContent = localStorage.getItem('chosePlan');
       // orderSummaryEntryTime.textContent = localStorage.getItem('entryTime');
       // orderSummaryExitTime.textContent = localStorage.getItem('exitTime');
-      orderSummaryPlan.textContent = planData.planText;
-      orderSummaryEntryTime.textContent = planData.entryTime;
-      orderSummaryExitTime.textContent = planData.exitTime
+      orderSummaryPlan.textContent = finalDataLocal.plan;
+      orderSummaryEntryTime.textContent = finalDataLocal.inTime;
+      orderSummaryExitTime.textContent = finalDataLocal.outTime
 
       // 監聽訂單摘要按鈕 - 前往車主專區
       const goCarOwnerPageBtn = document.querySelector('[data-goCarOwnerPage]');
@@ -193,11 +196,13 @@ function storeOrderInfo(){
     orderDetail.orderId = orderNum;
     orderDetail.paymentMethod = paymentMethod;
     orderDetail.paymentStatus = paymentStatus;
-    orderDetail.planData = planData;
-    orderDetail.parkDetail = parkDetail;
+    orderDetail.planData = finalDataLocal.plan;
+    orderDetail.inTime = finalDataLocal.inTime;
+    orderDetail.outTime = finalDataLocal.outTime;
+    orderDetail.totalCharge = finalDataLocal.totalCharge;
     orderDetailAll.push(orderDetail)
     localStorage.setItem('orderDetail' , JSON.stringify(orderDetailAll))
-  // console.log(orderDetail)
+  console.log(orderDetail)
 }
 
 // 產出隨機訂單編號
@@ -221,3 +226,56 @@ function generateOrderNumber() {
 
   return orderNumber;
 }
+const detail = document.querySelector('#detail')
+const showPark = () => {
+  let str = `<div class="row g-5">
+  <div class="col me-3 border-end border-3">
+      <div class="d-flex justify-content-between">
+          <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">停車場名:</label>
+          <div class="d-flex align-items-center">
+              <label for="" class="fw-bold text-dark-gray">${finalDataLocal.parkName}</label>
+          </div>
+      </div>
+      <div class="d-flex justify-content-between">
+          <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">地址:</label>
+          <div class="d-flex align-items-center">
+              <label for="" class="fw-bold text-dark-gray">${finalDataLocal.address}</label>
+          </div>
+      </div>
+  </div>
+  <div class="col me-3 border-end border-3">
+      <div class="col">
+          <div class="d-flex justify-content-between">
+              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">進場時間:</label>
+              <div class="d-flex align-items-center">
+                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.inTime}</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-between">
+              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">離場時間:</label>
+              <div class="d-flex align-items-center">
+                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.outTime}</label>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="col">
+          <div class="d-flex justify-content-between">
+              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">車牌號碼:</label>
+              <div class="d-flex align-items-center">
+                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.carIdV}</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-between">
+              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">應繳金額:</label>
+              <div class="d-flex align-items-center">
+                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.totalCharge}</label>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>`
+detail.innerHTML = str
+}
+showPark()

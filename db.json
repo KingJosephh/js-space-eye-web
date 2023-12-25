@@ -68,26 +68,6 @@
     {
       "id": "S05",
       "area": "北區"
-    },
-    {
-      "id": "S06",
-      "area": "北屯區"
-    },
-    {
-      "id": "S07",
-      "area": "西屯區"
-    },
-    {
-      "id": "S08",
-      "area": "南屯區"
-    },
-    {
-      "id": "S09",
-      "area": "北區"
-    },
-    {
-      "id": "S10",
-      "area": "北屯區"
     }
   ],
   "roads": [
@@ -103,93 +83,43 @@
     },
     {
       "id": "R003",
-      "roadName": "中正路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R004",
-      "roadName": "學士路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R005",
-      "roadName": "民族路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R006",
-      "roadName": "中華路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R007",
-      "roadName": "公園路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R008",
-      "roadName": "和平路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R009",
-      "roadName": "文化路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R010",
-      "roadName": "民生路",
-      "sectionId": "S01"
-    },
-    {
-      "id": "R011",
       "roadName": "崇德路",
       "sectionId": "S02"
     },
     {
-      "id": "R012",
+      "id": "R004",
       "roadName": "昌平路",
       "sectionId": "S02"
     },
     {
-      "id": "R013",
-      "roadName": "金華路",
-      "sectionId": "S02"
+      "id": "R005",
+      "roadName": "文心南一路",
+      "sectionId": "S03"
     },
     {
-      "id": "R014",
-      "roadName": "協和路",
-      "sectionId": "S02"
+      "id": "R006",
+      "roadName": "南屯路",
+      "sectionId": "S03"
     },
     {
-      "id": "R015",
-      "roadName": "安順路",
-      "sectionId": "S02"
+      "id": "R007",
+      "roadName": "中港路",
+      "sectionId": "S04"
     },
     {
-      "id": "R016",
-      "roadName": "平等路",
-      "sectionId": "S02"
+      "id": "R008",
+      "roadName": "忠明南路",
+      "sectionId": "S04"
     },
     {
-      "id": "R017",
-      "roadName": "文德路",
-      "sectionId": "S02"
+      "id": "R009",
+      "roadName": "中華路",
+      "sectionId": "S05"
     },
     {
-      "id": "R018",
-      "roadName": "建國路",
-      "sectionId": "S02"
-    },
-    {
-      "id": "R019",
-      "roadName": "仁愛路",
-      "sectionId": "S02"
-    },
-    {
-      "id": "R020",
-      "roadName": "東山路",
-      "sectionId": "S02"
+      "id": "R0010",
+      "roadName": "一中街",
+      "sectionId": "S05"
     }
   ],
   "categorys": [
@@ -211,9 +141,9 @@
       "categoryId": "C02",
       "roadId": "R001",
       "space": "35",
-      "charge": "40/hr 400/d 4000/w",
+      "charge": "40/hr 400/d 4000/w 5600/m 67000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "220cm",
       "type": "一般車位/親子車位/殘障車位",
       "location": {
@@ -228,9 +158,9 @@
       "categoryId": "C02",
       "roadId": "R001",
       "space": "0",
-      "charge": "45/hr 450/d 4500/w",
+      "charge": "40/hr 400/d 3000/w 5300/m 65000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "180cm",
       "type": "一般車位/親子車位/殘障車位",
       "location": {
@@ -245,9 +175,9 @@
       "categoryId": "C02",
       "roadId": "R001",
       "space": "0",
-      "charge": "50/hr 500/d 5000/w",
+      "charge": "20/hr 400/d 2800/w 6600/m 69000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "220cm",
       "type": "一般車位/親子車位/殘障車位",
       "location": {
@@ -262,9 +192,9 @@
       "categoryId": "C02",
       "roadId": "R001",
       "space": "30",
-      "charge": "55/hr 550/d 5500/w",
+      "charge": "30/hr 400/d 4500/w 6580/m 66000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "220cm",
       "type": "一般車位/殘障車位",
       "location": {
@@ -279,7 +209,7 @@
       "categoryId": "C02",
       "roadId": "R001",
       "space": "40",
-      "charge": "60/hr 600/d 6000/w",
+      "charge": "35/hr 300/d 2300/w 6700/m 88000/y",
       "inOrOut": "室外",
       "pay": "現金/信用卡",
       "height": "無",
@@ -315,7 +245,7 @@
       "space": "9",
       "charge": "62/hr",
       "inOrOut": "無",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "無",
       "type": "一般車位",
       "location": {
@@ -332,7 +262,7 @@
       "space": "2",
       "charge": "63/hr",
       "inOrOut": "無",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "無",
       "type": "親子車位",
       "location": {
@@ -349,7 +279,7 @@
       "space": "7",
       "charge": "64/hr",
       "inOrOut": "無",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "無",
       "type": "一般車位",
       "location": {
@@ -381,9 +311,9 @@
       "categoryId": "C02",
       "roadId": "R002",
       "space": "45",
-      "charge": "40/hr 400/d 4000/w",
+      "charge": "45/hr 700/d 3000/w 7500/m 68000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "220cm",
       "type": "一般車位/親子車位/殘障車位",
       "location": {
@@ -398,9 +328,9 @@
       "categoryId": "C02",
       "roadId": "R002",
       "space": "0",
-      "charge": "45/hr 450/d 4500/w",
+      "charge": "30/hr 460/d 3500/w 5700/m 57000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "180cm",
       "type": "一般車位/親子車位",
       "location": {
@@ -415,9 +345,9 @@
       "categoryId": "C02",
       "roadId": "R002",
       "space": "30",
-      "charge": "50/hr 500/d 5000/w",
+      "charge": "30/hr 420/d 1100/w 3600/m 65000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "220cm",
       "type": "一般車位/殘障車位",
       "location": {
@@ -432,9 +362,9 @@
       "categoryId": "C02",
       "roadId": "R002",
       "space": "25",
-      "charge": "55/hr 550/d 5500/w",
+      "charge": "40/hr 400/d 4000/w 5600/m 67000/y",
       "inOrOut": "室內",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "220cm",
       "type": "一般車位/殘障車位",
       "location": {
@@ -449,7 +379,7 @@
       "categoryId": "C02",
       "roadId": "R002",
       "space": "40",
-      "charge": "60/hr 600/d 6000/w",
+      "charge": "20/hr 200/d 4000/w 52200/m 55000/y",
       "inOrOut": "室外",
       "pay": "現金/信用卡",
       "height": "無",
@@ -485,7 +415,7 @@
       "space": "2",
       "charge": "30/hr",
       "inOrOut": "無",
-      "pay": "現金/儲值金",
+      "pay": "現金",
       "height": "無",
       "type": "一般車位",
       "location": {
@@ -502,7 +432,7 @@
       "space": "0",
       "charge": "30/hr",
       "inOrOut": "無",
-      "pay": "現金/信用卡/儲值金",
+      "pay": "現金/信用卡",
       "height": "無",
       "type": "殘障車位",
       "location": {
@@ -623,10 +553,826 @@
       "inOrOut": "無",
       "pay": "現金/信用卡",
       "height": "無",
-      "type": "一般車位",
+      "type": "親子車位",
       "location": {
         "latitude": 24.186789,
         "longitude": 120.618042
+      }
+    },
+    {
+      "id": 26,
+      "parkName": "星光停車場",
+      "address": "台中市東區崇德路123號",
+      "categoryId": "C02",
+      "roadId": "R003",
+      "space": "25",
+      "charge": "20/hr 200/d 4000/w 5200/m 55000/y",
+      "inOrOut": "室內",
+      "pay": "信用卡",
+      "height": "200cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.140560,
+        "longitude": 120.692315
+      }
+    },
+    {
+      "id": 27,
+      "parkName": "藝響車位",
+      "address": "台中市東區崇德路456號",
+      "categoryId": "C02",
+      "roadId": "R003",
+      "space": "15",
+      "charge": "20/hr 800/d 4500/w 5300/m 55000/y",
+      "inOrOut": "室外",
+      "pay": "現金",
+      "height": "無",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.143752,
+        "longitude": 120.689831
+      }
+    },
+    {
+      "id": 28,
+      "parkName": "幸福泊車場",
+      "address": "台中市東區崇德路789號",
+      "categoryId": "C02",
+      "roadId": "R003",
+      "space": "35",
+      "charge": "50/hr 300/d 4700/w 5800/m 87000/y",
+      "inOrOut": "室內",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "210cm",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.145927,
+        "longitude": 120.686442
+      }
+    },
+    {
+      "id": 29,
+      "parkName": "路邊停車格",
+      "address": "台中市東區崇德路999號",
+      "categoryId": "C01",
+      "roadId": "R003",
+      "space": "5",
+      "charge": "55/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.180320,
+        "longitude": 120.620723
+      }
+    },
+    {
+      "id": 30,
+      "parkName": "路邊停車格",
+      "address": "台中市東區崇德路777號",
+      "categoryId": "C01",
+      "roadId": "R003",
+      "space": "3",
+      "charge": "60/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.179457,
+        "longitude": 120.618615
+      }
+    },
+    {
+      "id": 31,
+      "parkName": "路邊停車格",
+      "address": "台中市東區崇德路555號",
+      "categoryId": "C01",
+      "roadId": "R003",
+      "space": "8",
+      "charge": "58/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.177845,
+        "longitude": 120.616987
+      }
+    },
+    {
+      "id": 32,
+      "parkName": "想響車位",
+      "address": "台中市東區昌平路789號",
+      "categoryId": "C02",
+      "roadId": "R004",
+      "space": "30",
+      "charge": "50/hr 300/d 4700/w 5800/m 87000/y",
+      "inOrOut": "室內",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "210cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.153020,
+        "longitude": 120.685123
+      }
+    },
+    {
+      "id": 33,
+      "parkName": "星興停車場",
+      "address": "台中市東區昌平路456號",
+      "categoryId": "C02",
+      "roadId": "R004",
+      "space": "20",
+      "charge": "35/hr 300/d 4800/w 5600/m 74000/y",
+      "inOrOut": "室外",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位/親子車位",
+      "location": {
+        "latitude": 24.155470,
+        "longitude": 120.688582
+      }
+    },
+    {
+      "id": 34,
+      "parkName": "樂活泊車場",
+      "address": "台中市東區昌平路123號",
+      "categoryId": "C02",
+      "roadId": "R004",
+      "space": "15",
+      "charge": "50/hr 200/d 5700/w 7500/m 77000/y",
+      "inOrOut": "室內",
+      "pay": "信用卡",
+      "height": "220cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.157912,
+        "longitude": 120.691871
+      }
+    },
+    {
+      "id": 35,
+      "parkName": "路邊停車格",
+      "address": "台中市東區昌平路789號",
+      "categoryId": "C01",
+      "roadId": "R004",
+      "space": "3",
+      "charge": "62/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.162450,
+        "longitude": 120.684261
+      }
+    },
+    {
+      "id": 36,
+      "parkName": "路邊停車格",
+      "address": "台中市東區昌平路456號",
+      "categoryId": "C01",
+      "roadId": "R004",
+      "space": "7",
+      "charge": "60/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.165052,
+        "longitude": 120.681545
+      }
+    },
+    {
+      "id": 37,
+      "parkName": "路邊停車格",
+      "address": "台中市東區昌平路123號",
+      "categoryId": "C01",
+      "roadId": "R004",
+      "space": "9",
+      "charge": "55/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.168244,
+        "longitude": 120.678823
+      }
+    },
+    {
+      "id": 38,
+      "parkName": "樂泊車場",
+      "address": "台中市南區文心南一路567號",
+      "categoryId": "C02",
+      "roadId": "R005",
+      "space": "25",
+      "charge": "50/hr 270/d 5000/w 7000/m 77800/y",
+      "inOrOut": "室外",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.141015,
+        "longitude": 120.656678
+      }
+    },
+    {
+      "id": 39,
+      "parkName": "西湖停車場",
+      "address": "台中市南區文心南一路234號",
+      "categoryId": "C02",
+      "roadId": "R005",
+      "space": "12",
+      "charge": "30/hr 270/d 5770/w 7500/m 88000/y",
+      "inOrOut": "室內",
+      "pay": "信用卡",
+      "height": "210cm",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.143390,
+        "longitude": 120.655091
+      }
+    },
+    {
+      "id": 40,
+      "parkName": "南瓜停車場",
+      "address": "台中市南區文心南一路789號",
+      "categoryId": "C02",
+      "roadId": "R005",
+      "space": "8",
+      "charge": "10/hr 200/d 5100/w 6500/m 71000/y",
+      "inOrOut": "室外",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.145767,
+        "longitude": 120.653501
+      }
+    },
+    {
+      "id": 41,
+      "parkName": "路邊停車格",
+      "address": "台中市南區文心南一路234號",
+      "categoryId": "C01",
+      "roadId": "R005",
+      "space": "9",
+      "charge": "48/hr",
+      "inOrOut": "無",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.141300,
+        "longitude": 120.655900
+      }
+    },
+    {
+      "id": 42,
+      "parkName": "路邊停車格",
+      "address": "台中市南區文心南一路789號",
+      "categoryId": "C01",
+      "roadId": "R005",
+      "space": "5",
+      "charge": "53/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.147500,
+        "longitude": 120.651500
+      }
+    },
+    {
+      "id": 43,
+      "parkName": "路邊停車格",
+      "address": "台中市南區文心南一路123號",
+      "categoryId": "C01",
+      "roadId": "R005",
+      "space": "7",
+      "charge": "52/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.149700,
+        "longitude": 120.650000
+      }
+    },
+    {
+      "id": 44,
+      "parkName": "藝夢泊車場",
+      "address": "台中市南區南屯路567號",
+      "categoryId": "C02",
+      "roadId": "R006",
+      "space": "18",
+      "charge": "13/hr 195/d 5050/w 6550/m 70500/y",
+      "inOrOut": "室內",
+      "pay": "信用卡",
+      "height": "210cm",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.142015,
+        "longitude": 120.643876
+      }
+    },
+    {
+      "id": 45,
+      "parkName": "夢幻泊車場",
+      "address": "台中市南區南屯路234號",
+      "categoryId": "C02",
+      "roadId": "R006",
+      "space": "12",
+      "charge": "16/hr 205/d 5150/w 6700/m 72000/y",
+      "inOrOut": "室外",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.143790,
+        "longitude": 120.646267
+      }
+    },
+    {
+      "id": 46,
+      "parkName": "小叮噹車場",
+      "address": "台中市南區南屯路789號",
+      "categoryId": "C02",
+      "roadId": "R006",
+      "space": "25",
+      "charge": "15/hr 225/d 5400/w 6800/m 71000/y",
+      "inOrOut": "室內",
+      "pay": "現金",
+      "height": "180cm",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.145921,
+        "longitude": 120.648689
+      }
+    },
+    {
+      "id": 47,
+      "parkName": "路邊停車格",
+      "address": "台中市南區南屯路567號",
+      "categoryId": "C01",
+      "roadId": "R006",
+      "space": "3",
+      "charge": "48/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.142015,
+        "longitude": 120.643876
+      }
+    },
+    {
+      "id": 48,
+      "parkName": "路邊停車格",
+      "address": "台中市南區南屯路234號",
+      "categoryId": "C01",
+      "roadId": "R006",
+      "space": "5",
+      "charge": "50/hr",
+      "inOrOut": "無",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.143790,
+        "longitude": 120.646267
+      }
+    },
+    {
+      "id": 49,
+      "parkName": "路邊停車格",
+      "address": "台中市南區南屯路789號",
+      "categoryId": "C01",
+      "roadId": "R006",
+      "space": "8",
+      "charge": "55/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.145921,
+        "longitude": 120.648689
+      }
+    },
+    {
+      "id": 50,
+      "parkName": "櫻花停車場",
+      "address": "台中市西區中港路567號",
+      "categoryId": "C02",
+      "roadId": "R007",
+      "space": "12",
+      "charge": "18/hr 235/d 5200/w 6700/m 70000/y",
+      "inOrOut": "室內",
+      "pay": "現金",
+      "height": "220cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.140279,
+        "longitude": 120.662748
+      }
+    },
+    {
+      "id": 51,
+      "parkName": "梅花停車場",
+      "address": "台中市西區中港路234號",
+      "categoryId": "C02",
+      "roadId": "R007",
+      "space": "20",
+      "charge": "22/hr 250/d 5500/w 6900/m 72000/y",
+      "inOrOut": "室外",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.141813,
+        "longitude": 120.663520
+      }
+    },
+    {
+      "id": 52,
+      "parkName": "玫瑰挖泊車場",
+      "address": "台中市西區中港路789號",
+      "categoryId": "C02",
+      "roadId": "R007",
+      "space": "35",
+      "charge": "20/hr 240/d 5300/w 6800/m 71000/y",
+      "inOrOut": "室內",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "180cm",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.142650,
+        "longitude": 120.664281
+      }
+    },
+    {
+      "id": 53,
+      "parkName": "路邊停車格",
+      "address": "台中市西區中港路567號",
+      "categoryId": "C01",
+      "roadId": "R007",
+      "space": "5",
+      "charge": "52/hr",
+      "inOrOut": "無",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.140279,
+        "longitude": 120.662748
+      }
+    },
+    {
+      "id": 54,
+      "parkName": "路邊停車格",
+      "address": "台中市西區中港路234號",
+      "categoryId": "C01",
+      "roadId": "R007",
+      "space": "8",
+      "charge": "55/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.141813,
+        "longitude": 120.663520
+      }
+    },
+    {
+      "id": 55,
+      "parkName": "路邊停車格",
+      "address": "台中市西區中港路789號",
+      "categoryId": "C01",
+      "roadId": "R007",
+      "space": "3",
+      "charge": "48/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.142650,
+        "longitude": 120.664281
+      }
+    },
+    {
+      "id": 56,
+      "parkName": "彩虹泊車場",
+      "address": "台中市西區忠明南路123號",
+      "categoryId": "C02",
+      "roadId": "R008",
+      "space": "18",
+      "charge": "25/hr 260/d 5800/w 7200/m 74000/y",
+      "inOrOut": "室內",
+      "pay": "現金",
+      "height": "220cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.145345,
+        "longitude": 120.664956
+      }
+    },
+    {
+      "id": 57,
+      "parkName": "星光光車場",
+      "address": "台中市西區忠明南路234號",
+      "categoryId": "C02",
+      "roadId": "R008",
+      "space": "27",
+      "charge": "28/hr 280/d 5900/w 7300/m 75000/y",
+      "inOrOut": "室外",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.146822,
+        "longitude": 120.665729
+      }
+    },
+    {
+      "id": 58,
+      "parkName": "夢夢停車場",
+      "address": "台中市西區忠明南路345號",
+      "categoryId": "C02",
+      "roadId": "R008",
+      "space": "12",
+      "charge": "22/hr 250/d 5700/w 7100/m 73000/y",
+      "inOrOut": "室內",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "180cm",
+      "type": "一般車位/親子車位",
+      "location": {
+        "latitude": 24.148395,
+        "longitude": 120.666491
+      }
+    },
+    {
+      "id": 59,
+      "parkName": "路邊停車格",
+      "address": "台中市西區忠明南路123號",
+      "categoryId": "C01",
+      "roadId": "R008",
+      "space": "2",
+      "charge": "50/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.143752,
+        "longitude": 120.664951
+      }
+    },
+    {
+      "id": 60,
+      "parkName": "路邊停車格",
+      "address": "台中市西區忠明南路234號",
+      "categoryId": "C01",
+      "roadId": "R008",
+      "space": "8",
+      "charge": "48/hr",
+      "inOrOut": "無",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.145229,
+        "longitude": 120.665724
+      }
+    },
+    {
+      "id": 61,
+      "parkName": "路邊停車格",
+      "address": "台中市西區忠明南路345號",
+      "categoryId": "C01",
+      "roadId": "R008",
+      "space": "5",
+      "charge": "52/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.146706,
+        "longitude": 120.666499
+      }
+    },
+    {
+      "id": 62,
+      "parkName": "艾莉莎莎停車場",
+      "address": "台中市北區中華路123號",
+      "categoryId": "C02",
+      "roadId": "R009",
+      "space": "15",
+      "charge": "25/hr",
+      "inOrOut": "室內",
+      "pay": "現金",
+      "height": "180cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.156145,
+        "longitude": 120.674412
+      }
+    },
+    {
+      "id": 63,
+      "parkName": "蛇蛇停車場",
+      "address": "台中市北區中華路234號",
+      "categoryId": "C02",
+      "roadId": "R009",
+      "space": "20",
+      "charge": "23/hr",
+      "inOrOut": "室外",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.154718,
+        "longitude": 120.675187
+      }
+    },
+    {
+      "id": 64,
+      "parkName": "旺財停車場",
+      "address": "台中市北區中華路345號",
+      "categoryId": "C02",
+      "roadId": "R009",
+      "space": "25",
+      "charge": "21/hr",
+      "inOrOut": "室內",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "220cm",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.153291,
+        "longitude": 120.675962
+      }
+    },
+    {
+      "id": 65,
+      "parkName": "路邊停車格",
+      "address": "台中市北區中華路123號",
+      "categoryId": "C01",
+      "roadId": "R009",
+      "space": "8",
+      "charge": "48/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.151406,
+        "longitude": 120.680692
+      }
+    },
+    {
+      "id": 66,
+      "parkName": "路邊停車格",
+      "address": "台中市北區中華路234號",
+      "categoryId": "C01",
+      "roadId": "R009",
+      "space": "3",
+      "charge": "50/hr",
+      "inOrOut": "無",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.149198,
+        "longitude": 120.681442
+      }
+    },
+    {
+      "id": 67,
+      "parkName": "路邊停車格",
+      "address": "台中市北區中華路345號",
+      "categoryId": "C01",
+      "roadId": "R009",
+      "space": "10",
+      "charge": "46/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.146989,
+        "longitude": 120.682192
+      }
+    },
+    {
+      "id": 68,
+      "parkName": "幸福停車場",
+      "address": "台中市北區一中街567號",
+      "categoryId": "C02",
+      "roadId": "R0010",
+      "space": "15",
+      "charge": "22/hr 250/d 5700/w 7100/m 73000/y",
+      "inOrOut": "室內",
+      "pay": "現金",
+      "height": "無",
+      "type": "一般車位/親子車位/殘障車位",
+      "location": {
+        "latitude": 24.152923,
+        "longitude": 120.666636
+      }
+    },
+    {
+      "id": 69,
+      "parkName": "七彩停車場",
+      "address": "台中市北區一中街678號",
+      "categoryId": "C02",
+      "roadId": "R0010",
+      "space": "5",
+      "charge": "22/hr 230/d 6660/w 7100/m 83000/y",
+      "inOrOut": "室外",
+      "pay": "信用卡",
+      "height": "220cm",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.151312,
+        "longitude": 120.667386
+      }
+    },
+    {
+      "id": 70,
+      "parkName": "夢幻停車場",
+      "address": "台中市北區一中街789號",
+      "categoryId": "C02",
+      "roadId": "R0010",
+      "space": "8",
+      "charge": "22/hr 250/d 5900/w 7700/m 75000/y",
+      "inOrOut": "室內",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "一般車位/殘障車位",
+      "location": {
+        "latitude": 24.149701,
+        "longitude": 120.668136
+      }
+    },
+    {
+      "id": 71,
+      "parkName": "路邊停車格",
+      "address": "台中市北區一中街789號",
+      "categoryId": "C01",
+      "roadId": "R0010",
+      "space": "5",
+      "charge": "50/hr",
+      "inOrOut": "無",
+      "pay": "信用卡",
+      "height": "無",
+      "type": "殘障車位",
+      "location": {
+        "latitude": 24.147589,
+        "longitude": 120.683692
+      }
+    },
+    {
+      "id": 72,
+      "parkName": "路邊停車格",
+      "address": "台中市北區一中街234號",
+      "categoryId": "C01",
+      "roadId": "R0010",
+      "space": "8",
+      "charge": "45/hr",
+      "inOrOut": "無",
+      "pay": "現金",
+      "height": "無",
+      "type": "一般車位",
+      "location": {
+        "latitude": 24.147789,
+        "longitude": 120.682592
+      }
+    },
+    {
+      "id": 73,
+      "parkName": "路邊停車格",
+      "address": "台中市北區一中街456號",
+      "categoryId": "C01",
+      "roadId": "R0010",
+      "space": "3",
+      "charge": "48/hr",
+      "inOrOut": "無",
+      "pay": "現金/信用卡/超商繳費",
+      "height": "無",
+      "type": "親子車位",
+      "location": {
+        "latitude": 24.148989,
+        "longitude": 120.681492
       }
     }
   ]

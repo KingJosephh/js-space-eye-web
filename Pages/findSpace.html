@@ -37,8 +37,8 @@
                         </mask>
                         <g mask="url(#mask0_2609_18108)">
                             <path
-                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"saveModel
-                                fill="#1E1E1E" />
+                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                                saveModel fill="#1E1E1E" />
                         </g>
                     </svg>
                 </button>
@@ -55,7 +55,7 @@
             </div>
         </nav>
     </header>
-    
+
     <!-- 另外做一個手機版的js然後重新命名這裡的class -->
     <section>
         <!-- 以下是手機版 -->
@@ -113,8 +113,8 @@
                         <div class="col mt-4 me-5 p-0 parkingCategory-container">
                             <div class="button-group d-flex justify-content-evenly p-2">
                                 <!-- btn-bg-move-dad  -->
-                                <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0"
-                                    data-num="1" value="C01">路邊車格</button>
+                                <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0" data-num="1"
+                                    value="C01">路邊車格</button>
                                 <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0 color-white"
                                     data-num="2" value="C02">停車場</button>
                             </div>
@@ -165,7 +165,8 @@
                                         value="haveSpace">有空位停車場</button>
                                 </div>
                                 <div class="col d-flex justify-content-center interface-main-submitBtn">
-                                    <button id="confirm" type="button" class="btn btn-light-solid-l jumping-button">確認送出</button>
+                                    <button id="confirm" type="button"
+                                        class="btn btn-light-solid-l jumping-button">確認送出</button>
                                 </div>
                             </div>
                             <!-- 停車場一覽 -->
@@ -196,6 +197,58 @@
                         </div>
                     </div>
                 </div>
+                <div class="plan-container mt-5">
+                    <div onclick="select(this)" class="plan" id="dayPlan">
+                        <div class="plan-container-title">
+                            <div class="h4">單次停車</div>
+                            <p>day</p>
+                            <div class="plan-price h1">NT 30</div>
+                        </div>
+                        <ul class="m-0 text-start">
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>縮短週末中尋找停車位的時間。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>享受假日無限次數停車的自由，每日都是好日子。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>省時省力，停車不再是煩惱。</li>
+                        </ul>
+                    </div>
+                    <div onclick="select(this)" class="plan" id="weekPlan">
+                        <div class="plan-container-title">
+                            <div class="h4">每週停車</div>
+                            <p>week</p>
+                            <div class="plan-price h1">NT 149</div>
+                        </div>
+                        <ul class="m-0 text-start">
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>縮短週末中的尋找停車位的時間。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>享受假日無限次數停車的自由，每日都是好日子。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>省時省力，停車不再是煩惱。</li>
+                        </ul>
+                    </div>
+                    <div onclick="select(this)" class="plan" id="monthPlan">
+                        <div class="plan-container-title">
+                            <div class="h4">每月停車</div>
+                            <p>monthly</p>
+                            <div class="plan-price h1">NT 349</div>
+                        </div>
+                        <ul class="m-0 text-start">
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>全月自由停車，方便又節省。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>享受假日無限次數停車的自由，每日都是好日子。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>一次訂閱，當月無限次數停車。</li>
+                        </ul>
+                    </div>
+                    <div onclick="select(this)" class="plan" id="yearPlan">
+                        <div class="plan-container-title">
+                            <div class="h4">每年停車</div>
+                            <p>year</p>
+                            <div class="plan-price h1">NT 749</div>
+                        </div>
+                        <ul class="m-0 text-start">
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>長期停車需求，最好的選擇。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>享受假日無限次數停車的自由，每日都是好日子。</li>
+                            <li class="pe-0"><i class="fa-solid fa-check checkIcon"></i>一次訂閱，一整年無限次數停車。</li>
+                        </ul>
+                    </div>
+                </div>
+                1.在營車廠一覽點長期方案抓取營車廠價位渲染金額在找車位下方
+                2.在找車位選擇方案厚道預約停車
                 <!-- Modal -->
                 <div class="modal fade" id="showAllParkModel" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
