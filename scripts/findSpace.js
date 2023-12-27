@@ -323,33 +323,39 @@ axios.get(Url + `/600/users/${usersId}`, {
     .catch((error) => {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
-            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+            if(likeBtn.classList.contains('save-like') ){
                 Swal.fire({
                     icon: "error",
                     title: "請先登入",
                     timer: 1500
                 });
+            }else{
+                window.location.href = "#plan-container";
             }
         })
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
-            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
+            if(likeBtn.textContent === '預約停車'){
                 Swal.fire({
                     icon: "error",
                     title: "請先登入",
                     timer: 1500
                 });
+            } else {
+                window.location.href = "#plan-container";
             }
         })
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
             let likeBtn = e.target
-            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+            if(likeBtn.classList.contains('save-like')){
                 Swal.fire({
                     icon: "error",
                     title: "請先登入",
                     timer: 1500
                 });
+            } else {
+                window.location.href = "#plan-container";
             }
         })
         console.error('请求受保护的端点失败:', error);
