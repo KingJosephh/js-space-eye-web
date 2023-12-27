@@ -228,49 +228,49 @@ function generateOrderNumber() {
 }
 const detail = document.querySelector('#detail')
 const showPark = () => {
-  let str = `<div class="row g-5">
-  <div class="col me-3 border-end border-3">
-      <div class="d-flex justify-content-between">
-          <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">停車場名:</label>
+  let str = `<div class="row flex-column flex-lg-row">
+  <div class="col border-end border-3">
+      <div class="d-flex">
+          <label for="inputPassword" class="col-form-label pe-2 text-dark-gray text-nowrap">停車場名:</label>
           <div class="d-flex align-items-center">
-              <label for="" class="fw-bold text-dark-gray">${finalDataLocal.parkName}</label>
+              <label for="" class="text-dark-gray">${finalDataLocal.parkName}</label>
           </div>
       </div>
-      <div class="d-flex justify-content-between">
-          <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">地址:</label>
+      <div class="d-flex">
+          <label for="inputPassword" class="col-form-label pe-2 text-dark-gray text-nowrap">地址:</label>
           <div class="d-flex align-items-center">
-              <label for="" class="fw-bold text-dark-gray">${finalDataLocal.address}</label>
+              <label for="" class="text-dark-gray">${finalDataLocal.address}</label>
           </div>
       </div>
   </div>
-  <div class="col me-3 border-end border-3">
+  <div class="col border-end border-3">
       <div class="col">
-          <div class="d-flex justify-content-between">
-              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">進場時間:</label>
+          <div class="d-flex">
+              <label for="inputPassword" class="col-form-label pe-2 text-dark-gray text-nowrap">進場時間:</label>
               <div class="d-flex align-items-center">
-                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.inTime}</label>
+                  <label for="" class="text-dark-gray">${finalDataLocal.inTime}</label>
               </div>
           </div>
-          <div class="d-flex justify-content-between">
-              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">離場時間:</label>
+          <div class="d-flex">
+              <label for="inputPassword" class="col-form-label pe-2 text-dark-gray text-nowrap">離場時間:</label>
               <div class="d-flex align-items-center">
-                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.outTime}</label>
+                  <label for="" class="text-dark-gray">${finalDataLocal.outTime}</label>
               </div>
           </div>
       </div>
   </div>
   <div class="col">
       <div class="col">
-          <div class="d-flex justify-content-between">
-              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">車牌號碼:</label>
+          <div class="d-flex">
+              <label for="inputPassword" class="col-form-label pe-2 text-dark-gray text-nowrap">車牌號碼:</label>
               <div class="d-flex align-items-center">
-                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.carIdV}</label>
+                  <label for="" class="text-dark-gray">${finalDataLocal.carIdV}</label>
               </div>
           </div>
-          <div class="d-flex justify-content-between">
-              <label for="inputPassword" class="col-form-label fw-bold  text-dark-gray text-nowrap">應繳金額:</label>
+          <div class="d-flex">
+              <label for="inputPassword" class="col-form-label pe-2 text-dark-gray text-nowrap">應繳金額:</label>
               <div class="d-flex align-items-center">
-                  <label for="" class="fw-bold text-dark-gray">${finalDataLocal.totalCharge}</label>
+                  <label for="" class="text-dark-gray">${finalDataLocal.totalCharge}</label>
               </div>
           </div>
       </div>

@@ -340,7 +340,7 @@ axios.get(Url + `/600/users/${usersId}`, {
                     title: "請先登入",
                     timer: 1500
                 });
-            }else{
+            }else if(likeBtn.textContent === '長期方案'){
                 window.location.href = "#plan-container";
             }
         })
@@ -352,7 +352,7 @@ axios.get(Url + `/600/users/${usersId}`, {
                     title: "請先登入",
                     timer: 1500
                 });
-            } else {
+            } else if(likeBtn.textContent === '長期方案'){
                 window.location.href = "#plan-container";
             }
         })
@@ -365,7 +365,7 @@ axios.get(Url + `/600/users/${usersId}`, {
                     title: "請先登入",
                     timer: 1500
                 });
-            } else {
+            } else if(likeBtn.textContent === '長期方案'){
                 window.location.href = "#plan-container";
             }
         })
@@ -701,12 +701,14 @@ const showRoadOptionListRwd = (a) => {
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
     e.preventDefault();
+    e.stopPropagation();
     rwdBtn = !rwdBtn;
     showRwdChoice()
     rotateIcon()
 })
 //監聽彈跳視窗背景
 searchBg.addEventListener('click' , (e) => {
+    if(e.target.classList[0] !== 'searchBg')return
     rwdBtn = !rwdBtn;
     showRwdChoice()
     rotateIcon()
