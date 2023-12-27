@@ -78,18 +78,18 @@ const cardBody = () => {
 }
 
 // 方案點擊後樣式
-function select(el) {
-  const plan = el.id;
-  if (!plan) {
-    btn.disabled = false;
-  }
+// function select(el) {
+//   const plan = el.id;
+//   if (!plan) {
+//     btn.disabled = false;
+//   }
 
-  Array.from(el.parentElement.children).forEach(function (child) {
-    child.classList.remove("plan-active");
-  });
+//   Array.from(el.parentElement.children).forEach(function (child) {
+//     child.classList.remove("plan-active");
+//   });
 
-  el.classList.add("plan-active");
-}
+//   el.classList.add("plan-active");
+// }
 
 // 抓進出場資料
 document.getElementById("entryDate").addEventListener("change", updateOrderSummary);

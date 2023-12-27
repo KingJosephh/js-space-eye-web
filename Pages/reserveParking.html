@@ -61,10 +61,10 @@
     </header>
     <section>
         <div class="container">
-            <h2 class="text-center">愈約停車</h2>
+            <h2 class="text-center">預約停車</h2>
             <hr class="text-dark mt-5">
-            <div class="row mt-5 d-flex justify-content-between gx-5">
-                <div class="col-6">
+            <div class="row mt-5 mb-5 d-flex justify-content-between gx-5 flex-column flex-sm-row">
+                <div class="col-sm-6">
                     <p class="fs-5 fw-bold text-dark-gray mt-2">停車場資訊</p>
                     <div class="dataDetail">
                         <!-- <div class="changePassWord d-flex justify-content-between mb-3">
@@ -94,17 +94,17 @@
                     </div>
                     <hr class="text-dark">
                     <div class="fs-7">
-                        <p> 1. 同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</p>
+                        <p>1. 同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</p>
                         <p>2. 預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</p>
                         <p>3. 本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</p>
-                        <p> 4. 若預約天數不為剛好天數(例:1、7、30、360)均用單日價格累加計算</p>
+                        <p>4. 若預約天數不為剛好天數(例:1、7、30、365)均用單日價格累加計算</p>
                         <p class="text-danger">★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。 ★</p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div class="mt-5"></div>
                     <div class="row g-3 d-flex justify-content-between mb-3">
-                        <label for="PhoneNumber" class="col-sm-2 col-form-label fw-bold text-dark-gray">方案選擇</label>
+                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">方案選擇</label>
                         <div class="col-8 d-flex">
                             <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" id="plan">
                                 <option class="text-5" value="當日預約" selected>當日預約</option>
@@ -115,18 +115,18 @@
                         </div>
                     </div>
                     <div class="row g-3 d-flex justify-content-between mb-4">
-                        <label for="PhoneNumber" class="col-sm-2 col-form-label fw-bold text-dark-gray">入場日期:</label>
+                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">入場日期:</label>
                         <div class="col-8 d-flex">
                             <input class="form-control bg-light-gray" type="date" value="" aria-label="Disabled input example" id="inPark">
                         </div>
                     </div>
                     <div class="row g-3 d-flex justify-content-between mb-4">
-                        <label for="PhoneNumber" class="col-sm-2 col-form-label fw-bold text-dark-gray">離場日期:</label>
+                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">離場日期:</label>
                         <div class="col-8 d-flex">
                             <input class="form-control bg-light-gray" type="date" value="" aria-label="Disabled input example" id="outPark">
                         </div>
                     </div><div class="row g-3 d-flex justify-content-between mb-4">
-                        <label for="PhoneNumber" class="col-sm-2 col-form-label fw-bold text-dark-gray">車牌號碼:</label>
+                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">車牌號碼:</label>
                         <div class="col-8 d-flex">
                             <input class="form-control bg-light-gray" type="text" placeholder="請輸入車牌號碼" aria-label="Disabled input example" id="carId">
                         </div>
@@ -144,8 +144,8 @@
                     </form>
                     <div class="row">
                         <div class="col d-flex flex-row-reverse" style="margin-top: 50px;">
-                            <button type="button" class="btn btn-light-green mx-3 px-5 py-1" id="checkOut">確認送出</button>
-                            <button type="button" class="btn btn-light-gray mx-3 px-3 py-1">取消</button>
+                            <button type="button" class="btn btn-light-solid-l mx-3" id="checkOut">確認送出</button>
+                            <button type="button" class="btn btn-dark-trans-l mx-3">取消</button>
                         </div>
                     </div>
                 </div>
