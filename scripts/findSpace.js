@@ -34,6 +34,7 @@ let filteredMapData = [];
 let saveLikePark = [];
 let locatedX = 24.162139;
 let locatedY = 120.647021;
+let showType = 1;
 
 //leaflet資料
 var map = L.map('map').setView([24.162139, 120.647021], 17);
@@ -177,10 +178,12 @@ const dataToMap = () => {
 btn1.addEventListener('click', (e) => {
     hidePage(btn1);
     btnStylingTogglerToLightL(btn1,btn2);
+    console.log(showType)
 });
 btn2.addEventListener('click', (e) => {
     hidePage(btn2);
     btnStylingTogglerToLightL(btn2, btn1);
+    console.log(showType)
 });
 btn21.addEventListener('click', () => {
     getType = btn21.value;
@@ -215,6 +218,7 @@ confirmBtn.addEventListener('click', () => {
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue);
     render(filteredMapData);
     dataToMap()
+    showType = 2
 })
 
 //路邊停車與停車場按鈕監聽
@@ -223,9 +227,13 @@ btn11.addEventListener('click' , () => {
     let road = roadOption.value;
     getParkValue = btn11.value
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
     // moveBtn1(btn11)
     btnStylingTogglerToLightM(btn11,btn12);
+    if(showType == 1){
+        return
+    }else if(showType == 2){
+        render(filteredMapData)
+    }
     dataToMap()
 })
 btn12.addEventListener('click' , () => {
@@ -233,9 +241,12 @@ btn12.addEventListener('click' , () => {
     let road = roadOption.value;
     getParkValue = btn12.value
     getMapDetail(area,road,getType,getSpaceOrNot,getParkValue)
-    render(filteredMapData)
-    // moveBtn1(btn12)
     btnStylingTogglerToLightM(btn12, btn11);
+    if(showType == 1){
+        return
+    }else if(showType == 2){
+        render(filteredMapData)
+    }
     dataToMap()
 })
 
@@ -294,7 +305,7 @@ axios.get(Url + `/600/users/${usersId}`, {
             if (likeBtn.textContent === '長期方案') {
                 optionParkId = likeBtn.getAttribute('data-parkId');
                 localStorage.setItem('parkId', optionParkId);
-                window.location.href = "reserveParking.html";
+                window.location.href = "#plan-container";
             }
             if(likeBtn.textContent === '詳細資料'){
                 optionParkId = likeBtn.getAttribute('data-parkId');
@@ -304,8 +315,12 @@ axios.get(Url + `/600/users/${usersId}`, {
         })
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target;
-            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
+            if(likeBtn.textContent === '預約停車'){
                 window.location.href = "reserveParking.html"
+                console.log('aa')
+            }
+            else if(likeBtn.textContent === '長期方案'){
+                window.location.href = "#plan-container"
                 console.log('aa')
             }
         })
@@ -319,33 +334,39 @@ axios.get(Url + `/600/users/${usersId}`, {
     .catch((error) => {
         showMapCard.addEventListener('click' ,(e) => {
             let likeBtn = e.target
-            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+            if(likeBtn.classList.contains('save-like') ){
                 Swal.fire({
                     icon: "error",
                     title: "請先登入",
                     timer: 1500
                 });
+            }else{
+                window.location.href = "#plan-container";
             }
         })
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target
-            if(likeBtn.textContent === '預約停車' || likeBtn.textContent === '長期方案'){
+            if(likeBtn.textContent === '預約停車'){
                 Swal.fire({
                     icon: "error",
                     title: "請先登入",
                     timer: 1500
                 });
+            } else {
+                window.location.href = "#plan-container";
             }
         })
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
             let likeBtn = e.target
-            if(likeBtn.classList.contains('save-like') || likeBtn.textContent === '長期方案'){
+            if(likeBtn.classList.contains('save-like')){
                 Swal.fire({
                     icon: "error",
                     title: "請先登入",
                     timer: 1500
                 });
+            } else {
+                window.location.href = "#plan-container";
             }
         })
         console.error('请求受保护的端点失败:', error);
@@ -355,9 +376,11 @@ axios.get(Url + `/600/users/${usersId}`, {
 function hidePage(a){
     let num = parseInt(a.getAttribute('data-num'));
     if(num === 1){
+        showType = 1
         hideSearch.style.display = 'flex';
         hideShowPark.style.display = 'none';
     }else if(num === 2){
+        showType = 2
         hideSearch.style.display = 'none';
         hideShowPark.style.display = 'flex';
     }
