@@ -13,13 +13,14 @@
 - Leaflet 地圖套件
 - Validate 表單驗證套件
 - Sweetalert2 彈出框套件
+- AOS 滾動動化套件
 
 ## 作者
 
-- Mangotreee / 專案發起人 / 統籌
+- Mangotreee / 發起人
 - Celine 510 / PM
 - 張景泰
-- 小廷
+- 小廷 / 前期規劃
 
 ## 設計師
 
@@ -28,5 +29,5 @@
 
 ## 專題指導
 
-- 六角學院 / christina 助教
-- Jessica / 設計溝通助教
+- 六角學院 / christina / 助教
+- 六角學院 / Jessica / 設計溝通助教
