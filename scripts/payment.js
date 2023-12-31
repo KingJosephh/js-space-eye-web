@@ -9,9 +9,6 @@ let orderDetail = {}
 let orderDetailAll = []
 const finalData = localStorage.getItem('finalData')
 const finalDataLocal = JSON.parse(finalData)
-// console.log(planData)
-//將本地端交易明細抓下來放入orderDetailAll
-console.log(finalDataLocal)
 if(orderDetailLocal === null){
 
 }else{
@@ -124,9 +121,6 @@ showSummaryBtns.forEach(btn => {
       const orderSummaryEntryTime = document.querySelector('[data-orderSummaryEntryTime]');
       const orderSummaryExitTime = document.querySelector('[data-orderSummaryExitTime]');
 
-      // orderSummaryPlan.textContent = localStorage.getItem('chosePlan');
-      // orderSummaryEntryTime.textContent = localStorage.getItem('entryTime');
-      // orderSummaryExitTime.textContent = localStorage.getItem('exitTime');
       orderSummaryPlan.textContent = finalDataLocal.plan;
       orderSummaryEntryTime.textContent = finalDataLocal.inTime;
       orderSummaryExitTime.textContent = finalDataLocal.outTime
@@ -189,10 +183,6 @@ function storeOrderInfo(){
   const orderNum = generateOrderNumber();
   const paymentMethod = nowPageId[4] === '1' ? "信用卡" : nowPageId[4] === '2' ? "網路ATM" : nowPageId[4] === '3' ? "ATM櫃員機" : "超商代碼";
   const paymentStatus = nowPageId[4] === 1 ? true : nowPageId[4] === 2 ? true : false;
-  // localStorage.setItem('orderId', orderNum);
-  // localStorage.setItem('paymentMethod', paymentMethod); 
-  // // 信用卡跟網路ATM付款狀態預設為true，其二為false
-  // localStorage.setItem('paymentStatus', paymentStatus); 
     orderDetail.orderId = orderNum;
     orderDetail.paymentMethod = paymentMethod;
     orderDetail.paymentStatus = paymentStatus;
@@ -202,7 +192,6 @@ function storeOrderInfo(){
     orderDetail.totalCharge = finalDataLocal.totalCharge;
     orderDetailAll.push(orderDetail)
     localStorage.setItem('orderDetail' , JSON.stringify(orderDetailAll))
-  console.log(orderDetail)
 }
 
 // 產出隨機訂單編號

@@ -160,30 +160,18 @@ const dataToMap = () => {
     </div>`);
             
         }
-        // const longTermBtn = marker.getElement().querySelector('#longTermBtn');
-        // longTermBtn.classList.toggle('d-none', dataDetail.parkName === "路邊停車格");
         markersLayer.addLayer(marker);
     }
-    // console.log(locatedX, locatedY)
     map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
 }
-//測試地圖上卡片監聽事件(目前無效)
-// mapLocated.addEventListener('click' , (e) => {
-//     console.log(e.target)
-// })
-//搜尋條件與停車場一覽監聽
-
-
 //車位類別按鈕監聽
 btn1.addEventListener('click', (e) => {
     hidePage(btn1);
     btnStylingTogglerToLightL(btn1,btn2);
-    console.log(showType)
 });
 btn2.addEventListener('click', (e) => {
     hidePage(btn2);
     btnStylingTogglerToLightL(btn2, btn1);
-    console.log(showType)
 });
 btn21.addEventListener('click', () => {
     getType = btn21.value;
@@ -281,9 +269,7 @@ const parsedLocalParkData = () => {
     if(localParkData === null){
         saveLikePark = [];
     }else{
-        console.log('執行')
         let ss = localParkData.split(',').map(parseFloat);
-        console.log(ss)
         saveLikePark.push(...ss)
     }
 } 
@@ -310,18 +296,15 @@ axios.get(Url + `/600/users/${usersId}`, {
             if(likeBtn.textContent === '詳細資料'){
                 optionParkId = likeBtn.getAttribute('data-parkId');
                 localStorage.setItem('parkId', optionParkId);
-                // console.log(optionPark)
             }
         })
         modalFooter.addEventListener('click' , (e) => {
             let likeBtn = e.target;
             if(likeBtn.textContent === '預約停車'){
                 window.location.href = "reserveParking.html"
-                console.log('aa')
             }
             else if(likeBtn.textContent === '長期方案'){
                 window.location.href = "#plan-container"
-                console.log('aa')
             }
         })
         mapLocated.addEventListener('click' , (e) => {
@@ -329,7 +312,6 @@ axios.get(Url + `/600/users/${usersId}`, {
         })
         // parsedLocalParkData()
         const data = response.data;
-        console.log('从受保护的端点获取的数据:', data);
     })
     .catch((error) => {
         showMapCard.addEventListener('click' ,(e) => {
@@ -395,13 +377,11 @@ const addLikeParkToLocal = (e) => {
             getLikePark(filteredMapData,someValue)
             likeBtn.classList.add('bi-suit-heart-broke');
             updateLocalStorage()
-            console.log(saveLikePark)
         } else if (e.target.classList.contains('bi-suit-heart-broke')) {
             let someValue = likeBtn.getAttribute('data-some-value');
             removeLikePark(saveLikePark,someValue)
             likeBtn.classList.remove('bi-suit-heart-broke');
             updateLocalStorage()
-            console.log(saveLikePark)
         }
     }
 }
@@ -496,7 +476,6 @@ const getMap = () => {
     axios.get(Url + '/parks?_expand=road')
     .then(function(res){
         data = res.data
-        console.log(data)
     })
     .catch(function(err){
         console.log(err)
@@ -541,7 +520,6 @@ const render = (aa) => {
     str += content
     })
     showMapCard.innerHTML = str
-    // console.log(saveLikePark)
     plusLike(aa)
 }
 const hideBtn = (aa) => {
@@ -556,7 +534,6 @@ const getLikePark = (aa, bb) => {
             saveLikePark.push(locateNum);
         }
     });
-    console.log(saveLikePark);
 };
 //將saveLikePark裡喜愛停車場remove
 const removeLikePark = (cc, dd) => {
@@ -572,7 +549,6 @@ const plusLike = (aa) => {
     const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
     aa.forEach((item) => {
         let locatedId = item.location.latitude;
-        // console.log(locatedId)
         for (let i = 0; i < saveLikePark.length; i++) {
             if (locatedId === saveLikePark[i]) {
                 let saveLikeElement = saveLikePark[i];
@@ -668,35 +644,6 @@ const showRoadOptionListRwd = (a) => {
         }
         roadOptionRwd.innerHTML = content;
 }
-//選車位種類按鈕區塊移動
-/* const moveBtn2Rwd = (y) => {
-    let num = parseInt(y.getAttribute('data-num'));
-    if (num > btnNumList2) {
-        btnBgMove2Rwd.style.marginLeft = (100 * (num-1)) + 'px';
-    }else if(num > btnNumList2){
-        btnBgMove2Rwd.style.marginLeft = (100 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove2Rwd.style.marginLeft = 0;
-    }
-} */
-//顯示有車位停車場按鈕區塊移動
-/* const moveBtn3Rwd = (z) => {
-    let num = parseInt(z.getAttribute('data-num'));
-    if (num > btnNumList2) {
-        btnBgMove3Rwd.style.marginLeft = (158 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove3Rwd.style.marginLeft = 0;
-    }
-} */
-//選擇路邊或停車唱按鈕區塊移動
-/* const moveBtn1Rwd = (w) => {
-    let num = parseInt(w.getAttribute('data-num'));
-    if (num > btnNumList1) {
-        btnBgMove1Rwd.style.marginLeft = (170 * (num-1)) + 'px';
-    }else if(num=1){
-        btnBgMove1Rwd.style.marginLeft = 0;
-    }
-} */
 //控制篩選藍
 let rwdBtn = false
 searchBtn.addEventListener('click' , (e) => {
@@ -723,7 +670,6 @@ const showRwdChoice = () => {
     }else if(rwdBtn === false){
         let area = areaOptionRwd.value;
         let road = roadOptionRwd.value;
-        console.log(area,road,getType,getSpaceOrNot,getParkValue)
         getMapDetailRwd(area,road,getType,getSpaceOrNot,getParkValue)
         dataToMap()
         searchBg.classList.remove('show');
@@ -752,5 +698,4 @@ const getMapDetailRwd = (a,b,c,d,e) => {
             return item
         }
     })
-    console.log(filteredMapData)
 }

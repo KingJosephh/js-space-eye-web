@@ -15,7 +15,6 @@ const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const contentToHide = document.querySelector('.content-to-hide-owner');
 const contentToHide2 = document.querySelector('.content-to-hide-save');
 const btnList = document.querySelector('#list')
-// const contentToHide3 = document.querySelector('.content-to-hide-place-history');
 const contentToHide3 = document.querySelector('.content-to-hide-trading-history');
 const contentToHide4 = document.querySelector('.content-to-hide-appointment');
 const contentToHide5 = document.querySelector('.content-to-hide-storage');
@@ -32,11 +31,6 @@ const exitTimeHeader = localStorage.getItem("exitTime");
 const chosePlanHeader = localStorage.getItem("chosePlan");
 let locatedX = 24.162139;
 let locatedY = 120.647021;
-
-// 將這些時間設置到表頭的相應元素中
-// document.getElementById("entryTimeHeader").textContent = `${entryTimeHeader}`;
-// document.getElementById("exitTimeHeader").textContent = `${exitTimeHeader}`;
-// document.getElementById("chosePlanHeader").textContent = `${chosePlanHeader}`;
 
 //切換六個項目按鈕
 function getNum(x) {
@@ -61,7 +55,6 @@ function getHide(same) {
 //如果num跟取得數值一樣將項目style加上block
 function showContent(z) {
   let num = parseInt(z.getAttribute('data-num'));
-  // console.log(num);
   if (num === 1) {
     getHide(z)
     contentToHide.style.display = 'block';
@@ -169,17 +162,6 @@ function btnStylingTogglerToLightL(activeBtn, closeBtn1, closeBtn2, closeBtn3, c
   activeBtn.classList.remove('btn-dark-trans-l');
   activeBtn.classList.add('btn-light-solid-l');
 }
-
-//選擇路邊或停車唱按鈕區塊移動
-// const moveBtn1 = (w) => {
-//   let num = parseInt(w.getAttribute('data-num'));
-//   if (num > btnNumList1) {
-//     btnBgMove1.style.marginLeft = (130 * (num - 1)) + 'px';
-//   } else if (num = 1) {
-//     btnBgMove1.style.marginLeft = 0;
-//   }
-// }
-
 //我的收藏盤出視窗
 const saveParkModel = document.querySelector('#saveModel')
 saveParkModel.addEventListener('show.bs.modal', function (e) {
@@ -189,7 +171,6 @@ saveParkModel.addEventListener('show.bs.modal', function (e) {
   const saveAddress = saveButton.dataset.bsSaveAddress
   const saveSpace = saveButton.dataset.bsSaveSpace
   const saveIn = saveButton.dataset.bsSaveIn
-  // console.log(saveButton,savePark)
   const park = saveParkModel.querySelector('#park')
   const type = saveParkModel.querySelector('#type')
   const address = saveParkModel.querySelector('#address')
@@ -201,14 +182,6 @@ saveParkModel.addEventListener('show.bs.modal', function (e) {
   space.textContent = saveSpace
   inOrOut.textContent = saveIn
 })
-//停車紀錄提示框
-// const modalByDelete = document.querySelector('#deleteModal');
-// modalByDelete.addEventListener('show.bs.modal', function(event) {
-//     const button = event.relatedTarget;
-//     const orderId = button.dataset.bsOrderId;
-//     const modalText = modalByDelete.querySelector('#deleteText');
-//     modalText.textContent = orderId;
-// })
 //交易紀錄提示框
 const TradToDelete = document.querySelector('#deleteTrad');
 TradToDelete.addEventListener('show.bs.modal', function (event) {
@@ -225,17 +198,6 @@ deleteAppointmentModel.addEventListener('show.bs.modal', function (p) {
   const text = deleteAppointmentModel.querySelector('#deleteReserveText')
   text.textContent = getAppointment
 })
-//儲值專區提示框
-// const storageModel = document.querySelector('#storageModel')
-// storageModel.addEventListener('show.bs.modal', function (event) {
-//   const UnitValue = document.querySelector('#unitId').value.trim()
-//   const AmountValue = document.querySelector('#amountId').value.trim()
-//   const storageButton = event.relatedTarget
-//   const unit = storageModel.querySelector('#unit')
-//   const amount = storageModel.querySelector('#amount')
-//   unit.textContent = UnitValue
-//   amount.textContent = AmountValue
-// })
 //更改密碼按鈕監聽
 getNewPassword.addEventListener('click', (e) => {
   let passwordV = '';
@@ -258,7 +220,6 @@ const applyChangePassWord = (aa) => {
       Authorization: `Bearer ${token}`,
     },
   }).then((response) => {
-    console.log(response)
     alert('密碼修改成功')
   }).catch((err) => {
     console, log(err)
@@ -433,7 +394,6 @@ const dataToMap = (aa) => {
       </div>
   </div>`);
     } else if (dataDetail.space !== '0' && dataDetail.parkName === "路邊停車格") {
-      console.log('執行')
       marker = L.marker([locatedX, locatedY], { icon: greenIcon })
         .bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
@@ -456,7 +416,6 @@ const dataToMap = (aa) => {
       </div>
   </div>`);
     } else if (dataDetail.space !== '0' && dataDetail.parkName !== "路邊停車格") {
-      console.log('執行')
       marker = L.marker([locatedX, locatedY], { icon: greenIcon })
         .bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
@@ -488,7 +447,6 @@ const parsedLocalParkData = () => {
     saveLikePark = [];
   } else {
     let ss = localParkData.split(',').map(parseFloat);
-    console.log(ss)
     saveLikePark.push(...ss)
   }
 }
@@ -500,7 +458,6 @@ const getMapData = () => {
     .then((response) => {
       data = response.data
       getLikePark(saveLikePark, getParkValue)
-      console.log(response)
     }).catch((err) => {
       console.log(err)
     })
@@ -516,7 +473,6 @@ const getLikePark = (aa, bb) => {
     })
     mapDataFilterA.push(...mapDataFilter)
   })
-  console.log(mapDataFilterA)
   //渲染我的收藏至畫面
   mapDataFilterA.forEach((item) => {
     let additionalClass = (item.parkName === "路邊停車格") ? 'd-none' : '';
@@ -552,14 +508,12 @@ showMapCard.addEventListener('click', (e) => {
   removeLikePark(saveLikePark, btnValue)
   localStorage.setItem('likePark', saveLikePark);
   getLikePark(saveLikePark, getParkValue)
-  // console.log(e.target)
 })
 //將收藏停車場愛心換成紅色
 const plusLike = (aa) => {
   const saveLikes = document.querySelectorAll('.save-like[data-some-value]');
   aa.forEach((item) => {
     let locatedId = item.location.latitude;
-    // console.log(locatedId)
     for (let i = 0;i < saveLikePark.length;i++) {
       if (locatedId === saveLikePark[i]) {
         let saveLikeElement = saveLikePark[i];
@@ -590,7 +544,6 @@ const showOrderDeal = (aa) => {
   let pay;
   let str = ''
   aa.forEach(item => {
-    console.log(item)
     pay = item.paymentStatus ? '已付款' : '未付款';
     str += `<tr>
     <td scope="row" class="py-4">${item.orderId}</td>
@@ -640,7 +593,6 @@ deleteTradBtn.addEventListener('click', (e) => {
 const reserve = localStorage.getItem('finalDataAll')
 const reserveLocal = JSON.parse(reserve)
 const reserveHistory = document.querySelector('#reserveHistory')
-console.log(reserveLocal)
 const showReserveDetail = (bb) => {
   let str = ''
   bb.forEach(item => {
@@ -710,8 +662,4 @@ storageCheckoutBtn.addEventListener('click', e => {
     title: "尚未開放儲值功能",
     timer: 1500
   });
-  // const amount = document.querySelector('#amountId');
-  // console.log(amount.value);
-
-  // window.location.href = 'payment.html';
 })

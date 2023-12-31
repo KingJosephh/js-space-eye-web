@@ -10,13 +10,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const summaryButton = document.getElementById("showWatermarkBtn");
     const summaryWindow = document.getElementById("elementToClose"); 
     // 前往車主專區按扭
-    // const cardButton = document.querySelector(".btn-card");
     const cardButton2 = document.getElementById("button6");
     // 儲存選擇銀行資料
     const bankSelect = document.getElementById("bankSelect");
     const showBankDataBtn2 = document.getElementById("showWatermarkBtn2");
     const showBankDataBtn3 = document.getElementById("showWatermarkBtn3");
-    // const bankDataContainer = document.getElementById("bankData");
 
     function showPage(pageId, pagesClass) {
         const allPages = document.querySelectorAll(`.${pagesClass}`);
@@ -89,11 +87,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }).then(res => {
             summaryWindow.style.display = "flex";
         })
-        
-
-        /* cardButton.addEventListener("click", function() {
-            window.location.href = "carOwnerNew.html";
-        }) */
     })
     showBankDataBtn3.addEventListener("click", () => {
         Swal.fire({
@@ -103,22 +96,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }).then(res => {
             summaryWindow.style.display = "flex";
         })
-        // summaryWindow.style.display = "flex";
-
-        // cardButton.addEventListener("click", function() {
-        //     window.location.href = "carOwnerNew.html";
-        // })
     })
-
     cardButton2.addEventListener("click", function() {
         window.location.href = "carOwnerNew.html";
     })
-
     document.getElementById("showWatermarkBtn2").addEventListener("click",function(){
         swal("Success!", "訂單確認成功!", "success");
     });
-    
-    
     // 檢查是否填寫信用卡卡號
     summaryButton.addEventListener("click", (event) => {
       const cardNumber = document.getElementById("cardnumber").value;
@@ -126,7 +110,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       const securityCode = document.getElementById("securitycode").value;
 
       if (cardNumber && expirationDate && securityCode) {
-        // document.getElementById("cardData").textContent = "信用卡資料是否填寫: 是";
         
         // 顯示訂單摘要視窗
         summaryWindow.style.display = "flex";
@@ -142,7 +125,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("chosePlan").textContent = `方案選擇: ${chosePlanHeader}`;
 
       } else {
-        // document.getElementById("cardData").textContent = "信用卡資料是否填寫: 否";
         alert("请填寫完整的信用卡信息！");
     }
 });

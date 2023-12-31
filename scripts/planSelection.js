@@ -25,10 +25,8 @@ axios.get(Url + `/600/users/${usersId}`, {
     },
   })
   .then((response) => {
-    // console.log(response);
   })
   .catch((error) => {
-    // console.log(error);
     Swal.fire({
       icon: "error",
       title: "尚未登入",
@@ -44,9 +42,8 @@ axios.get(Url + '/parks?_expand=road')
     data = response.data
     getFindSpace(data)
     cardBody()
-    // console.log(getFindSpace)
   }).catch(function (err) {
-    // console.log(err)
+    console.log(err)
   })
 //選出預約的停車場資料
 const getFindSpace = (aa) => {
@@ -76,20 +73,6 @@ const cardBody = () => {
               </tbody>`
   detailsCard.innerHTML = Card;
 }
-
-// 方案點擊後樣式
-// function select(el) {
-//   const plan = el.id;
-//   if (!plan) {
-//     btn.disabled = false;
-//   }
-
-//   Array.from(el.parentElement.children).forEach(function (child) {
-//     child.classList.remove("plan-active");
-//   });
-
-//   el.classList.add("plan-active");
-// }
 
 // 抓進出場資料
 document.getElementById("entryDate").addEventListener("change", updateOrderSummary);
@@ -158,7 +141,6 @@ submitPlanBtn.addEventListener("click", function () {
   const planSelected = document.querySelector('[class="plan plan-active"]');
   const reserveNum = generateReserveNumber();
 
-  // console.log(planSelected);
   if (!entryDateValue || !exitDateValue) {
     Swal.fire({
       title: "入場日期和離場日期未選擇",
@@ -236,11 +218,3 @@ const cancelSubmitPlanBtn = document.querySelector("[data-cancelSubmitPlan]");
 cancelSubmitPlanBtn.addEventListener("click", function () {
   window.location.href = "findSpace.html";
 })
-
-// 确保 optionPark 不为空
-if (optionPark) {
-  console.log('Received optionPark in another page:', optionPark);
-} else {
-  console.log('No optionPark data available.');
-}
-

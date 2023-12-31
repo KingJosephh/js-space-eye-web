@@ -8,7 +8,6 @@ const dataDetail = document.querySelector('.dataDetail');
 const plan = document.querySelector('#plan');
 const inPark = document.querySelector('#inPark');
 const outPark = document.querySelector('#outPark');
-// const pay = document.querySelector('#pay');
 const checkOut = document.querySelector('#checkOut');
 const carId = document.querySelector('#carId')
 let data;
@@ -19,7 +18,6 @@ let charge;
 let chargeList;
 let totalCharge;
 
-console.log(reservePark)
 checkOut.addEventListener('click', () => {
     const planV = plan.value
     const inParkV = new Date(inPark.value)
@@ -52,11 +50,8 @@ checkOut.addEventListener('click', () => {
             finalData.plan = planV
             finalData.inTime = inParkV
             finalData.outTime = outParkV
-            // finalData.payV = payV
             finalData.carIdV = carIdV
             finalData.totalCharge = totalCharge
-            // localStorage 只能存儲字符串形式的數據，因此將物件直接存儲進去可能會導致不正確的結果。
-            // 為了將物件以字符串形式存儲到 localStorage 中，你需要使用 JSON.stringify：
             finalDataAll.push(finalData)
             localStorage.setItem('finalData', JSON.stringify(finalData))
             localStorage.setItem('finalDataAll', JSON.stringify(finalDataAll))
@@ -122,7 +117,6 @@ const countCharge = (daysDifference) => {
 }
 axios.get(Url1 + '/parks?_expand=road')
     .then((res) => {
-        console.log(res.data)
         data = res.data
         getPark()
         showParkDetail(parkData)
@@ -137,7 +131,6 @@ const getPark = () => {
             parkData = item
         }
     })
-    console.log(parkData)
 }
 const showParkDetail = (aa) => {
     str = `<div class="changePassWord d-flex justify-content-between mb-3">
@@ -166,18 +159,6 @@ const showParkDetail = (aa) => {
     </div>`
     dataDetail.innerHTML = str
 }
-//如果違停車格禁用當日預約以外選項
-// const disableOption = (aa) => {
-//     if(aa.parkName === '路邊停车格(僅提供當日預約)'){
-//         document.getElementById('w').disabled = true;
-//         document.getElementById('m').disabled = true;
-//         document.getElementById('y').disabled = true;
-//     }else{
-//         document.getElementById('w').disabled = false;
-//         document.getElementById('m').disabled = false;
-//         document.getElementById('y').disabled = false;
-//     }
-// }
 const getCharge = () => {
     const pattern = /(\d+)\/(\w+)/g;
     const matches = Array.from(charge.matchAll(pattern));
@@ -186,5 +167,4 @@ const getCharge = () => {
         unit: match[2]
     }));
     chargeList = result;
-    console.log(chargeList)
 }
