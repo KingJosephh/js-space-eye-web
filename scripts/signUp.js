@@ -25,7 +25,7 @@ function signUp(a, b, c, d) {
       showConfirmButton: false,
       timer: 1500
     }).then(res => {
-      window.location.href = '/Pages/login.html';
+      window.location.href = 'login.html';
     })
   }).catch(function (err) {
     console.log(err)
