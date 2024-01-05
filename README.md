@@ -13,7 +13,7 @@
 - Leaflet 地圖套件
 - Validate 表單驗證套件
 - Sweetalert2 彈出框套件
-- AOS 滾動動化套件
+- AOS 滾動動畫套件
 
 ## 作者
 

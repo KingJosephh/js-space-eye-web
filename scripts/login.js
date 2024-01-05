@@ -49,47 +49,6 @@ function logIn(a, b) {
   })
 }
 
-// 芒果樹原版
-/* function logIn(a, b) {
-  axios.post(Url + '/login', {
-    'email': a,
-    'password': b,
-  }).then(function (response) {
-    console.log(response)
-    const token = response.data.accessToken;
-    const usersId = response.data.user.id;
-    localStorage.setItem('token', token);
-    localStorage.setItem('usersId', usersId);
-    // document.querySelector('.btn2').style.display = 'block';
-    // document.querySelector('.btn1').style.display = 'none'; // !這兩行會導致出錯，因為display undefined
-    // emailInput.value = '';
-    // passWordInput.value = '';
-    logInForm.reset();
-    alert('登入成功!');
-    window.location.href = '/Pages/carOwnerNew.html';
-  }).catch(function (err) {
-    console.log(err)
-    if (err.response.data === 'Email format is invalid') {
-      showError('.email-warn')
-    } else if (email !== '') {
-      hideError('.email-warn')
-    }
-    if (err.response.data === 'Incorrect password') {
-      showError('.Password-warn')
-      return
-    } else if (email !== '') {
-      hideError('.Password-warn')
-    }
-    else{
-      Swal.fire({
-        icon: "error",
-        title: "登入失敗",
-        text: "請確認已註冊"
-      });
-    }
-  })
-} */
-
 logInBtn.addEventListener('click', function (e) {
   let email = emailInput.value.trim();
   let passWord = passWordInput.value.trim();
@@ -129,5 +88,3 @@ function showError(select) {
 function hideError(select) {
   document.querySelector(select).style.display = 'none';
 }
-
-

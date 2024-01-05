@@ -1,5 +1,3 @@
-// const { default: axios } = require("axios");
-
 const signUpForm = document.querySelector('#signUpForm');
 const UserName = document.getElementById('UserName')
 const Email = document.getElementById('Email')
@@ -42,13 +40,6 @@ function signUp(a, b, c, d) {
     if (err.response.data === 'Email already exists') {
       showError('.warn-Email-exists');
     }
-    // else if (err.response.data === 'Cannot find user') {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "登入失敗",
-    //     text: "請確認您已註冊"
-    //   });
-    // }
   });
 }
 // 檢查輸入是否正確
