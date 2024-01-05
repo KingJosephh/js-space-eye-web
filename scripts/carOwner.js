@@ -213,7 +213,7 @@ getNewPassword.addEventListener('click', (e) => {
 })
 //更改密碼
 const applyChangePassWord = (aa) => {
-  axios.patch(Url + `/600/users/${usersId}`, {
+  axios.patch(UrlWebType + `/600/users/${usersId}`, {
     'password': `${aa}`
   }, {
     headers: {
@@ -227,7 +227,7 @@ const applyChangePassWord = (aa) => {
 }
 
 //取得用戶資料
-axios.get(Url + `/600/users/${usersId}`, {
+axios.get(UrlWebType + `/600/users/${usersId}`, {
   headers: {
     Authorization: `Bearer ${token}`,
   },
@@ -454,7 +454,7 @@ parsedLocalParkData()
 //取得所有停車場資料
 let data = [];
 const getMapData = () => {
-  axios.get(Url + '/parks?_expand=road')
+  axios.get(UrlWebType + '/parks?_expand=road')
     .then((response) => {
       data = response.data
       getLikePark(saveLikePark, getParkValue)

@@ -1,6 +1,6 @@
 const reservePark = localStorage.getItem('parkId');
-const Url1 = 'http://localhost:3000';
-const UrlWebType1 = 'https://space-eye-web-surver.onrender.com'
+// const Url1 = 'http://localhost:3000';
+const UrlWebType = 'https://space-eye-web-surver.onrender.com'
 const token1 = localStorage.getItem('token');
 const usersId1 = localStorage.getItem('usersId');
 const userBtn1 = document.querySelector('#userBtn');
@@ -115,7 +115,7 @@ const countCharge = (daysDifference) => {
         }
     }
 }
-axios.get(Url1 + '/parks?_expand=road')
+axios.get(UrlWebType + '/parks?_expand=road')
     .then((res) => {
         data = res.data
         getPark()

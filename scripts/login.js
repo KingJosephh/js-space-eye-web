@@ -4,7 +4,7 @@ const passWordInput = document.querySelector('.Password');
 const logInBtn = document.querySelector('.logIn-btn');
 
 function logIn(a, b) {
-  axios.post(Url + '/login', {
+  axios.post(UrlWebType + '/login', {
     'email': a,
     'password': b,
   }).then(function (response) {

@@ -1,4 +1,4 @@
-const UrlWebType = 'https://space-eye-web-surver.onrender.com'
+// const UrlWebType = 'https://space-eye-web-surver.onrender.com'
 const optionPark = localStorage.getItem('parkId');
 const detailsCard = document.querySelector('#detailsCard');
 let data = [];
@@ -19,7 +19,7 @@ if(reserveDataLocal === null){
   }
 }
 // 辨識是否登入，未登入跳往'登入頁面'
-axios.get(Url + `/600/users/${usersId}`, {
+axios.get(UrlWebType + `/600/users/${usersId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -37,7 +37,7 @@ axios.get(Url + `/600/users/${usersId}`, {
   });
 
 //取得地圖資料
-axios.get(Url + '/parks?_expand=road')
+axios.get(UrlWebType + '/parks?_expand=road')
   .then(function (response) {
     data = response.data
     getFindSpace(data)

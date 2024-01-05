@@ -1,9 +1,10 @@
-const Url = 'http://localhost:3000';
+// const Url = 'http://localhost:3000';
+const UrlWebType = 'https://space-eye-web-surver.onrender.com';
 const token = localStorage.getItem('token');
 const usersId = localStorage.getItem('usersId');
 // 辨識是否已登入
 const userBtn = document.querySelector('#userBtn');
-axios.get(Url + `/600/users/${usersId}`, {
+axios.get(UrlWebType + `/600/users/${usersId}`, {
   headers: {
     Authorization: `Bearer ${token}`,
   },

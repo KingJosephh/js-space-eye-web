@@ -31,3 +31,8 @@
 
 - 六角學院 / christina / 助教
 - 六角學院 / Jessica / 設計溝通助教
+
+## 測試帳號
+
+- 帳號: test@gmail.com
+- 密碼: test

@@ -9,7 +9,7 @@ let aa = [];
 
 
 function signUp(a, b, c, d) {
-  axios.post(Url + '/users', {
+  axios.post(UrlWebType + '/users', {
     'username': a,
     'email': b,
     'password': c,

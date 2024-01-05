@@ -20,7 +20,7 @@ const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map');
 const reserve = document.querySelector('#reserve')
-const UrlWebType = 'https://space-eye-web-surver.onrender.com';
+// const UrlWebType = 'https://space-eye-web-surver.onrender.com';
 const btnNumList = 1;
 const btnNumList1 = 1;
 const btnNumList2 = 1;
@@ -88,7 +88,7 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 d-none">長期方案</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 d-none" id="longBtn">長期方案</button>
             </div>
         </div>
     </div>`);
@@ -110,7 +110,7 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2" id="longBtn">長期方案</button>
             </div>
         </div>
     </div>`);
@@ -132,7 +132,7 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 d-none">長期方案</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2 d-none" id="longBtn">長期方案</button>
             </div>
         </div>
     </div>`);
@@ -154,11 +154,10 @@ const dataToMap = () => {
             </div>
             <div class="d-flex justify-content-center pt-2">
             <button id="detailBtn" type="button" class="btn btn-dark-solid-m py-2" data-bs-toggle="modal" data-bs-target="#showAllParkModel" data-bs-show-park="${dataDetail.parkName}" data-bs-show-type="${dataDetail.type}" data-bs-show-address="${dataDetail.address}" data-bs-show-space="${dataDetail.space}" data-bs-show-in="${dataDetail.height}">詳細資料</button>
-                <button type="button" class="btn btn-dark-solid-m py-2 ms-2">長期方案</button>
+                <button type="button" class="btn btn-dark-solid-m py-2 ms-2" id="longBtn">長期方案</button>
             </div>
         </div>
     </div>`);
-            
         }
         markersLayer.addLayer(marker);
     }
@@ -274,10 +273,9 @@ const parsedLocalParkData = () => {
     }
 } 
 let optionPark = '';
-// export default optionPark;
 
 // 在后续请求中，将 token 添加到请求头中
-axios.get(Url + `/600/users/${usersId}`, {
+axios.get(UrlWebType + `/600/users/${usersId}`, {
     headers: {
         Authorization: `Bearer ${token}`,
         },
@@ -309,6 +307,10 @@ axios.get(Url + `/600/users/${usersId}`, {
         })
         mapLocated.addEventListener('click' , (e) => {
             addLikeParkToLocal(e)
+            let likeBtn = e.target
+            if (likeBtn.textContent === '長期方案') {
+                window.location.href = "#plan-container";
+            }
         })
         // parsedLocalParkData()
         const data = response.data;
@@ -410,7 +412,7 @@ showAllPark.addEventListener('show.bs.modal' , function (e) {
 //取得區域資料
 let sectionData = [];
 const getSection = () => {
-    axios.get(Url + '/sections')
+    axios.get(UrlWebType + '/sections')
     .then(function(res){
         sectionData = res.data;
         showSectionList()
@@ -445,7 +447,7 @@ areaOption.addEventListener('click', (event) => {
 //取得道路資料
 let roadData = [];
 const getRoad = (roadIdInData) => {
-    axios.get(Url + '/roads')
+    axios.get(UrlWebType + '/roads')
     .then(function(res){
         roadData = res.data;
         const equalId = roadData.filter((item) => {
@@ -473,7 +475,7 @@ const showRoadOptionList = (a) => {
 }
 //取得停車場資訊
 const getMap = () => {
-    axios.get(Url + '/parks?_expand=road')
+    axios.get(UrlWebType + '/parks?_expand=road')
     .then(function(res){
         data = res.data
     })
@@ -517,7 +519,7 @@ const render = (aa) => {
             </div>
         </div>
     </div>`
-    str += content
+    str += content;
     })
     showMapCard.innerHTML = str
     plusLike(aa)
