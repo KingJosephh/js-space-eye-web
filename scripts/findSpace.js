@@ -309,6 +309,10 @@ axios.get(Url + `/600/users/${usersId}`, {
         })
         mapLocated.addEventListener('click' , (e) => {
             addLikeParkToLocal(e)
+            let likeBtn = e.target
+            if(likeBtn.textContent === '長期方案'){
+                window.location.href = "#plan-container";
+            }
         })
         // parsedLocalParkData()
         const data = response.data;
@@ -341,6 +345,7 @@ axios.get(Url + `/600/users/${usersId}`, {
         //地圖上卡片監聽事件
         mapLocated.addEventListener('click' , (e) => {
             let likeBtn = e.target
+            console.log(likeBtn)
             if(likeBtn.classList.contains('save-like')){
                 Swal.fire({
                     icon: "error",
@@ -348,6 +353,7 @@ axios.get(Url + `/600/users/${usersId}`, {
                     timer: 1500
                 });
             } else if(likeBtn.textContent === '長期方案'){
+                console.log('長期方案')
                 window.location.href = "#plan-container";
             }
         })
