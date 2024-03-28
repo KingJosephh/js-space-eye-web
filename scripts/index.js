@@ -5,7 +5,7 @@ const usersId = localStorage.getItem('usersId');
 // 辨識是否已登入
 const userBtn = document.querySelector('#userBtn');
 
-if (usersId){
+if (usersId) {
   axios
     .get(UrlWebType + `/600/users/${usersId}`, {
       headers: {

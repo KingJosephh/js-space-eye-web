@@ -1,9 +1,9 @@
 const reservePark = localStorage.getItem('parkId');
 // const Url1 = 'http://localhost:3000';
 const UrlWebType = 'https://space-eye-web-surver.onrender.com';
-const token1 = localStorage.getItem('token');
-const usersId1 = localStorage.getItem('usersId');
-const userBtn1 = document.querySelector('#userBtn');
+// const token1 = localStorage.getItem('token');
+// const usersId1 = localStorage.getItem('usersId');
+// const userBtn1 = document.querySelector('#userBtn');
 const dataDetail = document.querySelector('.dataDetail');
 const plan = document.querySelector('#plan');
 const inPark = document.querySelector('#inPark');
@@ -54,7 +54,7 @@ checkOut.addEventListener('click', () => {
       finalData.totalCharge = totalCharge;
       finalDataAll.push(finalData);
       localStorage.setItem('finalData', JSON.stringify(finalData));
-      localStorage.setItem('finalDataAll', JSON.stringify(finalDataAll));
+      localStorage.setItem('finalDataAll', JSON.stringify(finalData));
       window.location.href = '/Pages/payment.html';
     }
   }

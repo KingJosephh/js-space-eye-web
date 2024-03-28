@@ -11,8 +11,7 @@ let reserveDataAll = [];
 let reserve = localStorage.getItem('reserveData');
 let reserveDataLocal = JSON.parse(reserve);
 //將本地端資料先放入reserveDataAll
-if (reserveDataLocal === null) {
-} else {
+if (reserveDataLocal !== null) {
   for (let i = 0; i < reserveDataLocal.length; i++) {
     reserveDataAll.push(reserveDataLocal[i]);
   }
@@ -76,12 +75,8 @@ const cardBody = () => {
 };
 
 // 抓進出場資料
-document
-  .getElementById('entryDate')
-  .addEventListener('change', updateOrderSummary);
-document
-  .getElementById('exitDate')
-  .addEventListener('change', updateOrderSummary);
+document.getElementById('entryDate').addEventListener('change', updateOrderSummary);
+document.getElementById('exitDate').addEventListener('change', updateOrderSummary);
 
 function updateOrderSummary() {
   const entryDate = document.getElementById('entryDate').value;
@@ -94,12 +89,8 @@ function updateOrderSummary() {
       const entryTimeText = `${entryDate}`;
       const exitTimeText = `${exitDate}`;
 
-      document
-        .getElementById('entryTime')
-        .getElementsByTagName('span')[0].textContent = entryTimeText;
-      document
-        .getElementById('exitTime')
-        .getElementsByTagName('span')[0].textContent = exitTimeText;
+      document.getElementById('entryTime').getElementsByTagName('span')[0].textContent = entryTimeText;
+      document.getElementById('exitTime').getElementsByTagName('span')[0].textContent = exitTimeText;
       localStorage.setItem('entryTime', entryTimeText); //使用在超商繳費明細資料
       localStorage.setItem('exitTime', exitTimeText); //使用在超商繳費明細資料
       getData.entryTime = entryTimeText;
@@ -111,18 +102,10 @@ function updateOrderSummary() {
 }
 
 // 抓取方案資料
-document
-  .getElementById('monthPlan')
-  .addEventListener('click', () => updatePlanSummary('monthPlan'));
-document
-  .getElementById('weekPlan')
-  .addEventListener('click', () => updatePlanSummary('weekPlan'));
-document
-  .getElementById('yearPlan')
-  .addEventListener('click', () => updatePlanSummary('yearPlan'));
-document
-  .getElementById('dayPlan')
-  .addEventListener('click', () => updatePlanSummary('dayPlan'));
+document.getElementById('monthPlan').addEventListener('click', () => updatePlanSummary('monthPlan'));
+document.getElementById('weekPlan').addEventListener('click', () => updatePlanSummary('weekPlan'));
+document.getElementById('yearPlan').addEventListener('click', () => updatePlanSummary('yearPlan'));
+document.getElementById('dayPlan').addEventListener('click', () => updatePlanSummary('dayPlan'));
 
 function updatePlanSummary(planId) {
   const selectedPlan = document.getElementById(planId);
@@ -223,9 +206,7 @@ paymentButton.addEventListener('click', function () {
 });
 
 // 訂單摘要-取消按鈕
-const orderSummaryCancelBtn = document.querySelector(
-  '[data-orderSummaryCancel]',
-);
+const orderSummaryCancelBtn = document.querySelector('[data-orderSummaryCancel]');
 
 orderSummaryCancelBtn.addEventListener('click', function () {
   const elementToClose = document.getElementById('elementToClose');

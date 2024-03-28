@@ -1,12 +1,12 @@
 window.onload = function () {
   const name = document.getElementById('name');
-  const cardnumber = document.getElementById('cardnumber');
-  const expirationdate = document.getElementById('expirationdate');
-  const securitycode = document.getElementById('securitycode');
-  let cctype = null;
+  const cardNumber = document.getElementById('cardNumber');
+  const expirationDate = document.getElementById('expirationDate');
+  const securityCode = document.getElementById('securityCode');
+  // let cctype = null;
 
   //Mask the Credit Card Number Input
-  var cardnumber_mask = new IMask(cardnumber, {
+  var cardNumber_mask = new IMask(cardNumber, {
     mask: [
       {
         mask: '0000 0000 0000 0000',
@@ -16,7 +16,7 @@ window.onload = function () {
   });
 
   //Mask the Expiration Date
-  var expirationdate_mask = new IMask(expirationdate, {
+  var expirationDate_mask = new IMask(expirationDate, {
     mask: 'MM{/}YY',
     groups: {
       YY: new IMask.MaskedPattern.Group.Range([0, 99]),
@@ -25,7 +25,7 @@ window.onload = function () {
   });
 
   //Mask the security code
-  var securitycode_mask = new IMask(securitycode, {
+  var securityCode_mask = new IMask(securityCode, {
     mask: '0000',
   });
 
@@ -50,29 +50,27 @@ window.onload = function () {
     }
   });
 
-  cardnumber_mask.on('accept', function () {
-    if (cardnumber_mask.value.length == 0) {
+  cardNumber_mask.on('accept', function () {
+    if (cardNumber_mask.value.length == 0) {
       document.getElementById('svgnumber').innerHTML = '0123 4567 8910 1112';
     } else {
-      document.getElementById('svgnumber').innerHTML = cardnumber_mask.value;
+      document.getElementById('svgnumber').innerHTML = cardNumber_mask.value;
     }
   });
 
-  expirationdate_mask.on('accept', function () {
-    if (expirationdate_mask.value.length == 0) {
+  expirationDate_mask.on('accept', function () {
+    if (expirationDate_mask.value.length == 0) {
       document.getElementById('svgexpire').innerHTML = '11/14';
     } else {
-      document.getElementById('svgexpire').innerHTML =
-        expirationdate_mask.value;
+      document.getElementById('svgexpire').innerHTML = expirationDate_mask.value;
     }
   });
 
-  securitycode_mask.on('accept', function () {
-    if (securitycode_mask.value.length == 0) {
+  securityCode_mask.on('accept', function () {
+    if (securityCode_mask.value.length == 0) {
       document.getElementById('svgsecurity').innerHTML = '000';
     } else {
-      document.getElementById('svgsecurity').innerHTML =
-        securitycode_mask.value;
+      document.getElementById('svgsecurity').innerHTML = securityCode_mask.value;
     }
   });
 
@@ -81,15 +79,15 @@ window.onload = function () {
     document.querySelector('.creditCard').classList.remove('flipped');
   });
 
-  cardnumber.addEventListener('focus', function () {
+  cardNumber.addEventListener('focus', function () {
     document.querySelector('.creditCard').classList.remove('flipped');
   });
 
-  expirationdate.addEventListener('focus', function () {
+  expirationDate.addEventListener('focus', function () {
     document.querySelector('.creditCard').classList.remove('flipped');
   });
 
-  securitycode.addEventListener('focus', function () {
+  securityCode.addEventListener('focus', function () {
     document.querySelector('.creditCard').classList.add('flipped');
   });
 };

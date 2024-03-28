@@ -8,10 +8,10 @@ const btn32 = document.querySelector('#btn3-2');
 const btn11 = document.querySelector('#btn1-1');
 const btn12 = document.querySelector('#btn1-2');
 const confirmBtn = document.querySelector('#confirm');
-const btnBgMove = document.querySelector('.btn-bg-move');
-const btnBgMove1 = document.querySelector('.btn-bg-move1');
-const btnBgMove2 = document.querySelector('.btn-bg-move2');
-const btnBgMove3 = document.querySelector('.btn-bg-move3');
+// const btnBgMove = document.querySelector('.btn-bg-move');
+// const btnBgMove1 = document.querySelector('.btn-bg-move1');
+// const btnBgMove2 = document.querySelector('.btn-bg-move2');
+// const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard = document.querySelector('#showMapCard');
@@ -21,10 +21,10 @@ const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map');
 const reserve = document.querySelector('#reserve');
 // const UrlWebType = 'https://space-eye-web-surver.onrender.com';
-const btnNumList = 1;
-const btnNumList1 = 1;
-const btnNumList2 = 1;
-const btnNumList3 = 1;
+// const btnNumList = 1;
+// const btnNumList1 = 1;
+// const btnNumList2 = 1;
+// const btnNumList3 = 1;
 const localParkData = localStorage.getItem('likePark');
 let getType = '一般車位';
 let getSpaceOrNot = 'all';
@@ -40,25 +40,20 @@ let showType = 1;
 var map = L.map('map').setView([24.162139, 120.647021], 17);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
 var greenIcon = new L.Icon({
-  iconUrl:
-    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-  shadowUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
 var greyIcon = new L.Icon({
-  iconUrl:
-    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
-  shadowUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -73,13 +68,9 @@ const dataToMap = () => {
   for (let i = 0; i < filteredMapData.length; i++) {
     let dataDetail = filteredMapData[i];
     let marker;
-    (locatedX = dataDetail.location.latitude),
-      (locatedY = dataDetail.location.longitude);
+    (locatedX = dataDetail.location.latitude), (locatedY = dataDetail.location.longitude);
     if (dataDetail.space === '0' && dataDetail.parkName === '路邊停車格') {
-      marker = L.marker(
-        [dataDetail.location.latitude, dataDetail.location.longitude],
-        { icon: greyIcon },
-      ).bindPopup(`<div class="card">
+      marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon }).bindPopup(`<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div class="h4 card-title">${dataDetail.parkName}</div>
@@ -99,14 +90,8 @@ const dataToMap = () => {
             </div>
         </div>
     </div>`);
-    } else if (
-      dataDetail.space === '0' &&
-      dataDetail.parkName !== '路邊停車格'
-    ) {
-      marker = L.marker(
-        [dataDetail.location.latitude, dataDetail.location.longitude],
-        { icon: greyIcon },
-      ).bindPopup(`<div class="card">
+    } else if (dataDetail.space === '0' && dataDetail.parkName !== '路邊停車格') {
+      marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greyIcon }).bindPopup(`<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div class="h4 card-title">${dataDetail.parkName}</div>
@@ -126,14 +111,8 @@ const dataToMap = () => {
             </div>
         </div>
     </div>`);
-    } else if (
-      dataDetail.space !== '0' &&
-      dataDetail.parkName === '路邊停車格'
-    ) {
-      marker = L.marker(
-        [dataDetail.location.latitude, dataDetail.location.longitude],
-        { icon: greenIcon },
-      ).bindPopup(`<div class="card">
+    } else if (dataDetail.space !== '0' && dataDetail.parkName === '路邊停車格') {
+      marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon }).bindPopup(`<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div class="h4 card-title">${dataDetail.parkName}</div>
@@ -153,14 +132,8 @@ const dataToMap = () => {
             </div>
         </div>
     </div>`);
-    } else if (
-      dataDetail.space !== '0' &&
-      dataDetail.parkName !== '路邊停車格'
-    ) {
-      marker = L.marker(
-        [dataDetail.location.latitude, dataDetail.location.longitude],
-        { icon: greenIcon },
-      ).bindPopup(`<div class="card">
+    } else if (dataDetail.space !== '0' && dataDetail.parkName !== '路邊停車格') {
+      marker = L.marker([dataDetail.location.latitude, dataDetail.location.longitude], { icon: greenIcon }).bindPopup(`<div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div class="h4 card-title">${dataDetail.parkName}</div>
@@ -186,11 +159,11 @@ const dataToMap = () => {
   map.flyTo([locatedX, locatedY], 16, { duration: 2 }); // 第三個參數是動畫持續時間（以秒為單位）
 };
 //車位類別按鈕監聽
-btn1.addEventListener('click', (e) => {
+btn1.addEventListener('click', () => {
   hidePage(btn1);
   btnStylingTogglerToLightL(btn1, btn2);
 });
-btn2.addEventListener('click', (e) => {
+btn2.addEventListener('click', () => {
   hidePage(btn2);
   btnStylingTogglerToLightL(btn2, btn1);
 });
@@ -297,86 +270,88 @@ const parsedLocalParkData = () => {
 let optionPark = '';
 
 // 在后续请求中，将 token 添加到请求头中
-axios
-  .get(UrlWebType + `/600/users/${usersId}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-  .then((response) => {
-    parsedLocalParkData();
-    showMapCard.addEventListener('click', (e) => {
-      let likeBtn = e.target;
-      addLikeParkToLocal(e);
-      //取得停車場資料並存到本地端
-      if (likeBtn.textContent === '長期方案') {
-        optionParkId = likeBtn.getAttribute('data-parkId');
-        localStorage.setItem('parkId', optionParkId);
-        window.location.href = '#plan-container';
-      }
-      if (likeBtn.textContent === '詳細資料') {
-        optionParkId = likeBtn.getAttribute('data-parkId');
-        localStorage.setItem('parkId', optionParkId);
-      }
+if (usersId) {
+  axios
+    .get(UrlWebType + `/600/users/${usersId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      parsedLocalParkData();
+      showMapCard.addEventListener('click', (e) => {
+        let likeBtn = e.target;
+        addLikeParkToLocal(e);
+        //取得停車場資料並存到本地端
+        if (likeBtn.textContent === '長期方案') {
+          optionParkId = likeBtn.getAttribute('data-parkId');
+          localStorage.setItem('parkId', optionParkId);
+          window.location.href = '#plan-container';
+        }
+        if (likeBtn.textContent === '詳細資料') {
+          optionParkId = likeBtn.getAttribute('data-parkId');
+          localStorage.setItem('parkId', optionParkId);
+        }
+      });
+      modalFooter.addEventListener('click', (e) => {
+        let likeBtn = e.target;
+        if (likeBtn.textContent === '預約停車') {
+          window.location.href = 'reserveParking.html';
+        } else if (likeBtn.textContent === '長期方案') {
+          window.location.href = '#plan-container';
+        }
+      });
+      mapLocated.addEventListener('click', (e) => {
+        addLikeParkToLocal(e);
+        let likeBtn = e.target;
+        if (likeBtn.textContent === '長期方案') {
+          window.location.href = '#plan-container';
+        }
+      });
+      // parsedLocalParkData()
+      // const data = response.data;
+    })
+    .catch((error) => {
+      showMapCard.addEventListener('click', (e) => {
+        let likeBtn = e.target;
+        if (likeBtn.classList.contains('save-like')) {
+          Swal.fire({
+            icon: 'error',
+            title: '請先登入',
+            timer: 1500,
+          });
+        } else if (likeBtn.textContent === '長期方案') {
+          window.location.href = '#plan-container';
+        }
+      });
+      modalFooter.addEventListener('click', (e) => {
+        let likeBtn = e.target;
+        if (likeBtn.textContent === '預約停車') {
+          Swal.fire({
+            icon: 'error',
+            title: '請先登入',
+            timer: 1500,
+          });
+        } else if (likeBtn.textContent === '長期方案') {
+          window.location.href = '#plan-container';
+        }
+      });
+      //地圖上卡片監聽事件
+      mapLocated.addEventListener('click', (e) => {
+        let likeBtn = e.target;
+        if (likeBtn.classList.contains('save-like')) {
+          Swal.fire({
+            icon: 'error',
+            title: '請先登入',
+            timer: 1500,
+          });
+        } else if (likeBtn.textContent === '長期方案') {
+          window.location.href = '#plan-container';
+        }
+      });
+      // console.error('请求受保护的端点失败:', error);
     });
-    modalFooter.addEventListener('click', (e) => {
-      let likeBtn = e.target;
-      if (likeBtn.textContent === '預約停車') {
-        window.location.href = 'reserveParking.html';
-      } else if (likeBtn.textContent === '長期方案') {
-        window.location.href = '#plan-container';
-      }
-    });
-    mapLocated.addEventListener('click', (e) => {
-      addLikeParkToLocal(e);
-      let likeBtn = e.target;
-      if (likeBtn.textContent === '長期方案') {
-        window.location.href = '#plan-container';
-      }
-    });
-    // parsedLocalParkData()
-    const data = response.data;
-  })
-  .catch((error) => {
-    showMapCard.addEventListener('click', (e) => {
-      let likeBtn = e.target;
-      if (likeBtn.classList.contains('save-like')) {
-        Swal.fire({
-          icon: 'error',
-          title: '請先登入',
-          timer: 1500,
-        });
-      } else if (likeBtn.textContent === '長期方案') {
-        window.location.href = '#plan-container';
-      }
-    });
-    modalFooter.addEventListener('click', (e) => {
-      let likeBtn = e.target;
-      if (likeBtn.textContent === '預約停車') {
-        Swal.fire({
-          icon: 'error',
-          title: '請先登入',
-          timer: 1500,
-        });
-      } else if (likeBtn.textContent === '長期方案') {
-        window.location.href = '#plan-container';
-      }
-    });
-    //地圖上卡片監聽事件
-    mapLocated.addEventListener('click', (e) => {
-      let likeBtn = e.target;
-      if (likeBtn.classList.contains('save-like')) {
-        Swal.fire({
-          icon: 'error',
-          title: '請先登入',
-          timer: 1500,
-        });
-      } else if (likeBtn.textContent === '長期方案') {
-        window.location.href = '#plan-container';
-      }
-    });
-    console.error('请求受保护的端点失败:', error);
-  });
+}
 
 //控制顯示或隱藏頁面
 function hidePage(a) {
@@ -428,7 +403,7 @@ showAllPark.addEventListener('show.bs.modal', function (e) {
   address.textContent = showAddress;
   space.textContent = showSpace;
   inOrOut.textContent = showIn;
-  longTerm.classList.toggle('d-none', showPark === '路邊停車格');
+  // longTerm.classList.toggle('d-none', showPark === '路邊停車格');
   reserve.classList.toggle('d-none', showPark === '路邊停車格');
 });
 //取得區域資料
@@ -513,22 +488,9 @@ getMap();
 //透過搜尋條件篩選資料
 const getMapDetail = (a, b, c, d, e) => {
   filteredMapData = data.filter((item) => {
-    if (
-      item.road.sectionId === a &&
-      item.roadId === b &&
-      item.type.includes(c) &&
-      d === 'haveSpace' &&
-      item.space !== '0' &&
-      item.categoryId === e
-    ) {
+    if (item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'haveSpace' && item.space !== '0' && item.categoryId === e) {
       return item;
-    } else if (
-      item.road.sectionId === a &&
-      item.roadId === b &&
-      item.type.includes(c) &&
-      d === 'all' &&
-      item.categoryId === e
-    ) {
+    } else if (item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'all' && item.categoryId === e) {
       return item;
     }
   });
@@ -563,11 +525,11 @@ const render = (aa) => {
   showMapCard.innerHTML = str;
   plusLike(aa);
 };
-const hideBtn = (aa) => {
-  if (aa.parkName === '路邊停車格') {
-    longBtn;
-  }
-};
+// const hideBtn = (aa) => {
+//   if (aa.parkName === '路邊停車格') {
+//     longBtn;
+//   }
+// };
 const getLikePark = (aa, bb) => {
   aa.forEach((item) => {
     let locateNum = parseFloat(item.location.latitude);
@@ -594,10 +556,7 @@ const plusLike = (aa) => {
       if (locatedId === saveLikePark[i]) {
         let saveLikeElement = saveLikePark[i];
         for (let x = 0; x < saveLikes.length; x++) {
-          if (
-            saveLikeElement.toString() ===
-            saveLikes[x].getAttribute('data-some-value')
-          ) {
+          if (saveLikeElement.toString() === saveLikes[x].getAttribute('data-some-value')) {
             saveLikes[x].classList.add('bi-suit-heart-broke');
           }
         }
@@ -621,14 +580,14 @@ const searchBg = document.querySelector('.searchBg');
 const btnX = document.querySelector('#btnX');
 const areaOptionRwd = document.querySelector('#areaOption-Rwd');
 const roadOptionRwd = document.querySelector('#roadOption-Rwd');
-const btnBgMove2Rwd = document.querySelector('.btn-bg-move2-Rwd');
+// const btnBgMove2Rwd = document.querySelector('.btn-bg-move2-Rwd');
 const btn11Rwd = document.querySelector('#btn1-1-Rwd');
 const btn12Rwd = document.querySelector('#btn1-2-Rwd');
 const btn21Rwd = document.querySelector('#btn2-1-Rwd');
 const btn22Rwd = document.querySelector('#btn2-2-Rwd');
 const btn23Rwd = document.querySelector('#btn2-3-Rwd');
-const btnBgMove3Rwd = document.querySelector('.btn-bg-move3-Rwd');
-const btnBgMove1Rwd = document.querySelector('.btn-bg-move1-Rwd');
+// const btnBgMove3Rwd = document.querySelector('.btn-bg-move3-Rwd');
+// const btnBgMove1Rwd = document.querySelector('.btn-bg-move1-Rwd');
 const btn31Rwd = document.querySelector('#btn3-1-Rwd');
 const btn32Rwd = document.querySelector('#btn3-2-Rwd');
 
@@ -735,22 +694,9 @@ const rotateIcon = () => {
 //手機板選出篩選過後停車場資料
 const getMapDetailRwd = (a, b, c, d, e) => {
   filteredMapData = data.filter((item) => {
-    if (
-      item.road.sectionId === a &&
-      item.roadId === b &&
-      item.type.includes(c) &&
-      d === 'haveSpace' &&
-      item.space !== '0' &&
-      item.categoryId === e
-    ) {
+    if (item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'haveSpace' && item.space !== '0' && item.categoryId === e) {
       return item;
-    } else if (
-      item.road.sectionId === a &&
-      item.roadId === b &&
-      item.type.includes(c) &&
-      d === 'all' &&
-      item.categoryId === e
-    ) {
+    } else if (item.road.sectionId === a && item.roadId === b && item.type.includes(c) && d === 'all' && item.categoryId === e) {
       return item;
     }
   });

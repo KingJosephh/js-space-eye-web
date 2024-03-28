@@ -2,41 +2,33 @@ const change = document.querySelector('#changeText');
 const enterPassword = document.querySelector('#enterPassword');
 const reEnterPassword = document.querySelector('#reEnterPassword');
 const getNewPassword = document.querySelector('#getNewPass');
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-const btn3 = document.getElementById('btn3');
-const btn4 = document.getElementById('btn4');
-const btn5 = document.getElementById('btn5');
-const btn6 = document.getElementById('btn6');
+const btnCarOwner = document.getElementById('btnCarOwner');
+const btnSaved = document.getElementById('btnSaved');
+const btnPaymentRecord = document.getElementById('btnPaymentRecord');
+const btnBookedRecord = document.getElementById('btnBookedRecord');
+const btnStoredValue = document.getElementById('btnStoredValue');
+// const btn6 = document.getElementById('btn6');
 const btn11 = document.querySelector('#btn1-1');
 const btn12 = document.querySelector('#btn1-2');
 const btnBgMove = document.querySelector('.btn-bg-move');
-const btnBgMove1 = document.querySelector('.btn-bg-move1');
+// const btnBgMove1 = document.querySelector('.btn-bg-move1');
 const contentToHide = document.querySelector('.content-to-hide-owner');
 const contentToHide2 = document.querySelector('.content-to-hide-save');
 const btnList = document.querySelector('#list');
-const contentToHide3 = document.querySelector(
-  '.content-to-hide-trading-history',
-);
+const contentToHide3 = document.querySelector('.content-to-hide-trading-history');
 const contentToHide4 = document.querySelector('.content-to-hide-appointment');
 const contentToHide5 = document.querySelector('.content-to-hide-storage');
 const showMapCard = document.querySelector('#showMapCard');
 const btnNumList = 1;
-const btnNumList1 = 1;
-const allHide = [
-  contentToHide,
-  contentToHide2,
-  contentToHide3,
-  contentToHide4,
-  contentToHide5,
-];
+// const btnNumList1 = 1;
+const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, contentToHide5];
 let getParkValue = 'C01';
 const localParkData = localStorage.getItem('likePark');
 let saveLikePark = [];
 // 從 localStorage 中讀取進場和出場時間和方案選擇
-const entryTimeHeader = localStorage.getItem('entryTime');
-const exitTimeHeader = localStorage.getItem('exitTime');
-const chosePlanHeader = localStorage.getItem('chosePlan');
+// const entryTimeHeader = localStorage.getItem('entryTime');
+// const exitTimeHeader = localStorage.getItem('exitTime');
+// const chosePlanHeader = localStorage.getItem('chosePlan');
 let locatedX = 24.162139;
 let locatedY = 120.647021;
 
@@ -47,7 +39,7 @@ function getNum(x) {
     btnBgMove.style.marginLeft = 287 * (num - 1) + 'px';
   } else if (num < btnNumList) {
     btnBgMove.style.marginLeft = 287 * (num - 1) + 'px';
-  } else if ((num = 1)) {
+  } else if (num === 1) {
     btnBgMove.style.marginLeft = 0;
   }
 }
@@ -86,44 +78,44 @@ function showContent(z) {
 }
 let grayBtnText = '車主專區';
 //按鈕監聽
-btn1.addEventListener('click', (e) => {
+btnCarOwner.addEventListener('click', (e) => {
   grayBtnText = e.target.textContent;
   changeText();
-  getNum(btn1);
-  showContent(btn1);
-  btnStylingTogglerToLightL(btn1, btn2, btn3, btn4, btn5);
+  getNum(btnCarOwner);
+  showContent(btnCarOwner);
+  btnStylingTogglerToLightL(btnCarOwner, btnSaved, btnPaymentRecord, btnBookedRecord, btnStoredValue);
   ctrBtnBg();
 });
-btn2.addEventListener('click', (e) => {
+btnSaved.addEventListener('click', (e) => {
   grayBtnText = e.target.textContent;
   changeText();
-  getNum(btn2);
-  showContent(btn2);
-  btnStylingTogglerToLightL(btn2, btn1, btn3, btn4, btn5);
+  getNum(btnSaved);
+  showContent(btnSaved);
+  btnStylingTogglerToLightL(btnSaved, btnCarOwner, btnPaymentRecord, btnBookedRecord, btnStoredValue);
   ctrBtnBg();
 });
-btn3.addEventListener('click', (e) => {
+btnPaymentRecord.addEventListener('click', (e) => {
   grayBtnText = e.target.textContent;
   changeText();
-  getNum(btn3);
-  showContent(btn3);
-  btnStylingTogglerToLightL(btn3, btn2, btn1, btn4, btn5);
+  getNum(btnPaymentRecord);
+  showContent(btnPaymentRecord);
+  btnStylingTogglerToLightL(btnPaymentRecord, btnSaved, btnCarOwner, btnBookedRecord, btnStoredValue);
   ctrBtnBg();
 });
-btn4.addEventListener('click', (e) => {
+btnBookedRecord.addEventListener('click', (e) => {
   grayBtnText = e.target.textContent;
   changeText();
-  getNum(btn4);
-  showContent(btn4);
-  btnStylingTogglerToLightL(btn4, btn2, btn3, btn1, btn5);
+  getNum(btnBookedRecord);
+  showContent(btnBookedRecord);
+  btnStylingTogglerToLightL(btnBookedRecord, btnSaved, btnPaymentRecord, btnCarOwner, btnStoredValue);
   ctrBtnBg();
 });
-btn5.addEventListener('click', (e) => {
+btnStoredValue.addEventListener('click', (e) => {
   grayBtnText = e.target.textContent;
   changeText();
-  getNum(btn5);
-  showContent(btn5);
-  btnStylingTogglerToLightL(btn5, btn2, btn3, btn4, btn1);
+  getNum(btnStoredValue);
+  showContent(btnStoredValue);
+  btnStylingTogglerToLightL(btnStoredValue, btnSaved, btnPaymentRecord, btnBookedRecord, btnCarOwner);
   ctrBtnBg();
 });
 btn11.addEventListener('click', () => {
@@ -136,12 +128,12 @@ btn12.addEventListener('click', () => {
   getLikePark(saveLikePark, getParkValue);
   btnStylingTogglerToLightM(btn12, btn11);
 });
-var windowWidth = window.innerWidth;
-btn.addEventListener('click', function () {
-  if (btnList.classList.contains('sticky')) {
-    btnList.classList.remove('sticky');
-  }
-});
+// var windowWidth = window.innerWidth;
+// btn.addEventListener('click', function () {
+//   if (btnList.classList.contains('sticky')) {
+//     btnList.classList.remove('sticky');
+//   }
+// });
 
 const changeText = () => {
   change.innerHTML = grayBtnText;
@@ -158,13 +150,7 @@ window.addEventListener('resize', function () {
   }
 });
 // btn點擊樣式更動
-function btnStylingTogglerToLightL(
-  activeBtn,
-  closeBtn1,
-  closeBtn2,
-  closeBtn3,
-  closeBtn4,
-) {
+function btnStylingTogglerToLightL(activeBtn, closeBtn1, closeBtn2, closeBtn3, closeBtn4) {
   closeBtn1.classList.remove('btn-light-solid-l');
   closeBtn1.classList.add('btn-dark-trans-l');
   closeBtn2.classList.remove('btn-light-solid-l');
@@ -340,25 +326,20 @@ const getMemberData = (aa) => {
 var map = L.map('map').setView([24.162139, 120.647021], 11);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
 var greenIcon = new L.Icon({
-  iconUrl:
-    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-  shadowUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
 var greyIcon = new L.Icon({
-  iconUrl:
-    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
-  shadowUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -377,8 +358,7 @@ const dataToMap = (aa) => {
     locatedX = dataDetail.location.latitude;
     locatedY = dataDetail.location.longitude;
     if (dataDetail.space === '0' && dataDetail.parkName === '路邊停車格') {
-      marker = L.marker([locatedX, locatedY], { icon: greyIcon })
-        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+      marker = L.marker([locatedX, locatedY], { icon: greyIcon }).bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
           <div class="d-flex justify-content-between">
               <h5 class="card-title">${dataDetail.parkName}</h5>
@@ -398,12 +378,8 @@ const dataToMap = (aa) => {
           </div>
       </div>
   </div>`);
-    } else if (
-      dataDetail.space === '0' &&
-      dataDetail.parkName !== '路邊停車格'
-    ) {
-      marker = L.marker([locatedX, locatedY], { icon: greyIcon })
-        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+    } else if (dataDetail.space === '0' && dataDetail.parkName !== '路邊停車格') {
+      marker = L.marker([locatedX, locatedY], { icon: greyIcon }).bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
           <div class="d-flex justify-content-between">
               <h5 class="card-title">${dataDetail.parkName}</h5>
@@ -423,12 +399,8 @@ const dataToMap = (aa) => {
           </div>
       </div>
   </div>`);
-    } else if (
-      dataDetail.space !== '0' &&
-      dataDetail.parkName === '路邊停車格'
-    ) {
-      marker = L.marker([locatedX, locatedY], { icon: greenIcon })
-        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+    } else if (dataDetail.space !== '0' && dataDetail.parkName === '路邊停車格') {
+      marker = L.marker([locatedX, locatedY], { icon: greenIcon }).bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
           <div class="d-flex justify-content-between">
               <h5 class="card-title">${dataDetail.parkName}</h5>
@@ -448,12 +420,8 @@ const dataToMap = (aa) => {
           </div>
       </div>
   </div>`);
-    } else if (
-      dataDetail.space !== '0' &&
-      dataDetail.parkName !== '路邊停車格'
-    ) {
-      marker = L.marker([locatedX, locatedY], { icon: greenIcon })
-        .bindPopup(`<div class="card mt-3" style="width: 16rem;">
+    } else if (dataDetail.space !== '0' && dataDetail.parkName !== '路邊停車格') {
+      marker = L.marker([locatedX, locatedY], { icon: greenIcon }).bindPopup(`<div class="card mt-3" style="width: 16rem;">
       <div class="card-body">
           <div class="d-flex justify-content-between">
               <h5 class="card-title">${dataDetail.parkName}</h5>
@@ -556,10 +524,7 @@ const plusLike = (aa) => {
       if (locatedId === saveLikePark[i]) {
         let saveLikeElement = saveLikePark[i];
         for (let x = 0; x < saveLikes.length; x++) {
-          if (
-            saveLikeElement.toString() ===
-            saveLikes[x].getAttribute('data-some-value')
-          ) {
+          if (saveLikeElement.toString() === saveLikes[x].getAttribute('data-some-value')) {
             saveLikes[x].classList.add('bi-suit-heart-broke');
           }
         }
@@ -584,6 +549,7 @@ const tradingHistory = document.querySelector('#tradingHistory');
 const showOrderDeal = (aa) => {
   let pay;
   let str = '';
+  if (!aa) return;
   aa.forEach((item) => {
     pay = item.paymentStatus ? '已付款' : '未付款';
     str += `<tr>
@@ -635,6 +601,7 @@ const reserveLocal = JSON.parse(reserve);
 const reserveHistory = document.querySelector('#reserveHistory');
 const showReserveDetail = (bb) => {
   let str = '';
+  if (!bb) return;
   bb.forEach((item) => {
     str += `<tr>
     <td scope="row" class="py-4">${item.reserveId}</td>
@@ -694,9 +661,7 @@ modalBtnContainer.addEventListener('click', (e) => {
 
 // 儲值專區
 const storageCheckoutBtn = document.querySelector('#storageCheckout');
-const storageCheckoutCancelBtn = document.querySelector(
-  '#storageCheckoutCancel',
-);
+const storageCheckoutCancelBtn = document.querySelector('#storageCheckoutCancel');
 storageCheckoutBtn.addEventListener('click', (e) => {
   e.preventDefault();
   Swal.fire({

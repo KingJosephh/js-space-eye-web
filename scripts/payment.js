@@ -1,16 +1,15 @@
 let nowPageId = 'page1';
-const plan = localStorage.getItem('plan');
-const planData = JSON.parse(plan);
-const park = localStorage.getItem('parkDetail');
-const parkDetail = JSON.parse(park);
+// const plan = localStorage.getItem('plan');
+// const planData = JSON.parse(plan);
+// const park = localStorage.getItem('parkDetail');
+// const parkDetail = JSON.parse(park);
 const order = localStorage.getItem('orderDetail');
 const orderDetailLocal = JSON.parse(order);
 let orderDetail = {};
 let orderDetailAll = [];
 const finalData = localStorage.getItem('finalData');
 const finalDataLocal = JSON.parse(finalData);
-if (orderDetailLocal === null) {
-} else {
+if (orderDetailLocal !== null) {
   for (let i = 0; i < orderDetailLocal.length; i++) {
     orderDetailAll.push(orderDetailLocal[i]);
   }
@@ -50,29 +49,27 @@ showSummaryBtns.forEach((btn) => {
     e.preventDefault();
     // 信用卡-驗證
     if (nowPageId === 'page1') {
-      const creditCardForm = document.querySelector(
-        '.payment-creditCard-input-container',
-      );
+      const creditCardForm = document.querySelector('.payment-creditCard-input-container');
       // 驗證限制條件
       const constraints = {
         name: {
           presence: { message: '必填' },
         },
-        cardnumber: {
+        cardNumber: {
           presence: { message: '必填' },
           length: {
             is: 19,
             message: '信用卡須為16碼',
           },
         },
-        expirationdate: {
+        expirationDate: {
           presence: { message: '必填' },
           length: {
             is: 5,
             message: '日期須為4碼',
           },
         },
-        securitycode: {
+        securityCode: {
           presence: { message: '必填' },
         },
       };
@@ -89,8 +86,7 @@ showSummaryBtns.forEach((btn) => {
           // Object.keys(errors) 取得errors的所有屬性
           Object.keys(errors).forEach((key) => {
             // 用 input name屬性的值、p data-msg屬性的值來找對應項目
-            document.querySelector(`p[data-msg=${key}]`).textContent =
-              errors[key];
+            document.querySelector(`p[data-msg=${key}]`).textContent = errors[key];
           });
         }
       });
@@ -100,9 +96,7 @@ showSummaryBtns.forEach((btn) => {
     }
 
     // 同意相關資訊按鈕-驗證
-    const agreeCheckbox = document.querySelector(
-      `[data-page${nowPageId[4] * 1}]`,
-    );
+    const agreeCheckbox = document.querySelector(`[data-page${nowPageId[4] * 1}]`);
     if (agreeCheckbox.checked) {
       agreeCheckbox.nextElementSibling.textContent = '';
     } else if (!agreeCheckbox.checked) {
@@ -120,15 +114,9 @@ showSummaryBtns.forEach((btn) => {
       // 顯示訂單摘要
       OrderSummary.style.display = 'flex';
 
-      const orderSummaryPlan = document.querySelector(
-        '[data-orderSummaryPlan]',
-      );
-      const orderSummaryEntryTime = document.querySelector(
-        '[data-orderSummaryEntryTime]',
-      );
-      const orderSummaryExitTime = document.querySelector(
-        '[data-orderSummaryExitTime]',
-      );
+      const orderSummaryPlan = document.querySelector('[data-orderSummaryPlan]');
+      const orderSummaryEntryTime = document.querySelector('[data-orderSummaryEntryTime]');
+      const orderSummaryExitTime = document.querySelector('[data-orderSummaryExitTime]');
 
       orderSummaryPlan.textContent = finalDataLocal.plan;
       orderSummaryEntryTime.textContent = finalDataLocal.inTime;
@@ -148,12 +136,8 @@ showSummaryBtns.forEach((btn) => {
 // 超商代碼
 // 產出超商繳款資訊
 function supermarketDetails() {
-  const supermarketPageContainer = document.querySelector(
-    '.payment-supermarket-container',
-  );
-  const detailsContainer = document.querySelector(
-    '.payment-supermarket-details-container',
-  );
+  const supermarketPageContainer = document.querySelector('.payment-supermarket-container');
+  const detailsContainer = document.querySelector('.payment-supermarket-details-container');
   const showDetailsBtn = document.querySelector('[data-showDetailsBtn]');
 
   showDetailsBtn.addEventListener('click', (e) => {
@@ -178,9 +162,7 @@ function supermarketDetails() {
       const orderNum = generateOrderNumber();
       const orderId = document.querySelector('#supermarketOrderId');
       const orderPlan = document.querySelector('#supermarketChosePlan');
-      const paymentDeadline = document.querySelector(
-        '#supermarketPaymentDeadline',
-      );
+      const paymentDeadline = document.querySelector('#supermarketPaymentDeadline');
       orderId.textContent = orderNum;
       orderPlan.textContent = localStorage.getItem('chosePlan');
       // 繳費期限: 入場日期
@@ -196,16 +178,8 @@ function supermarketDetails() {
 // 儲存訂單資料到localStorage
 function storeOrderInfo() {
   const orderNum = generateOrderNumber();
-  const paymentMethod =
-    nowPageId[4] === '1'
-      ? '信用卡'
-      : nowPageId[4] === '2'
-        ? '網路ATM'
-        : nowPageId[4] === '3'
-          ? 'ATM櫃員機'
-          : '超商代碼';
-  const paymentStatus =
-    nowPageId[4] === 1 ? true : nowPageId[4] === 2 ? true : false;
+  const paymentMethod = nowPageId[4] === '1' ? '信用卡' : nowPageId[4] === '2' ? '網路ATM' : nowPageId[4] === '3' ? 'ATM櫃員機' : '超商代碼';
+  const paymentStatus = nowPageId[4] === 1 ? true : nowPageId[4] === 2 ? true : false;
   orderDetail.orderId = orderNum;
   orderDetail.paymentMethod = paymentMethod;
   orderDetail.paymentStatus = paymentStatus;
