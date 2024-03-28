@@ -1,46 +1,48 @@
 const signUpForm = document.querySelector('#signUpForm');
-const UserName = document.getElementById('UserName')
-const Email = document.getElementById('Email')
-const Password = document.getElementById('Password-signIn')
-const PasswordAgain = document.getElementById('Password-again')
-const CarId = document.getElementById('Car-id')
-const logInBtn = document.querySelector('.logIn-btn')
+const UserName = document.getElementById('UserName');
+const Email = document.getElementById('Email');
+const Password = document.getElementById('Password-signIn');
+const PasswordAgain = document.getElementById('Password-again');
+const CarId = document.getElementById('Car-id');
+const logInBtn = document.querySelector('.logIn-btn');
 let aa = [];
 
-
 function signUp(a, b, c, d) {
-  axios.post(UrlWebType + '/users', {
-    'username': a,
-    'email': b,
-    'password': c,
-    'carId': d
-  }).then(function (response) {
-    console.log(response);
-    signUpForm.reset();
-    
-    // 註冊成功提示
-    Swal.fire({
-      icon: "success",
-      title: "註冊成功",
-      showConfirmButton: false,
-      timer: 1500
-    }).then(res => {
-      window.location.href = 'login.html';
+  axios
+    .post(UrlWebType + '/users', {
+      username: a,
+      email: b,
+      password: c,
+      carId: d,
     })
-  }).catch(function (err) {
-    console.log(err)
-    console.dir(err)
-    hideError('.warn-Email');
-    hideError('.warn-Email-exists');
-    if (err.response.data === 'Email format is invalid') {
-      showError('.warn-Email');
-    } else if (err.response.data === 'Email and password are required') {
-      showError('.warn-Email');
-    }
-    if (err.response.data === 'Email already exists') {
-      showError('.warn-Email-exists');
-    }
-  });
+    .then(function (response) {
+      console.log(response);
+      signUpForm.reset();
+
+      // 註冊成功提示
+      Swal.fire({
+        icon: 'success',
+        title: '註冊成功',
+        showConfirmButton: false,
+        timer: 1500,
+      }).then((res) => {
+        window.location.href = 'login.html';
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
+      console.dir(err);
+      hideError('.warn-Email');
+      hideError('.warn-Email-exists');
+      if (err.response.data === 'Email format is invalid') {
+        showError('.warn-Email');
+      } else if (err.response.data === 'Email and password are required') {
+        showError('.warn-Email');
+      }
+      if (err.response.data === 'Email already exists') {
+        showError('.warn-Email-exists');
+      }
+    });
 }
 // 檢查輸入是否正確
 function add() {
@@ -98,8 +100,8 @@ function hideError(selector) {
 }
 
 logInBtn.addEventListener('click', function (e) {
-  add()
-})
+  add();
+});
 
 UserName.addEventListener('input', function () {
   if (UserName.value !== '') {

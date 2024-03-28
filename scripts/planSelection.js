@@ -4,55 +4,56 @@ const detailsCard = document.querySelector('#detailsCard');
 let data = [];
 //愈約停車傳到付款葉面資料
 let getSpaceDetails = [];
-let getData = {}
+let getData = {};
 //預約停車傳到預約紀錄葉面資料
-let reserveData = {}
-let reserveDataAll = []
-let reserve = localStorage.getItem('reserveData')
-let reserveDataLocal = JSON.parse(reserve)
+let reserveData = {};
+let reserveDataAll = [];
+let reserve = localStorage.getItem('reserveData');
+let reserveDataLocal = JSON.parse(reserve);
 //將本地端資料先放入reserveDataAll
-if(reserveDataLocal === null){
-
-}else{
-    for(let i = 0 ; i<reserveDataLocal.length ; i++){
-    reserveDataAll.push(reserveDataLocal[i])
+if (reserveDataLocal === null) {
+} else {
+  for (let i = 0; i < reserveDataLocal.length; i++) {
+    reserveDataAll.push(reserveDataLocal[i]);
   }
 }
 // 辨識是否登入，未登入跳往'登入頁面'
-axios.get(UrlWebType + `/600/users/${usersId}`, {
+axios
+  .get(UrlWebType + `/600/users/${usersId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
-  .then((response) => {
-  })
+  .then((response) => {})
   .catch((error) => {
     Swal.fire({
-      icon: "error",
-      title: "尚未登入",
-      text: "請前往登入，開通預約車位功能"
-    }).then(res=>{
-      window.location.href = "login.html";
-    })
+      icon: 'error',
+      title: '尚未登入',
+      text: '請前往登入，開通預約車位功能',
+    }).then((res) => {
+      window.location.href = 'login.html';
+    });
   });
 
 //取得地圖資料
-axios.get(UrlWebType + '/parks?_expand=road')
+axios
+  .get(UrlWebType + '/parks?_expand=road')
   .then(function (response) {
-    data = response.data
-    getFindSpace(data)
-    cardBody()
-  }).catch(function (err) {
-    console.log(err)
+    data = response.data;
+    getFindSpace(data);
+    cardBody();
   })
+  .catch(function (err) {
+    console.log(err);
+  });
 //選出預約的停車場資料
 const getFindSpace = (aa) => {
   getSpaceDetails = aa.filter((item) => {
     if (item.id == optionPark) {
-      return item
+      return item;
     }
-  })
-}
+  });
+};
 //將停車場資訊渲染到畫面上
 const cardBody = () => {
   let Card = `<thead>
@@ -70,103 +71,119 @@ const cardBody = () => {
                   <td data-label="Account">${getSpaceDetails[0].inOrOut}</td>
                   <td data-label="Account">${getSpaceDetails[0].type}</td>
                 </tr>
-              </tbody>`
+              </tbody>`;
   detailsCard.innerHTML = Card;
-}
+};
 
 // 抓進出場資料
-document.getElementById("entryDate").addEventListener("change", updateOrderSummary);
-document.getElementById("exitDate").addEventListener("change", updateOrderSummary);
+document
+  .getElementById('entryDate')
+  .addEventListener('change', updateOrderSummary);
+document
+  .getElementById('exitDate')
+  .addEventListener('change', updateOrderSummary);
 
 function updateOrderSummary() {
-  const entryDate = document.getElementById("entryDate").value;
-  const exitDate = document.getElementById("exitDate").value;
-  const url = `/Pages/planSelection.html`;
+  const entryDate = document.getElementById('entryDate').value;
+  const exitDate = document.getElementById('exitDate').value;
+  const url = '/Pages/planSelection.html';
 
-  axios.get(url)
-    .then(response => {
+  axios
+    .get(url)
+    .then((response) => {
       const entryTimeText = `${entryDate}`;
       const exitTimeText = `${exitDate}`;
 
-      document.getElementById('entryTime').getElementsByTagName("span")[0].textContent = entryTimeText;
-      document.getElementById('exitTime').getElementsByTagName("span")[0].textContent = exitTimeText;
-      localStorage.setItem("entryTime", entryTimeText)//使用在超商繳費明細資料
-      localStorage.setItem("exitTime", exitTimeText)//使用在超商繳費明細資料
-      getData.entryTime = entryTimeText
-      getData.exitTime = exitTimeText
+      document
+        .getElementById('entryTime')
+        .getElementsByTagName('span')[0].textContent = entryTimeText;
+      document
+        .getElementById('exitTime')
+        .getElementsByTagName('span')[0].textContent = exitTimeText;
+      localStorage.setItem('entryTime', entryTimeText); //使用在超商繳費明細資料
+      localStorage.setItem('exitTime', exitTimeText); //使用在超商繳費明細資料
+      getData.entryTime = entryTimeText;
+      getData.exitTime = exitTimeText;
     })
-    .catch(error => {
-      console.log("Error fetching data:", error);
-    })
+    .catch((error) => {
+      console.log('Error fetching data:', error);
+    });
 }
 
 // 抓取方案資料
-document.getElementById("monthPlan").addEventListener("click", () => updatePlanSummary('monthPlan'));
-document.getElementById("weekPlan").addEventListener("click", () => updatePlanSummary('weekPlan'));
-document.getElementById("yearPlan").addEventListener("click", () => updatePlanSummary('yearPlan'));
-document.getElementById("dayPlan").addEventListener("click", () => updatePlanSummary('dayPlan'));
+document
+  .getElementById('monthPlan')
+  .addEventListener('click', () => updatePlanSummary('monthPlan'));
+document
+  .getElementById('weekPlan')
+  .addEventListener('click', () => updatePlanSummary('weekPlan'));
+document
+  .getElementById('yearPlan')
+  .addEventListener('click', () => updatePlanSummary('yearPlan'));
+document
+  .getElementById('dayPlan')
+  .addEventListener('click', () => updatePlanSummary('dayPlan'));
 
 function updatePlanSummary(planId) {
   const selectedPlan = document.getElementById(planId);
-  const servalUrl = `/Pages/planSelection.html`;
+  const servalUrl = '/Pages/planSelection.html';
 
   const planText = `${selectedPlan.querySelector('.h4').textContent}`;
-  const planePrice = `${selectedPlan.querySelector('.plan-price').textContent}`
+  const planePrice = `${selectedPlan.querySelector('.plan-price').textContent}`;
 
-  axios.get(servalUrl, {
-    params: {
-      planId: planId,
-      planText: planText,
-      planePrice: planePrice
-    }
-  })
-    .then(response => {
+  axios
+    .get(servalUrl, {
+      params: {
+        planId: planId,
+        planText: planText,
+        planePrice: planePrice,
+      },
+    })
+    .then((response) => {
       document.querySelector('[data-orderSummaryPlan]').textContent = planText;
-      localStorage.setItem('chosePlan', planText);//使用在超商繳費明細資料
-      getData.planText = planText
-      getData.planPrice = planePrice
+      localStorage.setItem('chosePlan', planText); //使用在超商繳費明細資料
+      getData.planText = planText;
+      getData.planPrice = planePrice;
     })
-    .catch(error => {
-      console.log("Error fetching data:", error);
-    })
+    .catch((error) => {
+      console.log('Error fetching data:', error);
+    });
 }
 
-
-
 // 確認送出按鈕-日期、方案選擇驗證
-const submitPlanBtn = document.querySelector("[data-submitPlan]");
-submitPlanBtn.addEventListener("click", function () {
-  const entryDateValue = document.getElementById("entryDate").value;
-  const exitDateValue = document.getElementById("exitDate").value;
+const submitPlanBtn = document.querySelector('[data-submitPlan]');
+submitPlanBtn.addEventListener('click', function () {
+  const entryDateValue = document.getElementById('entryDate').value;
+  const exitDateValue = document.getElementById('exitDate').value;
   const planSelected = document.querySelector('[class="plan plan-active"]');
   const reserveNum = generateReserveNumber();
 
   if (!entryDateValue || !exitDateValue) {
     Swal.fire({
-      title: "入場日期和離場日期未選擇",
-      text: "請重新選擇",
-      icon: "question",
-      timer: 1500
+      title: '入場日期和離場日期未選擇',
+      text: '請重新選擇',
+      icon: 'question',
+      timer: 1500,
     });
-  } else if (planSelected === null){
+  } else if (planSelected === null) {
     Swal.fire({
-      title: "方案未選擇",
-      text: "請重新選擇",
-      icon: "question",
-      timer: 1500
+      title: '方案未選擇',
+      text: '請重新選擇',
+      icon: 'question',
+      timer: 1500,
     });
   } else {
-    localStorage.setItem('plan' , JSON.stringify(getData))
-    localStorage.setItem('parkDetail' , JSON.stringify(getSpaceDetails))
+    localStorage.setItem('plan', JSON.stringify(getData));
+    localStorage.setItem('parkDetail', JSON.stringify(getSpaceDetails));
     reserveData.reserveId = reserveNum;
     reserveData.getData = getData;
     reserveData.getSpaceDetails = getSpaceDetails;
-    reserveDataAll.push(reserveData)
-    localStorage.setItem('reserveData' , JSON.stringify(reserveDataAll))
+    reserveDataAll.push(reserveData);
+    localStorage.setItem('reserveData', JSON.stringify(reserveDataAll));
     showWatermark();
     return true;
   }
-})
+});
 
 // 產出隨機訂單編號
 function generateReserveNumber() {
@@ -179,7 +196,7 @@ function generateReserveNumber() {
   const reserveNumberLength = 4;
   // 生成隨機訂單編號
   let reserveNumber = timePrefix;
-  for (let i = 0;i < reserveNumberLength;i++) {
+  for (let i = 0; i < reserveNumberLength; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
     reserveNumber += characters.charAt(randomIndex);
   }
@@ -187,34 +204,36 @@ function generateReserveNumber() {
 }
 // 跳出訂單摘要
 function showWatermark() {
-  document.querySelector(".watermark").style.display = "flex";
+  document.querySelector('.watermark').style.display = 'flex';
 }
 
 // 關閉訂單摘要 按鈕
-const closeButton = document.querySelector(".bi-x-circle");
+const closeButton = document.querySelector('.bi-x-circle');
 
-closeButton.addEventListener("click", function () {
-  const elementToClose = document.getElementById("elementToClose")
-  elementToClose.style.display = "none";
-})
+closeButton.addEventListener('click', function () {
+  const elementToClose = document.getElementById('elementToClose');
+  elementToClose.style.display = 'none';
+});
 
 // 訂單摘要-前往結帳按鈕
-const paymentButton = document.querySelector(".btn-payment");
+const paymentButton = document.querySelector('.btn-payment');
 
-paymentButton.addEventListener("click", function () {
-  window.location.href = "payment.html";
-})
+paymentButton.addEventListener('click', function () {
+  window.location.href = 'payment.html';
+});
 
 // 訂單摘要-取消按鈕
-const orderSummaryCancelBtn = document.querySelector("[data-orderSummaryCancel]");
+const orderSummaryCancelBtn = document.querySelector(
+  '[data-orderSummaryCancel]',
+);
 
-orderSummaryCancelBtn.addEventListener("click", function () {
-  const elementToClose = document.getElementById("elementToClose")
-  elementToClose.style.display = "none";
-})
+orderSummaryCancelBtn.addEventListener('click', function () {
+  const elementToClose = document.getElementById('elementToClose');
+  elementToClose.style.display = 'none';
+});
 
 // 方案選擇-取消按紐：跳回找車位頁面
-const cancelSubmitPlanBtn = document.querySelector("[data-cancelSubmitPlan]");
-cancelSubmitPlanBtn.addEventListener("click", function () {
-  window.location.href = "findSpace.html";
-})
+const cancelSubmitPlanBtn = document.querySelector('[data-cancelSubmitPlan]');
+cancelSubmitPlanBtn.addEventListener('click', function () {
+  window.location.href = 'findSpace.html';
+});

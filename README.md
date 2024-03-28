@@ -1,19 +1,20 @@
 ﻿# Space Eye 台中停車場檢索預約網站
+
 * Pages：https://kingjosephh.github.io/js-space-eye-web/
 
 ## 技術
 
-- HTML5
-- CSS3
-- JavaScript 開發工具
-- Sass 預處理器
+- HTML5 & CSS3
+- JavaScript
+- Sass
 - Bootstrap
 - JSON Server + JSON Server Auth 模擬後端 & JWT 權限驗證
-- Axios API 串接
+- Axios
+- Restful API
 - Leaflet 地圖套件
-- Validate 表單驗證套件
+- Validate 表單驗證
 - Sweetalert2 彈出框套件
-- AOS 滾動動畫套件
+- AOS 滾動動畫
 
 ## 作者
 

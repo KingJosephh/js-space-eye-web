@@ -1,481 +1,823 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carOwner</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-    <link rel="stylesheet" href="../stylesheets/all.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../stylesheets/all.css" />
+  </head>
 
-<body>
+  <body>
     <header id="header">
-        <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
-            <div class="container-md">
-                <!-- logo -->
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../Assests/img/Logo-dark.png" alt="" srcset="">
-                </a>
-                <!-- button -->
-                <button class="btn btn-light-solid-m" id="userBtn">
-                    <a href="carOwnerNew.html">
-                        車主專區
-                    </a>
-                </button>
-                <!-- hamburger -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
-                    aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="28" height="28">
-                            <rect width="28" height="28" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_2609_18108)">
-                            <path
-                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
-                                fill="#1E1E1E" />
-                        </g>
-                    </svg>
-                </button>
+      <nav
+        class="navbar navbar-expand-md initial-bg-color"
+        aria-label="Fourth navbar"
+      >
+        <div class="container-md">
+          <!-- logo -->
+          <a class="navbar-brand" href="../index.html">
+            <img src="../Assests/img/Logo-dark.png" alt="" srcset="" />
+          </a>
+          <!-- button -->
+          <button class="btn btn-light-solid-m" id="userBtn">
+            <a href="carOwner.html"> 車主專區 </a>
+          </button>
+          <!-- hamburger -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#headerNavbar"
+            aria-controls="headerNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              class="hamburger"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask
+                id="mask0_2609_18108"
+                style="mask-type: alpha"
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="28"
+                height="28"
+              >
+                <rect width="28" height="28" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_2609_18108)">
+                <path
+                  d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
+                  fill="#1E1E1E"
+                />
+              </g>
+            </svg>
+          </button>
 
-                <div class="collapse navbar-collapse" id="headerNavbar">
-                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="menu-l" href="findSpace.html">找停車位</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="menu-l" href="../index.html#questions">常見問題</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+          <div class="collapse navbar-collapse" id="headerNavbar">
+            <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="menu-l" href="findSpace.html">找停車位</a>
+              </li>
+              <li class="nav-item">
+                <a class="menu-l" href="../index.html#questions">常見問題</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="col mt-5">
-                    <p>Hello, <span id="greetName"></span><a href="" class="ps-5" style="color: #000;">logout</a></p>
-                </div>
-            </div>
-            <div class="row position-relative" id="list">
-                <div class="col-lg-12 col-10 button-group d-flex justify-content-lg-between flex-lg-row flex-column py-2 position-absolute" id="btnList">
-                    <div class="position-absolute btn-bg-move">
-                    </div>
-                    <button id="btn" type="button" class="d-lg-none mx-2 col-lg-2 col-5 btn mb-lg-0 mb-3 fw-bold" style="z-index: 2500;">
-                        <span class="mt-5" id="changeText">車主資訊</span>
-                    </button>
-                    <button id="btn1" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-light-solid-l" style="z-index: 2500;"
-                        data-num="1">車主資訊</button>
-                    <button id="btn2" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
-                        data-num="2">我的收藏</button>
-                    <button id="btn3" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
-                        data-num="3">交易紀錄</button>
-                    <button id="btn4" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
-                        data-num="4">預約紀錄</button>
-                    <button id="btn5" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500;"
-                        data-num="5">儲值專區</button>
-                </div>
-            </div>
-
-            <hr class="text-dark d-lg-block d-none" style="margin-top: 80px;">
-            <!-- 寫換頁(隱藏頁面顯示頁面) -->
-            <div class="content-to-hide-owner">
-                
-            </div>
-            <!-- model -->
-            <div class="modal fade" id="changePass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title h5" id="exampleModalLabel">更改密碼</div>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="enterPassword" class="col-form-label">輸入新密碼:</label>
-                                    <input type="text" class="form-control" id="enterPassword">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="reEnterPassword" class="col-form-label">再次輸入新密碼:</label>
-                                    <input type="text" class="form-control" id="reEnterPassword">
-                                    <p class="Password-warn text-end">* 請輸入正確密碼 *</p>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light-gray px-4" data-bs-dismiss="modal">取消</button>
-                            <button type="button" class="btn btn-light-solid-m px-4" id="getNewPass">儲存</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-to-hide-save">
-                <div class="row mx-1">
-                    <div class="col-lg-8 col p-0 me-4 me-lg-0">
-                        <div class="row d-flex justify-content-end position-relative"
-                            style="z-index: 2000;">
-                            <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0;width: fit-content;">
-                                <div class="button-group d-flex justify-content-evenly color-tran-gray p-2" style="gap: 10px">
-                                    <!-- btn-bg-move-dad  -->
-                                    <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0"
-                                        style="z-index: 2;" data-num="1" value="C01">路邊車格</button>
-                                    <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0 color-white"
-                                        style="z-index: 2;" data-num="2" value="C02">停車場</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="map" style="height: 450px;"></div>
-                    </div>
-                    <div class="col-4 d-lg-block d-none interface">
-                        <div class="row d-flex bg-white justify-content-center" style="height: 450px; overflow-y: scroll;">
-                            <div class="col-10 mt-4 rounded-2 d-flex flex-column justify-content-center" id="showMapCard">
-                                <div class="card mt-3" style="width: 16rem; height:fit-content;">
-                                    <div class="card-body">
-                                        <div class="card-title h5">西屯停車場</div>
-                                        <div class="row">
-                                            <div class="col-5">地址:</div>
-                                            <div class="col-7">台北市松山區八德路3段12巷</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5">剩餘空位:</div>
-                                            <div class="col-7">15</div>
-                                        </div>
-                                        <div class="d-flex justify-content-between mt-2">
-                                            <button type="button"
-                                                class="btn btn-sm btn-light-solid-m px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-solid-m px-3 py-1"
-                                                data-bs-toggle="modal" data-bs-target="#saveModel"
-                                                data-bs-save-park="西屯停車場" data-bs-save-type="林廷"
-                                                data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15"
-                                                data-bs-save-in="室外">長期方案</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mt-3" style="width: 16rem; height:fit-content;">
-                                    <div class="card-body">
-                                        <div class="card-title h5">西屯停車場</div>
-                                        <div class="row">
-                                            <div class="col-5">地址:</div>
-                                            <div class="col-7">台北市松山區八德路3段12巷</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5">剩餘空位:</div>
-                                            <div class="col-7">15</div>
-                                        </div>
-                                        <div class="d-flex justify-content-between mt-2">
-                                            <button type="button"
-                                                class="btn btn-sm btn-light-solid-m px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-solid-m px-3 py-1"
-                                                data-bs-toggle="modal" data-bs-target="#saveModel"
-                                                data-bs-save-park="西屯停車場" data-bs-save-type="林廷"
-                                                data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15"
-                                                data-bs-save-in="室外">長期方案</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mt-3" style="width: 16rem; height:fit-content;">
-                                    <div class="card-body">
-                                        <div class="card-title h5">西屯停車場</div>
-                                        <div class="row">
-                                            <div class="col-5">地址:</div>
-                                            <div class="col-7">台北市松山區八德路3段12巷</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5">剩餘空位:</div>
-                                            <div class="col-7">15</div>
-                                        </div>
-                                        <div class="d-flex justify-content-between mt-2">
-                                            <button type="button"
-                                                class="btn btn-sm btn-light-solid-m px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-solid-m px-3 py-1"
-                                                data-bs-toggle="modal" data-bs-target="#saveModel"
-                                                data-bs-save-park="西屯停車場" data-bs-save-type="林廷"
-                                                data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15"
-                                                data-bs-save-in="室外">長期方案</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mt-3" style="width: 16rem; height:fit-content;">
-                                    <div class="card-body">
-                                        <div class="card-title h5">西屯停車場</div>
-                                        <div class="row">
-                                            <div class="col-5">地址:</div>
-                                            <div class="col-7">台北市松山區八德路3段12巷</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5">剩餘空位:</div>
-                                            <div class="col-7">15</div>
-                                        </div>
-                                        <div class="d-flex justify-content-between mt-2">
-                                            <button type="button"
-                                                class="btn btn-sm btn-light-solid-m px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-solid-m px-3 py-1"
-                                                data-bs-toggle="modal" data-bs-target="#saveModel"
-                                                data-bs-save-park="西屯停車場" data-bs-save-type="林廷"
-                                                data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15"
-                                                data-bs-save-in="室外">長期方案</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mt-3" style="width: 16rem; height:fit-content;">
-                                    <div class="card-body">
-                                        <div class="card-title h5">西屯停車場</div>
-                                        <div class="row">
-                                            <div class="col-5">地址:</div>
-                                            <div class="col-7">台北市松山區八德路3段12巷</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5">剩餘空位:</div>
-                                            <div class="col-7">15</div>
-                                        </div>
-                                        <div class="d-flex justify-content-between mt-2">
-                                            <button type="button"
-                                                class="btn btn-sm btn-light-solid-m px-3 py-1">詳細資料</button>
-                                            <button type="button" class="btn btn-sm btn-light-solid-m px-3 py-1"
-                                                data-bs-toggle="modal" data-bs-target="#saveModel"
-                                                data-bs-save-park="西屯停車場" data-bs-save-type="林廷"
-                                                data-bs-save-address="台北市松山區八德路3段12巷" data-bs-save-space="15"
-                                                data-bs-save-in="室外">長期方案</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="saveModel" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true" style="z-index: 3000;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="modal-title mt-3 mx-4 h5" id="park"></div>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row mx-3 mb-3">
-                                    <div class="col-5">停車場樣式:</div>
-                                    <div class="col-7" id="type"></div>
-                                </div>
-                                <div class="row mx-3 mb-3">
-                                    <div class="col-5">地址:</div>
-                                    <div class="col-7" id="address"></div>
-                                </div>
-                                <div class="row mx-3 mb-3">
-                                    <div class="col-5">剩餘空位:</div>
-                                    <div class="col-7" id="space"></div>
-                                </div>
-                                <div class="row mx-3 mb-3">
-                                    <div class="col-5">室內/室外:</div>
-                                    <div class="col-7" id="in"></div>
-                                </div>
-                            </div>
-                            <div class="modal-footer" id="modalBtnContainer">
-                                <button type="button" class="btn btn-light-solid-m">預約停車</button>
-                                <button type="button" class="btn btn btn-dark-solid-m">長期方案</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-to-hide-trading-history">
-                <div class="card border-0" style="height: 400px; overflow: auto;">
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr class="align-middle">
-                                        <th scope="col" class="py-4">訂單編號</th>
-                                        <th scope="col">入場時間</th>
-                                        <th scope="col">出場時間</th>
-                                        <th scope="col">方案</th>
-                                        <th scope="col">金額</th>
-                                        <th scope="col">付款方式</th>
-                                        <th scope="col">付款狀態</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-nowrap" id="tradingHistory">
-                                    <tr>
-                                        <td scope="row" class="py-4">CCC1245678912456</td>
-                                        <td class="py-4">2022/03/01</td>
-                                        <td class="py-4">2022/03/01</td>
-                                        <td class="py-4">當日預約</td>
-                                        <td class="py-4">
-                                            NT$ 60
-                                        </td>
-                                        <td class="py-4">信用卡</td>
-                                        <td class="py-4">完成付款</td>
-                                        <td class="text-end pe-4 py-4">
-                                            <div class="btn-group">
-                                                <a href="#" class="btn btn-sm btn-outline-dark">
-                                                    編輯 <i class="bi bi-pen"></i></a>
-                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle"
-                                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    操作
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
-                                                    <li><a class="dropdown-item text-danger" href="#"
-                                                            data-bs-toggle="modal" data-bs-target="#deleteTrad"
-                                                            data-bs-trad-id="CCC1245678912456">刪除訂單</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent py-3">
-                    </div>
-                    <div class="modal fade" id="deleteTrad" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="z-index: 3000;">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title h5" id="staticBackdropLabel">Modal title</div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>確認刪除「<span id="deleteTradText"></span>」的訂單嗎？</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-danger" id="deleteTradBtn" data-bs-dismiss="modal">確認刪除</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-to-hide-appointment">
-                <div class="card border-0" style="height: 400px; overflow: auto;">
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead class="bg-light">
-                                    <tr class="align-middle">
-                                        <th scope="col" class="py-4">訂單編號</th>
-                                        <th scope="col">入場時間</th>
-                                        <th scope="col">出場時間</th>
-                                        <th scope="col">方案</th>
-                                        <th scope="col">停車場名</th>
-                                        <th scope="col">停車場地址</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-nowrap" id="reserveHistory">
-                                    <tr>
-                                        <td scope="row" class="py-4">CCC1245678912456</td>
-                                        <td class="py-4">2022/03/01</td>
-                                        <td class="py-4">2022/03/01</td>
-                                        <td class="py-4">當日預約</td>
-                                        <td class="py-4">路邊停車格</td>
-                                        <td class="py-4">台中市中區中山路123號</td>
-                                        <td class="text-end pe-4 py-4">
-                                            <div class="btn-group">
-                                                <a href="#" class="btn btn-sm btn-outline-dark">
-                                                    編輯 <i class="bi bi-pen"></i></a>
-                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle"
-                                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    操作
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
-                                                    <li><a class="dropdown-item text-danger" href="#"
-                                                            data-bs-toggle="modal" data-bs-target="#deleteAppointment"
-                                                            data-bs-trad-id="CCC1245678912456">刪除訂單</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent py-3">
-                    </div>
-                    <div class="modal fade" id="deleteReserve" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true" style="z-index: 3000;">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title h5" id="exampleModalLabel">刪除訂單</div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>確認刪除「<span id="deleteReserveText"></span>」的訂單嗎？</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-dark"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger" id="deleteReserveBtn" data-bs-dismiss="modal">確認刪除</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-to-hide-storage">
-                <div class="row mt-5">
-                    <div class="col-4 d-flex">
-                        <div class="col-8">
-                            <div class="h2">剩餘金額:</div>
-                        </div>
-                        <div class="col-4">
-                            <div class="h2">150</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-8">
-                        <div class="row g-3 d-flex justify-content-between mb-4">
-                            <label for="PhoneNumber" class="col-sm-2 col-form-label ms-2">輸入金額</label>
-                            <div class="col-8 d-flex p-0">
-                                <select class="form-select form-select-md mb-3 py-1"
-                                    aria-label=".form-select-lg example" id="unitId">
-                                    <option class="text-5" value="TWD">TWD</option>
-                                </select>
-                                <div class="col-8 ms-3">
-                                    <input class="form-control bg-white py-1" type="number" id="amountId">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col d-flex flex-row-reverse" style="margin-top: 100px;">
-                        <button type="button" class="btn btn-light-solid-m mx-3 px-5" id="storageCheckout">前往結帳</button>
-                        <button type="button" class="btn btn-light-gray mx-3 px-5" id="storageCheckoutCancel">取消</button>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col mt-5">
+            <p>
+              Hello, <span id="greetName"></span
+              ><a href="" class="ps-5" style="color: #000">logout</a>
+            </p>
+          </div>
         </div>
+        <div class="row position-relative" id="list">
+          <div
+            class="col-lg-12 col-10 button-group d-flex justify-content-lg-between flex-lg-row flex-column py-2 position-absolute"
+            id="btnList"
+          >
+            <div class="position-absolute btn-bg-move"></div>
+            <button
+              id="btn"
+              type="button"
+              class="d-lg-none mx-2 col-lg-2 col-5 btn mb-lg-0 mb-3 fw-bold"
+              style="z-index: 2500"
+            >
+              <span class="mt-5" id="changeText">車主資訊</span>
+            </button>
+            <button
+              id="btn1"
+              type="button"
+              class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-light-solid-l"
+              style="z-index: 2500"
+              data-num="1"
+            >
+              車主資訊
+            </button>
+            <button
+              id="btn2"
+              type="button"
+              class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l"
+              style="z-index: 2500"
+              data-num="2"
+            >
+              我的收藏
+            </button>
+            <button
+              id="btn3"
+              type="button"
+              class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l"
+              style="z-index: 2500"
+              data-num="3"
+            >
+              交易紀錄
+            </button>
+            <button
+              id="btn4"
+              type="button"
+              class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l"
+              style="z-index: 2500"
+              data-num="4"
+            >
+              預約紀錄
+            </button>
+            <button
+              id="btn5"
+              type="button"
+              class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l"
+              style="z-index: 2500"
+              data-num="5"
+            >
+              儲值專區
+            </button>
+          </div>
+        </div>
+
+        <hr class="text-dark d-lg-block d-none" style="margin-top: 80px" />
+        <!-- 寫換頁(隱藏頁面顯示頁面) -->
+        <div class="content-to-hide-owner"></div>
+        <!-- model -->
+        <div
+          class="modal fade"
+          id="changePass"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-title h5" id="exampleModalLabel">
+                  更改密碼
+                </div>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="enterPassword" class="col-form-label"
+                      >輸入新密碼:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="enterPassword"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="reEnterPassword" class="col-form-label"
+                      >再次輸入新密碼:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="reEnterPassword"
+                    />
+                    <p class="Password-warn text-end">* 請輸入正確密碼 *</p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-light-gray px-4"
+                  data-bs-dismiss="modal"
+                >
+                  取消
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light-solid-m px-4"
+                  id="getNewPass"
+                >
+                  儲存
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-to-hide-save">
+          <div class="row mx-1">
+            <div class="col-lg-8 col p-0 me-4 me-lg-0">
+              <div
+                class="row d-flex justify-content-end position-relative"
+                style="z-index: 2000"
+              >
+                <div
+                  class="col-3 mt-4 me-5 p-0 position-absolute"
+                  style="top: 0; right: 0; width: fit-content"
+                >
+                  <div
+                    class="button-group d-flex justify-content-evenly color-tran-gray p-2"
+                    style="gap: 10px"
+                  >
+                    <!-- btn-bg-move-dad  -->
+                    <button
+                      id="btn1-1"
+                      type="button"
+                      class="btn btn-light-solid-m border-0"
+                      style="z-index: 2"
+                      data-num="1"
+                      value="C01"
+                    >
+                      路邊車格
+                    </button>
+                    <button
+                      id="btn1-2"
+                      type="button"
+                      class="btn btn-dark-trans-m border-0 color-white"
+                      style="z-index: 2"
+                      data-num="2"
+                      value="C02"
+                    >
+                      停車場
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div id="map" style="height: 450px"></div>
+            </div>
+            <div class="col-4 d-lg-block d-none interface">
+              <div
+                class="row d-flex bg-white justify-content-center"
+                style="height: 450px; overflow-y: scroll"
+              >
+                <div
+                  class="col-10 mt-4 rounded-2 d-flex flex-column justify-content-center"
+                  id="showMapCard"
+                >
+                  <div
+                    class="card mt-3"
+                    style="width: 16rem; height: fit-content"
+                  >
+                    <div class="card-body">
+                      <div class="card-title h5">西屯停車場</div>
+                      <div class="row">
+                        <div class="col-5">地址:</div>
+                        <div class="col-7">台北市松山區八德路3段12巷</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5">剩餘空位:</div>
+                        <div class="col-7">15</div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-2">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                        >
+                          詳細資料
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                          data-bs-toggle="modal"
+                          data-bs-target="#saveModel"
+                          data-bs-save-park="西屯停車場"
+                          data-bs-save-type="林廷"
+                          data-bs-save-address="台北市松山區八德路3段12巷"
+                          data-bs-save-space="15"
+                          data-bs-save-in="室外"
+                        >
+                          長期方案
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mt-3"
+                    style="width: 16rem; height: fit-content"
+                  >
+                    <div class="card-body">
+                      <div class="card-title h5">西屯停車場</div>
+                      <div class="row">
+                        <div class="col-5">地址:</div>
+                        <div class="col-7">台北市松山區八德路3段12巷</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5">剩餘空位:</div>
+                        <div class="col-7">15</div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-2">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                        >
+                          詳細資料
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                          data-bs-toggle="modal"
+                          data-bs-target="#saveModel"
+                          data-bs-save-park="西屯停車場"
+                          data-bs-save-type="林廷"
+                          data-bs-save-address="台北市松山區八德路3段12巷"
+                          data-bs-save-space="15"
+                          data-bs-save-in="室外"
+                        >
+                          長期方案
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mt-3"
+                    style="width: 16rem; height: fit-content"
+                  >
+                    <div class="card-body">
+                      <div class="card-title h5">西屯停車場</div>
+                      <div class="row">
+                        <div class="col-5">地址:</div>
+                        <div class="col-7">台北市松山區八德路3段12巷</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5">剩餘空位:</div>
+                        <div class="col-7">15</div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-2">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                        >
+                          詳細資料
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                          data-bs-toggle="modal"
+                          data-bs-target="#saveModel"
+                          data-bs-save-park="西屯停車場"
+                          data-bs-save-type="林廷"
+                          data-bs-save-address="台北市松山區八德路3段12巷"
+                          data-bs-save-space="15"
+                          data-bs-save-in="室外"
+                        >
+                          長期方案
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mt-3"
+                    style="width: 16rem; height: fit-content"
+                  >
+                    <div class="card-body">
+                      <div class="card-title h5">西屯停車場</div>
+                      <div class="row">
+                        <div class="col-5">地址:</div>
+                        <div class="col-7">台北市松山區八德路3段12巷</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5">剩餘空位:</div>
+                        <div class="col-7">15</div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-2">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                        >
+                          詳細資料
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                          data-bs-toggle="modal"
+                          data-bs-target="#saveModel"
+                          data-bs-save-park="西屯停車場"
+                          data-bs-save-type="林廷"
+                          data-bs-save-address="台北市松山區八德路3段12巷"
+                          data-bs-save-space="15"
+                          data-bs-save-in="室外"
+                        >
+                          長期方案
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mt-3"
+                    style="width: 16rem; height: fit-content"
+                  >
+                    <div class="card-body">
+                      <div class="card-title h5">西屯停車場</div>
+                      <div class="row">
+                        <div class="col-5">地址:</div>
+                        <div class="col-7">台北市松山區八德路3段12巷</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5">剩餘空位:</div>
+                        <div class="col-7">15</div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-2">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                        >
+                          詳細資料
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-light-solid-m px-3 py-1"
+                          data-bs-toggle="modal"
+                          data-bs-target="#saveModel"
+                          data-bs-save-park="西屯停車場"
+                          data-bs-save-type="林廷"
+                          data-bs-save-address="台北市松山區八德路3段12巷"
+                          data-bs-save-space="15"
+                          data-bs-save-in="室外"
+                        >
+                          長期方案
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="saveModel"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+            style="z-index: 3000"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="modal-title mt-3 mx-4 h5" id="park"></div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row mx-3 mb-3">
+                    <div class="col-5">停車場樣式:</div>
+                    <div class="col-7" id="type"></div>
+                  </div>
+                  <div class="row mx-3 mb-3">
+                    <div class="col-5">地址:</div>
+                    <div class="col-7" id="address"></div>
+                  </div>
+                  <div class="row mx-3 mb-3">
+                    <div class="col-5">剩餘空位:</div>
+                    <div class="col-7" id="space"></div>
+                  </div>
+                  <div class="row mx-3 mb-3">
+                    <div class="col-5">室內/室外:</div>
+                    <div class="col-7" id="in"></div>
+                  </div>
+                </div>
+                <div class="modal-footer" id="modalBtnContainer">
+                  <button type="button" class="btn btn-light-solid-m">
+                    預約停車
+                  </button>
+                  <button type="button" class="btn btn btn-dark-solid-m">
+                    長期方案
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-to-hide-trading-history">
+          <div class="card border-0" style="height: 400px; overflow: auto">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead>
+                    <tr class="align-middle">
+                      <th scope="col" class="py-4">訂單編號</th>
+                      <th scope="col">入場時間</th>
+                      <th scope="col">出場時間</th>
+                      <th scope="col">方案</th>
+                      <th scope="col">金額</th>
+                      <th scope="col">付款方式</th>
+                      <th scope="col">付款狀態</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-nowrap" id="tradingHistory">
+                    <tr>
+                      <td scope="row" class="py-4">CCC1245678912456</td>
+                      <td class="py-4">2022/03/01</td>
+                      <td class="py-4">2022/03/01</td>
+                      <td class="py-4">當日預約</td>
+                      <td class="py-4">NT$ 60</td>
+                      <td class="py-4">信用卡</td>
+                      <td class="py-4">完成付款</td>
+                      <td class="text-end pe-4 py-4">
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-dark">
+                            編輯 <i class="bi bi-pen"></i
+                          ></a>
+                          <button
+                            class="btn btn-sm btn-outline-dark dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            操作
+                          </button>
+                          <ul
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <li>
+                              <a class="dropdown-item" href="#">修改狀態</a>
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item text-danger"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteTrad"
+                                data-bs-trad-id="CCC1245678912456"
+                                >刪除訂單</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent py-3"></div>
+            <div
+              class="modal fade"
+              id="deleteTrad"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+              style="z-index: 3000"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="modal-title h5" id="staticBackdropLabel">
+                      Modal title
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      確認刪除「<span id="deleteTradText"></span>」的訂單嗎？
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      取消
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      id="deleteTradBtn"
+                      data-bs-dismiss="modal"
+                    >
+                      確認刪除
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-to-hide-appointment">
+          <div class="card border-0" style="height: 400px; overflow: auto">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead class="bg-light">
+                    <tr class="align-middle">
+                      <th scope="col" class="py-4">訂單編號</th>
+                      <th scope="col">入場時間</th>
+                      <th scope="col">出場時間</th>
+                      <th scope="col">方案</th>
+                      <th scope="col">停車場名</th>
+                      <th scope="col">停車場地址</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-nowrap" id="reserveHistory">
+                    <tr>
+                      <td scope="row" class="py-4">CCC1245678912456</td>
+                      <td class="py-4">2022/03/01</td>
+                      <td class="py-4">2022/03/01</td>
+                      <td class="py-4">當日預約</td>
+                      <td class="py-4">路邊停車格</td>
+                      <td class="py-4">台中市中區中山路123號</td>
+                      <td class="text-end pe-4 py-4">
+                        <div class="btn-group">
+                          <a href="#" class="btn btn-sm btn-outline-dark">
+                            編輯 <i class="bi bi-pen"></i
+                          ></a>
+                          <button
+                            class="btn btn-sm btn-outline-dark dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            操作
+                          </button>
+                          <ul
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <li>
+                              <a class="dropdown-item" href="#">修改狀態</a>
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item text-danger"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteAppointment"
+                                data-bs-trad-id="CCC1245678912456"
+                                >刪除訂單</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent py-3"></div>
+            <div
+              class="modal fade"
+              id="deleteReserve"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+              style="z-index: 3000"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="modal-title h5" id="exampleModalLabel">
+                      刪除訂單
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      確認刪除「<span id="deleteReserveText"></span>」的訂單嗎？
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-outline-dark"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      id="deleteReserveBtn"
+                      data-bs-dismiss="modal"
+                    >
+                      確認刪除
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-to-hide-storage">
+          <div class="row mt-5">
+            <div class="col-4 d-flex">
+              <div class="col-8">
+                <div class="h2">剩餘金額:</div>
+              </div>
+              <div class="col-4">
+                <div class="h2">150</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-8">
+              <div class="row g-3 d-flex justify-content-between mb-4">
+                <label for="PhoneNumber" class="col-sm-2 col-form-label ms-2"
+                  >輸入金額</label
+                >
+                <div class="col-8 d-flex p-0">
+                  <select
+                    class="form-select form-select-md mb-3 py-1"
+                    aria-label=".form-select-lg example"
+                    id="unitId"
+                  >
+                    <option class="text-5" value="TWD">TWD</option>
+                  </select>
+                  <div class="col-8 ms-3">
+                    <input
+                      class="form-control bg-white py-1"
+                      type="number"
+                      id="amountId"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex flex-row-reverse" style="margin-top: 100px">
+              <button
+                type="button"
+                class="btn btn-light-solid-m mx-3 px-5"
+                id="storageCheckout"
+              >
+                前往結帳
+              </button>
+              <button
+                type="button"
+                class="btn btn-light-gray mx-3 px-5"
+                id="storageCheckoutCancel"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <script src="../stylesheets/components/header/header.js"></script>
     <script src="../scripts/carOwner.js"></script>
-</body>
-
+  </body>
 </html>
