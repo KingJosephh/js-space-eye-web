@@ -1,30 +1,5 @@
-const btnMail = document.querySelectorAll('.btn-mail');
 const btnUpL = document.querySelector('.btn-up-l');
 const btnUpM = document.querySelector('.btn-up-m');
-
-/* 按鈕 - 歡迎免費諮詢 */
-for(let i = 0;i < btnMail.length; i++){
-  btnMail[i].addEventListener('mouseover', () => {
-    btnMail[i].childNodes[5].children[1].innerHTML = `
-    <mask id="mask0_2918_2430" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-    <rect width="24" height="24" fill="#D9D9D9"/>
-    </mask>
-    <g mask="url(#mask0_2918_2430)">
-    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="#1E1E1E"/>
-    </g>
-    `;
-  });
-  btnMail[i].addEventListener('mouseout', () => {
-    btnMail[i].childNodes[5].children[1].innerHTML = `
-      <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-        <rect width="24" height="24" fill="#D9D9D9" />
-      </mask>
-      <g mask="url(#mask0_2910_7237)">
-        <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
-      </g>
-    `;
-  });
-}
 
 /* 按鈕 - 向上箭頭 */
 if (btnUpL){

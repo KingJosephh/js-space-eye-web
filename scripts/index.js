@@ -28,7 +28,7 @@ if (usersId) {
 }
 
 const btnUp = document.querySelector('[data-btnUp]');
-btnUp.addEventListener('click', () => {
+btnUp.addEventListener('click', (e) => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',

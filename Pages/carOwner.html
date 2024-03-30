@@ -52,24 +52,16 @@
       <div class="container">
         <div class="row">
           <div class="col mt-5">
-            <p>Hello, <span id="greetName"></span><span href="" class="ps-5" style="color: #000">logout</span></p>
+            <p>Hello, <span id="greetName"></span><span class="ps-5" style="color: #000">logout</span></p>
           </div>
         </div>
-        <div class="row position-relative" id="list">
-          <div class="col-lg-12 col-10 button-group d-flex justify-content-lg-between flex-lg-row flex-column py-2 position-absolute" id="btnList">
-            <div class="position-absolute btn-bg-move"></div>
-            <button id="btn" type="button" class="d-lg-none mx-2 col-lg-2 col-5 btn mb-lg-0 mb-3 fw-bold" style="z-index: 2500">
-              <span class="mt-5" id="changeText">車主資訊</span>
-            </button>
-            <button id="btnCarOwner" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-light-solid-l" style="z-index: 2500" data-num="1">車主資訊</button>
-            <button id="btnSaved" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500" data-num="2">我的收藏</button>
-            <button id="btnPaymentRecord" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500" data-num="3">交易紀錄</button>
-            <button id="btnBookedRecord" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500" data-num="4">預約紀錄</button>
-            <button id="btnStoredValue" type="button" class="col-lg-2 m-lg-0 ml-0 mb-3 col-5 btn btn-dark-trans-l" style="z-index: 2500" data-num="5">儲值專區</button>
-          </div>
+        <div class="d-flex gap-4 flex-wrap">
+          <button id="btnCarOwner" type="button" class="btn btn-light-solid-l" data-num="1">車主資訊</button>
+          <button id="btnSaved" type="button" class="btn btn-dark-trans-l" data-num="2">我的收藏</button>
+          <button id="btnPaymentRecord" type="button" class="btn btn-dark-trans-l" data-num="3">交易紀錄</button>
+          <button id="btnBookedRecord" type="button" class="btn btn-dark-trans-l" data-num="4">預約紀錄</button>
+          <button id="btnStoredValue" type="button" class="btn btn-dark-trans-l" data-num="5">儲值專區</button>
         </div>
-
-        <hr class="text-dark d-lg-block d-none" style="margin-top: 80px" />
         <!-- 寫換頁(隱藏頁面顯示頁面) -->
         <div class="content-to-hide-owner"></div>
         <!-- model -->
@@ -107,8 +99,8 @@
                 <div class="col-3 mt-4 me-5 p-0 position-absolute" style="top: 0; right: 0; width: fit-content">
                   <div class="button-group d-flex justify-content-evenly color-tran-gray p-2" style="gap: 10px">
                     <!-- btn-bg-move-dad  -->
-                    <button id="btn1-1" type="button" class="btn btn-light-solid-m border-0" style="z-index: 2" data-num="1" value="C01">路邊車格</button>
-                    <button id="btn1-2" type="button" class="btn btn-dark-trans-m border-0 color-white" style="z-index: 2" data-num="2" value="C02">停車場</button>
+                    <button id="btnParkRoad" type="button" class="btn btn-light-solid-m border-0" style="z-index: 2" data-num="1" value="C01">路邊車格</button>
+                    <button id="btnParkArea" type="button" class="btn btn-dark-trans-m border-0 color-white" style="z-index: 2" data-num="2" value="C02">停車場</button>
                   </div>
                 </div>
               </div>
@@ -379,29 +371,14 @@
           </div>
         </div>
         <div class="content-to-hide-storage">
-          <div class="row mt-5">
-            <div class="col-4 d-flex">
-              <div class="col-8">
-                <div class="h2">剩餘金額:</div>
-              </div>
-              <div class="col-4">
-                <div class="h2">150</div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-5">
-            <div class="col-8">
-              <div class="row g-3 d-flex justify-content-between mb-4">
-                <label for="PhoneNumber" class="col-sm-2 col-form-label ms-2">輸入金額</label>
-                <div class="col-8 d-flex p-0">
-                  <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" id="unitId">
-                    <option class="text-5" value="TWD">TWD</option>
-                  </select>
-                  <div class="col-8 ms-3">
-                    <input class="form-control bg-white py-1" type="number" id="amountId" />
-                  </div>
-                </div>
-              </div>
+          <div class="h2">剩餘金額: 150元</div>
+          <div class="col-md-8 d-flex pt-4">
+            <label for="PhoneNumber" class="col-3 col-md-2 col-form-label ms-2">儲值金額</label>
+            <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" id="unitId">
+              <option class="text-5" value="TWD">TWD</option>
+            </select>
+            <div class="col-5 ms-3">
+              <input class="form-control bg-white py-1" type="number" id="amountId" />
             </div>
           </div>
           <div class="row">

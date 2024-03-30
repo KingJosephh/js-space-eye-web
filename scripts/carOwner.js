@@ -1,4 +1,3 @@
-const change = document.querySelector('#changeText');
 const enterPassword = document.querySelector('#enterPassword');
 const reEnterPassword = document.querySelector('#reEnterPassword');
 const getNewPassword = document.querySelector('#getNewPass');
@@ -7,42 +6,21 @@ const btnSaved = document.getElementById('btnSaved');
 const btnPaymentRecord = document.getElementById('btnPaymentRecord');
 const btnBookedRecord = document.getElementById('btnBookedRecord');
 const btnStoredValue = document.getElementById('btnStoredValue');
-// const btn6 = document.getElementById('btn6');
-const btn11 = document.querySelector('#btn1-1');
-const btn12 = document.querySelector('#btn1-2');
-const btnBgMove = document.querySelector('.btn-bg-move');
-// const btnBgMove1 = document.querySelector('.btn-bg-move1');
-const contentToHide = document.querySelector('.content-to-hide-owner');
-const contentToHide2 = document.querySelector('.content-to-hide-save');
-const btnList = document.querySelector('#list');
-const contentToHide3 = document.querySelector('.content-to-hide-trading-history');
-const contentToHide4 = document.querySelector('.content-to-hide-appointment');
-const contentToHide5 = document.querySelector('.content-to-hide-storage');
+const btnParkRoad = document.querySelector('#btnParkRoad');
+const btnParkArea = document.querySelector('#btnParkArea');
+const contentToHideOwner = document.querySelector('.content-to-hide-owner');
+const contentToHideSave = document.querySelector('.content-to-hide-save');
+const contentToHideHistory = document.querySelector('.content-to-hide-trading-history');
+const contentToHideAppointment = document.querySelector('.content-to-hide-appointment');
+const contentToHideStorage = document.querySelector('.content-to-hide-storage');
 const showMapCard = document.querySelector('#showMapCard');
-const btnNumList = 1;
-// const btnNumList1 = 1;
-const allHide = [contentToHide, contentToHide2, contentToHide3, contentToHide4, contentToHide5];
+const allHide = [contentToHideOwner, contentToHideSave, contentToHideHistory, contentToHideAppointment, contentToHideStorage];
 let getParkValue = 'C01';
 const localParkData = localStorage.getItem('likePark');
 let saveLikePark = [];
-// 從 localStorage 中讀取進場和出場時間和方案選擇
-// const entryTimeHeader = localStorage.getItem('entryTime');
-// const exitTimeHeader = localStorage.getItem('exitTime');
-// const chosePlanHeader = localStorage.getItem('chosePlan');
 let locatedX = 24.162139;
 let locatedY = 120.647021;
 
-//切換六個項目按鈕
-function getNum(x) {
-  let num = parseInt(x.getAttribute('data-num'));
-  if (num > btnNumList) {
-    btnBgMove.style.marginLeft = 287 * (num - 1) + 'px';
-  } else if (num < btnNumList) {
-    btnBgMove.style.marginLeft = 287 * (num - 1) + 'px';
-  } else if (num === 1) {
-    btnBgMove.style.marginLeft = 0;
-  }
-}
 //將未被選種項目style加上none
 function getHide(same) {
   const differentBtn = allHide
@@ -55,99 +33,41 @@ function getHide(same) {
 //如果num跟取得數值一樣將項目style加上block
 function showContent(z) {
   let num = parseInt(z.getAttribute('data-num'));
-  if (num === 1) {
-    getHide(z);
-    contentToHide.style.display = 'block';
-  } else if (num === 2) {
-    getHide(z);
-    contentToHide2.style.display = 'block';
-  } else if (num === 3) {
-    getHide(z);
-    contentToHide3.style.display = 'block';
-  } else if (num === 4) {
-    getHide(z);
-    contentToHide4.style.display = 'block';
-  } else if (num === 5) {
-    getHide(z);
-    contentToHide5.style.display = 'block';
-  }
-  // else if(num === 6){
-  //     getHide(z)
-  //     contentToHide6.style.display = 'block';
-  // }
+  getHide(z);
+  num === 1 ? (contentToHideOwner.style.display = 'block') : num === 2 ? (contentToHideSave.style.display = 'block') : num === 3 ? (contentToHideHistory.style.display = 'block') : num === 4 ? (contentToHideAppointment.style.display = 'block') : (contentToHideStorage.style.display = 'block');
 }
-let grayBtnText = '車主專區';
+// 首次載入時顯示車主資訊
+contentToHideOwner.style.display = 'block';
 //按鈕監聽
-btnCarOwner.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent;
-  changeText();
-  getNum(btnCarOwner);
+btnCarOwner.addEventListener('click', () => {
   showContent(btnCarOwner);
   btnStylingTogglerToLightL(btnCarOwner, btnSaved, btnPaymentRecord, btnBookedRecord, btnStoredValue);
-  ctrBtnBg();
 });
-btnSaved.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent;
-  changeText();
-  getNum(btnSaved);
+btnSaved.addEventListener('click', () => {
   showContent(btnSaved);
   btnStylingTogglerToLightL(btnSaved, btnCarOwner, btnPaymentRecord, btnBookedRecord, btnStoredValue);
-  ctrBtnBg();
 });
-btnPaymentRecord.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent;
-  changeText();
-  getNum(btnPaymentRecord);
+btnPaymentRecord.addEventListener('click', () => {
   showContent(btnPaymentRecord);
   btnStylingTogglerToLightL(btnPaymentRecord, btnSaved, btnCarOwner, btnBookedRecord, btnStoredValue);
-  ctrBtnBg();
 });
-btnBookedRecord.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent;
-  changeText();
-  getNum(btnBookedRecord);
+btnBookedRecord.addEventListener('click', () => {
   showContent(btnBookedRecord);
   btnStylingTogglerToLightL(btnBookedRecord, btnSaved, btnPaymentRecord, btnCarOwner, btnStoredValue);
-  ctrBtnBg();
 });
-btnStoredValue.addEventListener('click', (e) => {
-  grayBtnText = e.target.textContent;
-  changeText();
-  getNum(btnStoredValue);
+btnStoredValue.addEventListener('click', () => {
   showContent(btnStoredValue);
   btnStylingTogglerToLightL(btnStoredValue, btnSaved, btnPaymentRecord, btnBookedRecord, btnCarOwner);
-  ctrBtnBg();
 });
-btn11.addEventListener('click', () => {
-  getParkValue = btn11.value;
+btnParkRoad.addEventListener('click', () => {
+  getParkValue = btnParkRoad.value;
   getLikePark(saveLikePark, getParkValue);
-  btnStylingTogglerToLightM(btn11, btn12);
+  btnStylingTogglerToLightM(btnParkRoad, btnParkArea);
 });
-btn12.addEventListener('click', () => {
-  getParkValue = btn12.value;
+btnParkArea.addEventListener('click', () => {
+  getParkValue = btnParkArea.value;
   getLikePark(saveLikePark, getParkValue);
-  btnStylingTogglerToLightM(btn12, btn11);
-});
-// var windowWidth = window.innerWidth;
-// btn.addEventListener('click', function () {
-//   if (btnList.classList.contains('sticky')) {
-//     btnList.classList.remove('sticky');
-//   }
-// });
-
-const changeText = () => {
-  change.innerHTML = grayBtnText;
-};
-const ctrBtnBg = () => {
-  btnList.classList.add('sticky');
-};
-window.addEventListener('resize', function () {
-  var windowWidth = window.innerWidth;
-  if (windowWidth < 780) {
-    btnList.classList.add('sticky');
-  } else if (windowWidth > 780) {
-    btnList.classList.remove('sticky');
-  }
+  btnStylingTogglerToLightM(btnParkArea, btnParkRoad);
 });
 // btn點擊樣式更動
 function btnStylingTogglerToLightL(activeBtn, closeBtn1, closeBtn2, closeBtn3, closeBtn4) {
@@ -251,41 +171,42 @@ if (usersId) {
 }
 // 車主資訊-將會員資料渲染至畫面
 const getMemberData = (aa) => {
-  let content = `<div class="row mt-5 d-flex justify-content-lg-between gx-5 ps-2 pe-2 pb-5">
+  let content = `
+  <div class="row d-flex justify-content-lg-between gx-5">
     <div class="col-lg-6 col-12">
-        <div class="mb-4 row d-flex justify-content-between">
-            <label for="inputPassword" class="col-sm-4 col-form-label">姓名</label>
-            <div class="col col-sm-8">
-                <input class="form-control  bg-white" type="text" value="${aa.username}" aria-label="Disabled input example" disabled readonly>
-            </div>
+      <div class="mb-4 row d-flex justify-content-between">
+        <label for="inputPassword" class="col-sm-4 col-form-label">姓名</label>
+        <div class="col col-sm-8">
+          <input class="form-control  bg-white" type="text" value="${aa.username}" aria-label="Disabled input example" disabled readonly>
         </div>
-        <div class="mb-4 row d-flex justify-content-between">
-            <label for="inputPassword" class="col-sm-4 col-form-label">Email</label>
-            <div class="col col-sm-8">
-                <input class="form-control  bg-white" type="text" value="${aa.email}" aria-label="Disabled input example" disabled readonly>
-            </div>
+      </div>
+      <div class="mb-4 row d-flex justify-content-between">
+        <label for="inputPassword" class="col-sm-4 col-form-label">Email</label>
+        <div class="col col-sm-8">
+          <input class="form-control  bg-white" type="text" value="${aa.email}" aria-label="Disabled input example" disabled readonly>
         </div>
-            <div class="row g-3 d-flex justify-content-between mb-4">
-                <label for="PhoneNumber" class="col-sm-4 col-form-label">手機號碼</label>
-                <div class="col d-flex">
-                    <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" style="width: fit-content">
-                        <option class="text-5" selected>+ 886</option>
-                        <option value="1">+ 007</option>
-                        <option value="2">+ 125</option>
-                        <option value="3">+ 789</option>
-                    </select>
-                    <div class="ms-3">
-                        <input class="form-control bg-white py-1" type="text" value="" aria-label="Disabled input example" disabled readonly>
-                    </div>
-                </div>
+      </div>
+        <div class="row g-3 d-flex justify-content-between mb-4">
+          <label for="PhoneNumber" class="col-sm-4 col-form-label">手機號碼</label>
+          <div class="col d-flex">
+            <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" style="width: fit-content">
+              <option class="text-5" selected>+ 886</option>
+              <option value="1">+ 007</option>
+              <option value="2">+ 125</option>
+              <option value="3">+ 789</option>
+            </select>
+            <div class="ms-3">
+              <input class="form-control bg-white py-1" type="text" value="" aria-label="Disabled input example" disabled readonly>
             </div>
-        </form>
-        <div class="changePassWord d-flex justify-content-between mb-4">
-                <label for="inputPassword" class="col-sm-4 col-form-label">密碼</label>
-                <div class="col col-sm-8 d-flex align-items-center">
-                    <label for="" class=""><a href="" class="fw-bold text-decoration-none ps-2" data-bs-toggle="modal" data-bs-target="#changePass">更改密碼</a></label>
-                </div>
+          </div>
         </div>
+      </form>
+      <div class="changePassWord d-flex justify-content-between mb-4">
+        <label for="inputPassword" class="col-sm-4 col-form-label">密碼</label>
+        <div class="col col-sm-8 d-flex align-items-center">
+          <label for="" class=""><a href="" class="fw-bold text-decoration-none ps-2" data-bs-toggle="modal" data-bs-target="#changePass">更改密碼</a></label>
+        </div>
+      </div>
     </div>
     <div class="col-lg-6 col-12">
         <div class="mb-4 row d-flex justify-content-between">
@@ -319,7 +240,7 @@ const getMemberData = (aa) => {
         </div>
     </div>
 </div>`;
-  contentToHide.innerHTML = content;
+  contentToHideOwner.innerHTML = content;
 
   const greetName = document.querySelector('#greetName');
   greetName.textContent = aa.username;
