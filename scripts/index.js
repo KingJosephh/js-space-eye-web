@@ -11,19 +11,17 @@ if (usersId) {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then((response) => {
+    .then(() => {
       userBtn.children[0].innerText = '車主專區';
       userBtn.children[0].setAttribute('href', './Pages/carOwner.html');
       userBtn.addEventListener('click', () => {
         window.location.href = './Pages/carOwner.html';
       });
     })
-    .catch((error) => {
-      // console.log(error);
-      // window.location.href = '../Pages/login.html';
+    .catch(() => {
       userBtn.children[0].innerText = '登入 / 註冊';
       userBtn.children[0].setAttribute('href', './Pages/login.html');
-      userBtn.addEventListener('click', (e) => {
+      userBtn.addEventListener('click', () => {
         window.location.href = './Pages/login.html';
       });
     });

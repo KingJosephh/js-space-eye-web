@@ -110,7 +110,7 @@ showSummaryBtns.forEach((btn) => {
     Swal.fire({
       title: '付款成功',
       icon: 'success',
-    }).then((res) => {
+    }).then(() => {
       // 顯示訂單摘要
       OrderSummary.style.display = 'flex';
 
@@ -157,7 +157,7 @@ function supermarketDetails() {
     Swal.fire({
       title: '訂單成立',
       icon: 'success',
-    }).then((res) => {
+    }).then(() => {
       // 取得明細資料
       const orderNum = generateOrderNumber();
       const orderId = document.querySelector('#supermarketOrderId');

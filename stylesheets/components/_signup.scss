@@ -1,188 +1,188 @@
 .background-img {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../Assests/img/bgImg.png);
-    background-position: center;
-    background-size: cover;
-    filter: blur(5px);
+  width: 100%;
+  height: 100vh;
+  background-image: url(../Assests/img/bgImg.png);
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
 }
 
 .main {
-    position: absolute;
-    top: 53%;
-    left: 50%;
-    width: 75%;
-    height: 65%;
-    min-height: 650px;
-    transform: translate(-50%, -50%);
-    background: url(../Assests/img/bgImg.png);
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    margin-top: 10px;
-    border: 1px solid black;
-    border-radius: 24px;
-    border: none;
-    box-shadow: 5px 5px 10px rgb(51, 51, 51, 0.3);
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  width: 75%;
+  height: 65%;
+  min-height: 650px;
+  transform: translate(-50%, -50%);
+  background: url(../Assests/img/bgImg.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 24px;
+  border: none;
+  box-shadow: 5px 5px 10px rgb(51, 51, 51, 0.3);
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 24px;
-        z-index: -1;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    z-index: -1;
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 700px;
-    border-radius: 24px;
-    padding: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 700px;
+  border-radius: 24px;
+  padding: 110px;
 
-    .h2 {
-        font-size: 4.5em;
-        text-align: start;
-        color: #fff;
-        letter-spacing: 10px;
-    }
+  .h2 {
+    font-size: 4.5em;
+    text-align: start;
+    color: #fff;
+    letter-spacing: 10px;
+  }
 
-    p {
-        margin-top: 20px;
-        text-align: start;
-        color: #ffffff;
-        font-size: 1.5rem;
-    }
+  p {
+    margin-top: 20px;
+    text-align: start;
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .content {
-        padding: 120px;
-    }
+  .content {
+    padding: 120px;
+  }
 }
 
 @media screen and (min-width: 1000px) {
-    .content {
-        padding: 90px;
-    }
+  .content {
+    padding: 90px;
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .content {
-        padding: 80px;
-    }
+  .content {
+    padding: 80px;
+  }
 }
 
 .signUpForm {
-    width: 40%;
-    position: absolute;
-    right: 0;
-    height: 100%;
-    padding: 20px 40px;
-    background-color: rgba(220, 220, 220, 0.5);
-    backdrop-filter: blur(10px);
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
+  width: 40%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding: 20px 40px;
+  background-color: rgba(220, 220, 220, 0.5);
+  backdrop-filter: blur(10px);
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
 
-    @media screen and (max-width: 1440px) {
-        width: 55%;
+  @media screen and (max-width: 1440px) {
+    width: 55%;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    position: relative;
+
+    .all-input {
+      width: 100%;
+      height: 100%;
+      font-style: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #fff;
+      color: #fff;
     }
 
-    @media screen and (max-width: 992px) {
-        width: 80%;
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
     }
 
-    h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        color: #fff;
-        margin-bottom: 10px;
+    input:focus ~ label,
+    input[data-state='UserName']:valid ~ label,
+    input[data-state='Email']:valid ~ label,
+    input[data-state='Password-sign']:valid ~ label,
+    input[data-state='Password-again-sign']:valid ~ label,
+    input[data-state='Car-id']:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #93ff00;
+      font-size: 12px;
     }
 
-    .input {
-        width: 100%;
-        height: 40px;
-        margin-bottom: 20px;
-        position: relative;
+    .warn-UserName,
+    .warn-Email,
+    .warn-Email-exists,
+    .warn-Password,
+    .warn-Password-again,
+    .warn-Car-id {
+      text-align: end;
+      font-size: 12px;
+      color: #ff0000;
+      display: none;
+    }
+  }
 
-        .all-input {
-            width: 100%;
-            height: 100%;
-            font-style: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: transparent;
-            border: none;
-            outline: none;
-            border-bottom: 2px solid #fff;
-            color: #fff;
-        }
+  .aboutAccount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 32px;
 
-        label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            pointer-events: none;
-            transition: 0.5s;
-        }
-
-        input:focus~label,
-        input[data-state="UserName"]:valid~label,
-        input[data-state="Email"]:valid~label,
-        input[data-state="Password-sign"]:valid~label,
-        input[data-state="Password-again-sign"]:valid~label,
-        input[data-state="Car-id"]:valid~label {
-            top: -20px;
-            left: 0;
-            color: #93FF00;
-            font-size: 12px;
-        }
-
-        .warn-UserName,
-        .warn-Email,
-        .warn-Email-exists,
-        .warn-Password,
-        .warn-Password-again,
-        .warn-Car-id {
-            text-align: end;
-            font-size: 12px;
-            color: #ff0000;
-            display: none;
-        }
+    .check {
+      display: flex;
     }
 
-    .aboutAccount {
-        display: flex;
-        justify-content: space-between;
-        font-size: 16px;
-        color: #fff;
-        margin-bottom: 32px;
-
-        .check {
-            display: flex;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
+    a {
+      text-decoration: none;
+      color: #fff;
     }
+  }
 
-    .word a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 12px;
-        margin-top: 16px;
-    }
+  .word a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 16px;
+  }
 }

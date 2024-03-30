@@ -8,10 +8,6 @@ const btn32 = document.querySelector('#btn3-2');
 const btn11 = document.querySelector('#btn1-1');
 const btn12 = document.querySelector('#btn1-2');
 const confirmBtn = document.querySelector('#confirm');
-// const btnBgMove = document.querySelector('.btn-bg-move');
-// const btnBgMove1 = document.querySelector('.btn-bg-move1');
-// const btnBgMove2 = document.querySelector('.btn-bg-move2');
-// const btnBgMove3 = document.querySelector('.btn-bg-move3');
 const hideSearch = document.querySelector('.content-to-hide-search');
 const hideShowPark = document.querySelector('.content-to-hide-showPark');
 const showMapCard = document.querySelector('#showMapCard');
@@ -20,11 +16,6 @@ const areaOption = document.querySelector('#areaOption');
 const roadOption = document.querySelector('#roadOption');
 const mapLocated = document.querySelector('#map');
 const reserve = document.querySelector('#reserve');
-// const UrlWebType = 'https://space-eye-web-surver.onrender.com';
-// const btnNumList = 1;
-// const btnNumList1 = 1;
-// const btnNumList2 = 1;
-// const btnNumList3 = 1;
 const localParkData = localStorage.getItem('likePark');
 let getType = '一般車位';
 let getSpaceOrNot = 'all';
@@ -267,7 +258,7 @@ const parsedLocalParkData = () => {
     saveLikePark.push(...ss);
   }
 };
-let optionPark = '';
+let optionParkId = '';
 
 // 在后续请求中，将 token 添加到请求头中
 if (usersId) {
@@ -277,7 +268,7 @@ if (usersId) {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then((response) => {
+    .then(() => {
       parsedLocalParkData();
       showMapCard.addEventListener('click', (e) => {
         let likeBtn = e.target;
@@ -311,7 +302,7 @@ if (usersId) {
       // parsedLocalParkData()
       // const data = response.data;
     })
-    .catch((error) => {
+    .catch(() => {
       showMapCard.addEventListener('click', (e) => {
         let likeBtn = e.target;
         if (likeBtn.classList.contains('save-like')) {
@@ -416,9 +407,7 @@ const getSection = () => {
       showSectionList();
       showSectionListRwd();
     })
-    .catch(function (err) {
-      console.log(err);
-    });
+    .catch(function () {});
 };
 getSection();
 //渲染區域資料到畫面上
@@ -456,9 +445,7 @@ const getRoad = (roadIdInData) => {
       showRoadOptionList(equalId);
       showRoadOptionListRwd(equalId);
     })
-    .catch(function (err) {
-      console.log(err);
-    });
+    .catch(function () {});
 };
 getRoad('S01'); //預先渲染路段R001到畫面上
 //渲染道路資料到畫面上
@@ -480,9 +467,7 @@ const getMap = () => {
     .then(function (res) {
       data = res.data;
     })
-    .catch(function (err) {
-      console.log(err);
-    });
+    .catch(function () {});
 };
 getMap();
 //透過搜尋條件篩選資料
@@ -525,11 +510,7 @@ const render = (aa) => {
   showMapCard.innerHTML = str;
   plusLike(aa);
 };
-// const hideBtn = (aa) => {
-//   if (aa.parkName === '路邊停車格') {
-//     longBtn;
-//   }
-// };
+
 const getLikePark = (aa, bb) => {
   aa.forEach((item) => {
     let locateNum = parseFloat(item.location.latitude);

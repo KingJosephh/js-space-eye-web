@@ -10,8 +10,6 @@ function logIn(a, b) {
       password: b,
     })
     .then(function (response) {
-      console.log(response);
-
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('usersId', response.data.user.id);
 
@@ -23,12 +21,11 @@ function logIn(a, b) {
         title: '登入成功',
         showConfirmButton: false,
         timer: 1500,
-      }).then((res) => {
+      }).then(() => {
         window.location.href = '../index.html';
       });
     })
     .catch(function (err) {
-      console.log(err);
       hideError('.email-warn');
       hideError('.Password-warn');
 
@@ -56,7 +53,7 @@ function logIn(a, b) {
     });
 }
 
-logInBtn.addEventListener('click', function (e) {
+logInBtn.addEventListener('click', function () {
   let email = emailInput.value.trim();
   let passWord = passWordInput.value.trim();
 

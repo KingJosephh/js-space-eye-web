@@ -199,7 +199,7 @@ deleteAppointmentModel.addEventListener('show.bs.modal', function (p) {
   text.textContent = getAppointment;
 });
 //更改密碼按鈕監聽
-getNewPassword.addEventListener('click', (e) => {
+getNewPassword.addEventListener('click', () => {
   let passwordV = '';
   const enterV = enterPassword.value;
   const reEnterV = reEnterPassword.value;
@@ -225,12 +225,10 @@ const applyChangePassWord = (aa) => {
         },
       },
     )
-    .then((response) => {
+    .then(() => {
       alert('密碼修改成功');
     })
-    .catch((err) => {
-      console, log(err);
-    });
+    .catch(() => {});
 };
 
 //取得用戶資料
@@ -245,7 +243,7 @@ if (usersId) {
       let memberData = response.data;
       getMemberData(memberData);
     })
-    .catch((err) => {
+    .catch(() => {
       window.location.href = 'login.html';
     });
 } else {
@@ -468,9 +466,7 @@ const getMapData = () => {
       data = response.data;
       getLikePark(saveLikePark, getParkValue);
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch(() => {});
 };
 getMapData();
 //取得全部停車場資料中與收藏停車場資料相符
@@ -591,7 +587,7 @@ showOrderDeal(orderDetail);
 const deleteTradText = document.querySelector('#deleteTradText');
 const deleteTradBtn = document.querySelector('#deleteTradBtn');
 
-deleteTradBtn.addEventListener('click', (e) => {
+deleteTradBtn.addEventListener('click', () => {
   let deleteId = deleteTradText.textContent;
   let num = orderDetail.findIndex((item) => item.orderId === deleteId);
   orderDetail.splice(num, 1);
@@ -665,7 +661,6 @@ modalBtnContainer.addEventListener('click', (e) => {
 
 // 儲值專區
 const storageCheckoutBtn = document.querySelector('#storageCheckout');
-const storageCheckoutCancelBtn = document.querySelector('#storageCheckoutCancel');
 storageCheckoutBtn.addEventListener('click', (e) => {
   e.preventDefault();
   Swal.fire({

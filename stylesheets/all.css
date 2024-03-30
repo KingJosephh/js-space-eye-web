@@ -12370,7 +12370,7 @@ button.btn-light-trans-l, button.btn-light-trans-m {
   color: var(--brand-01);
   border: 2px solid var(--brand-01);
 }
-button.btn-light-solid-l:hover, button.btn-light-solid-m:hover, button.btn-light-trans-l:hover, button.btn-light-trans-m:hover {
+button.btn-light-solid-l:hover, button.btn-light-solid-m:hover, button.btn-light-trans-l:hover, button.btn-light-trans-m:hover, button.btn-light-solid-l:focus, button.btn-light-solid-m:focus, button.btn-light-trans-l:focus, button.btn-light-trans-m:focus {
   background: var(--brand-02);
   border-color: var(--brand-02);
 }
@@ -13514,7 +13514,7 @@ li .menu-m:hover::before {
 .signUpForm .input input[data-state=Car-id]:valid ~ label {
   top: -20px;
   left: 0;
-  color: #93FF00;
+  color: #93ff00;
   font-size: 12px;
 }
 .signUpForm .input .warn-UserName,
@@ -14117,7 +14117,6 @@ li .menu-m:hover::before {
   box-shadow: 0 0 3px rgba(31, 31, 31, 0.5);
 }
 .plan-container .plan:hover {
-  cursor: pointer;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
 }
 .plan-container .plan .plan-price {

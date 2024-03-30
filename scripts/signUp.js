@@ -15,8 +15,7 @@ function signUp(a, b, c, d) {
       password: c,
       carId: d,
     })
-    .then(function (response) {
-      console.log(response);
+    .then(function () {
       signUpForm.reset();
 
       // 註冊成功提示
@@ -25,13 +24,11 @@ function signUp(a, b, c, d) {
         title: '註冊成功',
         showConfirmButton: false,
         timer: 1500,
-      }).then((res) => {
+      }).then(() => {
         window.location.href = 'login.html';
       });
     })
     .catch(function (err) {
-      console.log(err);
-      console.dir(err);
       hideError('.warn-Email');
       hideError('.warn-Email-exists');
       if (err.response.data === 'Email format is invalid') {
@@ -99,7 +96,7 @@ function hideError(selector) {
   document.querySelector(selector).style.display = 'none';
 }
 
-logInBtn.addEventListener('click', function (e) {
+logInBtn.addEventListener('click', function () {
   add();
 });
 

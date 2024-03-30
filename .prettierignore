@@ -3,3 +3,5 @@
 # *.md
 .vscode
 .idea
+.css
+.css.map

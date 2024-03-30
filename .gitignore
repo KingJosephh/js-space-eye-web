@@ -14,6 +14,11 @@ dist-ssr
 coverage
 *.local
 
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
 /cypress/videos/
 /cypress/screenshots/
 

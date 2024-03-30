@@ -263,7 +263,6 @@
     box-shadow: 0 0 3px rgba(31,31,31,.5);
 
     &:hover {
-      cursor: pointer;
       box-shadow: 0 0 15px 5px rgba(0, 0, 0, .1);
     }
 
@@ -291,7 +290,7 @@
       flex-direction: row;
       max-width: 600px;
       justify-content: space-between;
-
+      
       .plan-container-title {
         display: flex;
         flex-direction: column;

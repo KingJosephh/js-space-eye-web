@@ -124,8 +124,8 @@ axios
     charge = parkData.charge;
     getCharge(charge);
   })
-  .catch((err) => {
-    console.log(err);
+  .catch(() => {
+    // console.log(err);
   });
 const getPark = () => {
   data.forEach((item) => {
