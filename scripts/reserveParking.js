@@ -78,6 +78,7 @@ function generateReserveNumber() {
 }
 //用天數計算價錢
 const countCharge = (daysDifference) => {
+  if (!chargeList) return
   if (daysDifference <= 1) {
     for (let i = 0; i < chargeList.length; i++) {
       if (chargeList[i].unit === 'd') {
