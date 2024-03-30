@@ -1,244 +1,218 @@
 $display-none: none;
 
 .btn-bg-move {
-    transition: margin-left 0.3s;
-    margin-left: 0;
+  transition: margin-left 0.3s;
+  margin-left: 0;
 }
 
-#btnList{
-    border-radius: 48px;
-    position: relative;
-    height: 100px;
-    z-index: 1;
-    
-    @media screen and (min-width: 992px) {
-        background: var(--gray-01);
-        align-items: center;
-        &::after {
-            content: '';
-            border: 4px solid var(--gray-01);
-            background: var(--gray-01);
-            width: 1300px;
-            height: 100px;
-            position: absolute;
-            right: -1200px;
-            top: 0;
-        }
+#btnList {
+  border-radius: 48px;
+  position: relative;
+  height: 100px;
+  z-index: 1;
+
+  @media screen and (min-width: 992px) {
+    background: var(--gray-01);
+    align-items: center;
+    &::after {
+      content: '';
+      border: 4px solid var(--gray-01);
+      background: var(--gray-01);
+      width: 1300px;
+      height: 100px;
+      position: absolute;
+      right: -1200px;
+      top: 0;
     }
-    @media screen and (max-width: 991px) {
-        &::after {
-            content: none;
-        }
+  }
+  @media screen and (max-width: 991px) {
+    &::after {
+      content: none;
     }
-    .btn-dark-trans-l{
-        color: #fff;
-    }
+  }
+  .btn-dark-trans-l {
+    color: #fff;
+  }
+  #btn1,
+  #btn2,
+  #btn3,
+  #btn4,
+  #btn5 {
+    padding: 22px 58px;
+    height: fit-content;
+    width: fit-content;
+  }
+  @media screen and (max-width: 991px) {
     #btn1,
     #btn2,
     #btn3,
     #btn4,
     #btn5 {
-        padding: 22px 58px;
-        height: fit-content;
-        width: fit-content;
+      padding: 22px 74px;
+      margin-left: 8px;
+      height: fit-content;
+      width: fit-content;
     }
-    @media screen and (max-width: 991px) {
-        #btn1,
-        #btn2,
-        #btn3,
-        #btn4,
-        #btn5 {
-            padding: 22px 74px;
-            margin-left: 8px;
-            height: fit-content;
-            width: fit-content;
-        }
-    }
+  }
 }
 
-// .content-to-hide-owner {
-//     display: block;
-//     padding: 50px 30px 24px 0;
-//     position: relative;
-//     background: #fff;
-//     border-bottom-right-radius: 40px;
-//     // &::after {
-//     //     content: '';
-//     //     background: #fff;
-//     //     width: 1800px;
-//     //     height: 573px;
-//     //     position: absolute;
-//     //     left: -1000px;
-//     //     top: -50px;
-//     //     z-index: -1;
-//     //     border-top-right-radius: 40px;
-//     //     border-bottom-right-radius: 40px;
-//     //     @media screen and (max-width: 991px) {
-//     //         top: 0;
-//     //         height: 720px;
-//     //         left: -1200px;
-//     //     }
-//     // }
-//     @media screen and (max-width: 991px) {
-//         border-top-right-radius: 40px;
-//     }
-// }
-
 .btn-light-gray {
-    border-radius: 48px;
+  border-radius: 48px;
 }
 
 .content-to-hide-save,
 .content-to-hide-trading-history,
 .content-to-hide-appointment,
 .content-to-hide-storage {
-    display: $display-none;
-    padding-top: 50px;
-    position: relative;
-    padding-bottom: 50px;
-    border-bottom-right-radius: 40px;
+  display: $display-none;
+  padding-top: 50px;
+  position: relative;
+  padding-bottom: 50px;
+  border-bottom-right-radius: 40px;
+  background: #fff;
+  &::after {
+    content: '';
     background: #fff;
-    &::after {
-        content: '';
-        background: #fff;
-        width: 1800px;
-        height: 458px;
-        position: absolute;
-        left: -1000px;
-        top: -50px;
-        z-index: -1;
-        @media screen and (max-width: 991px) {
-            top: 0;
-            left: -1200px;
-        }
-        @media screen and (max-width: 768px) {
-            left: -1400px;
-        }
+    width: 1800px;
+    height: 458px;
+    position: absolute;
+    left: -500px;
+    top: -50px;
+    z-index: -1;
+    @media screen and (max-width: 1400px) {
+      left: -680px;
     }
     @media screen and (max-width: 991px) {
-        border-top-right-radius: 40px;
+      top: 0;
+      left: -1100px;
     }
+    @media screen and (max-width: 768px) {
+      left: -1400px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    border-top-right-radius: 40px;
+  }
 }
 
-.content-to-hide-save{
-    &::after {
-        height: 600px;
-        @media screen and (max-width: 991px) {
-            height: 550px;
-        }
+.content-to-hide-save {
+  &::after {
+    height: 600px;
+    @media screen and (max-width: 991px) {
+      height: 550px;
     }
+  }
 }
 
 .content-to-hide-trading-history,
-.content-to-hide-appointment{
-    padding-right: 30px;
-    &::after {
-        height: 550px;
-        @media screen and (max-width: 991px) {
-        height: 500px;
-        }
+.content-to-hide-appointment {
+  padding-right: 30px;
+  &::after {
+    height: 550px;
+    @media screen and (max-width: 991px) {
+      height: 500px;
     }
-    td{
-        background: #fff;
-    }
+  }
+  td {
+    background: #fff;
+  }
 }
 
 .content-to-hide-storage {
-    padding: 50px 30px 80px 0;
+  padding: 50px 30px 80px 0;
+  &::after {
+    height: 540px;
+  }
+  .btn-light-gray {
+    border-radius: 48px;
+  }
+  @media screen and (max-width: 991px) {
+    top: 0;
     &::after {
-        height: 540px;
+      height: 498px;
     }
-    .btn-light-gray {
-        border-radius: 48px;
+  }
+  @media screen and (max-width: 768px) {
+    &::after {
+      height: 530px;
     }
-    @media screen and (max-width: 991px) {
-        top: 0;
-        &::after {
-            height: 498px;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        &::after {
-            height: 530px;
-        }
-    }
+  }
 }
 
 .Password-warn {
-    text-align: end;
-    font-size: 12px;
-    color: red;
-    display: none;
+  text-align: end;
+  font-size: 12px;
+  color: red;
+  display: none;
 }
 
 #btn {
-    // -webkit-appearance: none;
-    background: var(--gray-01);
-    // background: rgba(31, 31, 31, .3);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, .1);
-    border-radius: 32px;
-    padding-bottom: 74%;
-    position: absolute;
-    left: 0;
-    width: 40%;
-    height: 60px;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    span {
-        opacity: 0;
-    }
-    @media screen and (max-width: 768px) {
-        width: 53%;
-        padding-bottom: 96%;
-    }
+  // -webkit-appearance: none;
+  background: var(--gray-01);
+  // background: rgba(31, 31, 31, .3);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding-bottom: 74%;
+  position: absolute;
+  left: 0;
+  width: 40%;
+  height: 60px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  span {
+    opacity: 0;
+  }
+  @media screen and (max-width: 768px) {
+    width: 53%;
+    padding-bottom: 96%;
+  }
 }
-
 
 @media (max-width: 1000px) {
-    .sticky {
-        #btn {
-            // -webkit-appearance: none;
-            background: var(--brand-01);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, .1);
-            border-radius: 32px;
-            padding-bottom: 0;
-            position: absolute;
-            left: 0;
-            width: 40%;
-            height: 60px;
-            outline: 0;
-            border: 0;
-            cursor: pointer;
-            transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
-            span {
-                opacity: 1;
-                transition-delay: 0.3s;
-                /* 加入延遲效果 */
-            }
-        }
-        
-        #btn1,
-        #btn2,
-        #btn3,
-        #btn4,
-        #btn5 {
-            padding: 0;
-            opacity: 0;
-            display: none;
-        }
+  .sticky {
+    #btn {
+      // -webkit-appearance: none;
+      background: var(--brand-01);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 32px;
+      padding-bottom: 0;
+      position: absolute;
+      left: 0;
+      width: 40%;
+      height: 60px;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+      transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+      span {
+        opacity: 1;
+        transition-delay: 0.3s;
+        /* 加入延遲效果 */
+      }
     }
+
+    #btn1,
+    #btn2,
+    #btn3,
+    #btn4,
+    #btn5 {
+      padding: 0;
+      opacity: 0;
+      display: none;
+    }
+  }
 }
 
-#list{
-    @media screen and (max-width: 991px){
-        margin-bottom: 40px;
-    }
+#list {
+  @media screen and (max-width: 991px) {
+    margin-bottom: 40px;
+  }
 }
 
-.color-tran-gray{
-    background: rgb(31, 31, 31, 0.8);
-    border-radius: 18px;
+.color-tran-gray {
+  background: rgb(31, 31, 31, 0.8);
+  border-radius: 18px;
 }

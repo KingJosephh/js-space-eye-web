@@ -37,8 +37,13 @@ function logIn(a, b) {
         showError('.email-warn');
       }
       // 錯誤密碼提示
-      else if (err.response.data === 'Incorrect password') {
+      else if (err.response.data === 'Incorrect password' || err.response.data === 'Password is too short') {
         showError('.Password-warn');
+        Swal.fire({
+          icon: 'error',
+          title: '登入失敗',
+          text: '密碼過短',
+        });
       }
       // 無帳號提示
       else if (err.response.data === 'Cannot find user') {

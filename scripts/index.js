@@ -1,4 +1,3 @@
-// const Url = 'http://localhost:3000';
 const UrlWebType = 'https://space-eye-web-surver.onrender.com';
 const token = localStorage.getItem('token');
 const usersId = localStorage.getItem('usersId');
@@ -20,7 +19,8 @@ if (usersId) {
       });
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
+      // window.location.href = '../Pages/login.html';
       userBtn.children[0].innerText = '登入 / 註冊';
       userBtn.children[0].setAttribute('href', './Pages/login.html');
       userBtn.addEventListener('click', (e) => {

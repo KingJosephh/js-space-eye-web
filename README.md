@@ -1,6 +1,6 @@
 ﻿# Space Eye 台中停車場檢索預約網站
 
-* Pages：https://kingjosephh.github.io/js-space-eye-web/
+Demo：https://celine510.github.io/SpaceEye/
 
 ## 技術
 
@@ -11,6 +11,8 @@
 - JSON Server + JSON Server Auth 模擬後端 & JWT 權限驗證
 - Axios
 - Restful API
+- Prettier
+- ESLint
 - Leaflet 地圖套件
 - Validate 表單驗證
 - Sweetalert2 彈出框套件
@@ -35,5 +37,5 @@
 
 ## 測試帳號
 
-- 帳號: test@gmail.com
-- 密碼: test
+- 帳號: celine@gmail.com
+- 密碼: ccccc

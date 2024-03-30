@@ -234,19 +234,23 @@ const applyChangePassWord = (aa) => {
 };
 
 //取得用戶資料
-axios
-  .get(UrlWebType + `/600/users/${usersId}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-  .then((response) => {
-    let memberData = response.data;
-    getMemberData(memberData);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+if (usersId) {
+  axios
+    .get(UrlWebType + `/600/users/${usersId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      let memberData = response.data;
+      getMemberData(memberData);
+    })
+    .catch((err) => {
+      window.location.href = 'login.html';
+    });
+} else {
+  window.location.href = 'login.html';
+}
 // 車主資訊-將會員資料渲染至畫面
 const getMemberData = (aa) => {
   let content = `<div class="row mt-5 d-flex justify-content-lg-between gx-5 ps-2 pe-2 pb-5">

@@ -12840,38 +12840,6 @@ li .menu-m:hover::before {
   }
 }
 
-.content-to-hide-owner {
-  display: block;
-  padding: 50px 30px 24px 0;
-  position: relative;
-  background: #fff;
-  border-bottom-right-radius: 40px;
-}
-.content-to-hide-owner::after {
-  content: "";
-  background: #fff;
-  width: 1800px;
-  height: 573px;
-  position: absolute;
-  left: -1000px;
-  top: -50px;
-  z-index: -1;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-}
-@media screen and (max-width: 991px) {
-  .content-to-hide-owner::after {
-    top: 0;
-    height: 720px;
-    left: -1200px;
-  }
-}
-@media screen and (max-width: 991px) {
-  .content-to-hide-owner {
-    border-top-right-radius: 40px;
-  }
-}
-
 .btn-light-gray {
   border-radius: 48px;
 }
@@ -12896,9 +12864,17 @@ li .menu-m:hover::before {
   width: 1800px;
   height: 458px;
   position: absolute;
-  left: -1000px;
+  left: -500px;
   top: -50px;
   z-index: -1;
+}
+@media screen and (max-width: 1400px) {
+  .content-to-hide-save::after,
+  .content-to-hide-trading-history::after,
+  .content-to-hide-appointment::after,
+  .content-to-hide-storage::after {
+    left: -680px;
+  }
 }
 @media screen and (max-width: 991px) {
   .content-to-hide-save::after,
@@ -12906,7 +12882,7 @@ li .menu-m:hover::before {
   .content-to-hide-appointment::after,
   .content-to-hide-storage::after {
     top: 0;
-    left: -1200px;
+    left: -1100px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -13318,9 +13294,9 @@ li .menu-m:hover::before {
   grid-area: security;
 }
 .payment-container .payment-creditCard-container .payment-creditCard-input-container .name,
-.payment-container .payment-creditCard-container .payment-creditCard-input-container .cardnumber,
-.payment-container .payment-creditCard-container .payment-creditCard-input-container .expirationdate,
-.payment-container .payment-creditCard-container .payment-creditCard-input-container .securitycode {
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .cardNumber,
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .cardNumber,
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .securityCode {
   margin-top: 3px;
   padding: 15px;
   font-size: 16px;
@@ -13649,7 +13625,7 @@ li .menu-m:hover::before {
 .logInForm-input input#Password:valid ~ label {
   top: -20px;
   left: 0;
-  color: #93FF00;
+  color: #93ff00;
   font-size: 12px;
 }
 
@@ -13677,7 +13653,7 @@ li .menu-m:hover::before {
 }
 .goSignUp-btn a {
   text-decoration: none;
-  color: #93FF00;
+  color: #93ff00;
 }
 
 .findSpace-main-container {
