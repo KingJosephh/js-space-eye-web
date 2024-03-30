@@ -561,14 +561,11 @@ const searchBg = document.querySelector('.searchBg');
 const btnX = document.querySelector('#btnX');
 const areaOptionRwd = document.querySelector('#areaOption-Rwd');
 const roadOptionRwd = document.querySelector('#roadOption-Rwd');
-// const btnBgMove2Rwd = document.querySelector('.btn-bg-move2-Rwd');
 const btn11Rwd = document.querySelector('#btn1-1-Rwd');
 const btn12Rwd = document.querySelector('#btn1-2-Rwd');
 const btn21Rwd = document.querySelector('#btn2-1-Rwd');
 const btn22Rwd = document.querySelector('#btn2-2-Rwd');
 const btn23Rwd = document.querySelector('#btn2-3-Rwd');
-// const btnBgMove3Rwd = document.querySelector('.btn-bg-move3-Rwd');
-// const btnBgMove1Rwd = document.querySelector('.btn-bg-move1-Rwd');
 const btn31Rwd = document.querySelector('#btn3-1-Rwd');
 const btn32Rwd = document.querySelector('#btn3-2-Rwd');
 
