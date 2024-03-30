@@ -44,9 +44,11 @@ checkOut.addEventListener('click', () => {
     } else {
       countCharge(daysDifference);
       finalData.reserveId = reserveId;
-      finalData.parkName = parkData.parkName;
-      finalData.address = parkData.address;
-      finalData.type = parkData.type;
+      if (parkData) {
+        finalData.parkName = parkData.parkName;
+        finalData.address = parkData.address;
+        finalData.type = parkData.type;
+      }
       finalData.plan = planV;
       finalData.inTime = inParkV;
       finalData.outTime = outParkV;
@@ -55,7 +57,7 @@ checkOut.addEventListener('click', () => {
       finalDataAll.push(finalData);
       localStorage.setItem('finalData', JSON.stringify(finalData));
       localStorage.setItem('finalDataAll', JSON.stringify(finalData));
-      window.location.href = '/Pages/payment.html';
+      window.location.href = 'payment.html';
     }
   }
 });
