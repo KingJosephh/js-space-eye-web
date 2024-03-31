@@ -46,7 +46,11 @@ button{
   &.btn-light-solid-l:hover,
   &.btn-light-solid-m:hover,
   &.btn-light-trans-l:hover,
-  &.btn-light-trans-m:hover {
+  &.btn-light-trans-m:hover,
+  &.btn-light-solid-l:focus,
+  &.btn-light-solid-m:focus,
+  &.btn-light-trans-l:focus,
+  &.btn-light-trans-m:focus {
     background: var(--brand-02);
     border-color: var(--brand-02);
   }

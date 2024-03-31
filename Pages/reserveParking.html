@@ -1,217 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <!-- CSS -->
-    <link rel="stylesheet" href="../stylesheets/all.css">
-</head>
+    <link rel="stylesheet" href="../stylesheets/all.css" />
+  </head>
 
-<body>
+  <body>
     <header id="header">
-        <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
-            <div class="container-md">
-                <!-- logo -->
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../Assests/img/Logo-dark.png" alt="" srcset="">
-                </a>
-                <!-- button -->
-                <button class="btn btn-light-solid-m" id="userBtn">
-                    <a href="carOwner.html">
-                        車主專區
-                    </a>
-                </button>
-                <!-- hamburger -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar"
-                    aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <mask id="mask0_2609_18108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                            width="28" height="28">
-                            <rect width="28" height="28" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_2609_18108)">
-                            <path
-                                d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z"
-                                saveModel fill="#1E1E1E" />
-                        </g>
-                    </svg>
-                </button>
-                <div class="collapse navbar-collapse" id="headerNavbar">
-                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="menu-l" href="findSpace.html">找停車位</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="menu-l" href="../index.html#questions">常見問題</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-md initial-bg-color" aria-label="Fourth navbar">
+        <div class="container-md">
+          <!-- logo -->
+          <a class="navbar-brand" href="../index.html">
+            <img src="../Assests/img/Logo-dark.png" alt="" srcset="" />
+          </a>
+          <!-- button -->
+          <button class="btn btn-light-solid-m" id="userBtn">
+            <a href="carOwner.html"> 車主專區 </a>
+          </button>
+          <!-- hamburger -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="hamburger" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_2609_18108" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+                <rect width="28" height="28" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_2609_18108)">
+                <path d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z" saveModel fill="#1E1E1E" />
+              </g>
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse" id="headerNavbar">
+            <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="menu-l" href="findSpace.html">找停車位</a>
+              </li>
+              <li class="nav-item">
+                <a class="menu-l" href="../index.html#questions">常見問題</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <section>
-        <div class="container">
-            <h2 class="text-center">預約停車</h2>
-            <hr class="text-dark mt-5">
-            <div class="row mt-5 mb-5 d-flex justify-content-between gx-5 flex-column flex-sm-row">
-                <div class="col-sm-6">
-                    <p class="fs-5 fw-bold text-dark-gray mt-2">停車場資訊</p>
-                    <div class="dataDetail">
-                    </div>
-                    <hr class="text-dark">
-                    <div class="fs-7">
-                        <p>1. 同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</p>
-                        <p>2. 預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</p>
-                        <p>3. 本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</p>
-                        <p>4. 若預約天數不為剛好天數(例:1、7、30、365)均用單日價格累加計算</p>
-                        <p class="text-danger">★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。 ★</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="mt-5"></div>
-                    <div class="row g-3 d-flex justify-content-between mb-3">
-                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">方案選擇</label>
-                        <div class="col-8 d-flex">
-                            <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" id="plan">
-                                <option class="text-5" value="當日預約" selected>當日預約</option>
-                                <option value="預約一個星期內" id="w">預約一個星期</option>
-                                <option value="預約一個月內" id="m">預約一個月</option>
-                                <option value="預約一年內" id="y">預約一年</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row g-3 d-flex justify-content-between mb-4">
-                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">入場日期:</label>
-                        <div class="col-8 d-flex">
-                            <input class="form-control bg-light-gray" type="date" value="" aria-label="Disabled input example" id="inPark">
-                        </div>
-                    </div>
-                    <div class="row g-3 d-flex justify-content-between mb-4">
-                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">離場日期:</label>
-                        <div class="col-8 d-flex">
-                            <input class="form-control bg-light-gray" type="date" value="" aria-label="Disabled input example" id="outPark">
-                        </div>
-                    </div><div class="row g-3 d-flex justify-content-between mb-4">
-                        <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">車牌號碼:</label>
-                        <div class="col-8 d-flex">
-                            <input class="form-control bg-light-gray" type="text" placeholder="請輸入車牌號碼" aria-label="Disabled input example" id="carId">
-                        </div>
-                    </div>
-                    </form>
-                    <div class="row">
-                        <div class="col d-flex flex-row-reverse" style="margin-top: 50px;">
-                            <button type="button" class="btn btn-light-solid-l mx-3" id="checkOut">確認送出</button>
-                            <button type="button" class="btn btn-dark-trans-l mx-3">取消</button>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center">預約停車</h2>
+        <hr class="text-dark mt-5" />
+        <div class="row mt-5 mb-5 d-flex justify-content-between gx-5 flex-column flex-sm-row">
+          <div class="col-sm-6">
+            <p class="fs-5 fw-bold text-dark-gray mt-2">停車場資訊</p>
+            <div class="dataDetail"></div>
+            <hr class="text-dark" />
+            <div class="fs-7">
+              <p>1. 同一輛車號預約成功後三次未報到完成繳費者,視同黑名單車號,日後不得使用線上預約功能。</p>
+              <p>2. 預約資料建立錯誤至現場報到時資料不符將視同放棄預約資格。</p>
+              <p>3. 本停車場僅供停車服務不負保管責任,貴重物品請勿放置車內。</p>
+              <p>4. 若預約天數不為剛好天數(例:1、7、30、365)均用單日價格累加計算</p>
+              <p class="text-danger">★近日詐騙電話簡訊頻傳,為保障貴客戶自身權益暨防制詐騙,請貴客戶仔細閱讀以下事項,並隨時提高警覺。 ★</p>
             </div>
-    </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="mt-5"></div>
+            <div class="row g-3 d-flex justify-content-between mb-3">
+              <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">方案選擇</label>
+              <div class="col-8 d-flex">
+                <select class="form-select form-select-md mb-3 py-1" aria-label=".form-select-lg example" id="plan">
+                  <option class="text-5" value="當日預約" selected>當日預約</option>
+                  <option value="預約一個星期內" id="w">預約一個星期</option>
+                  <option value="預約一個月內" id="m">預約一個月</option>
+                  <option value="預約一年內" id="y">預約一年</option>
+                </select>
+              </div>
+            </div>
+            <div class="row g-3 d-flex justify-content-between mb-4">
+              <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">入場日期:</label>
+              <div class="col-8 d-flex">
+                <input class="form-control bg-light-gray" type="date" value="" aria-label="Disabled input example" id="inPark" />
+              </div>
+            </div>
+            <div class="row g-3 d-flex justify-content-between mb-4">
+              <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">離場日期:</label>
+              <div class="col-8 d-flex">
+                <input class="form-control bg-light-gray" type="date" value="" aria-label="Disabled input example" id="outPark" />
+              </div>
+            </div>
+            <div class="row g-3 d-flex justify-content-between mb-4">
+              <label for="PhoneNumber" class="col-4 col-form-label fw-bold text-dark-gray">車牌號碼:</label>
+              <div class="col-8 d-flex">
+                <input class="form-control bg-light-gray" type="text" placeholder="請輸入車牌號碼" aria-label="Disabled input example" id="carId" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col d-flex flex-row-reverse" style="margin-top: 50px">
+                <button type="button" class="btn btn-light-solid-l mx-3" id="checkOut">確認送出</button>
+                <button type="button" class="btn btn-dark-trans-l mx-3">取消</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- FOOTER -->
     <footer>
-        <!-- 斜線條 -->
-        <img src="/Assests/icon/maskGroup-01.png" style="position: absolute; top: 44px;" alt="" srcset="">
-        <div class="container-md container-footer-l">
-            <!-- 向上箭頭 -->
-            <a class="btn-up btn-up-l" href="#header">
-                <svg width="21" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.175 14.6L11 7.42501L3.825 14.6L0.5 11.3333L11 0.833344L21.5 11.3333L18.175 14.6Z"
-                        fill="#1E1E1E" />
+      <!-- 斜線條 -->
+      <img src="../Assests/icon/maskGroup-01.png" style="position: absolute; top: 44px" alt="" srcset="" />
+      <div class="container-md container-footer-l">
+        <!-- 向上箭頭 -->
+        <a class="btn-up btn-up-l" href="#header">
+          <svg width="21" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.175 14.6L11 7.42501L3.825 14.6L0.5 11.3333L11 0.833344L21.5 11.3333L18.175 14.6Z" fill="#1E1E1E" />
+          </svg>
+        </a>
+        <!-- 內容區塊 -->
+        <div class="footer-content">
+          <!-- logo -->
+          <img src="../Assests/img/Logo-white.png" alt="" srcset="" />
+          <p class="footer-content-p-l fs-4">現在就與我們聯絡!</p>
+          <!-- btn -->
+          <div class="footer-content-button-l">
+            <!-- email -->
+            <button class="btn-mail btn-mail-l">
+              <!-- icon -->
+              <div class="icon-mail-l">
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L2 4V14H18V4L10 9ZM10 7L18 2H2L10 7ZM2 4V2V14V4Z"
+                    fill="#1E1E1E" />
                 </svg>
-            </a>
-            <!-- 內容區塊 -->
-            <div class="footer-content">
-                <!-- logo -->
-                <img src="/Assests/img/Logo-white.png" alt="" srcset="">
-                <p class="footer-content-p-l fs-4">現在就與我們聯絡!</p>
-                <!-- btn -->
-                <div class="footer-content-button-l">
-                    <!-- email -->
-                    <button class="btn-mail btn-mail-l">
-                        <!-- icon -->
-                        <div class="icon-mail-l">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L2 4V14H18V4L10 9ZM10 7L18 2H2L10 7ZM2 4V2V14V4Z"
-                                    fill="#1E1E1E" />
-                            </svg>
-                        </div>
-                        <div class="btn-mail-part-l">
-                            <div class="btn-mail-title-l">歡迎免費諮詢</div>
-                            <!-- 箭頭 -->
-                            <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
-                                    y="0" width="24" height="24">
-                                    <rect width="24" height="24" fill="#D9D9D9" />
-                                </mask>
-                                <g mask="url(#mask0_2910_7237)">
-                                    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z"
-                                        fill="white" />
-                                </g>
-                            </svg>
-                        </div>
-                    </button>
-                    <!-- phone -->
-                    <button class="btn-mail btn-mail-l">
-                        <!-- icon -->
-                        <div class="icon-mail-l">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <mask id="mask0_2910_7143" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
-                                    y="0" width="24" height="24">
-                                    <rect width="24" height="24" fill="#D9D9D9" />
-                                </mask>
-                                <g mask="url(#mask0_2910_7143)">
-                                    <path
-                                        d="M19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
-                                        fill="#1E1E1E" />
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="btn-mail-part-l">
-                            <div class="btn-mail-title-l">02-2326-8575</div>
-                            <!-- 箭頭 -->
-                            <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <mask id="mask0_2910_7237" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
-                                    y="0" width="24" height="24">
-                                    <rect width="24" height="24" fill="#D9D9D9" />
-                                </mask>
-                                <g mask="url(#mask0_2910_7237)">
-                                    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z"
-                                        fill="white" />
-                                </g>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-                <!-- copyright -->
-                <span class="footer-content-copyright-l fs-16">© 2023 SPACE EYE</span>
-            </div>
+              </div>
+              <div class="btn-mail-part-l">
+                <div class="btn-mail-title-l">歡迎免費諮詢</div>
+                <!-- 箭頭 -->
+                <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_2910_7237" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_2910_7237)">
+                    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <!-- phone -->
+            <button class="btn-mail btn-mail-l">
+              <!-- icon -->
+              <div class="icon-mail-l">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_2910_7143" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_2910_7143)">
+                    <path
+                      d="M19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
+                      fill="#1E1E1E" />
+                  </g>
+                </svg>
+              </div>
+              <div class="btn-mail-part-l">
+                <div class="btn-mail-title-l">02-2326-8575</div>
+                <!-- 箭頭 -->
+                <svg class="btn-mail-m-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_2910_7237" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_2910_7237)">
+                    <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill="white" />
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <!-- copyright -->
+          <span class="footer-content-copyright-l fs-16">© 2023 SPACE EYE</span>
         </div>
-        <!-- 斜線條 -->
-        <img src="/Assests/icon/maskGroup-02.png" style="position: absolute; top: 44px; right: 0;" alt="" srcset="">
+      </div>
+      <!-- 斜線條 -->
+      <img src="../Assests/icon/maskGroup-02.png" style="position: absolute; top: 44px; right: 0" alt="" srcset="" />
     </footer>
-
 
     <!-- components部分，之後用webpack處理 -->
     <!-- bootstrap -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="/scripts/reserveParking.js"></script>
+    <script src="../scripts/reserveParking.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>
