@@ -517,8 +517,8 @@ deleteTradBtn.addEventListener('click', () => {
 });
 
 // 2.渲染預約紀錄到畫面上
-const reserve = localStorage.getItem('finalDataAll');
-const reserveLocal = [JSON.parse(reserve)];
+const reserve = localStorage.getItem('finalReserveAll');
+const reserveLocal = JSON.parse(reserve);
 const reserveHistory = document.querySelector('#reserveHistory');
 const showReserveDetail = (bb) => {
   let str = '';

@@ -9,10 +9,18 @@ let orderDetail = {};
 let orderDetailAll = [];
 const finalData = localStorage.getItem('finalData');
 const finalDataLocal = JSON.parse(finalData);
+let finalDataAll = [];
+
 if (orderDetailLocal !== null) {
   for (let i = 0; i < orderDetailLocal.length; i++) {
     orderDetailAll.push(orderDetailLocal[i]);
   }
+}
+if (finalDataLocal !== null) {
+  for (let i = 0; i < finalDataLocal.length; i++) {
+    finalDataAll.push(finalDataLocal[i]);
+  }
+  localStorage.setItem('finalDataAll', finalDataAll);
 }
 // 換頁顯示
 const paymentMethods = document.querySelectorAll('.payment-method-group');

@@ -13134,8 +13134,8 @@ li .menu-m:hover::before {
 }
 .payment-container .payment-creditCard-container .payment-creditCard-input-container .name,
 .payment-container .payment-creditCard-container .payment-creditCard-input-container .cardNumber,
-.payment-container .payment-creditCard-container .payment-creditCard-input-container .cardNumber,
-.payment-container .payment-creditCard-container .payment-creditCard-input-container .securityCode {
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .securityCode,
+.payment-container .payment-creditCard-container .payment-creditCard-input-container .expirationDate {
   margin-top: 3px;
   padding: 15px;
   font-size: 16px;

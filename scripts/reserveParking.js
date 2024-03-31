@@ -1,9 +1,5 @@
 const reservePark = localStorage.getItem('parkId');
-// const Url1 = 'http://localhost:3000';
 const UrlWebType = 'https://space-eye-web-surver.onrender.com';
-// const token1 = localStorage.getItem('token');
-// const usersId1 = localStorage.getItem('usersId');
-// const userBtn1 = document.querySelector('#userBtn');
 const dataDetail = document.querySelector('.dataDetail');
 const plan = document.querySelector('#plan');
 const inPark = document.querySelector('#inPark');
@@ -13,7 +9,7 @@ const carId = document.querySelector('#carId');
 let data;
 let parkData;
 let finalData = {};
-let finalDataAll = [];
+let finalReserveAll = [];
 let charge;
 let chargeList;
 let totalCharge;
@@ -22,7 +18,6 @@ checkOut.addEventListener('click', () => {
   const planV = plan.value;
   const inParkV = new Date(inPark.value);
   const outParkV = new Date(outPark.value);
-  // const payV = pay.value
   const carIdV = carId.value;
   if (carIdV === '') {
     alert('請填寫車牌號碼');
@@ -54,9 +49,9 @@ checkOut.addEventListener('click', () => {
       finalData.outTime = outParkV;
       finalData.carIdV = carIdV;
       finalData.totalCharge = totalCharge;
-      finalDataAll.push(finalData);
+      finalReserveAll.push(finalData);
       localStorage.setItem('finalData', JSON.stringify(finalData));
-      localStorage.setItem('finalDataAll', JSON.stringify(finalData));
+      localStorage.setItem('finalReserveAll', JSON.stringify(finalReserveAll));
       window.location.href = 'payment.html';
     }
   }
