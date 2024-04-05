@@ -2,6 +2,8 @@
 
 Demo：https://kingjosephh.github.io/js-space-eye-web/
 
+一個簡單易用的停車場查詢預約平台，幫助用戶輕鬆找到停車位，模擬提供預約、收費和停車位狀態查詢等功能，方便出遊。
+
 ## 技術
 
 - HTML5 & CSS3
