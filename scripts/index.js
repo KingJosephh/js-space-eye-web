@@ -1,4 +1,4 @@
-const UrlWebType = 'https://js-space-eye-web.onrender.com';
+const UrlWebType = 'https://spaceeye.dewed.one';
 const token = localStorage.getItem('token');
 const usersId = localStorage.getItem('usersId');
 // 辨識是否已登入

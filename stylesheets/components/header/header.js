@@ -1,9 +1,8 @@
-const UrlWebType = 'https://js-space-eye-web.onrender.com';
+const UrlWebType = 'https://spaceeye.dewed.one';
 const token = localStorage.getItem('token');
 const usersId = localStorage.getItem('usersId');
 // 辨識是否已登入
 const userBtn = document.querySelector('#userBtn');
-console.log(12);
 if (usersId) {
   axios
     .get(UrlWebType + `/600/users/${usersId}`, {
@@ -11,8 +10,7 @@ if (usersId) {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       userBtn.children[0].innerText = '車主專區';
       userBtn.children[0].setAttribute('href', 'carOwner.html');
       userBtn.addEventListener('click', () => {
